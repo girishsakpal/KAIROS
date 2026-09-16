@@ -1,0 +1,2001 @@
+customer_id,plan_type,contract_type,billing_cycle,payment_method,monthly_charge,tenure_months,status,start_date,end_date
+CUST-000001,Standard,One year,Annual,Credit card,102.92,23,active,2024-09-24,
+CUST-000002,Basic,Month-to-month,Monthly,Bank transfer,79.41,61,active,2021-08-01,
+CUST-000003,Pro,Two year,Annual,Electronic check,44.49,2,active,2026-07-12,
+CUST-000004,Standard,One year,Annual,Electronic check,94.57,32,active,2024-01-06,
+CUST-000005,Basic,Month-to-month,Monthly,Electronic check,28.45,58,active,2021-10-25,
+CUST-000006,Pro,Two year,Annual,Mailed check,97.44,69,active,2020-11-19,
+CUST-000007,Standard,One year,Annual,Bank transfer,79.0,18,active,2025-02-18,
+CUST-000008,Standard,One year,Annual,Credit card,31.08,47,active,2022-10-06,
+CUST-000009,Basic,Month-to-month,Monthly,Mailed check,27.95,13,cancelled,2025-08-03,2026-08-17
+CUST-000010,Basic,Month-to-month,Monthly,Electronic check,95.08,8,cancelled,2026-01-01,2026-09-01
+CUST-000011,Basic,Month-to-month,Monthly,Electronic check,49.29,25,cancelled,2024-08-15,2026-07-30
+CUST-000012,Pro,Two year,Annual,Mailed check,108.93,64,active,2021-05-14,
+CUST-000013,Standard,One year,Annual,Mailed check,96.21,50,active,2022-07-16,
+CUST-000014,Pro,Two year,Annual,Bank transfer,89.82,35,active,2023-09-25,
+CUST-000015,Basic,Month-to-month,Monthly,Electronic check,47.86,20,active,2025-01-10,
+CUST-000016,Basic,Month-to-month,Monthly,Electronic check,90.89,10,cancelled,2025-10-26,2026-09-14
+CUST-000017,Standard,One year,Annual,Bank transfer,114.81,19,active,2025-02-04,
+CUST-000018,Basic,Month-to-month,Monthly,Mailed check,29.16,11,cancelled,2025-09-24,2026-09-04
+CUST-000019,Pro,Two year,Annual,Mailed check,52.62,13,active,2025-08-14,
+CUST-000020,Standard,One year,Annual,Electronic check,43.47,50,active,2022-07-08,
+CUST-000021,Standard,One year,Annual,Electronic check,59.33,9,active,2025-12-11,
+CUST-000022,Basic,Month-to-month,Monthly,Mailed check,94.23,3,active,2026-06-04,
+CUST-000023,Pro,Two year,Annual,Mailed check,67.42,39,active,2023-06-01,
+CUST-000024,Pro,Two year,Annual,Credit card,77.07,20,active,2025-01-11,
+CUST-000025,Standard,One year,Annual,Credit card,51.42,33,active,2023-11-27,
+CUST-000026,Basic,Month-to-month,Monthly,Mailed check,34.13,10,cancelled,2025-10-19,2026-08-13
+CUST-000027,Basic,Month-to-month,Monthly,Mailed check,46.69,15,cancelled,2025-06-16,2026-07-28
+CUST-000028,Basic,Month-to-month,Monthly,Mailed check,105.97,32,cancelled,2024-01-14,2026-08-23
+CUST-000029,Basic,Month-to-month,Monthly,Bank transfer,80.24,50,active,2022-06-19,
+CUST-000030,Standard,One year,Annual,Mailed check,57.8,30,active,2024-02-27,
+CUST-000031,Standard,One year,Annual,Credit card,98.99,39,active,2023-05-21,
+CUST-000032,Pro,Two year,Annual,Credit card,26.45,38,active,2023-06-27,
+CUST-000033,Basic,Month-to-month,Monthly,Mailed check,45.39,19,cancelled,2025-01-25,2026-09-11
+CUST-000034,Basic,Month-to-month,Monthly,Electronic check,43.01,20,cancelled,2025-01-12,2026-08-14
+CUST-000035,Basic,Month-to-month,Monthly,Electronic check,118.54,31,active,2024-02-01,
+CUST-000036,Basic,Month-to-month,Monthly,Credit card,90.61,2,cancelled,2026-07-08,2026-08-31
+CUST-000037,Basic,Month-to-month,Monthly,Mailed check,81.78,50,active,2022-06-22,
+CUST-000038,Basic,Month-to-month,Monthly,Mailed check,20.5,44,active,2023-01-15,
+CUST-000039,Basic,Month-to-month,Monthly,Bank transfer,38.43,22,active,2024-11-16,
+CUST-000040,Standard,One year,Annual,Credit card,83.55,27,active,2024-06-01,
+CUST-000041,Basic,Month-to-month,Monthly,Mailed check,57.97,23,cancelled,2024-09-17,2026-08-29
+CUST-000042,Pro,Two year,Annual,Mailed check,112.43,47,active,2022-09-18,
+CUST-000043,Standard,One year,Annual,Credit card,96.47,55,active,2022-01-29,
+CUST-000044,Basic,Month-to-month,Monthly,Electronic check,64.74,7,cancelled,2026-02-03,2026-07-23
+CUST-000045,Pro,Two year,Annual,Credit card,94.95,30,active,2024-03-09,
+CUST-000046,Pro,Two year,Annual,Bank transfer,117.54,1,active,2026-07-19,
+CUST-000047,Basic,Month-to-month,Monthly,Electronic check,66.1,33,cancelled,2023-12-12,2026-07-22
+CUST-000048,Basic,Month-to-month,Monthly,Electronic check,84.25,18,cancelled,2025-03-15,2026-08-31
+CUST-000049,Standard,One year,Annual,Bank transfer,111.87,24,active,2024-09-01,
+CUST-000050,Basic,Month-to-month,Monthly,Credit card,44.87,33,cancelled,2023-12-06,2026-08-12
+CUST-000051,Basic,Month-to-month,Monthly,Electronic check,108.66,23,cancelled,2024-10-02,2026-08-15
+CUST-000052,Basic,Month-to-month,Monthly,Bank transfer,29.75,28,cancelled,2024-04-20,2026-07-21
+CUST-000053,Standard,One year,Annual,Credit card,84.84,55,active,2022-02-07,
+CUST-000054,Standard,One year,Annual,Bank transfer,98.28,59,active,2021-09-21,
+CUST-000055,Standard,One year,Annual,Bank transfer,81.46,0,active,2026-09-10,
+CUST-000056,Standard,One year,Annual,Electronic check,69.55,27,active,2024-06-08,
+CUST-000057,Basic,Month-to-month,Monthly,Bank transfer,81.73,61,active,2021-08-17,
+CUST-000058,Standard,One year,Annual,Bank transfer,35.17,38,active,2023-06-28,
+CUST-000059,Basic,Month-to-month,Monthly,Electronic check,41.56,14,active,2025-06-22,
+CUST-000060,Basic,Month-to-month,Monthly,Mailed check,46.99,43,cancelled,2023-01-21,2026-07-22
+CUST-000061,Standard,One year,Annual,Credit card,79.78,10,active,2025-11-11,
+CUST-000062,Basic,Month-to-month,Monthly,Credit card,64.19,1,cancelled,2026-07-25,2026-08-26
+CUST-000063,Standard,One year,Annual,Electronic check,44.45,46,active,2022-11-12,
+CUST-000064,Standard,One year,Annual,Bank transfer,108.28,37,active,2023-07-30,
+CUST-000065,Standard,One year,Annual,Bank transfer,57.39,55,active,2022-01-25,
+CUST-000066,Standard,One year,Annual,Bank transfer,64.6,25,active,2024-08-12,
+CUST-000067,Standard,One year,Annual,Bank transfer,60.97,62,active,2021-07-14,
+CUST-000068,Basic,Month-to-month,Monthly,Credit card,38.19,30,cancelled,2024-03-15,2026-09-14
+CUST-000069,Basic,Month-to-month,Monthly,Mailed check,93.16,53,cancelled,2022-03-27,2026-09-15
+CUST-000070,Basic,Month-to-month,Monthly,Bank transfer,64.85,7,cancelled,2026-01-28,2026-09-15
+CUST-000071,Basic,Month-to-month,Monthly,Bank transfer,21.63,7,cancelled,2026-02-12,2026-07-31
+CUST-000072,Basic,Month-to-month,Monthly,Bank transfer,116.4,57,cancelled,2021-12-01,2026-08-03
+CUST-000073,Pro,Two year,Annual,Credit card,101.58,60,active,2021-08-24,
+CUST-000074,Basic,Month-to-month,Monthly,Electronic check,92.36,68,active,2021-01-09,
+CUST-000075,Basic,Month-to-month,Monthly,Credit card,106.91,23,active,2024-09-28,
+CUST-000076,Basic,Month-to-month,Monthly,Bank transfer,110.68,1,cancelled,2026-08-09,2026-07-29
+CUST-000077,Basic,Month-to-month,Monthly,Credit card,53.75,71,cancelled,2020-10-09,2026-09-07
+CUST-000078,Standard,One year,Annual,Mailed check,81.1,43,active,2023-02-05,
+CUST-000079,Standard,One year,Annual,Mailed check,80.88,18,active,2025-03-08,
+CUST-000080,Standard,One year,Annual,Electronic check,46.73,55,active,2022-02-01,
+CUST-000081,Standard,One year,Annual,Credit card,42.2,65,active,2021-04-11,
+CUST-000082,Basic,Month-to-month,Monthly,Credit card,31.39,20,active,2025-01-05,
+CUST-000083,Pro,Two year,Annual,Mailed check,85.93,56,active,2021-12-29,
+CUST-000084,Basic,Month-to-month,Monthly,Electronic check,98.09,57,active,2021-12-05,
+CUST-000085,Basic,Month-to-month,Monthly,Bank transfer,96.1,36,active,2023-08-29,
+CUST-000086,Basic,Month-to-month,Monthly,Bank transfer,51.63,46,active,2022-11-13,
+CUST-000087,Standard,One year,Annual,Bank transfer,40.53,19,active,2025-02-11,
+CUST-000088,Basic,Month-to-month,Monthly,Electronic check,65.36,67,active,2021-01-21,
+CUST-000089,Basic,Month-to-month,Monthly,Credit card,74.68,71,active,2020-10-03,
+CUST-000090,Basic,Month-to-month,Monthly,Mailed check,111.91,71,active,2020-09-28,
+CUST-000091,Basic,Month-to-month,Monthly,Bank transfer,107.48,53,cancelled,2022-03-26,2026-09-12
+CUST-000092,Standard,One year,Annual,Credit card,111.61,3,active,2026-06-13,
+CUST-000093,Basic,Month-to-month,Monthly,Bank transfer,105.03,26,active,2024-06-18,
+CUST-000094,Basic,Month-to-month,Monthly,Electronic check,116.46,32,cancelled,2024-01-04,2026-09-05
+CUST-000095,Basic,Month-to-month,Monthly,Credit card,66.55,70,active,2020-10-21,
+CUST-000096,Standard,One year,Annual,Bank transfer,24.75,39,active,2023-06-05,
+CUST-000097,Basic,Month-to-month,Monthly,Credit card,28.36,39,active,2023-06-05,
+CUST-000098,Basic,Month-to-month,Monthly,Bank transfer,59.03,10,cancelled,2025-10-29,2026-08-10
+CUST-000099,Basic,Month-to-month,Monthly,Credit card,45.77,57,active,2021-12-11,
+CUST-000100,Pro,Two year,Annual,Credit card,36.99,24,active,2024-08-29,
+CUST-000101,Pro,Two year,Annual,Electronic check,115.32,6,active,2026-02-17,
+CUST-000102,Standard,One year,Annual,Electronic check,39.54,72,active,2020-08-28,
+CUST-000103,Basic,Month-to-month,Monthly,Electronic check,115.94,13,cancelled,2025-08-15,2026-09-15
+CUST-000104,Pro,Two year,Annual,Credit card,96.08,1,active,2026-07-28,
+CUST-000105,Standard,One year,Annual,Electronic check,84.09,5,active,2026-04-16,
+CUST-000106,Standard,One year,Annual,Mailed check,87.6,33,active,2023-12-14,
+CUST-000107,Basic,Month-to-month,Monthly,Credit card,53.15,7,cancelled,2026-02-07,2026-08-07
+CUST-000108,Basic,Month-to-month,Monthly,Mailed check,84.64,61,active,2021-08-08,
+CUST-000109,Basic,Month-to-month,Monthly,Electronic check,38.67,37,active,2023-08-17,
+CUST-000110,Pro,Two year,Annual,Mailed check,113.77,23,active,2024-10-16,
+CUST-000111,Basic,Month-to-month,Monthly,Electronic check,50.18,0,cancelled,2026-08-24,2026-07-25
+CUST-000112,Basic,Month-to-month,Monthly,Mailed check,45.52,35,active,2023-10-04,
+CUST-000113,Basic,Month-to-month,Monthly,Bank transfer,91.12,11,cancelled,2025-10-12,2026-09-07
+CUST-000114,Standard,One year,Annual,Bank transfer,85.64,71,active,2020-10-04,
+CUST-000115,Basic,Month-to-month,Monthly,Bank transfer,65.13,21,active,2024-11-26,
+CUST-000116,Pro,Two year,Annual,Electronic check,83.24,34,active,2023-10-26,
+CUST-000117,Standard,One year,Annual,Credit card,35.95,1,active,2026-08-09,
+CUST-000118,Standard,One year,Annual,Mailed check,87.33,9,active,2025-12-12,
+CUST-000119,Basic,Month-to-month,Monthly,Mailed check,47.06,15,cancelled,2025-05-20,2026-08-03
+CUST-000120,Standard,One year,Annual,Bank transfer,47.28,3,active,2026-05-30,
+CUST-000121,Standard,One year,Annual,Electronic check,36.22,52,active,2022-04-19,
+CUST-000122,Standard,One year,Annual,Mailed check,53.24,69,active,2020-12-07,
+CUST-000123,Basic,Month-to-month,Monthly,Mailed check,53.13,71,active,2020-10-13,
+CUST-000124,Basic,Month-to-month,Monthly,Electronic check,65.42,19,active,2025-02-04,
+CUST-000125,Basic,Month-to-month,Monthly,Credit card,39.04,57,active,2021-12-07,
+CUST-000126,Basic,Month-to-month,Monthly,Mailed check,39.3,36,active,2023-08-27,
+CUST-000127,Basic,Month-to-month,Monthly,Electronic check,74.17,3,active,2026-05-27,
+CUST-000128,Basic,Month-to-month,Monthly,Mailed check,32.89,6,active,2026-03-16,
+CUST-000129,Basic,Month-to-month,Monthly,Credit card,88.89,39,cancelled,2023-05-31,2026-08-14
+CUST-000130,Standard,One year,Annual,Bank transfer,114.39,30,active,2024-03-07,
+CUST-000131,Basic,Month-to-month,Monthly,Bank transfer,62.68,0,cancelled,2026-08-29,2026-07-22
+CUST-000132,Pro,Two year,Annual,Credit card,110.11,67,active,2021-02-04,
+CUST-000133,Standard,One year,Annual,Electronic check,29.83,53,active,2022-04-01,
+CUST-000134,Basic,Month-to-month,Monthly,Bank transfer,24.3,36,active,2023-08-27,
+CUST-000135,Standard,One year,Annual,Mailed check,92.14,72,active,2020-09-08,
+CUST-000136,Basic,Month-to-month,Monthly,Bank transfer,96.1,70,active,2020-11-11,
+CUST-000137,Pro,Two year,Annual,Credit card,104.31,71,active,2020-09-25,
+CUST-000138,Basic,Month-to-month,Monthly,Electronic check,25.68,18,active,2025-02-18,
+CUST-000139,Standard,One year,Annual,Electronic check,97.69,64,active,2021-05-04,
+CUST-000140,Basic,Month-to-month,Monthly,Credit card,57.65,36,active,2023-08-19,
+CUST-000141,Basic,Month-to-month,Monthly,Mailed check,50.33,53,cancelled,2022-04-12,2026-09-01
+CUST-000142,Basic,Month-to-month,Monthly,Mailed check,37.3,62,active,2021-06-23,
+CUST-000143,Pro,Two year,Annual,Electronic check,119.6,11,active,2025-09-18,
+CUST-000144,Standard,One year,Annual,Mailed check,26.37,32,active,2024-01-08,
+CUST-000145,Basic,Month-to-month,Monthly,Electronic check,102.7,9,cancelled,2025-12-13,2026-09-02
+CUST-000146,Basic,Month-to-month,Monthly,Electronic check,83.95,20,cancelled,2024-12-28,2026-09-15
+CUST-000147,Basic,Month-to-month,Monthly,Electronic check,93.51,30,active,2024-02-20,
+CUST-000148,Basic,Month-to-month,Monthly,Electronic check,91.17,62,active,2021-07-15,
+CUST-000149,Basic,Month-to-month,Monthly,Credit card,105.84,62,active,2021-06-28,
+CUST-000150,Basic,Month-to-month,Monthly,Credit card,38.38,28,cancelled,2024-04-21,2026-08-05
+CUST-000151,Pro,Two year,Annual,Credit card,20.08,24,active,2024-09-16,
+CUST-000152,Pro,Two year,Annual,Electronic check,79.85,38,active,2023-07-03,
+CUST-000153,Basic,Month-to-month,Monthly,Mailed check,55.39,66,active,2021-03-15,
+CUST-000154,Standard,One year,Annual,Mailed check,32.38,71,active,2020-10-11,
+CUST-000155,Basic,Month-to-month,Monthly,Bank transfer,38.61,16,cancelled,2025-05-03,2026-07-26
+CUST-000156,Standard,One year,Annual,Electronic check,53.17,13,active,2025-08-08,
+CUST-000157,Basic,Month-to-month,Monthly,Electronic check,27.02,51,active,2022-06-15,
+CUST-000158,Standard,One year,Annual,Credit card,25.69,22,active,2024-10-23,
+CUST-000159,Standard,One year,Annual,Mailed check,111.6,14,active,2025-07-11,
+CUST-000160,Standard,One year,Annual,Credit card,51.21,2,active,2026-06-22,
+CUST-000161,Basic,Month-to-month,Monthly,Electronic check,118.22,29,active,2024-04-12,
+CUST-000162,Pro,Two year,Annual,Credit card,116.44,28,active,2024-05-02,
+CUST-000163,Basic,Month-to-month,Monthly,Bank transfer,34.26,41,active,2023-03-27,
+CUST-000164,Basic,Month-to-month,Monthly,Credit card,91.49,14,cancelled,2025-07-03,2026-09-14
+CUST-000165,Standard,One year,Annual,Bank transfer,80.08,52,active,2022-05-06,
+CUST-000166,Basic,Month-to-month,Monthly,Credit card,89.06,49,active,2022-07-26,
+CUST-000167,Pro,Two year,Annual,Mailed check,29.62,33,active,2023-12-17,
+CUST-000168,Pro,Two year,Annual,Mailed check,38.86,13,active,2025-07-24,
+CUST-000169,Basic,Month-to-month,Monthly,Electronic check,27.66,37,active,2023-07-28,
+CUST-000170,Pro,Two year,Annual,Electronic check,80.41,49,active,2022-07-26,
+CUST-000171,Basic,Month-to-month,Monthly,Credit card,118.66,27,cancelled,2024-06-05,2026-08-17
+CUST-000172,Basic,Month-to-month,Monthly,Mailed check,87.2,19,cancelled,2025-02-04,2026-08-04
+CUST-000173,Basic,Month-to-month,Monthly,Electronic check,91.08,36,cancelled,2023-08-31,2026-07-31
+CUST-000174,Pro,Two year,Annual,Mailed check,118.46,25,active,2024-07-28,
+CUST-000175,Basic,Month-to-month,Monthly,Mailed check,87.8,29,active,2024-03-21,
+CUST-000176,Basic,Month-to-month,Monthly,Bank transfer,24.02,25,active,2024-07-22,
+CUST-000177,Basic,Month-to-month,Monthly,Electronic check,106.7,22,cancelled,2024-11-15,2026-07-23
+CUST-000178,Pro,Two year,Annual,Electronic check,56.47,52,active,2022-05-14,
+CUST-000179,Pro,Two year,Annual,Bank transfer,20.44,33,active,2023-11-19,
+CUST-000180,Standard,One year,Annual,Electronic check,70.72,34,active,2023-11-06,
+CUST-000181,Pro,Two year,Annual,Mailed check,113.7,47,active,2022-09-30,
+CUST-000182,Pro,Two year,Annual,Bank transfer,45.73,26,active,2024-07-16,
+CUST-000183,Basic,Month-to-month,Monthly,Bank transfer,69.15,7,cancelled,2026-02-12,2026-08-04
+CUST-000184,Basic,Month-to-month,Monthly,Electronic check,37.38,62,active,2021-07-05,
+CUST-000185,Standard,One year,Annual,Bank transfer,25.77,4,active,2026-04-27,
+CUST-000186,Standard,One year,Annual,Electronic check,28.05,41,active,2023-03-25,
+CUST-000187,Basic,Month-to-month,Monthly,Electronic check,92.7,19,cancelled,2025-01-20,2026-07-23
+CUST-000188,Basic,Month-to-month,Monthly,Electronic check,106.41,15,active,2025-06-12,
+CUST-000189,Standard,One year,Annual,Bank transfer,34.33,3,active,2026-06-11,
+CUST-000190,Basic,Month-to-month,Monthly,Bank transfer,48.83,65,active,2021-04-01,
+CUST-000191,Pro,Two year,Annual,Bank transfer,39.5,31,active,2024-01-31,
+CUST-000192,Basic,Month-to-month,Monthly,Electronic check,22.69,25,active,2024-08-15,
+CUST-000193,Basic,Month-to-month,Monthly,Mailed check,75.34,54,active,2022-03-05,
+CUST-000194,Pro,Two year,Annual,Electronic check,89.99,2,cancelled,2026-06-22,2026-07-19
+CUST-000195,Basic,Month-to-month,Monthly,Mailed check,84.79,41,active,2023-04-13,
+CUST-000196,Basic,Month-to-month,Monthly,Electronic check,58.81,36,cancelled,2023-08-24,2026-07-23
+CUST-000197,Standard,One year,Annual,Bank transfer,75.5,40,active,2023-05-05,
+CUST-000198,Pro,Two year,Annual,Credit card,29.41,9,active,2025-12-02,
+CUST-000199,Basic,Month-to-month,Monthly,Credit card,35.43,69,active,2020-11-27,
+CUST-000200,Basic,Month-to-month,Monthly,Electronic check,113.18,17,cancelled,2025-03-27,2026-08-21
+CUST-000201,Standard,One year,Annual,Electronic check,96.15,49,active,2022-07-29,
+CUST-000202,Pro,Two year,Annual,Electronic check,112.27,54,active,2022-03-15,
+CUST-000203,Basic,Month-to-month,Monthly,Credit card,111.67,25,cancelled,2024-08-08,2026-08-22
+CUST-000204,Basic,Month-to-month,Monthly,Credit card,84.94,9,cancelled,2025-11-22,2026-08-21
+CUST-000205,Basic,Month-to-month,Monthly,Electronic check,112.82,21,cancelled,2024-12-15,2026-07-21
+CUST-000206,Basic,Month-to-month,Monthly,Credit card,61.67,58,active,2021-10-26,
+CUST-000207,Basic,Month-to-month,Monthly,Bank transfer,20.36,66,active,2021-03-02,
+CUST-000208,Standard,One year,Annual,Electronic check,26.26,68,active,2021-01-13,
+CUST-000209,Basic,Month-to-month,Monthly,Mailed check,30.95,16,active,2025-05-14,
+CUST-000210,Basic,Month-to-month,Monthly,Mailed check,29.54,44,active,2022-12-18,
+CUST-000211,Standard,One year,Annual,Credit card,55.17,11,active,2025-10-17,
+CUST-000212,Standard,One year,Annual,Electronic check,90.13,51,active,2022-06-17,
+CUST-000213,Basic,Month-to-month,Monthly,Electronic check,99.06,30,cancelled,2024-03-17,2026-08-30
+CUST-000214,Pro,Two year,Annual,Bank transfer,79.02,52,active,2022-04-30,
+CUST-000215,Standard,One year,Annual,Mailed check,34.64,50,active,2022-06-20,
+CUST-000216,Standard,One year,Annual,Mailed check,94.79,72,active,2020-09-11,
+CUST-000217,Basic,Month-to-month,Monthly,Credit card,55.48,35,active,2023-09-24,
+CUST-000218,Basic,Month-to-month,Monthly,Credit card,21.3,24,cancelled,2024-08-26,2026-08-02
+CUST-000219,Pro,Two year,Annual,Bank transfer,48.06,38,active,2023-07-12,
+CUST-000220,Basic,Month-to-month,Monthly,Credit card,53.06,11,active,2025-10-15,
+CUST-000221,Basic,Month-to-month,Monthly,Credit card,47.42,8,active,2026-01-02,
+CUST-000222,Basic,Month-to-month,Monthly,Bank transfer,101.19,37,active,2023-08-15,
+CUST-000223,Standard,One year,Annual,Credit card,95.99,60,active,2021-09-13,
+CUST-000224,Pro,Two year,Annual,Electronic check,89.56,38,active,2023-07-05,
+CUST-000225,Basic,Month-to-month,Monthly,Electronic check,33.9,57,active,2021-11-22,
+CUST-000226,Pro,Two year,Annual,Credit card,100.78,12,active,2025-08-18,
+CUST-000227,Basic,Month-to-month,Monthly,Electronic check,87.72,32,active,2023-12-29,
+CUST-000228,Standard,One year,Annual,Bank transfer,39.48,44,active,2023-01-08,
+CUST-000229,Standard,One year,Annual,Mailed check,84.81,25,active,2024-08-07,
+CUST-000230,Basic,Month-to-month,Monthly,Credit card,68.35,1,cancelled,2026-07-30,2026-08-10
+CUST-000231,Basic,Month-to-month,Monthly,Bank transfer,63.94,5,cancelled,2026-04-12,2026-09-12
+CUST-000232,Basic,Month-to-month,Monthly,Electronic check,31.21,67,active,2021-01-31,
+CUST-000233,Pro,Two year,Annual,Mailed check,71.83,44,active,2022-12-24,
+CUST-000234,Standard,One year,Annual,Bank transfer,29.99,19,active,2025-01-21,
+CUST-000235,Pro,Two year,Annual,Credit card,36.43,18,active,2025-03-17,
+CUST-000236,Pro,Two year,Annual,Credit card,33.25,2,active,2026-07-10,
+CUST-000237,Basic,Month-to-month,Monthly,Credit card,115.41,68,cancelled,2021-01-09,2026-08-18
+CUST-000238,Standard,One year,Annual,Credit card,48.49,7,active,2026-01-30,
+CUST-000239,Basic,Month-to-month,Monthly,Credit card,55.52,55,active,2022-02-10,
+CUST-000240,Basic,Month-to-month,Monthly,Bank transfer,52.21,17,active,2025-03-20,
+CUST-000241,Pro,Two year,Annual,Mailed check,109.83,24,active,2024-08-20,
+CUST-000242,Pro,Two year,Annual,Bank transfer,76.3,19,active,2025-02-06,
+CUST-000243,Basic,Month-to-month,Monthly,Credit card,111.92,60,active,2021-09-04,
+CUST-000244,Basic,Month-to-month,Monthly,Mailed check,49.99,2,cancelled,2026-07-05,2026-09-04
+CUST-000245,Standard,One year,Annual,Credit card,31.48,25,active,2024-08-15,
+CUST-000246,Pro,Two year,Annual,Bank transfer,75.62,20,active,2024-12-21,
+CUST-000247,Standard,One year,Annual,Electronic check,54.55,19,active,2025-01-23,
+CUST-000248,Basic,Month-to-month,Monthly,Credit card,100.19,14,cancelled,2025-07-08,2026-08-04
+CUST-000249,Basic,Month-to-month,Monthly,Credit card,107.94,66,cancelled,2021-03-01,2026-08-20
+CUST-000250,Basic,Month-to-month,Monthly,Bank transfer,67.26,27,cancelled,2024-06-06,2026-08-25
+CUST-000251,Standard,One year,Annual,Electronic check,117.14,30,active,2024-03-11,
+CUST-000252,Pro,Two year,Annual,Electronic check,75.3,28,active,2024-05-08,
+CUST-000253,Basic,Month-to-month,Monthly,Credit card,47.09,71,active,2020-10-13,
+CUST-000254,Basic,Month-to-month,Monthly,Electronic check,68.9,24,cancelled,2024-08-23,2026-09-12
+CUST-000255,Basic,Month-to-month,Monthly,Mailed check,23.73,24,active,2024-08-28,
+CUST-000256,Standard,One year,Annual,Bank transfer,100.4,23,active,2024-09-19,
+CUST-000257,Pro,Two year,Annual,Electronic check,30.14,23,active,2024-10-16,
+CUST-000258,Basic,Month-to-month,Monthly,Credit card,50.87,6,cancelled,2026-02-28,2026-09-08
+CUST-000259,Basic,Month-to-month,Monthly,Bank transfer,76.53,44,cancelled,2022-12-31,2026-08-01
+CUST-000260,Standard,One year,Annual,Electronic check,24.3,1,active,2026-07-30,
+CUST-000261,Basic,Month-to-month,Monthly,Mailed check,27.93,16,cancelled,2025-04-18,2026-07-27
+CUST-000262,Pro,Two year,Annual,Mailed check,89.61,14,active,2025-07-06,
+CUST-000263,Basic,Month-to-month,Monthly,Electronic check,27.18,21,active,2024-12-12,
+CUST-000264,Basic,Month-to-month,Monthly,Credit card,67.71,55,active,2022-02-15,
+CUST-000265,Pro,Two year,Annual,Mailed check,53.87,43,active,2023-02-02,
+CUST-000266,Basic,Month-to-month,Monthly,Bank transfer,42.81,72,active,2020-09-11,
+CUST-000267,Basic,Month-to-month,Monthly,Bank transfer,38.88,25,active,2024-08-12,
+CUST-000268,Basic,Month-to-month,Monthly,Electronic check,96.34,67,cancelled,2021-02-11,2026-08-29
+CUST-000269,Basic,Month-to-month,Monthly,Bank transfer,115.15,3,cancelled,2026-06-09,2026-07-29
+CUST-000270,Basic,Month-to-month,Monthly,Mailed check,34.02,36,active,2023-09-14,
+CUST-000271,Basic,Month-to-month,Monthly,Electronic check,115.97,58,active,2021-11-02,
+CUST-000272,Basic,Month-to-month,Monthly,Mailed check,79.48,38,cancelled,2023-06-29,2026-08-14
+CUST-000273,Basic,Month-to-month,Monthly,Bank transfer,84.17,68,active,2021-01-08,
+CUST-000274,Standard,One year,Annual,Electronic check,90.99,22,active,2024-11-12,
+CUST-000275,Standard,One year,Annual,Credit card,90.41,2,active,2026-07-01,
+CUST-000276,Basic,Month-to-month,Monthly,Bank transfer,101.98,56,cancelled,2022-01-14,2026-08-26
+CUST-000277,Basic,Month-to-month,Monthly,Mailed check,68.35,4,active,2026-04-26,
+CUST-000278,Basic,Month-to-month,Monthly,Bank transfer,73.34,55,active,2022-02-04,
+CUST-000279,Pro,Two year,Annual,Mailed check,52.38,53,active,2022-04-05,
+CUST-000280,Pro,Two year,Annual,Bank transfer,30.53,61,active,2021-08-10,
+CUST-000281,Basic,Month-to-month,Monthly,Electronic check,86.46,34,active,2023-11-09,
+CUST-000282,Basic,Month-to-month,Monthly,Bank transfer,23.36,65,active,2021-04-13,
+CUST-000283,Basic,Month-to-month,Monthly,Electronic check,47.56,12,active,2025-08-31,
+CUST-000284,Basic,Month-to-month,Monthly,Electronic check,29.42,31,cancelled,2024-02-12,2026-08-20
+CUST-000285,Standard,One year,Annual,Mailed check,39.07,8,active,2025-12-27,
+CUST-000286,Basic,Month-to-month,Monthly,Electronic check,83.87,55,active,2022-02-08,
+CUST-000287,Basic,Month-to-month,Monthly,Mailed check,82.85,52,active,2022-05-02,
+CUST-000288,Basic,Month-to-month,Monthly,Electronic check,62.11,58,active,2021-10-31,
+CUST-000289,Basic,Month-to-month,Monthly,Electronic check,29.02,55,active,2022-01-27,
+CUST-000290,Basic,Month-to-month,Monthly,Electronic check,63.34,22,cancelled,2024-10-25,2026-08-06
+CUST-000291,Pro,Two year,Annual,Credit card,55.27,4,active,2026-05-02,
+CUST-000292,Basic,Month-to-month,Monthly,Bank transfer,92.05,67,active,2021-01-21,
+CUST-000293,Pro,Two year,Annual,Electronic check,77.9,35,active,2023-10-10,
+CUST-000294,Basic,Month-to-month,Monthly,Electronic check,69.16,6,cancelled,2026-02-24,2026-07-24
+CUST-000295,Pro,Two year,Annual,Credit card,68.7,67,active,2021-02-05,
+CUST-000296,Pro,Two year,Annual,Bank transfer,116.63,72,active,2020-08-29,
+CUST-000297,Pro,Two year,Annual,Credit card,95.63,32,active,2024-01-02,
+CUST-000298,Pro,Two year,Annual,Electronic check,69.7,56,active,2021-12-20,
+CUST-000299,Standard,One year,Annual,Mailed check,67.92,2,active,2026-07-10,
+CUST-000300,Standard,One year,Annual,Electronic check,22.65,6,active,2026-03-03,
+CUST-000301,Standard,One year,Annual,Mailed check,114.25,20,active,2025-01-12,
+CUST-000302,Basic,Month-to-month,Monthly,Electronic check,51.92,47,active,2022-09-28,
+CUST-000303,Basic,Month-to-month,Monthly,Electronic check,45.59,9,cancelled,2025-12-16,2026-08-17
+CUST-000304,Basic,Month-to-month,Monthly,Bank transfer,119.94,2,cancelled,2026-07-06,2026-08-26
+CUST-000305,Pro,Two year,Annual,Credit card,91.87,48,active,2022-09-16,
+CUST-000306,Basic,Month-to-month,Monthly,Bank transfer,24.74,56,active,2022-01-07,
+CUST-000307,Basic,Month-to-month,Monthly,Credit card,26.19,53,active,2022-04-03,
+CUST-000308,Standard,One year,Annual,Credit card,22.55,58,active,2021-11-07,
+CUST-000309,Basic,Month-to-month,Monthly,Credit card,79.96,58,active,2021-11-05,
+CUST-000310,Basic,Month-to-month,Monthly,Electronic check,27.16,43,active,2023-02-12,
+CUST-000311,Basic,Month-to-month,Monthly,Mailed check,113.34,37,active,2023-07-27,
+CUST-000312,Basic,Month-to-month,Monthly,Bank transfer,113.69,62,active,2021-06-24,
+CUST-000313,Basic,Month-to-month,Monthly,Credit card,74.61,25,cancelled,2024-08-03,2026-08-02
+CUST-000314,Basic,Month-to-month,Monthly,Credit card,81.66,7,cancelled,2026-02-14,2026-08-16
+CUST-000315,Basic,Month-to-month,Monthly,Bank transfer,49.19,54,active,2022-03-17,
+CUST-000316,Basic,Month-to-month,Monthly,Mailed check,26.4,20,cancelled,2024-12-27,2026-08-23
+CUST-000317,Basic,Month-to-month,Monthly,Mailed check,93.75,71,cancelled,2020-09-19,2026-08-19
+CUST-000318,Standard,One year,Annual,Electronic check,30.18,30,active,2024-02-21,
+CUST-000319,Basic,Month-to-month,Monthly,Mailed check,28.56,62,active,2021-07-05,
+CUST-000320,Pro,Two year,Annual,Electronic check,51.12,3,active,2026-06-03,
+CUST-000321,Pro,Two year,Annual,Credit card,21.25,48,active,2022-09-12,
+CUST-000322,Basic,Month-to-month,Monthly,Electronic check,63.4,32,cancelled,2024-01-14,2026-08-15
+CUST-000323,Basic,Month-to-month,Monthly,Mailed check,90.77,33,active,2023-11-25,
+CUST-000324,Basic,Month-to-month,Monthly,Credit card,100.13,19,active,2025-02-03,
+CUST-000325,Pro,Two year,Annual,Credit card,80.43,70,active,2020-11-02,
+CUST-000326,Standard,One year,Annual,Mailed check,104.69,28,active,2024-05-07,
+CUST-000327,Pro,Two year,Annual,Mailed check,60.65,62,active,2021-07-08,
+CUST-000328,Basic,Month-to-month,Monthly,Bank transfer,104.88,31,active,2024-01-18,
+CUST-000329,Standard,One year,Annual,Credit card,70.65,3,active,2026-05-24,
+CUST-000330,Basic,Month-to-month,Monthly,Credit card,42.3,64,active,2021-04-27,
+CUST-000331,Standard,One year,Annual,Bank transfer,114.41,13,active,2025-08-06,
+CUST-000332,Basic,Month-to-month,Monthly,Mailed check,47.5,19,cancelled,2025-01-25,2026-09-07
+CUST-000333,Standard,One year,Annual,Mailed check,22.62,62,active,2021-07-07,
+CUST-000334,Pro,Two year,Annual,Bank transfer,44.27,65,active,2021-04-02,
+CUST-000335,Basic,Month-to-month,Monthly,Credit card,56.67,66,active,2021-03-13,
+CUST-000336,Standard,One year,Annual,Electronic check,55.13,31,active,2024-01-26,
+CUST-000337,Basic,Month-to-month,Monthly,Credit card,72.47,55,active,2022-02-14,
+CUST-000338,Standard,One year,Annual,Mailed check,108.31,23,active,2024-09-25,
+CUST-000339,Basic,Month-to-month,Monthly,Electronic check,49.23,54,cancelled,2022-02-28,2026-09-12
+CUST-000340,Pro,Two year,Annual,Electronic check,72.08,36,active,2023-09-16,
+CUST-000341,Basic,Month-to-month,Monthly,Mailed check,54.01,3,cancelled,2026-06-02,2026-08-07
+CUST-000342,Pro,Two year,Annual,Electronic check,102.18,30,active,2024-03-11,
+CUST-000343,Pro,Two year,Annual,Electronic check,35.76,34,active,2023-11-03,
+CUST-000344,Standard,One year,Annual,Mailed check,30.35,18,active,2025-03-18,
+CUST-000345,Standard,One year,Annual,Credit card,70.3,27,active,2024-05-27,
+CUST-000346,Pro,Two year,Annual,Bank transfer,87.19,36,active,2023-09-02,
+CUST-000347,Pro,Two year,Annual,Electronic check,99.55,3,active,2026-06-07,
+CUST-000348,Basic,Month-to-month,Monthly,Bank transfer,78.96,11,cancelled,2025-09-21,2026-09-05
+CUST-000349,Standard,One year,Annual,Mailed check,97.38,55,active,2022-01-27,
+CUST-000350,Basic,Month-to-month,Monthly,Bank transfer,59.27,25,cancelled,2024-07-29,2026-08-15
+CUST-000351,Standard,One year,Annual,Electronic check,23.29,44,active,2023-01-12,
+CUST-000352,Basic,Month-to-month,Monthly,Electronic check,31.61,41,cancelled,2023-04-02,2026-07-31
+CUST-000353,Standard,One year,Annual,Mailed check,23.87,40,active,2023-04-27,
+CUST-000354,Standard,One year,Annual,Credit card,52.89,30,active,2024-02-19,
+CUST-000355,Basic,Month-to-month,Monthly,Bank transfer,69.55,35,cancelled,2023-09-29,2026-09-03
+CUST-000356,Basic,Month-to-month,Monthly,Electronic check,55.63,60,active,2021-09-11,
+CUST-000357,Standard,One year,Annual,Credit card,76.06,70,active,2020-10-27,
+CUST-000358,Pro,Two year,Annual,Credit card,68.06,18,active,2025-03-16,
+CUST-000359,Basic,Month-to-month,Monthly,Bank transfer,87.79,48,cancelled,2022-09-07,2026-08-24
+CUST-000360,Standard,One year,Annual,Bank transfer,86.7,70,active,2020-10-20,
+CUST-000361,Pro,Two year,Annual,Electronic check,51.81,0,active,2026-08-23,
+CUST-000362,Basic,Month-to-month,Monthly,Bank transfer,54.62,57,active,2021-11-19,
+CUST-000363,Basic,Month-to-month,Monthly,Credit card,78.51,36,active,2023-09-07,
+CUST-000364,Basic,Month-to-month,Monthly,Mailed check,79.64,70,active,2020-10-27,
+CUST-000365,Standard,One year,Annual,Electronic check,51.47,42,active,2023-02-25,
+CUST-000366,Basic,Month-to-month,Monthly,Credit card,53.03,61,cancelled,2021-08-10,2026-07-20
+CUST-000367,Standard,One year,Annual,Bank transfer,89.4,12,active,2025-08-19,
+CUST-000368,Standard,One year,Annual,Bank transfer,84.74,10,cancelled,2025-10-18,2026-09-13
+CUST-000369,Basic,Month-to-month,Monthly,Bank transfer,33.51,67,active,2021-02-12,
+CUST-000370,Pro,Two year,Annual,Electronic check,64.1,38,active,2023-06-26,
+CUST-000371,Standard,One year,Annual,Electronic check,109.27,40,active,2023-05-05,
+CUST-000372,Basic,Month-to-month,Monthly,Credit card,23.63,12,active,2025-08-27,
+CUST-000373,Basic,Month-to-month,Monthly,Credit card,105.52,16,cancelled,2025-05-01,2026-08-02
+CUST-000374,Basic,Month-to-month,Monthly,Electronic check,36.32,59,cancelled,2021-10-11,2026-09-06
+CUST-000375,Basic,Month-to-month,Monthly,Bank transfer,70.72,22,cancelled,2024-11-14,2026-07-24
+CUST-000376,Basic,Month-to-month,Monthly,Bank transfer,62.43,42,cancelled,2023-03-03,2026-08-22
+CUST-000377,Pro,Two year,Annual,Mailed check,21.01,23,active,2024-09-21,
+CUST-000378,Basic,Month-to-month,Monthly,Bank transfer,111.54,19,cancelled,2025-01-22,2026-09-15
+CUST-000379,Basic,Month-to-month,Monthly,Credit card,65.49,12,active,2025-09-08,
+CUST-000380,Standard,One year,Annual,Credit card,115.43,67,active,2021-01-21,
+CUST-000381,Standard,One year,Annual,Electronic check,48.67,68,active,2021-01-06,
+CUST-000382,Pro,Two year,Annual,Mailed check,106.63,8,active,2025-12-31,
+CUST-000383,Standard,One year,Annual,Credit card,112.24,25,active,2024-08-07,
+CUST-000384,Basic,Month-to-month,Monthly,Electronic check,75.68,41,cancelled,2023-04-02,2026-08-04
+CUST-000385,Basic,Month-to-month,Monthly,Credit card,40.27,27,cancelled,2024-06-02,2026-09-07
+CUST-000386,Pro,Two year,Annual,Mailed check,88.52,52,active,2022-04-28,
+CUST-000387,Standard,One year,Annual,Bank transfer,74.9,18,active,2025-03-04,
+CUST-000388,Pro,Two year,Annual,Mailed check,114.45,4,active,2026-05-03,
+CUST-000389,Basic,Month-to-month,Monthly,Credit card,63.93,24,active,2024-08-28,
+CUST-000390,Pro,Two year,Annual,Bank transfer,46.85,43,active,2023-02-04,
+CUST-000391,Standard,One year,Annual,Bank transfer,33.83,13,active,2025-08-02,
+CUST-000392,Basic,Month-to-month,Monthly,Mailed check,89.86,59,cancelled,2021-10-15,2026-08-25
+CUST-000393,Standard,One year,Annual,Electronic check,117.41,0,active,2026-08-21,
+CUST-000394,Standard,One year,Annual,Credit card,22.83,4,active,2026-05-15,
+CUST-000395,Basic,Month-to-month,Monthly,Mailed check,94.04,37,cancelled,2023-07-22,2026-08-17
+CUST-000396,Basic,Month-to-month,Monthly,Electronic check,112.69,37,active,2023-07-26,
+CUST-000397,Pro,Two year,Annual,Credit card,27.48,21,active,2024-11-18,
+CUST-000398,Basic,Month-to-month,Monthly,Electronic check,31.02,18,cancelled,2025-03-18,2026-08-03
+CUST-000399,Basic,Month-to-month,Monthly,Bank transfer,89.2,5,cancelled,2026-04-11,2026-08-22
+CUST-000400,Basic,Month-to-month,Monthly,Mailed check,84.8,48,active,2022-09-15,
+CUST-000401,Basic,Month-to-month,Monthly,Credit card,26.88,27,cancelled,2024-06-05,2026-07-27
+CUST-000402,Pro,Two year,Annual,Electronic check,103.44,8,active,2025-12-20,
+CUST-000403,Standard,One year,Annual,Credit card,72.34,29,active,2024-03-26,
+CUST-000404,Basic,Month-to-month,Monthly,Electronic check,110.72,68,active,2020-12-26,
+CUST-000405,Pro,Two year,Annual,Credit card,107.8,19,active,2025-01-21,
+CUST-000406,Pro,Two year,Annual,Mailed check,101.25,65,active,2021-04-17,
+CUST-000407,Basic,Month-to-month,Monthly,Electronic check,71.59,18,cancelled,2025-02-23,2026-08-18
+CUST-000408,Pro,Two year,Annual,Mailed check,45.17,13,active,2025-08-08,
+CUST-000409,Basic,Month-to-month,Monthly,Electronic check,70.6,19,active,2025-01-26,
+CUST-000410,Pro,Two year,Annual,Mailed check,30.08,23,active,2024-09-24,
+CUST-000411,Standard,One year,Annual,Bank transfer,85.88,8,active,2025-12-27,
+CUST-000412,Standard,One year,Annual,Bank transfer,33.4,42,active,2023-03-06,
+CUST-000413,Basic,Month-to-month,Monthly,Bank transfer,71.12,24,active,2024-08-29,
+CUST-000414,Pro,Two year,Annual,Credit card,25.44,52,active,2022-05-04,
+CUST-000415,Basic,Month-to-month,Monthly,Mailed check,49.95,35,cancelled,2023-09-29,2026-08-26
+CUST-000416,Basic,Month-to-month,Monthly,Bank transfer,43.21,32,active,2024-01-03,
+CUST-000417,Basic,Month-to-month,Monthly,Electronic check,82.0,34,cancelled,2023-11-06,2026-08-27
+CUST-000418,Standard,One year,Annual,Mailed check,98.68,11,active,2025-10-11,
+CUST-000419,Basic,Month-to-month,Monthly,Bank transfer,25.73,52,active,2022-05-07,
+CUST-000420,Pro,Two year,Annual,Electronic check,105.03,7,active,2026-01-25,
+CUST-000421,Standard,One year,Annual,Mailed check,106.08,52,active,2022-04-22,
+CUST-000422,Basic,Month-to-month,Monthly,Electronic check,54.23,72,active,2020-09-13,
+CUST-000423,Basic,Month-to-month,Monthly,Credit card,85.9,55,active,2022-02-10,
+CUST-000424,Basic,Month-to-month,Monthly,Bank transfer,60.26,33,cancelled,2023-12-02,2026-07-30
+CUST-000425,Standard,One year,Annual,Bank transfer,35.42,22,active,2024-10-26,
+CUST-000426,Pro,Two year,Annual,Bank transfer,72.87,63,active,2021-06-12,
+CUST-000427,Basic,Month-to-month,Monthly,Electronic check,28.64,18,cancelled,2025-03-09,2026-08-07
+CUST-000428,Pro,Two year,Annual,Electronic check,107.85,35,active,2023-10-16,
+CUST-000429,Basic,Month-to-month,Monthly,Mailed check,112.43,56,active,2022-01-15,
+CUST-000430,Pro,Two year,Annual,Electronic check,102.16,67,active,2021-02-11,
+CUST-000431,Pro,Two year,Annual,Mailed check,76.25,67,active,2021-01-25,
+CUST-000432,Standard,One year,Annual,Mailed check,75.76,6,active,2026-02-20,
+CUST-000433,Standard,One year,Annual,Credit card,118.46,65,active,2021-04-03,
+CUST-000434,Pro,Two year,Annual,Mailed check,44.79,8,active,2026-01-11,
+CUST-000435,Basic,Month-to-month,Monthly,Electronic check,27.59,42,active,2023-02-19,
+CUST-000436,Basic,Month-to-month,Monthly,Credit card,76.19,67,active,2021-02-07,
+CUST-000437,Basic,Month-to-month,Monthly,Electronic check,52.88,47,cancelled,2022-10-13,2026-09-08
+CUST-000438,Basic,Month-to-month,Monthly,Electronic check,52.23,69,active,2020-12-12,
+CUST-000439,Standard,One year,Annual,Mailed check,20.71,25,active,2024-08-06,
+CUST-000440,Standard,One year,Annual,Electronic check,79.62,22,active,2024-10-25,
+CUST-000441,Pro,Two year,Annual,Credit card,46.4,23,active,2024-10-05,
+CUST-000442,Basic,Month-to-month,Monthly,Mailed check,38.79,25,cancelled,2024-08-03,2026-08-02
+CUST-000443,Standard,One year,Annual,Credit card,24.04,49,active,2022-08-07,
+CUST-000444,Basic,Month-to-month,Monthly,Electronic check,56.44,33,active,2023-11-19,
+CUST-000445,Basic,Month-to-month,Monthly,Bank transfer,107.9,53,active,2022-03-28,
+CUST-000446,Standard,One year,Annual,Electronic check,53.67,30,active,2024-02-27,
+CUST-000447,Pro,Two year,Annual,Electronic check,87.91,22,active,2024-11-03,
+CUST-000448,Standard,One year,Annual,Mailed check,95.65,13,active,2025-08-02,
+CUST-000449,Basic,Month-to-month,Monthly,Credit card,52.81,40,active,2023-04-22,
+CUST-000450,Standard,One year,Annual,Mailed check,102.16,65,active,2021-03-29,
+CUST-000451,Basic,Month-to-month,Monthly,Credit card,89.19,62,active,2021-06-23,
+CUST-000452,Pro,Two year,Annual,Electronic check,75.92,18,active,2025-03-17,
+CUST-000453,Standard,One year,Annual,Mailed check,20.1,34,active,2023-10-23,
+CUST-000454,Basic,Month-to-month,Monthly,Bank transfer,23.51,51,active,2022-05-20,
+CUST-000455,Basic,Month-to-month,Monthly,Mailed check,119.09,44,cancelled,2022-12-27,2026-08-22
+CUST-000456,Basic,Month-to-month,Monthly,Bank transfer,98.23,4,cancelled,2026-04-20,2026-08-26
+CUST-000457,Pro,Two year,Annual,Bank transfer,113.76,43,active,2023-01-30,
+CUST-000458,Basic,Month-to-month,Monthly,Electronic check,110.23,2,cancelled,2026-07-10,2026-09-10
+CUST-000459,Standard,One year,Annual,Bank transfer,22.04,8,active,2025-12-29,
+CUST-000460,Standard,One year,Annual,Credit card,99.18,47,active,2022-09-29,
+CUST-000461,Standard,One year,Annual,Credit card,65.11,7,active,2026-02-11,
+CUST-000462,Basic,Month-to-month,Monthly,Mailed check,98.96,24,cancelled,2024-09-10,2026-07-19
+CUST-000463,Pro,Two year,Annual,Mailed check,20.67,42,active,2023-03-10,
+CUST-000464,Basic,Month-to-month,Monthly,Credit card,48.82,47,active,2022-10-01,
+CUST-000465,Standard,One year,Annual,Credit card,95.13,32,active,2024-01-12,
+CUST-000466,Standard,One year,Annual,Credit card,99.3,6,active,2026-02-23,
+CUST-000467,Standard,One year,Annual,Credit card,81.97,58,active,2021-11-13,
+CUST-000468,Pro,Two year,Annual,Mailed check,50.13,69,active,2020-11-18,
+CUST-000469,Basic,Month-to-month,Monthly,Electronic check,51.04,64,cancelled,2021-04-27,2026-09-12
+CUST-000470,Basic,Month-to-month,Monthly,Electronic check,116.68,54,cancelled,2022-03-08,2026-07-19
+CUST-000471,Basic,Month-to-month,Monthly,Mailed check,63.92,29,active,2024-04-06,
+CUST-000472,Basic,Month-to-month,Monthly,Credit card,64.71,63,active,2021-05-28,
+CUST-000473,Basic,Month-to-month,Monthly,Mailed check,75.23,35,cancelled,2023-10-15,2026-09-12
+CUST-000474,Basic,Month-to-month,Monthly,Mailed check,60.95,9,cancelled,2025-11-26,2026-08-17
+CUST-000475,Basic,Month-to-month,Monthly,Credit card,75.27,62,active,2021-07-01,
+CUST-000476,Basic,Month-to-month,Monthly,Electronic check,63.23,23,cancelled,2024-10-10,2026-09-09
+CUST-000477,Basic,Month-to-month,Monthly,Bank transfer,102.67,68,cancelled,2020-12-21,2026-08-17
+CUST-000478,Standard,One year,Annual,Bank transfer,110.91,26,active,2024-06-29,
+CUST-000479,Standard,One year,Annual,Credit card,113.21,63,active,2021-06-13,
+CUST-000480,Basic,Month-to-month,Monthly,Mailed check,76.43,39,active,2023-05-29,
+CUST-000481,Basic,Month-to-month,Monthly,Bank transfer,64.21,34,active,2023-11-05,
+CUST-000482,Basic,Month-to-month,Monthly,Credit card,90.52,21,cancelled,2024-11-24,2026-07-28
+CUST-000483,Standard,One year,Annual,Credit card,103.83,61,active,2021-08-03,
+CUST-000484,Basic,Month-to-month,Monthly,Bank transfer,76.3,4,cancelled,2026-04-19,2026-08-12
+CUST-000485,Basic,Month-to-month,Monthly,Bank transfer,90.0,34,active,2023-10-21,
+CUST-000486,Basic,Month-to-month,Monthly,Credit card,94.97,26,cancelled,2024-07-16,2026-08-14
+CUST-000487,Basic,Month-to-month,Monthly,Credit card,87.64,39,cancelled,2023-06-05,2026-09-08
+CUST-000488,Basic,Month-to-month,Monthly,Bank transfer,94.61,18,cancelled,2025-03-12,2026-07-22
+CUST-000489,Standard,One year,Annual,Mailed check,40.86,48,active,2022-09-03,
+CUST-000490,Standard,One year,Annual,Bank transfer,69.84,28,active,2024-05-13,
+CUST-000491,Standard,One year,Annual,Electronic check,78.83,13,active,2025-08-01,
+CUST-000492,Standard,One year,Annual,Bank transfer,20.25,14,active,2025-07-13,
+CUST-000493,Standard,One year,Annual,Mailed check,105.6,50,active,2022-06-29,
+CUST-000494,Basic,Month-to-month,Monthly,Credit card,81.0,19,cancelled,2025-02-02,2026-08-24
+CUST-000495,Standard,One year,Annual,Bank transfer,32.91,22,active,2024-10-18,
+CUST-000496,Basic,Month-to-month,Monthly,Credit card,101.64,45,cancelled,2022-11-21,2026-08-15
+CUST-000497,Basic,Month-to-month,Monthly,Credit card,91.71,24,cancelled,2024-08-29,2026-07-25
+CUST-000498,Standard,One year,Annual,Credit card,95.83,28,active,2024-05-04,
+CUST-000499,Basic,Month-to-month,Monthly,Electronic check,59.2,17,active,2025-03-27,
+CUST-000500,Basic,Month-to-month,Monthly,Credit card,105.42,25,cancelled,2024-07-27,2026-08-09
+CUST-000501,Standard,One year,Annual,Mailed check,61.4,50,active,2022-07-13,
+CUST-000502,Pro,Two year,Annual,Bank transfer,77.05,38,active,2023-07-07,
+CUST-000503,Pro,Two year,Annual,Mailed check,20.06,72,active,2020-08-18,
+CUST-000504,Basic,Month-to-month,Monthly,Mailed check,84.49,56,active,2022-01-07,
+CUST-000505,Basic,Month-to-month,Monthly,Credit card,91.82,1,cancelled,2026-08-17,2026-08-03
+CUST-000506,Pro,Two year,Annual,Credit card,76.71,27,active,2024-05-23,
+CUST-000507,Basic,Month-to-month,Monthly,Bank transfer,69.66,21,cancelled,2024-11-19,2026-09-05
+CUST-000508,Pro,Two year,Annual,Electronic check,100.99,42,active,2023-02-27,
+CUST-000509,Basic,Month-to-month,Monthly,Electronic check,88.14,19,cancelled,2025-01-27,2026-08-19
+CUST-000510,Basic,Month-to-month,Monthly,Electronic check,47.81,70,active,2020-11-06,
+CUST-000511,Basic,Month-to-month,Monthly,Credit card,115.91,21,cancelled,2024-12-06,2026-08-15
+CUST-000512,Pro,Two year,Annual,Mailed check,90.73,38,active,2023-06-21,
+CUST-000513,Basic,Month-to-month,Monthly,Electronic check,118.79,8,active,2025-12-22,
+CUST-000514,Basic,Month-to-month,Monthly,Bank transfer,117.13,66,active,2021-03-03,
+CUST-000515,Basic,Month-to-month,Monthly,Credit card,111.89,66,active,2021-03-08,
+CUST-000516,Basic,Month-to-month,Monthly,Bank transfer,95.54,57,active,2021-12-11,
+CUST-000517,Basic,Month-to-month,Monthly,Mailed check,80.94,25,cancelled,2024-08-16,2026-09-05
+CUST-000518,Standard,One year,Annual,Electronic check,37.22,4,active,2026-05-04,
+CUST-000519,Basic,Month-to-month,Monthly,Credit card,74.34,51,cancelled,2022-06-01,2026-08-24
+CUST-000520,Pro,Two year,Annual,Electronic check,96.54,31,active,2024-01-27,
+CUST-000521,Pro,Two year,Annual,Credit card,72.09,72,active,2020-08-23,
+CUST-000522,Basic,Month-to-month,Monthly,Electronic check,106.82,50,active,2022-07-06,
+CUST-000523,Basic,Month-to-month,Monthly,Electronic check,30.97,39,cancelled,2023-06-12,2026-07-28
+CUST-000524,Standard,One year,Annual,Mailed check,58.09,72,active,2020-08-22,
+CUST-000525,Basic,Month-to-month,Monthly,Electronic check,70.6,58,active,2021-10-25,
+CUST-000526,Basic,Month-to-month,Monthly,Electronic check,63.23,33,cancelled,2023-12-02,2026-07-23
+CUST-000527,Pro,Two year,Annual,Electronic check,30.86,1,active,2026-08-16,
+CUST-000528,Pro,Two year,Annual,Bank transfer,35.35,6,active,2026-03-04,
+CUST-000529,Standard,One year,Annual,Credit card,103.76,32,active,2023-12-29,
+CUST-000530,Basic,Month-to-month,Monthly,Electronic check,68.44,41,active,2023-03-23,
+CUST-000531,Standard,One year,Annual,Bank transfer,24.87,2,active,2026-07-03,
+CUST-000532,Standard,One year,Annual,Mailed check,21.65,9,active,2025-12-04,
+CUST-000533,Basic,Month-to-month,Monthly,Mailed check,67.35,51,cancelled,2022-06-06,2026-07-29
+CUST-000534,Standard,One year,Annual,Mailed check,36.44,54,active,2022-03-06,
+CUST-000535,Basic,Month-to-month,Monthly,Credit card,90.51,2,cancelled,2026-07-18,2026-07-22
+CUST-000536,Basic,Month-to-month,Monthly,Bank transfer,99.53,37,cancelled,2023-08-14,2026-07-19
+CUST-000537,Basic,Month-to-month,Monthly,Bank transfer,42.83,5,active,2026-03-26,
+CUST-000538,Basic,Month-to-month,Monthly,Credit card,79.22,52,cancelled,2022-05-08,2026-09-04
+CUST-000539,Basic,Month-to-month,Monthly,Bank transfer,35.44,60,active,2021-08-22,
+CUST-000540,Pro,Two year,Annual,Electronic check,50.36,63,active,2021-06-06,
+CUST-000541,Pro,Two year,Annual,Electronic check,108.88,43,active,2023-01-18,
+CUST-000542,Standard,One year,Annual,Mailed check,74.41,45,active,2022-12-12,
+CUST-000543,Pro,Two year,Annual,Electronic check,108.59,67,active,2021-02-10,
+CUST-000544,Pro,Two year,Annual,Bank transfer,42.52,44,active,2022-12-30,
+CUST-000545,Basic,Month-to-month,Monthly,Mailed check,53.0,32,active,2023-12-23,
+CUST-000546,Basic,Month-to-month,Monthly,Electronic check,67.1,55,cancelled,2022-02-11,2026-07-27
+CUST-000547,Basic,Month-to-month,Monthly,Mailed check,68.01,43,active,2023-02-01,
+CUST-000548,Basic,Month-to-month,Monthly,Credit card,119.76,61,active,2021-08-11,
+CUST-000549,Standard,One year,Annual,Credit card,31.44,38,active,2023-06-26,
+CUST-000550,Basic,Month-to-month,Monthly,Credit card,105.2,63,cancelled,2021-06-01,2026-08-10
+CUST-000551,Basic,Month-to-month,Monthly,Credit card,106.37,3,cancelled,2026-05-29,2026-07-27
+CUST-000552,Basic,Month-to-month,Monthly,Bank transfer,75.32,2,active,2026-07-10,
+CUST-000553,Basic,Month-to-month,Monthly,Credit card,54.4,7,cancelled,2026-02-07,2026-08-09
+CUST-000554,Pro,Two year,Annual,Credit card,71.92,40,active,2023-04-29,
+CUST-000555,Basic,Month-to-month,Monthly,Bank transfer,49.25,51,cancelled,2022-06-07,2026-09-08
+CUST-000556,Basic,Month-to-month,Monthly,Mailed check,99.91,15,active,2025-05-28,
+CUST-000557,Basic,Month-to-month,Monthly,Credit card,69.83,11,active,2025-10-13,
+CUST-000558,Basic,Month-to-month,Monthly,Mailed check,112.58,62,active,2021-07-08,
+CUST-000559,Standard,One year,Annual,Electronic check,82.27,54,active,2022-03-15,
+CUST-000560,Basic,Month-to-month,Monthly,Electronic check,71.43,47,active,2022-10-15,
+CUST-000561,Basic,Month-to-month,Monthly,Bank transfer,91.11,35,cancelled,2023-10-10,2026-08-13
+CUST-000562,Basic,Month-to-month,Monthly,Electronic check,70.39,30,cancelled,2024-03-03,2026-08-02
+CUST-000563,Pro,Two year,Annual,Electronic check,110.45,1,active,2026-08-13,
+CUST-000564,Standard,One year,Annual,Electronic check,38.44,13,active,2025-08-15,
+CUST-000565,Standard,One year,Annual,Bank transfer,117.33,65,active,2021-03-22,
+CUST-000566,Standard,One year,Annual,Mailed check,101.22,24,active,2024-09-01,
+CUST-000567,Standard,One year,Annual,Bank transfer,106.07,51,active,2022-05-27,
+CUST-000568,Basic,Month-to-month,Monthly,Bank transfer,68.29,51,active,2022-05-27,
+CUST-000569,Basic,Month-to-month,Monthly,Credit card,103.72,22,cancelled,2024-11-13,2026-09-08
+CUST-000570,Basic,Month-to-month,Monthly,Electronic check,50.68,14,cancelled,2025-06-29,2026-08-17
+CUST-000571,Basic,Month-to-month,Monthly,Mailed check,96.19,50,active,2022-06-22,
+CUST-000572,Pro,Two year,Annual,Bank transfer,34.05,6,active,2026-03-05,
+CUST-000573,Basic,Month-to-month,Monthly,Mailed check,50.71,36,active,2023-08-23,
+CUST-000574,Standard,One year,Annual,Electronic check,64.57,64,active,2021-04-19,
+CUST-000575,Pro,Two year,Annual,Electronic check,52.23,51,active,2022-06-01,
+CUST-000576,Basic,Month-to-month,Monthly,Mailed check,58.7,55,active,2022-02-12,
+CUST-000577,Pro,Two year,Annual,Mailed check,102.01,6,active,2026-02-28,
+CUST-000578,Standard,One year,Annual,Electronic check,45.67,14,active,2025-06-21,
+CUST-000579,Pro,Two year,Annual,Mailed check,94.53,20,active,2024-12-30,
+CUST-000580,Basic,Month-to-month,Monthly,Bank transfer,27.37,21,cancelled,2024-11-22,2026-08-08
+CUST-000581,Basic,Month-to-month,Monthly,Credit card,96.57,14,cancelled,2025-07-01,2026-08-19
+CUST-000582,Basic,Month-to-month,Monthly,Bank transfer,99.2,70,active,2020-11-04,
+CUST-000583,Basic,Month-to-month,Monthly,Electronic check,60.17,12,cancelled,2025-08-19,2026-07-30
+CUST-000584,Basic,Month-to-month,Monthly,Bank transfer,92.25,51,active,2022-06-13,
+CUST-000585,Pro,Two year,Annual,Electronic check,111.51,42,active,2023-03-05,
+CUST-000586,Standard,One year,Annual,Electronic check,100.07,44,active,2023-01-12,
+CUST-000587,Basic,Month-to-month,Monthly,Bank transfer,59.04,15,cancelled,2025-05-29,2026-09-08
+CUST-000588,Basic,Month-to-month,Monthly,Mailed check,68.42,22,cancelled,2024-10-20,2026-08-26
+CUST-000589,Basic,Month-to-month,Monthly,Mailed check,97.94,44,cancelled,2022-12-18,2026-07-21
+CUST-000590,Basic,Month-to-month,Monthly,Credit card,49.26,21,cancelled,2024-12-09,2026-08-16
+CUST-000591,Pro,Two year,Annual,Electronic check,100.39,50,active,2022-06-26,
+CUST-000592,Basic,Month-to-month,Monthly,Electronic check,52.81,2,cancelled,2026-06-22,2026-09-05
+CUST-000593,Basic,Month-to-month,Monthly,Bank transfer,100.6,5,cancelled,2026-03-23,2026-09-09
+CUST-000594,Standard,One year,Annual,Mailed check,28.68,53,active,2022-04-02,
+CUST-000595,Basic,Month-to-month,Monthly,Credit card,24.44,45,active,2022-12-12,
+CUST-000596,Basic,Month-to-month,Monthly,Electronic check,119.77,3,cancelled,2026-06-04,2026-08-12
+CUST-000597,Standard,One year,Annual,Mailed check,106.95,65,active,2021-03-25,
+CUST-000598,Standard,One year,Annual,Electronic check,108.28,0,active,2026-08-29,
+CUST-000599,Pro,Two year,Annual,Electronic check,115.13,69,active,2020-12-05,
+CUST-000600,Standard,One year,Annual,Mailed check,63.83,53,active,2022-04-11,
+CUST-000601,Basic,Month-to-month,Monthly,Bank transfer,48.68,72,active,2020-08-28,
+CUST-000602,Standard,One year,Annual,Electronic check,33.0,69,active,2020-12-04,
+CUST-000603,Pro,Two year,Annual,Credit card,70.12,22,active,2024-11-02,
+CUST-000604,Standard,One year,Annual,Bank transfer,42.0,55,active,2022-01-18,
+CUST-000605,Pro,Two year,Annual,Mailed check,113.56,15,active,2025-06-17,
+CUST-000606,Standard,One year,Annual,Credit card,20.4,34,active,2023-11-10,
+CUST-000607,Pro,Two year,Annual,Mailed check,34.32,17,active,2025-03-21,
+CUST-000608,Basic,Month-to-month,Monthly,Electronic check,44.65,35,cancelled,2023-09-20,2026-07-23
+CUST-000609,Standard,One year,Annual,Credit card,39.9,63,active,2021-06-08,
+CUST-000610,Basic,Month-to-month,Monthly,Electronic check,42.58,31,active,2024-01-18,
+CUST-000611,Standard,One year,Annual,Credit card,85.6,6,active,2026-03-12,
+CUST-000612,Standard,One year,Annual,Credit card,52.75,23,active,2024-10-15,
+CUST-000613,Pro,Two year,Annual,Credit card,81.5,57,active,2021-12-07,
+CUST-000614,Pro,Two year,Annual,Mailed check,109.03,38,active,2023-07-03,
+CUST-000615,Basic,Month-to-month,Monthly,Bank transfer,80.26,40,active,2023-05-18,
+CUST-000616,Standard,One year,Annual,Credit card,89.45,31,active,2024-02-11,
+CUST-000617,Standard,One year,Annual,Electronic check,56.55,21,active,2024-11-23,
+CUST-000618,Basic,Month-to-month,Monthly,Mailed check,35.97,43,active,2023-01-29,
+CUST-000619,Basic,Month-to-month,Monthly,Mailed check,52.06,46,active,2022-10-29,
+CUST-000620,Basic,Month-to-month,Monthly,Bank transfer,116.43,65,cancelled,2021-03-19,2026-09-13
+CUST-000621,Standard,One year,Annual,Bank transfer,82.18,45,active,2022-12-11,
+CUST-000622,Basic,Month-to-month,Monthly,Credit card,47.75,72,active,2020-08-21,
+CUST-000623,Pro,Two year,Annual,Mailed check,65.09,60,active,2021-09-06,
+CUST-000624,Basic,Month-to-month,Monthly,Electronic check,103.55,5,cancelled,2026-03-21,2026-09-09
+CUST-000625,Pro,Two year,Annual,Electronic check,86.84,28,active,2024-04-24,
+CUST-000626,Basic,Month-to-month,Monthly,Credit card,76.07,28,cancelled,2024-05-11,2026-08-24
+CUST-000627,Pro,Two year,Annual,Mailed check,108.52,0,active,2026-09-10,
+CUST-000628,Basic,Month-to-month,Monthly,Bank transfer,87.24,13,cancelled,2025-08-01,2026-09-03
+CUST-000629,Standard,One year,Annual,Bank transfer,84.27,55,active,2022-01-31,
+CUST-000630,Pro,Two year,Annual,Credit card,38.98,25,active,2024-08-09,
+CUST-000631,Pro,Two year,Annual,Electronic check,30.64,10,active,2025-11-09,
+CUST-000632,Pro,Two year,Annual,Electronic check,116.51,20,active,2024-12-21,
+CUST-000633,Basic,Month-to-month,Monthly,Bank transfer,79.89,20,cancelled,2024-12-25,2026-09-08
+CUST-000634,Basic,Month-to-month,Monthly,Mailed check,61.57,12,active,2025-09-11,
+CUST-000635,Basic,Month-to-month,Monthly,Credit card,78.9,7,cancelled,2026-01-25,2026-08-29
+CUST-000636,Basic,Month-to-month,Monthly,Electronic check,26.18,55,active,2022-02-11,
+CUST-000637,Standard,One year,Annual,Mailed check,102.21,60,active,2021-09-03,
+CUST-000638,Standard,One year,Annual,Credit card,41.66,36,active,2023-09-17,
+CUST-000639,Standard,One year,Annual,Credit card,100.45,44,active,2022-12-28,
+CUST-000640,Pro,Two year,Annual,Electronic check,73.44,67,active,2021-02-10,
+CUST-000641,Standard,One year,Annual,Credit card,47.66,61,active,2021-08-10,
+CUST-000642,Pro,Two year,Annual,Electronic check,23.02,2,active,2026-07-13,
+CUST-000643,Basic,Month-to-month,Monthly,Electronic check,101.58,69,active,2020-12-11,
+CUST-000644,Basic,Month-to-month,Monthly,Credit card,37.65,4,active,2026-05-16,
+CUST-000645,Standard,One year,Annual,Electronic check,25.18,1,active,2026-08-01,
+CUST-000646,Pro,Two year,Annual,Mailed check,95.59,29,active,2024-03-22,
+CUST-000647,Basic,Month-to-month,Monthly,Electronic check,55.0,54,active,2022-03-09,
+CUST-000648,Basic,Month-to-month,Monthly,Bank transfer,58.93,5,cancelled,2026-03-25,2026-08-09
+CUST-000649,Standard,One year,Annual,Electronic check,44.71,21,active,2024-11-30,
+CUST-000650,Basic,Month-to-month,Monthly,Mailed check,105.92,19,cancelled,2025-02-08,2026-07-29
+CUST-000651,Basic,Month-to-month,Monthly,Mailed check,49.73,29,active,2024-04-16,
+CUST-000652,Pro,Two year,Annual,Bank transfer,41.02,71,active,2020-09-23,
+CUST-000653,Standard,One year,Annual,Mailed check,50.92,24,active,2024-09-16,
+CUST-000654,Basic,Month-to-month,Monthly,Electronic check,40.31,15,cancelled,2025-06-05,2026-08-28
+CUST-000655,Pro,Two year,Annual,Mailed check,51.77,8,active,2026-01-15,
+CUST-000656,Basic,Month-to-month,Monthly,Mailed check,28.29,14,cancelled,2025-06-24,2026-08-05
+CUST-000657,Pro,Two year,Annual,Mailed check,35.85,9,active,2025-11-18,
+CUST-000658,Basic,Month-to-month,Monthly,Bank transfer,61.71,41,active,2023-04-08,
+CUST-000659,Standard,One year,Annual,Mailed check,107.95,30,active,2024-03-08,
+CUST-000660,Basic,Month-to-month,Monthly,Mailed check,25.73,36,active,2023-09-01,
+CUST-000661,Basic,Month-to-month,Monthly,Credit card,41.27,60,active,2021-09-01,
+CUST-000662,Pro,Two year,Annual,Mailed check,110.83,42,active,2023-03-07,
+CUST-000663,Basic,Month-to-month,Monthly,Mailed check,109.0,11,cancelled,2025-10-07,2026-07-29
+CUST-000664,Basic,Month-to-month,Monthly,Electronic check,87.95,27,cancelled,2024-06-12,2026-09-15
+CUST-000665,Basic,Month-to-month,Monthly,Bank transfer,44.05,22,active,2024-11-09,
+CUST-000666,Standard,One year,Annual,Bank transfer,61.98,60,active,2021-08-30,
+CUST-000667,Pro,Two year,Annual,Bank transfer,41.12,22,active,2024-10-25,
+CUST-000668,Pro,Two year,Annual,Electronic check,32.86,10,active,2025-10-25,
+CUST-000669,Basic,Month-to-month,Monthly,Mailed check,58.0,53,cancelled,2022-04-02,2026-07-27
+CUST-000670,Basic,Month-to-month,Monthly,Mailed check,77.58,31,cancelled,2024-01-25,2026-09-05
+CUST-000671,Basic,Month-to-month,Monthly,Credit card,55.99,6,active,2026-03-01,
+CUST-000672,Standard,One year,Annual,Mailed check,81.08,50,active,2022-07-07,
+CUST-000673,Pro,Two year,Annual,Mailed check,49.63,15,active,2025-06-07,
+CUST-000674,Standard,One year,Annual,Mailed check,54.59,63,active,2021-06-02,
+CUST-000675,Standard,One year,Annual,Credit card,99.07,60,active,2021-09-07,
+CUST-000676,Basic,Month-to-month,Monthly,Bank transfer,107.83,26,cancelled,2024-06-25,2026-08-06
+CUST-000677,Pro,Two year,Annual,Credit card,52.2,40,active,2023-05-13,
+CUST-000678,Basic,Month-to-month,Monthly,Mailed check,77.15,41,cancelled,2023-04-16,2026-08-02
+CUST-000679,Basic,Month-to-month,Monthly,Credit card,47.82,47,active,2022-10-03,
+CUST-000680,Basic,Month-to-month,Monthly,Credit card,25.33,5,active,2026-04-15,
+CUST-000681,Basic,Month-to-month,Monthly,Bank transfer,93.79,23,active,2024-10-11,
+CUST-000682,Basic,Month-to-month,Monthly,Bank transfer,37.1,12,cancelled,2025-09-05,2026-07-28
+CUST-000683,Basic,Month-to-month,Monthly,Credit card,62.57,50,cancelled,2022-07-17,2026-08-23
+CUST-000684,Basic,Month-to-month,Monthly,Credit card,68.7,5,cancelled,2026-04-11,2026-08-08
+CUST-000685,Standard,One year,Annual,Mailed check,38.45,37,active,2023-08-01,
+CUST-000686,Basic,Month-to-month,Monthly,Bank transfer,29.46,53,active,2022-04-06,
+CUST-000687,Basic,Month-to-month,Monthly,Mailed check,54.8,69,active,2020-11-20,
+CUST-000688,Pro,Two year,Annual,Electronic check,115.23,21,active,2024-12-14,
+CUST-000689,Standard,One year,Annual,Mailed check,81.51,0,active,2026-08-26,
+CUST-000690,Basic,Month-to-month,Monthly,Credit card,58.14,52,active,2022-05-01,
+CUST-000691,Basic,Month-to-month,Monthly,Credit card,23.89,0,cancelled,2026-08-28,2026-09-14
+CUST-000692,Pro,Two year,Annual,Credit card,80.03,4,active,2026-04-28,
+CUST-000693,Basic,Month-to-month,Monthly,Credit card,29.23,72,active,2020-09-15,
+CUST-000694,Basic,Month-to-month,Monthly,Bank transfer,74.25,62,active,2021-06-24,
+CUST-000695,Pro,Two year,Annual,Credit card,95.2,51,active,2022-06-08,
+CUST-000696,Basic,Month-to-month,Monthly,Electronic check,62.36,60,cancelled,2021-08-28,2026-08-20
+CUST-000697,Standard,One year,Annual,Mailed check,49.94,5,active,2026-04-09,
+CUST-000698,Standard,One year,Annual,Electronic check,24.74,6,active,2026-03-07,
+CUST-000699,Standard,One year,Annual,Credit card,22.48,21,active,2024-11-25,
+CUST-000700,Basic,Month-to-month,Monthly,Bank transfer,63.0,1,active,2026-07-20,
+CUST-000701,Basic,Month-to-month,Monthly,Credit card,108.33,64,cancelled,2021-04-21,2026-07-21
+CUST-000702,Basic,Month-to-month,Monthly,Mailed check,44.41,4,cancelled,2026-04-27,2026-09-06
+CUST-000703,Basic,Month-to-month,Monthly,Mailed check,77.41,39,cancelled,2023-06-01,2026-09-07
+CUST-000704,Pro,Two year,Annual,Bank transfer,88.43,62,active,2021-07-02,
+CUST-000705,Basic,Month-to-month,Monthly,Bank transfer,26.08,53,active,2022-03-20,
+CUST-000706,Standard,One year,Annual,Mailed check,35.31,17,active,2025-04-11,
+CUST-000707,Pro,Two year,Annual,Mailed check,53.13,34,active,2023-10-20,
+CUST-000708,Standard,One year,Annual,Bank transfer,87.01,40,active,2023-04-29,
+CUST-000709,Basic,Month-to-month,Monthly,Electronic check,63.9,56,cancelled,2021-12-29,2026-08-05
+CUST-000710,Basic,Month-to-month,Monthly,Electronic check,93.42,31,cancelled,2024-01-30,2026-08-16
+CUST-000711,Pro,Two year,Annual,Electronic check,106.76,20,active,2024-12-23,
+CUST-000712,Standard,One year,Annual,Electronic check,95.84,58,active,2021-10-27,
+CUST-000713,Pro,Two year,Annual,Electronic check,119.22,64,active,2021-05-15,
+CUST-000714,Pro,Two year,Annual,Electronic check,95.44,35,active,2023-09-24,
+CUST-000715,Standard,One year,Annual,Electronic check,105.22,2,active,2026-06-27,
+CUST-000716,Basic,Month-to-month,Monthly,Credit card,103.24,36,cancelled,2023-08-21,2026-08-20
+CUST-000717,Standard,One year,Annual,Electronic check,93.03,64,active,2021-04-19,
+CUST-000718,Basic,Month-to-month,Monthly,Bank transfer,100.18,72,active,2020-08-19,
+CUST-000719,Standard,One year,Annual,Electronic check,113.47,29,active,2024-04-16,
+CUST-000720,Pro,Two year,Annual,Credit card,67.52,10,active,2025-10-29,
+CUST-000721,Basic,Month-to-month,Monthly,Electronic check,83.83,41,active,2023-03-20,
+CUST-000722,Basic,Month-to-month,Monthly,Bank transfer,71.49,60,cancelled,2021-08-19,2026-09-01
+CUST-000723,Basic,Month-to-month,Monthly,Bank transfer,105.1,68,cancelled,2020-12-31,2026-09-05
+CUST-000724,Pro,Two year,Annual,Credit card,63.14,3,active,2026-05-21,
+CUST-000725,Basic,Month-to-month,Monthly,Bank transfer,101.97,21,cancelled,2024-11-20,2026-08-03
+CUST-000726,Basic,Month-to-month,Monthly,Bank transfer,99.94,34,cancelled,2023-11-17,2026-08-25
+CUST-000727,Basic,Month-to-month,Monthly,Credit card,116.19,7,cancelled,2026-01-20,2026-08-01
+CUST-000728,Basic,Month-to-month,Monthly,Credit card,44.89,64,active,2021-04-28,
+CUST-000729,Basic,Month-to-month,Monthly,Mailed check,90.96,8,cancelled,2025-12-30,2026-08-20
+CUST-000730,Basic,Month-to-month,Monthly,Credit card,95.69,48,cancelled,2022-09-11,2026-08-23
+CUST-000731,Basic,Month-to-month,Monthly,Credit card,113.63,67,cancelled,2021-01-19,2026-09-02
+CUST-000732,Basic,Month-to-month,Monthly,Bank transfer,110.69,50,cancelled,2022-07-09,2026-08-08
+CUST-000733,Basic,Month-to-month,Monthly,Credit card,77.35,55,active,2022-02-03,
+CUST-000734,Basic,Month-to-month,Monthly,Electronic check,77.92,19,active,2025-02-07,
+CUST-000735,Basic,Month-to-month,Monthly,Bank transfer,36.73,60,cancelled,2021-08-18,2026-08-30
+CUST-000736,Standard,One year,Annual,Bank transfer,117.5,30,active,2024-03-03,
+CUST-000737,Basic,Month-to-month,Monthly,Credit card,45.5,4,cancelled,2026-05-15,2026-07-24
+CUST-000738,Basic,Month-to-month,Monthly,Electronic check,92.47,26,cancelled,2024-07-17,2026-08-22
+CUST-000739,Basic,Month-to-month,Monthly,Credit card,99.58,25,cancelled,2024-07-18,2026-07-29
+CUST-000740,Basic,Month-to-month,Monthly,Electronic check,64.12,38,active,2023-07-11,
+CUST-000741,Basic,Month-to-month,Monthly,Mailed check,41.12,19,cancelled,2025-01-23,2026-08-19
+CUST-000742,Basic,Month-to-month,Monthly,Bank transfer,38.9,33,cancelled,2023-12-17,2026-08-22
+CUST-000743,Pro,Two year,Annual,Mailed check,105.65,31,active,2024-01-21,
+CUST-000744,Basic,Month-to-month,Monthly,Credit card,71.08,23,cancelled,2024-09-27,2026-08-20
+CUST-000745,Basic,Month-to-month,Monthly,Credit card,29.01,50,active,2022-07-11,
+CUST-000746,Basic,Month-to-month,Monthly,Electronic check,91.7,22,cancelled,2024-10-21,2026-08-20
+CUST-000747,Basic,Month-to-month,Monthly,Mailed check,45.02,55,cancelled,2022-02-07,2026-08-18
+CUST-000748,Basic,Month-to-month,Monthly,Electronic check,107.64,18,cancelled,2025-02-17,2026-07-25
+CUST-000749,Standard,One year,Annual,Bank transfer,50.96,63,active,2021-05-31,
+CUST-000750,Pro,Two year,Annual,Credit card,40.03,26,active,2024-07-04,
+CUST-000751,Basic,Month-to-month,Monthly,Bank transfer,28.49,2,cancelled,2026-07-17,2026-08-05
+CUST-000752,Basic,Month-to-month,Monthly,Electronic check,71.15,10,active,2025-11-09,
+CUST-000753,Basic,Month-to-month,Monthly,Electronic check,65.07,58,cancelled,2021-11-15,2026-09-13
+CUST-000754,Basic,Month-to-month,Monthly,Electronic check,95.13,63,active,2021-05-23,
+CUST-000755,Standard,One year,Annual,Mailed check,66.46,15,active,2025-06-14,
+CUST-000756,Basic,Month-to-month,Monthly,Bank transfer,54.38,43,active,2023-02-13,
+CUST-000757,Basic,Month-to-month,Monthly,Electronic check,46.17,41,active,2023-04-14,
+CUST-000758,Pro,Two year,Annual,Credit card,47.81,9,active,2025-11-18,
+CUST-000759,Basic,Month-to-month,Monthly,Mailed check,112.78,32,cancelled,2023-12-18,2026-09-12
+CUST-000760,Basic,Month-to-month,Monthly,Bank transfer,36.51,50,active,2022-06-26,
+CUST-000761,Standard,One year,Annual,Bank transfer,118.82,70,active,2020-11-14,
+CUST-000762,Basic,Month-to-month,Monthly,Bank transfer,52.69,61,active,2021-08-02,
+CUST-000763,Basic,Month-to-month,Monthly,Mailed check,28.84,7,active,2026-01-18,
+CUST-000764,Basic,Month-to-month,Monthly,Mailed check,44.87,17,cancelled,2025-04-15,2026-09-14
+CUST-000765,Pro,Two year,Annual,Mailed check,25.84,31,active,2024-01-24,
+CUST-000766,Basic,Month-to-month,Monthly,Electronic check,99.0,10,cancelled,2025-11-16,2026-08-06
+CUST-000767,Basic,Month-to-month,Monthly,Mailed check,71.26,41,active,2023-03-24,
+CUST-000768,Basic,Month-to-month,Monthly,Credit card,53.7,0,active,2026-08-31,
+CUST-000769,Basic,Month-to-month,Monthly,Credit card,86.2,8,cancelled,2025-12-21,2026-09-03
+CUST-000770,Standard,One year,Annual,Credit card,83.06,3,active,2026-06-05,
+CUST-000771,Basic,Month-to-month,Monthly,Mailed check,113.99,21,cancelled,2024-11-23,2026-08-24
+CUST-000772,Standard,One year,Annual,Mailed check,116.13,55,active,2022-01-21,
+CUST-000773,Standard,One year,Annual,Electronic check,88.07,12,active,2025-09-07,
+CUST-000774,Pro,Two year,Annual,Mailed check,101.78,72,active,2020-08-28,
+CUST-000775,Basic,Month-to-month,Monthly,Bank transfer,99.24,19,cancelled,2025-02-02,2026-07-29
+CUST-000776,Pro,Two year,Annual,Mailed check,69.13,3,active,2026-06-05,
+CUST-000777,Standard,One year,Annual,Bank transfer,90.45,24,active,2024-08-24,
+CUST-000778,Basic,Month-to-month,Monthly,Electronic check,27.83,54,active,2022-03-12,
+CUST-000779,Standard,One year,Annual,Mailed check,95.8,7,active,2026-02-12,
+CUST-000780,Pro,Two year,Annual,Mailed check,116.18,5,active,2026-04-03,
+CUST-000781,Basic,Month-to-month,Monthly,Mailed check,28.5,62,active,2021-06-23,
+CUST-000782,Pro,Two year,Annual,Electronic check,103.61,43,active,2023-02-12,
+CUST-000783,Basic,Month-to-month,Monthly,Mailed check,113.3,25,cancelled,2024-08-06,2026-09-08
+CUST-000784,Standard,One year,Annual,Credit card,42.62,55,active,2022-01-26,
+CUST-000785,Pro,Two year,Annual,Credit card,72.48,61,active,2021-08-03,
+CUST-000786,Basic,Month-to-month,Monthly,Mailed check,112.79,26,cancelled,2024-06-29,2026-09-06
+CUST-000787,Pro,Two year,Annual,Mailed check,116.02,40,active,2023-05-03,
+CUST-000788,Basic,Month-to-month,Monthly,Bank transfer,32.79,0,cancelled,2026-08-23,2026-09-11
+CUST-000789,Pro,Two year,Annual,Mailed check,54.9,22,active,2024-10-21,
+CUST-000790,Standard,One year,Annual,Bank transfer,89.81,43,active,2023-02-03,
+CUST-000791,Basic,Month-to-month,Monthly,Mailed check,42.16,14,cancelled,2025-07-05,2026-08-30
+CUST-000792,Basic,Month-to-month,Monthly,Credit card,52.48,72,active,2020-09-08,
+CUST-000793,Basic,Month-to-month,Monthly,Bank transfer,22.33,70,active,2020-11-03,
+CUST-000794,Basic,Month-to-month,Monthly,Credit card,35.35,18,active,2025-02-21,
+CUST-000795,Basic,Month-to-month,Monthly,Credit card,76.23,28,active,2024-05-02,
+CUST-000796,Basic,Month-to-month,Monthly,Mailed check,85.31,13,cancelled,2025-07-28,2026-09-10
+CUST-000797,Basic,Month-to-month,Monthly,Mailed check,84.89,36,active,2023-09-05,
+CUST-000798,Basic,Month-to-month,Monthly,Electronic check,97.84,9,active,2025-11-26,
+CUST-000799,Standard,One year,Annual,Bank transfer,61.53,28,active,2024-04-26,
+CUST-000800,Standard,One year,Annual,Bank transfer,47.35,40,active,2023-05-03,
+CUST-000801,Standard,One year,Annual,Mailed check,21.56,44,active,2022-12-19,
+CUST-000802,Basic,Month-to-month,Monthly,Electronic check,40.66,43,active,2023-01-21,
+CUST-000803,Pro,Two year,Annual,Credit card,51.24,16,active,2025-05-13,
+CUST-000804,Standard,One year,Annual,Electronic check,37.82,57,active,2021-12-10,
+CUST-000805,Basic,Month-to-month,Monthly,Bank transfer,22.01,50,active,2022-06-19,
+CUST-000806,Basic,Month-to-month,Monthly,Electronic check,35.74,54,active,2022-03-06,
+CUST-000807,Standard,One year,Annual,Electronic check,86.61,34,active,2023-11-08,
+CUST-000808,Basic,Month-to-month,Monthly,Credit card,82.96,65,cancelled,2021-03-25,2026-08-09
+CUST-000809,Basic,Month-to-month,Monthly,Bank transfer,113.57,28,cancelled,2024-04-29,2026-08-03
+CUST-000810,Pro,Two year,Annual,Electronic check,99.82,58,active,2021-11-13,
+CUST-000811,Basic,Month-to-month,Monthly,Electronic check,76.78,14,active,2025-07-15,
+CUST-000812,Basic,Month-to-month,Monthly,Mailed check,33.76,18,cancelled,2025-02-22,2026-09-05
+CUST-000813,Pro,Two year,Annual,Bank transfer,76.41,38,active,2023-06-26,
+CUST-000814,Standard,One year,Annual,Mailed check,26.16,40,active,2023-05-08,
+CUST-000815,Basic,Month-to-month,Monthly,Credit card,63.09,54,cancelled,2022-02-21,2026-08-16
+CUST-000816,Pro,Two year,Annual,Bank transfer,59.03,21,active,2024-12-13,
+CUST-000817,Pro,Two year,Annual,Bank transfer,62.78,63,active,2021-05-22,
+CUST-000818,Basic,Month-to-month,Monthly,Mailed check,47.98,24,cancelled,2024-09-14,2026-08-29
+CUST-000819,Standard,One year,Annual,Bank transfer,88.58,38,active,2023-06-29,
+CUST-000820,Basic,Month-to-month,Monthly,Credit card,104.09,68,active,2020-12-22,
+CUST-000821,Basic,Month-to-month,Monthly,Electronic check,96.85,39,active,2023-05-30,
+CUST-000822,Standard,One year,Annual,Bank transfer,82.78,49,active,2022-07-25,
+CUST-000823,Basic,Month-to-month,Monthly,Credit card,73.83,66,cancelled,2021-03-07,2026-09-11
+CUST-000824,Standard,One year,Annual,Mailed check,23.11,71,active,2020-10-08,
+CUST-000825,Pro,Two year,Annual,Credit card,92.29,36,active,2023-09-10,
+CUST-000826,Basic,Month-to-month,Monthly,Mailed check,74.5,30,active,2024-03-14,
+CUST-000827,Standard,One year,Annual,Electronic check,47.07,14,active,2025-07-09,
+CUST-000828,Basic,Month-to-month,Monthly,Credit card,52.78,39,cancelled,2023-06-10,2026-08-19
+CUST-000829,Pro,Two year,Annual,Mailed check,113.56,67,active,2021-01-24,
+CUST-000830,Basic,Month-to-month,Monthly,Credit card,82.44,35,cancelled,2023-10-11,2026-08-05
+CUST-000831,Standard,One year,Annual,Mailed check,67.59,25,active,2024-08-12,
+CUST-000832,Standard,One year,Annual,Mailed check,82.09,7,active,2026-01-25,
+CUST-000833,Basic,Month-to-month,Monthly,Bank transfer,61.37,28,active,2024-05-01,
+CUST-000834,Standard,One year,Annual,Mailed check,67.02,17,active,2025-04-11,
+CUST-000835,Standard,One year,Annual,Credit card,49.03,71,active,2020-09-25,
+CUST-000836,Standard,One year,Annual,Electronic check,63.99,38,active,2023-07-12,
+CUST-000837,Standard,One year,Annual,Electronic check,88.56,10,active,2025-10-24,
+CUST-000838,Pro,Two year,Annual,Electronic check,23.99,4,active,2026-05-18,
+CUST-000839,Basic,Month-to-month,Monthly,Mailed check,99.5,62,active,2021-06-30,
+CUST-000840,Basic,Month-to-month,Monthly,Electronic check,48.3,67,active,2021-01-29,
+CUST-000841,Basic,Month-to-month,Monthly,Mailed check,88.26,55,cancelled,2022-02-04,2026-09-02
+CUST-000842,Pro,Two year,Annual,Electronic check,84.27,9,active,2025-11-27,
+CUST-000843,Basic,Month-to-month,Monthly,Credit card,85.26,7,cancelled,2026-02-04,2026-07-31
+CUST-000844,Basic,Month-to-month,Monthly,Electronic check,80.81,14,cancelled,2025-06-28,2026-07-19
+CUST-000845,Basic,Month-to-month,Monthly,Credit card,115.91,54,cancelled,2022-03-12,2026-09-12
+CUST-000846,Pro,Two year,Annual,Credit card,70.83,55,active,2022-01-29,
+CUST-000847,Basic,Month-to-month,Monthly,Bank transfer,93.23,61,active,2021-07-26,
+CUST-000848,Standard,One year,Annual,Credit card,90.54,7,active,2026-01-18,
+CUST-000849,Basic,Month-to-month,Monthly,Credit card,43.63,11,active,2025-10-07,
+CUST-000850,Pro,Two year,Annual,Credit card,48.33,65,active,2021-04-03,
+CUST-000851,Basic,Month-to-month,Monthly,Bank transfer,62.4,67,active,2021-02-01,
+CUST-000852,Basic,Month-to-month,Monthly,Bank transfer,47.77,52,active,2022-04-23,
+CUST-000853,Pro,Two year,Annual,Mailed check,56.67,7,active,2026-01-18,
+CUST-000854,Pro,Two year,Annual,Bank transfer,59.1,5,active,2026-03-29,
+CUST-000855,Basic,Month-to-month,Monthly,Mailed check,80.39,4,cancelled,2026-04-24,2026-09-06
+CUST-000856,Basic,Month-to-month,Monthly,Electronic check,41.99,50,active,2022-07-15,
+CUST-000857,Standard,One year,Annual,Credit card,100.43,61,active,2021-07-26,
+CUST-000858,Pro,Two year,Annual,Bank transfer,63.75,46,active,2022-10-23,
+CUST-000859,Basic,Month-to-month,Monthly,Bank transfer,90.62,19,cancelled,2025-01-25,2026-08-29
+CUST-000860,Basic,Month-to-month,Monthly,Mailed check,28.14,55,active,2022-01-29,
+CUST-000861,Standard,One year,Annual,Credit card,67.0,4,active,2026-04-22,
+CUST-000862,Standard,One year,Annual,Bank transfer,22.82,60,active,2021-08-28,
+CUST-000863,Standard,One year,Annual,Electronic check,87.59,65,active,2021-03-23,
+CUST-000864,Standard,One year,Annual,Credit card,54.37,52,active,2022-05-13,
+CUST-000865,Basic,Month-to-month,Monthly,Credit card,114.93,64,cancelled,2021-04-28,2026-07-27
+CUST-000866,Pro,Two year,Annual,Credit card,52.41,42,active,2023-03-05,
+CUST-000867,Pro,Two year,Annual,Mailed check,76.38,34,active,2023-10-22,
+CUST-000868,Pro,Two year,Annual,Electronic check,45.74,23,active,2024-09-20,
+CUST-000869,Basic,Month-to-month,Monthly,Electronic check,82.01,67,active,2021-01-21,
+CUST-000870,Basic,Month-to-month,Monthly,Bank transfer,66.7,50,active,2022-07-11,
+CUST-000871,Standard,One year,Annual,Credit card,57.06,13,active,2025-08-03,
+CUST-000872,Basic,Month-to-month,Monthly,Electronic check,40.37,69,active,2020-12-16,
+CUST-000873,Pro,Two year,Annual,Bank transfer,31.15,4,active,2026-04-19,
+CUST-000874,Basic,Month-to-month,Monthly,Electronic check,31.99,42,cancelled,2023-03-11,2026-09-07
+CUST-000875,Standard,One year,Annual,Credit card,119.9,13,active,2025-07-30,
+CUST-000876,Pro,Two year,Annual,Electronic check,61.23,48,active,2022-09-02,
+CUST-000877,Basic,Month-to-month,Monthly,Credit card,20.19,30,active,2024-02-19,
+CUST-000878,Basic,Month-to-month,Monthly,Electronic check,115.29,31,active,2024-01-23,
+CUST-000879,Standard,One year,Annual,Mailed check,22.0,49,active,2022-07-25,
+CUST-000880,Standard,One year,Annual,Bank transfer,61.86,55,active,2022-01-27,
+CUST-000881,Basic,Month-to-month,Monthly,Credit card,91.75,27,active,2024-06-14,
+CUST-000882,Standard,One year,Annual,Mailed check,111.46,72,active,2020-08-20,
+CUST-000883,Pro,Two year,Annual,Credit card,91.29,36,active,2023-09-16,
+CUST-000884,Basic,Month-to-month,Monthly,Electronic check,66.36,11,active,2025-10-04,
+CUST-000885,Basic,Month-to-month,Monthly,Mailed check,117.44,0,cancelled,2026-09-05,2026-08-19
+CUST-000886,Basic,Month-to-month,Monthly,Credit card,23.93,14,active,2025-07-06,
+CUST-000887,Basic,Month-to-month,Monthly,Mailed check,118.69,50,cancelled,2022-06-18,2026-08-15
+CUST-000888,Basic,Month-to-month,Monthly,Bank transfer,104.94,39,active,2023-06-11,
+CUST-000889,Basic,Month-to-month,Monthly,Mailed check,112.89,24,cancelled,2024-08-30,2026-09-08
+CUST-000890,Standard,One year,Annual,Mailed check,45.48,35,active,2023-10-11,
+CUST-000891,Basic,Month-to-month,Monthly,Credit card,34.25,61,active,2021-07-21,
+CUST-000892,Pro,Two year,Annual,Bank transfer,86.33,41,active,2023-03-26,
+CUST-000893,Basic,Month-to-month,Monthly,Bank transfer,71.59,4,cancelled,2026-05-06,2026-09-13
+CUST-000894,Basic,Month-to-month,Monthly,Bank transfer,72.32,3,cancelled,2026-06-15,2026-09-09
+CUST-000895,Standard,One year,Annual,Credit card,112.46,35,active,2023-10-13,
+CUST-000896,Pro,Two year,Annual,Mailed check,82.01,29,active,2024-04-10,
+CUST-000897,Basic,Month-to-month,Monthly,Credit card,51.11,62,active,2021-07-05,
+CUST-000898,Basic,Month-to-month,Monthly,Bank transfer,60.01,42,active,2023-02-20,
+CUST-000899,Basic,Month-to-month,Monthly,Credit card,33.35,55,active,2022-02-12,
+CUST-000900,Basic,Month-to-month,Monthly,Credit card,39.23,42,cancelled,2023-03-01,2026-09-12
+CUST-000901,Basic,Month-to-month,Monthly,Electronic check,34.34,25,active,2024-08-06,
+CUST-000902,Basic,Month-to-month,Monthly,Mailed check,101.03,47,active,2022-10-16,
+CUST-000903,Basic,Month-to-month,Monthly,Mailed check,90.49,45,active,2022-11-29,
+CUST-000904,Basic,Month-to-month,Monthly,Mailed check,73.03,52,active,2022-04-27,
+CUST-000905,Pro,Two year,Annual,Mailed check,57.44,13,active,2025-07-20,
+CUST-000906,Standard,One year,Annual,Electronic check,86.85,46,active,2022-11-01,
+CUST-000907,Basic,Month-to-month,Monthly,Credit card,101.29,20,cancelled,2025-01-07,2026-08-17
+CUST-000908,Basic,Month-to-month,Monthly,Credit card,108.12,57,cancelled,2021-11-21,2026-07-22
+CUST-000909,Basic,Month-to-month,Monthly,Bank transfer,74.7,58,active,2021-11-09,
+CUST-000910,Basic,Month-to-month,Monthly,Mailed check,101.99,45,active,2022-11-27,
+CUST-000911,Standard,One year,Annual,Credit card,71.13,69,active,2020-11-18,
+CUST-000912,Pro,Two year,Annual,Mailed check,67.45,39,active,2023-06-17,
+CUST-000913,Pro,Two year,Annual,Mailed check,106.54,1,active,2026-07-21,
+CUST-000914,Pro,Two year,Annual,Credit card,58.64,44,active,2023-01-10,
+CUST-000915,Pro,Two year,Annual,Credit card,59.59,56,active,2022-01-02,
+CUST-000916,Pro,Two year,Annual,Bank transfer,50.49,7,active,2026-02-08,
+CUST-000917,Basic,Month-to-month,Monthly,Electronic check,71.87,7,cancelled,2026-02-11,2026-08-26
+CUST-000918,Basic,Month-to-month,Monthly,Electronic check,74.49,19,cancelled,2025-01-25,2026-08-31
+CUST-000919,Basic,Month-to-month,Monthly,Credit card,86.05,61,active,2021-08-03,
+CUST-000920,Standard,One year,Annual,Mailed check,63.05,38,active,2023-07-03,
+CUST-000921,Basic,Month-to-month,Monthly,Bank transfer,41.78,71,active,2020-10-02,
+CUST-000922,Pro,Two year,Annual,Mailed check,106.68,63,active,2021-05-26,
+CUST-000923,Standard,One year,Annual,Mailed check,54.6,40,active,2023-04-20,
+CUST-000924,Basic,Month-to-month,Monthly,Credit card,112.29,49,cancelled,2022-08-02,2026-09-02
+CUST-000925,Basic,Month-to-month,Monthly,Bank transfer,40.74,24,cancelled,2024-09-12,2026-07-20
+CUST-000926,Basic,Month-to-month,Monthly,Mailed check,76.01,6,cancelled,2026-03-09,2026-07-21
+CUST-000927,Basic,Month-to-month,Monthly,Mailed check,73.66,29,active,2024-04-03,
+CUST-000928,Pro,Two year,Annual,Electronic check,102.86,43,active,2023-02-13,
+CUST-000929,Standard,One year,Annual,Bank transfer,33.89,13,active,2025-08-11,
+CUST-000930,Standard,One year,Annual,Bank transfer,110.99,16,active,2025-05-11,
+CUST-000931,Basic,Month-to-month,Monthly,Electronic check,73.14,1,active,2026-07-19,
+CUST-000932,Basic,Month-to-month,Monthly,Mailed check,78.61,53,cancelled,2022-04-05,2026-08-08
+CUST-000933,Basic,Month-to-month,Monthly,Bank transfer,71.02,65,active,2021-03-22,
+CUST-000934,Standard,One year,Annual,Electronic check,23.6,60,active,2021-08-31,
+CUST-000935,Standard,One year,Annual,Credit card,69.71,27,active,2024-06-02,
+CUST-000936,Basic,Month-to-month,Monthly,Credit card,46.35,43,cancelled,2023-01-19,2026-08-19
+CUST-000937,Pro,Two year,Annual,Bank transfer,54.27,70,active,2020-10-27,
+CUST-000938,Basic,Month-to-month,Monthly,Electronic check,84.91,43,cancelled,2023-02-09,2026-09-06
+CUST-000939,Pro,Two year,Annual,Bank transfer,69.77,21,active,2024-12-08,
+CUST-000940,Basic,Month-to-month,Monthly,Credit card,29.32,24,cancelled,2024-08-28,2026-07-23
+CUST-000941,Basic,Month-to-month,Monthly,Electronic check,27.3,53,active,2022-04-17,
+CUST-000942,Pro,Two year,Annual,Credit card,38.57,32,active,2024-01-12,
+CUST-000943,Basic,Month-to-month,Monthly,Credit card,39.09,61,active,2021-08-15,
+CUST-000944,Basic,Month-to-month,Monthly,Electronic check,80.83,63,active,2021-05-27,
+CUST-000945,Basic,Month-to-month,Monthly,Electronic check,37.78,2,cancelled,2026-07-05,2026-09-15
+CUST-000946,Basic,Month-to-month,Monthly,Bank transfer,108.17,52,active,2022-05-18,
+CUST-000947,Standard,One year,Annual,Credit card,40.98,27,active,2024-05-26,
+CUST-000948,Pro,Two year,Annual,Credit card,29.11,37,active,2023-07-29,
+CUST-000949,Pro,Two year,Annual,Bank transfer,107.57,19,cancelled,2025-01-25,2026-09-06
+CUST-000950,Basic,Month-to-month,Monthly,Bank transfer,49.53,26,active,2024-07-13,
+CUST-000951,Basic,Month-to-month,Monthly,Bank transfer,62.54,24,active,2024-08-21,
+CUST-000952,Basic,Month-to-month,Monthly,Bank transfer,115.9,3,cancelled,2026-06-12,2026-08-06
+CUST-000953,Basic,Month-to-month,Monthly,Credit card,114.44,57,cancelled,2021-11-29,2026-09-05
+CUST-000954,Basic,Month-to-month,Monthly,Electronic check,91.49,10,cancelled,2025-10-31,2026-09-09
+CUST-000955,Pro,Two year,Annual,Electronic check,26.89,27,active,2024-06-11,
+CUST-000956,Pro,Two year,Annual,Electronic check,79.33,14,active,2025-07-06,
+CUST-000957,Standard,One year,Annual,Credit card,118.91,11,active,2025-10-16,
+CUST-000958,Basic,Month-to-month,Monthly,Bank transfer,114.69,27,cancelled,2024-06-03,2026-08-11
+CUST-000959,Basic,Month-to-month,Monthly,Electronic check,30.6,67,active,2021-01-26,
+CUST-000960,Basic,Month-to-month,Monthly,Electronic check,59.6,68,active,2021-01-07,
+CUST-000961,Basic,Month-to-month,Monthly,Mailed check,51.55,27,active,2024-06-01,
+CUST-000962,Basic,Month-to-month,Monthly,Electronic check,32.97,36,active,2023-08-20,
+CUST-000963,Basic,Month-to-month,Monthly,Bank transfer,89.48,71,active,2020-10-09,
+CUST-000964,Basic,Month-to-month,Monthly,Mailed check,47.38,17,cancelled,2025-04-09,2026-09-14
+CUST-000965,Pro,Two year,Annual,Mailed check,54.49,68,active,2021-01-13,
+CUST-000966,Basic,Month-to-month,Monthly,Electronic check,29.04,7,cancelled,2026-01-30,2026-08-31
+CUST-000967,Pro,Two year,Annual,Bank transfer,69.8,16,active,2025-05-11,
+CUST-000968,Basic,Month-to-month,Monthly,Credit card,35.82,24,cancelled,2024-08-22,2026-08-09
+CUST-000969,Standard,One year,Annual,Bank transfer,63.21,2,active,2026-07-10,
+CUST-000970,Basic,Month-to-month,Monthly,Credit card,34.33,59,active,2021-09-28,
+CUST-000971,Basic,Month-to-month,Monthly,Credit card,115.38,62,active,2021-07-12,
+CUST-000972,Basic,Month-to-month,Monthly,Credit card,34.5,27,cancelled,2024-06-08,2026-09-05
+CUST-000973,Basic,Month-to-month,Monthly,Bank transfer,72.19,61,cancelled,2021-08-12,2026-08-02
+CUST-000974,Pro,Two year,Annual,Electronic check,39.7,56,active,2021-12-31,
+CUST-000975,Basic,Month-to-month,Monthly,Mailed check,27.64,58,active,2021-11-16,
+CUST-000976,Standard,One year,Annual,Mailed check,40.23,58,active,2021-11-14,
+CUST-000977,Basic,Month-to-month,Monthly,Bank transfer,25.48,41,active,2023-04-02,
+CUST-000978,Basic,Month-to-month,Monthly,Credit card,33.94,8,cancelled,2025-12-31,2026-09-10
+CUST-000979,Basic,Month-to-month,Monthly,Bank transfer,69.35,67,active,2021-02-06,
+CUST-000980,Basic,Month-to-month,Monthly,Mailed check,85.18,44,cancelled,2023-01-04,2026-08-10
+CUST-000981,Pro,Two year,Annual,Credit card,28.73,65,active,2021-04-05,
+CUST-000982,Pro,Two year,Annual,Bank transfer,64.1,70,active,2020-10-25,
+CUST-000983,Standard,One year,Annual,Credit card,78.12,13,active,2025-08-04,
+CUST-000984,Basic,Month-to-month,Monthly,Bank transfer,43.42,29,active,2024-03-23,
+CUST-000985,Basic,Month-to-month,Monthly,Bank transfer,57.21,14,cancelled,2025-07-11,2026-09-11
+CUST-000986,Pro,Two year,Annual,Mailed check,27.18,3,active,2026-06-12,
+CUST-000987,Basic,Month-to-month,Monthly,Mailed check,42.01,70,active,2020-11-04,
+CUST-000988,Basic,Month-to-month,Monthly,Mailed check,66.68,67,active,2021-02-13,
+CUST-000989,Basic,Month-to-month,Monthly,Mailed check,119.04,68,cancelled,2020-12-27,2026-08-03
+CUST-000990,Pro,Two year,Annual,Bank transfer,119.63,64,active,2021-05-06,
+CUST-000991,Standard,One year,Annual,Mailed check,117.96,47,active,2022-10-07,
+CUST-000992,Standard,One year,Annual,Electronic check,62.31,38,active,2023-07-02,
+CUST-000993,Pro,Two year,Annual,Electronic check,28.07,72,active,2020-09-14,
+CUST-000994,Basic,Month-to-month,Monthly,Credit card,52.36,40,active,2023-05-07,
+CUST-000995,Pro,Two year,Annual,Mailed check,43.77,46,active,2022-10-18,
+CUST-000996,Basic,Month-to-month,Monthly,Bank transfer,21.41,15,active,2025-05-30,
+CUST-000997,Standard,One year,Annual,Credit card,29.52,54,active,2022-03-01,
+CUST-000998,Basic,Month-to-month,Monthly,Electronic check,65.32,59,active,2021-10-02,
+CUST-000999,Pro,Two year,Annual,Credit card,53.97,49,active,2022-08-03,
+CUST-001000,Basic,Month-to-month,Monthly,Bank transfer,38.04,36,cancelled,2023-08-20,2026-08-02
+CUST-001001,Basic,Month-to-month,Monthly,Bank transfer,91.61,14,cancelled,2025-06-20,2026-07-31
+CUST-001002,Basic,Month-to-month,Monthly,Mailed check,55.71,2,cancelled,2026-07-06,2026-08-30
+CUST-001003,Basic,Month-to-month,Monthly,Bank transfer,105.19,45,active,2022-11-20,
+CUST-001004,Basic,Month-to-month,Monthly,Electronic check,44.1,49,active,2022-08-15,
+CUST-001005,Standard,One year,Annual,Mailed check,73.84,56,active,2022-01-07,
+CUST-001006,Basic,Month-to-month,Monthly,Credit card,38.41,69,active,2020-12-07,
+CUST-001007,Pro,Two year,Annual,Mailed check,69.53,36,active,2023-08-28,
+CUST-001008,Basic,Month-to-month,Monthly,Bank transfer,35.25,60,active,2021-08-29,
+CUST-001009,Standard,One year,Annual,Credit card,36.16,52,active,2022-05-04,
+CUST-001010,Basic,Month-to-month,Monthly,Bank transfer,81.22,20,cancelled,2025-01-09,2026-09-02
+CUST-001011,Standard,One year,Annual,Mailed check,46.38,61,active,2021-08-02,
+CUST-001012,Standard,One year,Annual,Credit card,37.24,3,active,2026-06-09,
+CUST-001013,Basic,Month-to-month,Monthly,Credit card,112.98,43,cancelled,2023-02-02,2026-07-20
+CUST-001014,Pro,Two year,Annual,Bank transfer,24.3,68,active,2021-01-06,
+CUST-001015,Basic,Month-to-month,Monthly,Electronic check,76.51,48,cancelled,2022-08-21,2026-08-03
+CUST-001016,Basic,Month-to-month,Monthly,Mailed check,74.83,68,active,2020-12-25,
+CUST-001017,Standard,One year,Annual,Mailed check,45.06,4,active,2026-05-13,
+CUST-001018,Pro,Two year,Annual,Electronic check,65.28,38,active,2023-06-20,
+CUST-001019,Basic,Month-to-month,Monthly,Mailed check,28.77,56,cancelled,2021-12-28,2026-09-05
+CUST-001020,Basic,Month-to-month,Monthly,Electronic check,92.13,46,cancelled,2022-11-06,2026-09-14
+CUST-001021,Pro,Two year,Annual,Bank transfer,42.17,64,active,2021-05-02,
+CUST-001022,Standard,One year,Annual,Mailed check,39.34,33,active,2023-12-12,
+CUST-001023,Pro,Two year,Annual,Bank transfer,51.49,49,active,2022-08-16,
+CUST-001024,Basic,Month-to-month,Monthly,Mailed check,110.24,30,cancelled,2024-03-05,2026-08-26
+CUST-001025,Standard,One year,Annual,Bank transfer,99.65,63,active,2021-05-25,
+CUST-001026,Basic,Month-to-month,Monthly,Bank transfer,114.69,8,cancelled,2026-01-06,2026-08-07
+CUST-001027,Pro,Two year,Annual,Electronic check,85.2,18,active,2025-03-07,
+CUST-001028,Basic,Month-to-month,Monthly,Mailed check,86.29,7,cancelled,2026-01-17,2026-08-24
+CUST-001029,Standard,One year,Annual,Bank transfer,68.0,51,active,2022-05-19,
+CUST-001030,Basic,Month-to-month,Monthly,Bank transfer,110.52,16,cancelled,2025-05-04,2026-07-30
+CUST-001031,Standard,One year,Annual,Electronic check,71.09,23,active,2024-10-15,
+CUST-001032,Standard,One year,Annual,Credit card,55.51,61,active,2021-07-28,
+CUST-001033,Basic,Month-to-month,Monthly,Electronic check,84.04,26,cancelled,2024-06-26,2026-08-17
+CUST-001034,Pro,Two year,Annual,Credit card,74.61,10,active,2025-10-20,
+CUST-001035,Basic,Month-to-month,Monthly,Bank transfer,32.4,1,cancelled,2026-07-20,2026-07-19
+CUST-001036,Standard,One year,Annual,Mailed check,59.27,16,active,2025-04-29,
+CUST-001037,Basic,Month-to-month,Monthly,Electronic check,51.33,66,active,2021-03-14,
+CUST-001038,Basic,Month-to-month,Monthly,Credit card,104.68,40,cancelled,2023-05-11,2026-07-26
+CUST-001039,Basic,Month-to-month,Monthly,Bank transfer,57.88,72,active,2020-08-26,
+CUST-001040,Basic,Month-to-month,Monthly,Credit card,102.16,15,cancelled,2025-05-30,2026-08-19
+CUST-001041,Basic,Month-to-month,Monthly,Credit card,64.24,25,active,2024-08-03,
+CUST-001042,Standard,One year,Annual,Electronic check,95.35,11,active,2025-10-05,
+CUST-001043,Standard,One year,Annual,Bank transfer,33.53,29,active,2024-03-27,
+CUST-001044,Standard,One year,Annual,Mailed check,112.47,41,cancelled,2023-04-05,2026-07-28
+CUST-001045,Basic,Month-to-month,Monthly,Credit card,68.06,58,active,2021-11-12,
+CUST-001046,Basic,Month-to-month,Monthly,Electronic check,45.98,26,active,2024-06-18,
+CUST-001047,Basic,Month-to-month,Monthly,Electronic check,44.15,56,active,2022-01-06,
+CUST-001048,Standard,One year,Annual,Bank transfer,46.51,45,active,2022-12-09,
+CUST-001049,Pro,Two year,Annual,Bank transfer,56.67,21,active,2024-12-14,
+CUST-001050,Basic,Month-to-month,Monthly,Bank transfer,91.75,66,active,2021-03-03,
+CUST-001051,Standard,One year,Annual,Mailed check,114.96,31,active,2024-01-18,
+CUST-001052,Basic,Month-to-month,Monthly,Mailed check,86.9,11,cancelled,2025-10-13,2026-08-20
+CUST-001053,Basic,Month-to-month,Monthly,Credit card,74.72,70,active,2020-11-09,
+CUST-001054,Basic,Month-to-month,Monthly,Credit card,64.86,66,active,2021-03-12,
+CUST-001055,Basic,Month-to-month,Monthly,Credit card,102.82,3,cancelled,2026-06-15,2026-09-15
+CUST-001056,Standard,One year,Annual,Mailed check,104.97,65,active,2021-03-30,
+CUST-001057,Pro,Two year,Annual,Credit card,49.3,69,active,2020-12-08,
+CUST-001058,Basic,Month-to-month,Monthly,Mailed check,115.34,60,active,2021-08-25,
+CUST-001059,Basic,Month-to-month,Monthly,Credit card,59.51,18,cancelled,2025-03-06,2026-08-28
+CUST-001060,Standard,One year,Annual,Credit card,100.01,46,active,2022-10-28,
+CUST-001061,Pro,Two year,Annual,Electronic check,116.68,39,active,2023-06-15,
+CUST-001062,Standard,One year,Annual,Credit card,90.37,45,active,2022-12-08,
+CUST-001063,Basic,Month-to-month,Monthly,Bank transfer,36.16,45,active,2022-12-05,
+CUST-001064,Standard,One year,Annual,Credit card,78.61,46,active,2022-11-15,
+CUST-001065,Basic,Month-to-month,Monthly,Bank transfer,31.88,37,active,2023-08-05,
+CUST-001066,Pro,Two year,Annual,Electronic check,98.91,50,active,2022-07-03,
+CUST-001067,Basic,Month-to-month,Monthly,Credit card,48.13,38,active,2023-07-06,
+CUST-001068,Standard,One year,Annual,Electronic check,89.52,1,active,2026-08-02,
+CUST-001069,Basic,Month-to-month,Monthly,Credit card,111.01,2,cancelled,2026-06-25,2026-08-22
+CUST-001070,Basic,Month-to-month,Monthly,Electronic check,38.1,69,active,2020-11-23,
+CUST-001071,Pro,Two year,Annual,Credit card,59.29,66,active,2021-03-17,
+CUST-001072,Standard,One year,Annual,Mailed check,84.71,42,active,2023-02-27,
+CUST-001073,Basic,Month-to-month,Monthly,Electronic check,61.97,12,cancelled,2025-08-20,2026-07-20
+CUST-001074,Pro,Two year,Annual,Electronic check,37.48,57,active,2021-11-20,
+CUST-001075,Pro,Two year,Annual,Mailed check,22.91,10,active,2025-11-07,
+CUST-001076,Basic,Month-to-month,Monthly,Credit card,60.66,27,active,2024-05-25,
+CUST-001077,Basic,Month-to-month,Monthly,Credit card,84.92,24,cancelled,2024-08-23,2026-07-29
+CUST-001078,Basic,Month-to-month,Monthly,Bank transfer,77.4,0,cancelled,2026-09-06,2026-09-07
+CUST-001079,Standard,One year,Annual,Bank transfer,35.62,58,active,2021-10-21,
+CUST-001080,Basic,Month-to-month,Monthly,Mailed check,65.07,37,active,2023-07-30,
+CUST-001081,Basic,Month-to-month,Monthly,Credit card,56.95,23,cancelled,2024-09-24,2026-09-15
+CUST-001082,Pro,Two year,Annual,Mailed check,47.42,37,active,2023-07-26,
+CUST-001083,Pro,Two year,Annual,Credit card,92.93,0,active,2026-08-24,
+CUST-001084,Pro,Two year,Annual,Mailed check,50.97,31,active,2024-01-19,
+CUST-001085,Pro,Two year,Annual,Mailed check,74.01,37,active,2023-07-23,
+CUST-001086,Standard,One year,Annual,Mailed check,112.32,24,active,2024-09-04,
+CUST-001087,Standard,One year,Annual,Bank transfer,73.93,60,active,2021-08-31,
+CUST-001088,Standard,One year,Annual,Bank transfer,81.7,18,active,2025-02-27,
+CUST-001089,Basic,Month-to-month,Monthly,Credit card,27.32,10,cancelled,2025-10-22,2026-08-15
+CUST-001090,Basic,Month-to-month,Monthly,Electronic check,37.81,38,active,2023-07-07,
+CUST-001091,Basic,Month-to-month,Monthly,Electronic check,30.1,64,cancelled,2021-05-08,2026-08-15
+CUST-001092,Standard,One year,Annual,Credit card,96.48,27,active,2024-05-26,
+CUST-001093,Basic,Month-to-month,Monthly,Credit card,103.59,3,cancelled,2026-05-20,2026-08-03
+CUST-001094,Basic,Month-to-month,Monthly,Electronic check,38.65,70,active,2020-10-20,
+CUST-001095,Standard,One year,Annual,Credit card,41.93,32,active,2024-01-12,
+CUST-001096,Basic,Month-to-month,Monthly,Mailed check,52.32,12,cancelled,2025-08-20,2026-08-31
+CUST-001097,Basic,Month-to-month,Monthly,Credit card,79.11,44,active,2022-12-24,
+CUST-001098,Pro,Two year,Annual,Credit card,82.18,23,active,2024-10-12,
+CUST-001099,Pro,Two year,Annual,Bank transfer,88.68,68,active,2021-01-16,
+CUST-001100,Basic,Month-to-month,Monthly,Electronic check,110.52,21,cancelled,2024-12-10,2026-07-30
+CUST-001101,Basic,Month-to-month,Monthly,Credit card,49.5,40,active,2023-04-21,
+CUST-001102,Basic,Month-to-month,Monthly,Electronic check,85.88,39,active,2023-05-26,
+CUST-001103,Pro,Two year,Annual,Mailed check,75.97,17,active,2025-03-31,
+CUST-001104,Pro,Two year,Annual,Bank transfer,50.58,36,active,2023-08-30,
+CUST-001105,Basic,Month-to-month,Monthly,Electronic check,110.74,7,cancelled,2026-02-03,2026-08-22
+CUST-001106,Standard,One year,Annual,Mailed check,29.55,46,active,2022-10-20,
+CUST-001107,Basic,Month-to-month,Monthly,Credit card,91.2,55,cancelled,2022-02-11,2026-08-27
+CUST-001108,Basic,Month-to-month,Monthly,Electronic check,92.79,69,active,2020-12-07,
+CUST-001109,Pro,Two year,Annual,Mailed check,111.53,23,active,2024-10-10,
+CUST-001110,Basic,Month-to-month,Monthly,Electronic check,71.86,20,cancelled,2024-12-22,2026-08-22
+CUST-001111,Basic,Month-to-month,Monthly,Bank transfer,52.16,40,active,2023-05-02,
+CUST-001112,Basic,Month-to-month,Monthly,Electronic check,102.77,50,active,2022-06-27,
+CUST-001113,Standard,One year,Annual,Mailed check,97.08,72,active,2020-08-20,
+CUST-001114,Pro,Two year,Annual,Bank transfer,70.03,1,active,2026-08-12,
+CUST-001115,Pro,Two year,Annual,Electronic check,96.79,17,active,2025-03-20,
+CUST-001116,Basic,Month-to-month,Monthly,Electronic check,46.79,19,active,2025-02-12,
+CUST-001117,Basic,Month-to-month,Monthly,Credit card,78.95,18,active,2025-02-24,
+CUST-001118,Pro,Two year,Annual,Credit card,106.52,33,active,2023-11-26,
+CUST-001119,Basic,Month-to-month,Monthly,Electronic check,51.8,63,cancelled,2021-05-24,2026-07-22
+CUST-001120,Pro,Two year,Annual,Credit card,68.35,2,active,2026-07-14,
+CUST-001121,Standard,One year,Annual,Mailed check,115.1,59,active,2021-09-19,
+CUST-001122,Basic,Month-to-month,Monthly,Electronic check,99.82,45,cancelled,2022-11-24,2026-08-23
+CUST-001123,Pro,Two year,Annual,Credit card,108.7,44,active,2023-01-13,
+CUST-001124,Basic,Month-to-month,Monthly,Mailed check,58.52,49,cancelled,2022-08-01,2026-08-13
+CUST-001125,Basic,Month-to-month,Monthly,Mailed check,119.65,8,cancelled,2025-12-23,2026-07-25
+CUST-001126,Standard,One year,Annual,Electronic check,35.26,54,active,2022-03-04,
+CUST-001127,Basic,Month-to-month,Monthly,Credit card,71.88,18,cancelled,2025-03-07,2026-09-14
+CUST-001128,Standard,One year,Annual,Mailed check,67.93,37,active,2023-08-09,
+CUST-001129,Standard,One year,Annual,Bank transfer,99.84,49,active,2022-08-02,
+CUST-001130,Pro,Two year,Annual,Electronic check,110.86,44,active,2022-12-18,
+CUST-001131,Pro,Two year,Annual,Credit card,93.11,23,active,2024-09-28,
+CUST-001132,Basic,Month-to-month,Monthly,Credit card,82.68,28,active,2024-04-26,
+CUST-001133,Basic,Month-to-month,Monthly,Bank transfer,62.74,34,cancelled,2023-10-25,2026-08-15
+CUST-001134,Standard,One year,Annual,Mailed check,71.03,3,active,2026-05-25,
+CUST-001135,Pro,Two year,Annual,Bank transfer,70.93,53,active,2022-04-05,
+CUST-001136,Basic,Month-to-month,Monthly,Mailed check,22.04,7,active,2026-01-23,
+CUST-001137,Basic,Month-to-month,Monthly,Credit card,70.3,33,active,2023-12-08,
+CUST-001138,Basic,Month-to-month,Monthly,Bank transfer,105.6,47,cancelled,2022-09-30,2026-08-05
+CUST-001139,Basic,Month-to-month,Monthly,Electronic check,90.93,5,active,2026-04-08,
+CUST-001140,Standard,One year,Annual,Credit card,99.57,72,active,2020-08-19,
+CUST-001141,Basic,Month-to-month,Monthly,Electronic check,59.05,27,active,2024-05-27,
+CUST-001142,Standard,One year,Annual,Mailed check,72.9,1,active,2026-07-31,
+CUST-001143,Pro,Two year,Annual,Mailed check,23.35,48,active,2022-09-03,
+CUST-001144,Pro,Two year,Annual,Electronic check,58.3,40,active,2023-05-03,
+CUST-001145,Basic,Month-to-month,Monthly,Credit card,67.44,46,cancelled,2022-10-24,2026-07-24
+CUST-001146,Basic,Month-to-month,Monthly,Credit card,45.52,54,active,2022-03-10,
+CUST-001147,Standard,One year,Annual,Electronic check,23.12,34,active,2023-10-24,
+CUST-001148,Pro,Two year,Annual,Mailed check,89.04,60,active,2021-09-08,
+CUST-001149,Basic,Month-to-month,Monthly,Mailed check,63.51,27,active,2024-06-13,
+CUST-001150,Pro,Two year,Annual,Bank transfer,61.57,39,active,2023-05-26,
+CUST-001151,Basic,Month-to-month,Monthly,Bank transfer,45.0,11,active,2025-09-26,
+CUST-001152,Pro,Two year,Annual,Bank transfer,73.78,45,active,2022-12-07,
+CUST-001153,Basic,Month-to-month,Monthly,Electronic check,63.8,19,cancelled,2025-01-27,2026-09-12
+CUST-001154,Basic,Month-to-month,Monthly,Bank transfer,67.4,50,cancelled,2022-06-26,2026-08-04
+CUST-001155,Basic,Month-to-month,Monthly,Electronic check,78.09,58,active,2021-10-24,
+CUST-001156,Basic,Month-to-month,Monthly,Electronic check,20.63,62,active,2021-06-19,
+CUST-001157,Basic,Month-to-month,Monthly,Credit card,110.77,67,active,2021-01-21,
+CUST-001158,Basic,Month-to-month,Monthly,Electronic check,27.11,8,active,2026-01-03,
+CUST-001159,Basic,Month-to-month,Monthly,Electronic check,65.09,10,cancelled,2025-11-10,2026-07-30
+CUST-001160,Standard,One year,Annual,Mailed check,40.74,67,active,2021-02-13,
+CUST-001161,Basic,Month-to-month,Monthly,Bank transfer,72.38,27,cancelled,2024-05-31,2026-08-26
+CUST-001162,Standard,One year,Annual,Bank transfer,48.02,1,active,2026-07-29,
+CUST-001163,Pro,Two year,Annual,Electronic check,106.0,20,active,2024-12-27,
+CUST-001164,Basic,Month-to-month,Monthly,Credit card,59.64,61,active,2021-08-17,
+CUST-001165,Basic,Month-to-month,Monthly,Mailed check,83.88,25,active,2024-07-26,
+CUST-001166,Pro,Two year,Annual,Bank transfer,44.89,5,active,2026-03-25,
+CUST-001167,Pro,Two year,Annual,Electronic check,21.94,52,active,2022-04-27,
+CUST-001168,Basic,Month-to-month,Monthly,Credit card,60.42,14,cancelled,2025-07-02,2026-08-02
+CUST-001169,Pro,Two year,Annual,Mailed check,73.65,25,active,2024-08-16,
+CUST-001170,Basic,Month-to-month,Monthly,Credit card,65.95,0,cancelled,2026-09-02,2026-08-17
+CUST-001171,Basic,Month-to-month,Monthly,Mailed check,116.2,43,cancelled,2023-01-28,2026-08-08
+CUST-001172,Standard,One year,Annual,Bank transfer,90.68,32,active,2023-12-30,
+CUST-001173,Basic,Month-to-month,Monthly,Bank transfer,119.57,63,active,2021-05-31,
+CUST-001174,Standard,One year,Annual,Electronic check,49.51,24,active,2024-09-01,
+CUST-001175,Basic,Month-to-month,Monthly,Electronic check,98.91,14,cancelled,2025-07-01,2026-08-23
+CUST-001176,Standard,One year,Annual,Mailed check,75.56,12,active,2025-09-07,
+CUST-001177,Basic,Month-to-month,Monthly,Electronic check,81.18,14,cancelled,2025-06-29,2026-09-05
+CUST-001178,Basic,Month-to-month,Monthly,Bank transfer,118.59,32,cancelled,2024-01-08,2026-07-29
+CUST-001179,Basic,Month-to-month,Monthly,Electronic check,85.4,6,active,2026-03-04,
+CUST-001180,Basic,Month-to-month,Monthly,Bank transfer,109.88,29,cancelled,2024-04-05,2026-09-03
+CUST-001181,Standard,One year,Annual,Electronic check,92.58,62,active,2021-06-26,
+CUST-001182,Basic,Month-to-month,Monthly,Electronic check,32.74,56,active,2021-12-21,
+CUST-001183,Basic,Month-to-month,Monthly,Mailed check,89.94,46,active,2022-10-29,
+CUST-001184,Basic,Month-to-month,Monthly,Bank transfer,68.43,65,active,2021-04-13,
+CUST-001185,Basic,Month-to-month,Monthly,Mailed check,111.88,56,cancelled,2021-12-27,2026-09-04
+CUST-001186,Pro,Two year,Annual,Mailed check,100.68,47,active,2022-10-08,
+CUST-001187,Basic,Month-to-month,Monthly,Mailed check,30.41,63,active,2021-06-16,
+CUST-001188,Pro,Two year,Annual,Mailed check,33.39,9,active,2025-12-12,
+CUST-001189,Basic,Month-to-month,Monthly,Mailed check,26.96,59,active,2021-09-18,
+CUST-001190,Standard,One year,Annual,Credit card,69.32,21,active,2024-12-04,
+CUST-001191,Basic,Month-to-month,Monthly,Bank transfer,28.08,53,active,2022-04-11,
+CUST-001192,Basic,Month-to-month,Monthly,Mailed check,92.37,66,active,2021-03-13,
+CUST-001193,Pro,Two year,Annual,Bank transfer,75.24,36,active,2023-08-29,
+CUST-001194,Pro,Two year,Annual,Bank transfer,103.59,6,active,2026-02-24,
+CUST-001195,Pro,Two year,Annual,Credit card,47.98,27,active,2024-06-07,
+CUST-001196,Basic,Month-to-month,Monthly,Bank transfer,71.91,29,cancelled,2024-04-14,2026-07-25
+CUST-001197,Basic,Month-to-month,Monthly,Electronic check,31.75,68,active,2021-01-06,
+CUST-001198,Standard,One year,Annual,Bank transfer,108.46,68,active,2020-12-28,
+CUST-001199,Basic,Month-to-month,Monthly,Credit card,37.5,41,active,2023-04-14,
+CUST-001200,Standard,One year,Annual,Electronic check,30.24,69,active,2020-12-08,
+CUST-001201,Standard,One year,Annual,Electronic check,40.51,31,active,2024-02-16,
+CUST-001202,Standard,One year,Annual,Bank transfer,100.62,30,active,2024-03-03,
+CUST-001203,Pro,Two year,Annual,Credit card,30.58,61,active,2021-08-12,
+CUST-001204,Standard,One year,Annual,Mailed check,81.44,48,active,2022-09-11,
+CUST-001205,Basic,Month-to-month,Monthly,Bank transfer,94.62,38,active,2023-07-15,
+CUST-001206,Basic,Month-to-month,Monthly,Bank transfer,95.11,33,active,2023-11-26,
+CUST-001207,Standard,One year,Annual,Bank transfer,39.01,51,active,2022-06-03,
+CUST-001208,Basic,Month-to-month,Monthly,Electronic check,26.16,55,active,2022-01-18,
+CUST-001209,Basic,Month-to-month,Monthly,Mailed check,64.88,35,cancelled,2023-10-06,2026-07-22
+CUST-001210,Basic,Month-to-month,Monthly,Credit card,40.25,2,cancelled,2026-07-12,2026-08-11
+CUST-001211,Standard,One year,Annual,Credit card,89.93,7,active,2026-02-09,
+CUST-001212,Pro,Two year,Annual,Credit card,55.67,10,active,2025-10-19,
+CUST-001213,Standard,One year,Annual,Electronic check,64.94,33,active,2023-11-30,
+CUST-001214,Basic,Month-to-month,Monthly,Mailed check,31.35,44,active,2023-01-07,
+CUST-001215,Basic,Month-to-month,Monthly,Electronic check,76.76,58,active,2021-10-28,
+CUST-001216,Basic,Month-to-month,Monthly,Mailed check,38.55,16,cancelled,2025-05-01,2026-08-12
+CUST-001217,Basic,Month-to-month,Monthly,Credit card,87.9,57,cancelled,2021-12-13,2026-08-25
+CUST-001218,Standard,One year,Annual,Mailed check,27.12,48,active,2022-08-26,
+CUST-001219,Standard,One year,Annual,Electronic check,117.59,3,active,2026-06-14,
+CUST-001220,Basic,Month-to-month,Monthly,Bank transfer,88.45,25,cancelled,2024-08-11,2026-08-10
+CUST-001221,Basic,Month-to-month,Monthly,Credit card,38.17,22,active,2024-10-26,
+CUST-001222,Basic,Month-to-month,Monthly,Bank transfer,21.41,64,active,2021-05-04,
+CUST-001223,Pro,Two year,Annual,Credit card,53.45,67,active,2021-02-09,
+CUST-001224,Standard,One year,Annual,Bank transfer,35.28,59,active,2021-10-15,
+CUST-001225,Basic,Month-to-month,Monthly,Bank transfer,41.84,38,cancelled,2023-07-01,2026-08-11
+CUST-001226,Pro,Two year,Annual,Credit card,107.28,35,active,2023-09-27,
+CUST-001227,Basic,Month-to-month,Monthly,Mailed check,80.32,22,cancelled,2024-11-10,2026-08-16
+CUST-001228,Basic,Month-to-month,Monthly,Mailed check,37.65,56,active,2022-01-04,
+CUST-001229,Pro,Two year,Annual,Bank transfer,75.67,6,cancelled,2026-03-08,2026-08-08
+CUST-001230,Basic,Month-to-month,Monthly,Bank transfer,45.58,19,cancelled,2025-01-20,2026-08-14
+CUST-001231,Basic,Month-to-month,Monthly,Mailed check,117.62,9,cancelled,2025-11-24,2026-07-26
+CUST-001232,Standard,One year,Annual,Mailed check,23.28,36,active,2023-09-09,
+CUST-001233,Basic,Month-to-month,Monthly,Electronic check,93.23,21,cancelled,2024-12-01,2026-08-07
+CUST-001234,Standard,One year,Annual,Bank transfer,97.3,14,active,2025-06-20,
+CUST-001235,Basic,Month-to-month,Monthly,Electronic check,26.72,27,active,2024-06-07,
+CUST-001236,Basic,Month-to-month,Monthly,Mailed check,37.19,62,active,2021-07-13,
+CUST-001237,Basic,Month-to-month,Monthly,Mailed check,58.43,40,cancelled,2023-05-10,2026-08-24
+CUST-001238,Basic,Month-to-month,Monthly,Credit card,106.82,60,active,2021-08-29,
+CUST-001239,Basic,Month-to-month,Monthly,Mailed check,73.7,66,active,2021-02-16,
+CUST-001240,Basic,Month-to-month,Monthly,Electronic check,85.53,65,active,2021-04-08,
+CUST-001241,Pro,Two year,Annual,Bank transfer,98.3,25,active,2024-08-15,
+CUST-001242,Basic,Month-to-month,Monthly,Electronic check,102.81,64,cancelled,2021-05-12,2026-08-08
+CUST-001243,Basic,Month-to-month,Monthly,Mailed check,67.63,66,active,2021-03-05,
+CUST-001244,Basic,Month-to-month,Monthly,Mailed check,70.88,70,active,2020-11-14,
+CUST-001245,Basic,Month-to-month,Monthly,Electronic check,91.8,25,cancelled,2024-08-15,2026-09-02
+CUST-001246,Basic,Month-to-month,Monthly,Credit card,46.33,16,active,2025-04-28,
+CUST-001247,Standard,One year,Annual,Mailed check,105.45,42,active,2023-02-22,
+CUST-001248,Basic,Month-to-month,Monthly,Bank transfer,22.08,68,active,2021-01-10,
+CUST-001249,Pro,Two year,Annual,Credit card,39.58,65,active,2021-04-02,
+CUST-001250,Pro,Two year,Annual,Mailed check,100.02,41,active,2023-03-31,
+CUST-001251,Basic,Month-to-month,Monthly,Credit card,54.03,10,cancelled,2025-10-27,2026-09-03
+CUST-001252,Basic,Month-to-month,Monthly,Mailed check,34.98,30,active,2024-02-17,
+CUST-001253,Basic,Month-to-month,Monthly,Credit card,38.68,52,active,2022-04-22,
+CUST-001254,Standard,One year,Annual,Mailed check,73.08,40,active,2023-05-09,
+CUST-001255,Basic,Month-to-month,Monthly,Electronic check,104.62,25,active,2024-07-18,
+CUST-001256,Pro,Two year,Annual,Credit card,27.07,25,active,2024-08-15,
+CUST-001257,Standard,One year,Annual,Credit card,23.05,4,active,2026-04-20,
+CUST-001258,Pro,Two year,Annual,Credit card,66.52,21,active,2024-12-12,
+CUST-001259,Basic,Month-to-month,Monthly,Electronic check,115.62,48,active,2022-09-13,
+CUST-001260,Pro,Two year,Annual,Credit card,47.9,17,active,2025-04-14,
+CUST-001261,Basic,Month-to-month,Monthly,Mailed check,115.92,72,cancelled,2020-09-13,2026-07-29
+CUST-001262,Basic,Month-to-month,Monthly,Credit card,108.77,6,cancelled,2026-03-05,2026-08-12
+CUST-001263,Basic,Month-to-month,Monthly,Credit card,48.31,42,active,2023-02-27,
+CUST-001264,Pro,Two year,Annual,Electronic check,101.69,36,active,2023-08-26,
+CUST-001265,Standard,One year,Annual,Mailed check,88.59,60,active,2021-09-16,
+CUST-001266,Pro,Two year,Annual,Mailed check,71.18,64,active,2021-05-09,
+CUST-001267,Basic,Month-to-month,Monthly,Mailed check,62.29,39,active,2023-06-14,
+CUST-001268,Pro,Two year,Annual,Bank transfer,101.55,46,active,2022-11-12,
+CUST-001269,Basic,Month-to-month,Monthly,Mailed check,99.31,51,active,2022-05-26,
+CUST-001270,Basic,Month-to-month,Monthly,Bank transfer,95.69,38,active,2023-06-29,
+CUST-001271,Pro,Two year,Annual,Bank transfer,119.83,13,active,2025-08-11,
+CUST-001272,Basic,Month-to-month,Monthly,Electronic check,67.85,31,active,2024-02-07,
+CUST-001273,Basic,Month-to-month,Monthly,Electronic check,100.69,17,cancelled,2025-03-21,2026-09-12
+CUST-001274,Standard,One year,Annual,Bank transfer,106.25,33,active,2023-11-30,
+CUST-001275,Basic,Month-to-month,Monthly,Electronic check,41.16,44,active,2023-01-09,
+CUST-001276,Basic,Month-to-month,Monthly,Electronic check,24.21,15,cancelled,2025-05-20,2026-08-26
+CUST-001277,Basic,Month-to-month,Monthly,Bank transfer,60.47,18,cancelled,2025-03-13,2026-07-19
+CUST-001278,Basic,Month-to-month,Monthly,Mailed check,105.67,60,active,2021-09-08,
+CUST-001279,Pro,Two year,Annual,Electronic check,48.91,27,active,2024-05-28,
+CUST-001280,Standard,One year,Annual,Mailed check,90.0,14,active,2025-07-02,
+CUST-001281,Basic,Month-to-month,Monthly,Bank transfer,20.73,52,active,2022-05-16,
+CUST-001282,Basic,Month-to-month,Monthly,Credit card,55.54,52,active,2022-04-24,
+CUST-001283,Basic,Month-to-month,Monthly,Credit card,81.55,60,active,2021-09-10,
+CUST-001284,Standard,One year,Annual,Bank transfer,32.98,55,active,2022-01-26,
+CUST-001285,Pro,Two year,Annual,Credit card,109.66,72,active,2020-09-06,
+CUST-001286,Pro,Two year,Annual,Bank transfer,35.63,41,active,2023-03-26,
+CUST-001287,Basic,Month-to-month,Monthly,Mailed check,110.98,20,cancelled,2024-12-21,2026-08-09
+CUST-001288,Basic,Month-to-month,Monthly,Credit card,41.64,62,active,2021-06-24,
+CUST-001289,Basic,Month-to-month,Monthly,Mailed check,119.43,19,active,2025-01-19,
+CUST-001290,Standard,One year,Annual,Credit card,80.47,21,active,2024-11-30,
+CUST-001291,Basic,Month-to-month,Monthly,Credit card,28.43,60,cancelled,2021-09-15,2026-07-26
+CUST-001292,Standard,One year,Annual,Mailed check,26.53,64,active,2021-05-01,
+CUST-001293,Standard,One year,Annual,Bank transfer,27.49,24,active,2024-09-03,
+CUST-001294,Basic,Month-to-month,Monthly,Credit card,78.99,53,active,2022-03-27,
+CUST-001295,Basic,Month-to-month,Monthly,Credit card,100.96,67,active,2021-02-08,
+CUST-001296,Basic,Month-to-month,Monthly,Electronic check,60.3,58,cancelled,2021-10-27,2026-08-14
+CUST-001297,Basic,Month-to-month,Monthly,Credit card,64.48,0,cancelled,2026-09-03,2026-09-13
+CUST-001298,Basic,Month-to-month,Monthly,Bank transfer,78.93,48,active,2022-08-27,
+CUST-001299,Standard,One year,Annual,Electronic check,73.3,12,active,2025-09-04,
+CUST-001300,Basic,Month-to-month,Monthly,Electronic check,88.81,61,active,2021-08-06,
+CUST-001301,Basic,Month-to-month,Monthly,Bank transfer,67.18,4,active,2026-05-12,
+CUST-001302,Standard,One year,Annual,Mailed check,91.39,72,active,2020-08-23,
+CUST-001303,Standard,One year,Annual,Electronic check,119.73,12,active,2025-09-14,
+CUST-001304,Basic,Month-to-month,Monthly,Bank transfer,55.03,30,active,2024-03-10,
+CUST-001305,Pro,Two year,Annual,Bank transfer,21.22,17,active,2025-04-05,
+CUST-001306,Pro,Two year,Annual,Electronic check,32.56,59,active,2021-10-13,
+CUST-001307,Standard,One year,Annual,Mailed check,75.35,28,active,2024-04-20,
+CUST-001308,Standard,One year,Annual,Mailed check,54.43,54,active,2022-03-08,
+CUST-001309,Basic,Month-to-month,Monthly,Credit card,114.0,4,cancelled,2026-05-11,2026-09-05
+CUST-001310,Pro,Two year,Annual,Bank transfer,82.74,33,active,2023-12-10,
+CUST-001311,Basic,Month-to-month,Monthly,Electronic check,72.04,66,active,2021-03-12,
+CUST-001312,Pro,Two year,Annual,Bank transfer,99.8,67,active,2021-01-27,
+CUST-001313,Standard,One year,Annual,Credit card,45.86,15,active,2025-06-03,
+CUST-001314,Basic,Month-to-month,Monthly,Electronic check,101.97,28,active,2024-05-11,
+CUST-001315,Basic,Month-to-month,Monthly,Credit card,20.31,29,active,2024-03-22,
+CUST-001316,Standard,One year,Annual,Electronic check,81.97,41,active,2023-03-29,
+CUST-001317,Standard,One year,Annual,Bank transfer,113.48,39,active,2023-06-05,
+CUST-001318,Basic,Month-to-month,Monthly,Mailed check,98.79,7,cancelled,2026-01-31,2026-09-10
+CUST-001319,Standard,One year,Annual,Bank transfer,105.36,55,active,2022-01-27,
+CUST-001320,Pro,Two year,Annual,Credit card,59.7,16,active,2025-05-13,
+CUST-001321,Basic,Month-to-month,Monthly,Credit card,102.42,22,cancelled,2024-10-23,2026-08-03
+CUST-001322,Basic,Month-to-month,Monthly,Credit card,75.08,61,cancelled,2021-08-10,2026-08-02
+CUST-001323,Basic,Month-to-month,Monthly,Credit card,81.85,50,active,2022-07-17,
+CUST-001324,Standard,One year,Annual,Mailed check,25.89,28,active,2024-05-02,
+CUST-001325,Basic,Month-to-month,Monthly,Mailed check,40.16,66,active,2021-02-19,
+CUST-001326,Pro,Two year,Annual,Bank transfer,75.1,28,active,2024-04-26,
+CUST-001327,Basic,Month-to-month,Monthly,Electronic check,25.88,41,active,2023-04-08,
+CUST-001328,Standard,One year,Annual,Bank transfer,94.14,17,active,2025-04-06,
+CUST-001329,Basic,Month-to-month,Monthly,Bank transfer,104.01,13,cancelled,2025-07-31,2026-08-20
+CUST-001330,Basic,Month-to-month,Monthly,Credit card,112.04,35,cancelled,2023-10-11,2026-08-04
+CUST-001331,Standard,One year,Annual,Electronic check,30.18,41,active,2023-03-24,
+CUST-001332,Basic,Month-to-month,Monthly,Electronic check,113.97,58,active,2021-11-08,
+CUST-001333,Basic,Month-to-month,Monthly,Electronic check,26.76,28,cancelled,2024-05-11,2026-08-14
+CUST-001334,Pro,Two year,Annual,Bank transfer,67.41,65,active,2021-04-15,
+CUST-001335,Pro,Two year,Annual,Bank transfer,104.03,44,active,2022-12-27,
+CUST-001336,Pro,Two year,Annual,Bank transfer,27.03,5,active,2026-04-17,
+CUST-001337,Basic,Month-to-month,Monthly,Electronic check,21.82,53,active,2022-03-24,
+CUST-001338,Standard,One year,Annual,Mailed check,22.49,41,active,2023-03-19,
+CUST-001339,Pro,Two year,Annual,Mailed check,71.13,28,active,2024-05-14,
+CUST-001340,Basic,Month-to-month,Monthly,Electronic check,101.16,34,cancelled,2023-11-15,2026-08-03
+CUST-001341,Basic,Month-to-month,Monthly,Credit card,32.74,22,active,2024-10-19,
+CUST-001342,Pro,Two year,Annual,Electronic check,32.46,44,active,2023-01-13,
+CUST-001343,Basic,Month-to-month,Monthly,Bank transfer,76.85,41,active,2023-04-05,
+CUST-001344,Standard,One year,Annual,Mailed check,43.43,32,active,2023-12-21,
+CUST-001345,Pro,Two year,Annual,Credit card,93.02,20,active,2025-01-12,
+CUST-001346,Standard,One year,Annual,Bank transfer,114.96,29,active,2024-03-29,
+CUST-001347,Basic,Month-to-month,Monthly,Mailed check,96.6,36,active,2023-09-06,
+CUST-001348,Basic,Month-to-month,Monthly,Bank transfer,107.72,34,cancelled,2023-11-04,2026-08-07
+CUST-001349,Basic,Month-to-month,Monthly,Electronic check,71.96,22,cancelled,2024-10-20,2026-08-20
+CUST-001350,Basic,Month-to-month,Monthly,Electronic check,103.23,42,active,2023-02-27,
+CUST-001351,Pro,Two year,Annual,Mailed check,38.29,16,active,2025-05-08,
+CUST-001352,Pro,Two year,Annual,Credit card,26.83,36,active,2023-08-20,
+CUST-001353,Basic,Month-to-month,Monthly,Credit card,85.6,8,cancelled,2025-12-30,2026-08-08
+CUST-001354,Basic,Month-to-month,Monthly,Mailed check,25.2,34,active,2023-11-15,
+CUST-001355,Pro,Two year,Annual,Mailed check,109.25,57,active,2021-12-05,
+CUST-001356,Basic,Month-to-month,Monthly,Credit card,89.16,59,active,2021-10-10,
+CUST-001357,Basic,Month-to-month,Monthly,Bank transfer,115.22,50,active,2022-06-28,
+CUST-001358,Basic,Month-to-month,Monthly,Electronic check,51.39,54,active,2022-02-21,
+CUST-001359,Standard,One year,Annual,Electronic check,68.62,4,active,2026-05-17,
+CUST-001360,Basic,Month-to-month,Monthly,Credit card,94.17,24,active,2024-08-24,
+CUST-001361,Standard,One year,Annual,Credit card,44.28,47,active,2022-09-20,
+CUST-001362,Basic,Month-to-month,Monthly,Credit card,74.18,58,cancelled,2021-10-18,2026-08-28
+CUST-001363,Standard,One year,Annual,Electronic check,85.95,42,active,2023-02-27,
+CUST-001364,Basic,Month-to-month,Monthly,Credit card,117.88,62,active,2021-07-08,
+CUST-001365,Basic,Month-to-month,Monthly,Electronic check,94.47,19,cancelled,2025-02-11,2026-08-02
+CUST-001366,Basic,Month-to-month,Monthly,Credit card,31.81,11,cancelled,2025-09-19,2026-07-24
+CUST-001367,Basic,Month-to-month,Monthly,Credit card,67.53,6,cancelled,2026-03-06,2026-09-03
+CUST-001368,Basic,Month-to-month,Monthly,Mailed check,78.88,42,active,2023-03-08,
+CUST-001369,Basic,Month-to-month,Monthly,Electronic check,34.66,48,active,2022-08-25,
+CUST-001370,Basic,Month-to-month,Monthly,Bank transfer,63.2,20,cancelled,2024-12-26,2026-08-07
+CUST-001371,Basic,Month-to-month,Monthly,Electronic check,48.4,57,active,2021-11-22,
+CUST-001372,Pro,Two year,Annual,Bank transfer,31.88,53,active,2022-03-22,
+CUST-001373,Basic,Month-to-month,Monthly,Mailed check,71.2,26,cancelled,2024-06-21,2026-09-09
+CUST-001374,Pro,Two year,Annual,Mailed check,36.56,17,active,2025-04-12,
+CUST-001375,Pro,Two year,Annual,Credit card,79.05,54,active,2022-03-13,
+CUST-001376,Basic,Month-to-month,Monthly,Credit card,36.97,49,active,2022-08-11,
+CUST-001377,Standard,One year,Annual,Mailed check,92.36,12,active,2025-08-29,
+CUST-001378,Pro,Two year,Annual,Mailed check,39.52,18,active,2025-03-01,
+CUST-001379,Standard,One year,Annual,Credit card,109.63,35,active,2023-09-22,
+CUST-001380,Basic,Month-to-month,Monthly,Mailed check,22.62,37,active,2023-07-23,
+CUST-001381,Basic,Month-to-month,Monthly,Electronic check,72.2,12,active,2025-08-23,
+CUST-001382,Basic,Month-to-month,Monthly,Credit card,52.01,69,active,2020-12-14,
+CUST-001383,Basic,Month-to-month,Monthly,Credit card,42.51,28,cancelled,2024-04-27,2026-08-24
+CUST-001384,Pro,Two year,Annual,Mailed check,67.16,27,active,2024-05-23,
+CUST-001385,Pro,Two year,Annual,Electronic check,104.2,4,active,2026-04-19,
+CUST-001386,Basic,Month-to-month,Monthly,Electronic check,111.53,63,active,2021-06-07,
+CUST-001387,Standard,One year,Annual,Bank transfer,50.32,17,active,2025-03-25,
+CUST-001388,Basic,Month-to-month,Monthly,Mailed check,35.42,72,active,2020-09-04,
+CUST-001389,Pro,Two year,Annual,Bank transfer,92.01,36,active,2023-09-13,
+CUST-001390,Basic,Month-to-month,Monthly,Credit card,78.2,63,active,2021-06-07,
+CUST-001391,Pro,Two year,Annual,Electronic check,40.1,13,active,2025-08-10,
+CUST-001392,Pro,Two year,Annual,Credit card,96.03,12,active,2025-08-20,
+CUST-001393,Basic,Month-to-month,Monthly,Electronic check,71.89,58,active,2021-11-11,
+CUST-001394,Basic,Month-to-month,Monthly,Electronic check,85.34,59,active,2021-10-14,
+CUST-001395,Pro,Two year,Annual,Bank transfer,55.93,39,active,2023-05-31,
+CUST-001396,Basic,Month-to-month,Monthly,Bank transfer,63.91,2,cancelled,2026-07-01,2026-08-07
+CUST-001397,Basic,Month-to-month,Monthly,Credit card,38.03,68,active,2020-12-31,
+CUST-001398,Pro,Two year,Annual,Bank transfer,95.65,28,active,2024-05-13,
+CUST-001399,Standard,One year,Annual,Mailed check,35.7,68,active,2021-01-02,
+CUST-001400,Basic,Month-to-month,Monthly,Bank transfer,97.83,63,cancelled,2021-05-21,2026-08-30
+CUST-001401,Basic,Month-to-month,Monthly,Credit card,99.8,62,active,2021-07-15,
+CUST-001402,Basic,Month-to-month,Monthly,Bank transfer,94.66,50,cancelled,2022-06-24,2026-09-02
+CUST-001403,Pro,Two year,Annual,Mailed check,21.94,49,active,2022-08-14,
+CUST-001404,Basic,Month-to-month,Monthly,Credit card,47.31,38,cancelled,2023-07-11,2026-08-24
+CUST-001405,Basic,Month-to-month,Monthly,Mailed check,66.83,1,active,2026-07-22,
+CUST-001406,Basic,Month-to-month,Monthly,Mailed check,79.55,28,cancelled,2024-05-09,2026-09-09
+CUST-001407,Pro,Two year,Annual,Mailed check,111.92,53,active,2022-04-02,
+CUST-001408,Basic,Month-to-month,Monthly,Mailed check,57.56,59,cancelled,2021-10-06,2026-08-10
+CUST-001409,Pro,Two year,Annual,Electronic check,107.5,40,active,2023-04-30,
+CUST-001410,Standard,One year,Annual,Bank transfer,36.34,51,active,2022-06-05,
+CUST-001411,Pro,Two year,Annual,Bank transfer,57.13,1,active,2026-08-04,
+CUST-001412,Pro,Two year,Annual,Mailed check,25.23,34,active,2023-10-24,
+CUST-001413,Pro,Two year,Annual,Credit card,94.25,37,active,2023-08-01,
+CUST-001414,Pro,Two year,Annual,Mailed check,35.07,65,active,2021-04-01,
+CUST-001415,Basic,Month-to-month,Monthly,Mailed check,45.7,22,active,2024-10-23,
+CUST-001416,Pro,Two year,Annual,Electronic check,97.52,16,active,2025-05-05,
+CUST-001417,Basic,Month-to-month,Monthly,Credit card,73.47,25,active,2024-07-23,
+CUST-001418,Basic,Month-to-month,Monthly,Electronic check,21.4,12,active,2025-08-26,
+CUST-001419,Pro,Two year,Annual,Electronic check,20.22,40,active,2023-04-22,
+CUST-001420,Pro,Two year,Annual,Credit card,71.07,46,active,2022-11-03,
+CUST-001421,Standard,One year,Annual,Bank transfer,50.5,58,active,2021-10-31,
+CUST-001422,Basic,Month-to-month,Monthly,Electronic check,38.03,70,cancelled,2020-11-13,2026-09-08
+CUST-001423,Basic,Month-to-month,Monthly,Mailed check,81.36,5,cancelled,2026-04-14,2026-08-27
+CUST-001424,Basic,Month-to-month,Monthly,Bank transfer,42.84,18,active,2025-03-15,
+CUST-001425,Basic,Month-to-month,Monthly,Electronic check,79.22,21,active,2024-11-28,
+CUST-001426,Basic,Month-to-month,Monthly,Credit card,57.93,18,cancelled,2025-03-09,2026-08-28
+CUST-001427,Basic,Month-to-month,Monthly,Bank transfer,38.67,60,cancelled,2021-09-08,2026-07-20
+CUST-001428,Basic,Month-to-month,Monthly,Electronic check,33.81,10,active,2025-10-29,
+CUST-001429,Standard,One year,Annual,Bank transfer,43.69,2,active,2026-07-07,
+CUST-001430,Basic,Month-to-month,Monthly,Electronic check,22.98,62,active,2021-07-13,
+CUST-001431,Pro,Two year,Annual,Bank transfer,50.81,70,active,2020-10-31,
+CUST-001432,Standard,One year,Annual,Mailed check,110.2,16,active,2025-05-01,
+CUST-001433,Basic,Month-to-month,Monthly,Electronic check,103.14,24,cancelled,2024-09-12,2026-07-19
+CUST-001434,Basic,Month-to-month,Monthly,Bank transfer,57.2,36,active,2023-09-09,
+CUST-001435,Basic,Month-to-month,Monthly,Mailed check,77.58,38,cancelled,2023-07-11,2026-09-11
+CUST-001436,Pro,Two year,Annual,Mailed check,76.74,72,active,2020-08-27,
+CUST-001437,Basic,Month-to-month,Monthly,Credit card,102.87,29,cancelled,2024-04-10,2026-09-06
+CUST-001438,Basic,Month-to-month,Monthly,Bank transfer,43.63,0,cancelled,2026-09-16,2026-08-03
+CUST-001439,Pro,Two year,Annual,Mailed check,49.64,30,active,2024-03-09,
+CUST-001440,Pro,Two year,Annual,Electronic check,50.18,40,active,2023-05-04,
+CUST-001441,Basic,Month-to-month,Monthly,Bank transfer,24.09,37,cancelled,2023-07-25,2026-08-29
+CUST-001442,Basic,Month-to-month,Monthly,Electronic check,51.47,37,active,2023-08-16,
+CUST-001443,Basic,Month-to-month,Monthly,Credit card,107.79,67,active,2021-01-20,
+CUST-001444,Basic,Month-to-month,Monthly,Electronic check,111.2,58,active,2021-11-07,
+CUST-001445,Basic,Month-to-month,Monthly,Bank transfer,30.96,18,active,2025-03-08,
+CUST-001446,Standard,One year,Annual,Mailed check,65.81,25,active,2024-08-16,
+CUST-001447,Pro,Two year,Annual,Bank transfer,58.13,48,active,2022-09-08,
+CUST-001448,Basic,Month-to-month,Monthly,Mailed check,68.94,29,active,2024-04-03,
+CUST-001449,Standard,One year,Annual,Electronic check,75.47,31,active,2024-01-29,
+CUST-001450,Basic,Month-to-month,Monthly,Credit card,22.03,12,cancelled,2025-08-24,2026-08-08
+CUST-001451,Pro,Two year,Annual,Credit card,104.22,18,active,2025-03-03,
+CUST-001452,Standard,One year,Annual,Electronic check,117.37,54,active,2022-03-15,
+CUST-001453,Pro,Two year,Annual,Electronic check,85.34,61,active,2021-08-06,
+CUST-001454,Pro,Two year,Annual,Bank transfer,86.05,57,active,2021-11-24,
+CUST-001455,Basic,Month-to-month,Monthly,Credit card,72.8,22,active,2024-10-28,
+CUST-001456,Basic,Month-to-month,Monthly,Bank transfer,53.43,9,active,2025-11-30,
+CUST-001457,Basic,Month-to-month,Monthly,Electronic check,34.9,11,active,2025-10-02,
+CUST-001458,Basic,Month-to-month,Monthly,Bank transfer,78.41,28,cancelled,2024-05-02,2026-07-23
+CUST-001459,Pro,Two year,Annual,Mailed check,24.49,37,active,2023-07-19,
+CUST-001460,Basic,Month-to-month,Monthly,Bank transfer,102.45,65,cancelled,2021-03-31,2026-09-06
+CUST-001461,Standard,One year,Annual,Mailed check,62.09,65,active,2021-03-31,
+CUST-001462,Basic,Month-to-month,Monthly,Electronic check,61.48,0,cancelled,2026-09-06,2026-07-21
+CUST-001463,Basic,Month-to-month,Monthly,Electronic check,52.72,51,active,2022-06-03,
+CUST-001464,Basic,Month-to-month,Monthly,Bank transfer,116.94,21,cancelled,2024-11-25,2026-09-12
+CUST-001465,Standard,One year,Annual,Bank transfer,37.49,14,active,2025-06-22,
+CUST-001466,Standard,One year,Annual,Mailed check,35.13,40,active,2023-04-25,
+CUST-001467,Basic,Month-to-month,Monthly,Electronic check,36.55,2,cancelled,2026-06-29,2026-09-02
+CUST-001468,Basic,Month-to-month,Monthly,Credit card,85.85,24,cancelled,2024-08-24,2026-08-17
+CUST-001469,Standard,One year,Annual,Electronic check,119.19,40,active,2023-05-18,
+CUST-001470,Basic,Month-to-month,Monthly,Electronic check,43.55,19,cancelled,2025-02-07,2026-07-26
+CUST-001471,Pro,Two year,Annual,Mailed check,110.56,43,active,2023-02-09,
+CUST-001472,Basic,Month-to-month,Monthly,Bank transfer,47.86,33,cancelled,2023-11-28,2026-08-14
+CUST-001473,Basic,Month-to-month,Monthly,Credit card,84.79,58,active,2021-10-25,
+CUST-001474,Basic,Month-to-month,Monthly,Bank transfer,24.05,13,cancelled,2025-08-13,2026-09-07
+CUST-001475,Basic,Month-to-month,Monthly,Credit card,69.57,4,cancelled,2026-05-13,2026-09-01
+CUST-001476,Basic,Month-to-month,Monthly,Bank transfer,85.46,38,cancelled,2023-07-04,2026-08-02
+CUST-001477,Basic,Month-to-month,Monthly,Credit card,73.63,18,cancelled,2025-02-17,2026-08-13
+CUST-001478,Pro,Two year,Annual,Electronic check,43.78,51,active,2022-06-17,
+CUST-001479,Basic,Month-to-month,Monthly,Electronic check,102.85,6,cancelled,2026-02-20,2026-09-15
+CUST-001480,Basic,Month-to-month,Monthly,Bank transfer,117.01,41,cancelled,2023-04-12,2026-08-17
+CUST-001481,Basic,Month-to-month,Monthly,Credit card,65.92,72,active,2020-09-08,
+CUST-001482,Basic,Month-to-month,Monthly,Bank transfer,83.59,6,cancelled,2026-02-28,2026-08-23
+CUST-001483,Standard,One year,Annual,Mailed check,99.04,22,active,2024-10-26,
+CUST-001484,Basic,Month-to-month,Monthly,Mailed check,44.15,61,active,2021-07-22,
+CUST-001485,Standard,One year,Annual,Electronic check,106.45,38,active,2023-07-18,
+CUST-001486,Basic,Month-to-month,Monthly,Mailed check,48.02,12,active,2025-09-15,
+CUST-001487,Pro,Two year,Annual,Bank transfer,97.58,15,active,2025-06-03,
+CUST-001488,Basic,Month-to-month,Monthly,Electronic check,31.21,55,cancelled,2022-01-30,2026-09-15
+CUST-001489,Pro,Two year,Annual,Mailed check,48.84,62,active,2021-07-10,
+CUST-001490,Basic,Month-to-month,Monthly,Mailed check,73.36,26,active,2024-06-28,
+CUST-001491,Basic,Month-to-month,Monthly,Mailed check,72.49,34,cancelled,2023-11-10,2026-09-01
+CUST-001492,Pro,Two year,Annual,Credit card,105.04,57,active,2021-11-19,
+CUST-001493,Standard,One year,Annual,Credit card,119.61,12,cancelled,2025-09-11,2026-07-22
+CUST-001494,Standard,One year,Annual,Mailed check,30.72,15,active,2025-05-29,
+CUST-001495,Basic,Month-to-month,Monthly,Credit card,47.14,56,active,2022-01-01,
+CUST-001496,Standard,One year,Annual,Bank transfer,55.76,13,active,2025-08-14,
+CUST-001497,Pro,Two year,Annual,Credit card,67.89,56,active,2021-12-29,
+CUST-001498,Standard,One year,Annual,Bank transfer,69.39,36,active,2023-09-13,
+CUST-001499,Basic,Month-to-month,Monthly,Bank transfer,105.62,72,active,2020-08-31,
+CUST-001500,Standard,One year,Annual,Bank transfer,97.06,2,active,2026-06-29,
+CUST-001501,Standard,One year,Annual,Mailed check,21.89,69,active,2020-12-14,
+CUST-001502,Pro,Two year,Annual,Bank transfer,65.5,16,active,2025-05-11,
+CUST-001503,Basic,Month-to-month,Monthly,Bank transfer,81.81,2,cancelled,2026-07-10,2026-08-05
+CUST-001504,Basic,Month-to-month,Monthly,Bank transfer,66.04,52,cancelled,2022-04-21,2026-09-11
+CUST-001505,Pro,Two year,Annual,Electronic check,33.06,38,active,2023-07-12,
+CUST-001506,Basic,Month-to-month,Monthly,Bank transfer,59.75,61,active,2021-07-21,
+CUST-001507,Standard,One year,Annual,Bank transfer,61.17,7,active,2026-01-30,
+CUST-001508,Basic,Month-to-month,Monthly,Electronic check,38.77,5,cancelled,2026-03-20,2026-09-15
+CUST-001509,Basic,Month-to-month,Monthly,Credit card,95.63,41,active,2023-03-24,
+CUST-001510,Standard,One year,Annual,Credit card,52.14,64,active,2021-05-09,
+CUST-001511,Basic,Month-to-month,Monthly,Bank transfer,78.9,29,cancelled,2024-04-01,2026-08-26
+CUST-001512,Basic,Month-to-month,Monthly,Credit card,71.57,58,active,2021-10-26,
+CUST-001513,Standard,One year,Annual,Credit card,107.74,66,active,2021-03-15,
+CUST-001514,Standard,One year,Annual,Mailed check,32.2,63,active,2021-05-29,
+CUST-001515,Pro,Two year,Annual,Credit card,31.43,37,active,2023-08-04,
+CUST-001516,Basic,Month-to-month,Monthly,Credit card,50.03,50,cancelled,2022-07-16,2026-08-19
+CUST-001517,Basic,Month-to-month,Monthly,Electronic check,63.12,38,active,2023-06-22,
+CUST-001518,Pro,Two year,Annual,Credit card,49.85,49,active,2022-08-10,
+CUST-001519,Basic,Month-to-month,Monthly,Electronic check,96.32,41,active,2023-03-22,
+CUST-001520,Basic,Month-to-month,Monthly,Mailed check,44.53,38,active,2023-07-12,
+CUST-001521,Basic,Month-to-month,Monthly,Credit card,28.48,31,cancelled,2024-01-31,2026-08-20
+CUST-001522,Basic,Month-to-month,Monthly,Bank transfer,61.38,47,cancelled,2022-10-06,2026-08-05
+CUST-001523,Pro,Two year,Annual,Mailed check,97.34,54,active,2022-02-20,
+CUST-001524,Standard,One year,Annual,Bank transfer,105.06,67,active,2021-01-18,
+CUST-001525,Standard,One year,Annual,Electronic check,93.33,44,active,2022-12-24,
+CUST-001526,Basic,Month-to-month,Monthly,Electronic check,75.79,7,cancelled,2026-01-21,2026-09-05
+CUST-001527,Basic,Month-to-month,Monthly,Credit card,92.42,42,cancelled,2023-02-23,2026-09-13
+CUST-001528,Basic,Month-to-month,Monthly,Electronic check,88.14,23,cancelled,2024-10-08,2026-08-07
+CUST-001529,Basic,Month-to-month,Monthly,Credit card,43.44,1,cancelled,2026-07-21,2026-07-25
+CUST-001530,Basic,Month-to-month,Monthly,Mailed check,75.08,5,active,2026-04-02,
+CUST-001531,Basic,Month-to-month,Monthly,Electronic check,97.06,43,active,2023-02-06,
+CUST-001532,Basic,Month-to-month,Monthly,Credit card,51.71,68,cancelled,2021-01-11,2026-09-06
+CUST-001533,Standard,One year,Annual,Electronic check,85.4,36,active,2023-08-27,
+CUST-001534,Standard,One year,Annual,Mailed check,68.15,32,active,2024-01-08,
+CUST-001535,Basic,Month-to-month,Monthly,Electronic check,70.32,6,cancelled,2026-02-27,2026-08-25
+CUST-001536,Basic,Month-to-month,Monthly,Credit card,29.01,49,active,2022-08-16,
+CUST-001537,Standard,One year,Annual,Mailed check,86.62,4,active,2026-04-29,
+CUST-001538,Standard,One year,Annual,Bank transfer,106.57,61,active,2021-07-29,
+CUST-001539,Pro,Two year,Annual,Electronic check,34.14,59,active,2021-10-02,
+CUST-001540,Basic,Month-to-month,Monthly,Bank transfer,56.61,72,cancelled,2020-08-28,2026-08-10
+CUST-001541,Pro,Two year,Annual,Bank transfer,24.87,20,active,2024-12-18,
+CUST-001542,Basic,Month-to-month,Monthly,Mailed check,22.96,11,active,2025-09-22,
+CUST-001543,Basic,Month-to-month,Monthly,Credit card,118.97,21,cancelled,2024-12-03,2026-09-06
+CUST-001544,Basic,Month-to-month,Monthly,Mailed check,69.35,58,active,2021-10-21,
+CUST-001545,Basic,Month-to-month,Monthly,Bank transfer,55.55,15,cancelled,2025-05-20,2026-07-27
+CUST-001546,Basic,Month-to-month,Monthly,Electronic check,47.49,64,active,2021-05-13,
+CUST-001547,Basic,Month-to-month,Monthly,Credit card,118.0,11,cancelled,2025-10-07,2026-09-02
+CUST-001548,Standard,One year,Annual,Electronic check,45.23,3,active,2026-05-26,
+CUST-001549,Basic,Month-to-month,Monthly,Bank transfer,92.57,16,active,2025-05-02,
+CUST-001550,Basic,Month-to-month,Monthly,Electronic check,48.38,55,cancelled,2022-02-11,2026-08-15
+CUST-001551,Basic,Month-to-month,Monthly,Electronic check,27.05,43,active,2023-02-02,
+CUST-001552,Basic,Month-to-month,Monthly,Electronic check,88.33,25,active,2024-08-05,
+CUST-001553,Basic,Month-to-month,Monthly,Credit card,20.16,47,active,2022-09-25,
+CUST-001554,Basic,Month-to-month,Monthly,Electronic check,87.57,47,active,2022-10-02,
+CUST-001555,Basic,Month-to-month,Monthly,Credit card,45.04,40,cancelled,2023-05-14,2026-08-27
+CUST-001556,Standard,One year,Annual,Bank transfer,94.61,37,active,2023-08-16,
+CUST-001557,Pro,Two year,Annual,Electronic check,96.98,7,active,2026-02-07,
+CUST-001558,Basic,Month-to-month,Monthly,Mailed check,92.41,18,cancelled,2025-03-14,2026-08-07
+CUST-001559,Standard,One year,Annual,Mailed check,22.45,38,active,2023-06-22,
+CUST-001560,Pro,Two year,Annual,Mailed check,90.37,9,active,2025-12-09,
+CUST-001561,Pro,Two year,Annual,Bank transfer,119.01,34,active,2023-10-29,
+CUST-001562,Standard,One year,Annual,Credit card,44.26,8,active,2026-01-13,
+CUST-001563,Pro,Two year,Annual,Credit card,47.42,57,active,2021-12-03,
+CUST-001564,Pro,Two year,Annual,Bank transfer,101.35,7,active,2026-01-18,
+CUST-001565,Pro,Two year,Annual,Credit card,36.04,6,active,2026-02-27,
+CUST-001566,Basic,Month-to-month,Monthly,Credit card,86.06,46,active,2022-11-08,
+CUST-001567,Basic,Month-to-month,Monthly,Electronic check,95.5,16,cancelled,2025-04-25,2026-09-04
+CUST-001568,Basic,Month-to-month,Monthly,Bank transfer,23.72,25,cancelled,2024-08-01,2026-09-10
+CUST-001569,Basic,Month-to-month,Monthly,Credit card,75.38,22,cancelled,2024-11-09,2026-08-16
+CUST-001570,Basic,Month-to-month,Monthly,Electronic check,77.59,15,cancelled,2025-05-19,2026-07-26
+CUST-001571,Basic,Month-to-month,Monthly,Bank transfer,50.34,55,cancelled,2022-01-18,2026-08-09
+CUST-001572,Standard,One year,Annual,Credit card,107.63,50,active,2022-07-01,
+CUST-001573,Standard,One year,Annual,Mailed check,36.27,17,active,2025-04-17,
+CUST-001574,Pro,Two year,Annual,Credit card,56.42,50,active,2022-07-05,
+CUST-001575,Basic,Month-to-month,Monthly,Credit card,104.87,52,cancelled,2022-05-03,2026-08-02
+CUST-001576,Basic,Month-to-month,Monthly,Bank transfer,39.06,39,active,2023-05-21,
+CUST-001577,Pro,Two year,Annual,Bank transfer,102.14,42,active,2023-02-25,
+CUST-001578,Pro,Two year,Annual,Bank transfer,27.91,68,active,2021-01-10,
+CUST-001579,Pro,Two year,Annual,Mailed check,68.92,33,active,2023-12-02,
+CUST-001580,Pro,Two year,Annual,Mailed check,27.53,28,active,2024-05-12,
+CUST-001581,Pro,Two year,Annual,Bank transfer,87.79,39,active,2023-06-03,
+CUST-001582,Basic,Month-to-month,Monthly,Mailed check,99.06,61,cancelled,2021-08-01,2026-08-21
+CUST-001583,Basic,Month-to-month,Monthly,Credit card,104.99,51,cancelled,2022-06-02,2026-09-07
+CUST-001584,Basic,Month-to-month,Monthly,Credit card,118.13,5,cancelled,2026-04-05,2026-08-21
+CUST-001585,Standard,One year,Annual,Mailed check,87.2,33,active,2023-12-04,
+CUST-001586,Pro,Two year,Annual,Bank transfer,96.91,54,active,2022-02-23,
+CUST-001587,Basic,Month-to-month,Monthly,Electronic check,70.58,16,active,2025-05-02,
+CUST-001588,Standard,One year,Annual,Electronic check,111.27,72,active,2020-09-15,
+CUST-001589,Basic,Month-to-month,Monthly,Mailed check,84.38,58,active,2021-10-25,
+CUST-001590,Basic,Month-to-month,Monthly,Electronic check,108.36,61,cancelled,2021-07-30,2026-07-19
+CUST-001591,Basic,Month-to-month,Monthly,Credit card,43.55,5,cancelled,2026-03-28,2026-07-31
+CUST-001592,Basic,Month-to-month,Monthly,Electronic check,69.67,42,cancelled,2023-02-25,2026-08-05
+CUST-001593,Pro,Two year,Annual,Mailed check,92.98,38,active,2023-07-13,
+CUST-001594,Basic,Month-to-month,Monthly,Mailed check,40.27,45,active,2022-11-18,
+CUST-001595,Pro,Two year,Annual,Electronic check,41.13,62,active,2021-06-18,
+CUST-001596,Standard,One year,Annual,Mailed check,117.8,25,active,2024-08-12,
+CUST-001597,Basic,Month-to-month,Monthly,Bank transfer,63.46,38,active,2023-07-12,
+CUST-001598,Basic,Month-to-month,Monthly,Credit card,38.18,49,active,2022-08-10,
+CUST-001599,Pro,Two year,Annual,Electronic check,53.15,54,active,2022-02-18,
+CUST-001600,Basic,Month-to-month,Monthly,Electronic check,59.74,56,active,2021-12-20,
+CUST-001601,Pro,Two year,Annual,Mailed check,82.31,24,active,2024-09-09,
+CUST-001602,Basic,Month-to-month,Monthly,Mailed check,112.3,72,active,2020-08-29,
+CUST-001603,Standard,One year,Annual,Credit card,118.66,0,active,2026-09-09,
+CUST-001604,Pro,Two year,Annual,Electronic check,85.17,35,active,2023-10-16,
+CUST-001605,Basic,Month-to-month,Monthly,Mailed check,89.99,44,cancelled,2023-01-10,2026-08-29
+CUST-001606,Basic,Month-to-month,Monthly,Bank transfer,52.18,4,cancelled,2026-05-16,2026-08-11
+CUST-001607,Pro,Two year,Annual,Mailed check,105.72,32,active,2023-12-22,
+CUST-001608,Basic,Month-to-month,Monthly,Bank transfer,41.78,43,active,2023-01-24,
+CUST-001609,Basic,Month-to-month,Monthly,Credit card,30.64,44,active,2023-01-11,
+CUST-001610,Basic,Month-to-month,Monthly,Bank transfer,117.33,8,cancelled,2025-12-30,2026-08-10
+CUST-001611,Basic,Month-to-month,Monthly,Mailed check,106.41,20,cancelled,2025-01-10,2026-08-08
+CUST-001612,Standard,One year,Annual,Credit card,50.36,17,active,2025-04-01,
+CUST-001613,Standard,One year,Annual,Credit card,87.52,46,active,2022-10-21,
+CUST-001614,Basic,Month-to-month,Monthly,Credit card,66.7,24,active,2024-08-21,
+CUST-001615,Pro,Two year,Annual,Electronic check,52.31,41,active,2023-03-24,
+CUST-001616,Basic,Month-to-month,Monthly,Credit card,48.68,53,active,2022-04-10,
+CUST-001617,Basic,Month-to-month,Monthly,Credit card,33.6,58,active,2021-11-11,
+CUST-001618,Standard,One year,Annual,Credit card,74.93,13,active,2025-08-13,
+CUST-001619,Pro,Two year,Annual,Bank transfer,64.66,65,active,2021-04-14,
+CUST-001620,Basic,Month-to-month,Monthly,Mailed check,71.22,12,cancelled,2025-08-29,2026-07-25
+CUST-001621,Basic,Month-to-month,Monthly,Bank transfer,41.54,1,cancelled,2026-07-29,2026-08-06
+CUST-001622,Basic,Month-to-month,Monthly,Bank transfer,113.86,3,cancelled,2026-05-22,2026-09-02
+CUST-001623,Pro,Two year,Annual,Credit card,83.86,14,active,2025-07-15,
+CUST-001624,Basic,Month-to-month,Monthly,Mailed check,109.96,63,cancelled,2021-06-10,2026-09-02
+CUST-001625,Basic,Month-to-month,Monthly,Bank transfer,30.93,15,cancelled,2025-05-27,2026-08-10
+CUST-001626,Standard,One year,Annual,Credit card,82.29,50,active,2022-06-27,
+CUST-001627,Basic,Month-to-month,Monthly,Credit card,104.95,30,cancelled,2024-03-05,2026-07-26
+CUST-001628,Basic,Month-to-month,Monthly,Electronic check,53.09,2,cancelled,2026-07-14,2026-07-22
+CUST-001629,Basic,Month-to-month,Monthly,Credit card,39.51,32,active,2024-01-02,
+CUST-001630,Basic,Month-to-month,Monthly,Electronic check,46.5,2,active,2026-07-13,
+CUST-001631,Basic,Month-to-month,Monthly,Credit card,47.29,34,cancelled,2023-11-01,2026-08-11
+CUST-001632,Pro,Two year,Annual,Electronic check,64.72,40,active,2023-04-21,
+CUST-001633,Standard,One year,Annual,Electronic check,52.6,38,active,2023-07-13,
+CUST-001634,Standard,One year,Annual,Bank transfer,47.13,20,active,2025-01-13,
+CUST-001635,Pro,Two year,Annual,Bank transfer,84.85,55,active,2022-01-24,
+CUST-001636,Basic,Month-to-month,Monthly,Bank transfer,25.3,43,active,2023-02-16,
+CUST-001637,Basic,Month-to-month,Monthly,Mailed check,54.04,18,active,2025-02-17,
+CUST-001638,Pro,Two year,Annual,Electronic check,88.98,31,active,2024-01-24,
+CUST-001639,Basic,Month-to-month,Monthly,Bank transfer,37.58,7,active,2026-02-03,
+CUST-001640,Standard,One year,Annual,Bank transfer,42.09,67,active,2021-02-05,
+CUST-001641,Standard,One year,Annual,Bank transfer,40.07,54,active,2022-03-07,
+CUST-001642,Basic,Month-to-month,Monthly,Mailed check,20.09,21,cancelled,2024-12-05,2026-08-15
+CUST-001643,Basic,Month-to-month,Monthly,Credit card,67.38,49,cancelled,2022-07-23,2026-07-29
+CUST-001644,Basic,Month-to-month,Monthly,Credit card,23.9,49,cancelled,2022-07-25,2026-07-20
+CUST-001645,Basic,Month-to-month,Monthly,Electronic check,47.29,44,active,2023-01-10,
+CUST-001646,Basic,Month-to-month,Monthly,Electronic check,119.48,3,cancelled,2026-06-12,2026-09-14
+CUST-001647,Basic,Month-to-month,Monthly,Electronic check,111.84,64,cancelled,2021-05-01,2026-08-28
+CUST-001648,Pro,Two year,Annual,Electronic check,41.51,69,active,2020-11-27,
+CUST-001649,Pro,Two year,Annual,Bank transfer,51.0,71,active,2020-09-25,
+CUST-001650,Pro,Two year,Annual,Bank transfer,66.37,71,active,2020-10-07,
+CUST-001651,Basic,Month-to-month,Monthly,Mailed check,104.44,67,active,2021-02-01,
+CUST-001652,Basic,Month-to-month,Monthly,Bank transfer,100.26,53,active,2022-04-14,
+CUST-001653,Basic,Month-to-month,Monthly,Credit card,32.62,4,cancelled,2026-05-05,2026-08-27
+CUST-001654,Basic,Month-to-month,Monthly,Credit card,32.44,33,cancelled,2023-11-27,2026-08-13
+CUST-001655,Pro,Two year,Annual,Mailed check,61.67,17,active,2025-04-08,
+CUST-001656,Basic,Month-to-month,Monthly,Bank transfer,107.01,16,active,2025-05-08,
+CUST-001657,Basic,Month-to-month,Monthly,Bank transfer,108.21,60,cancelled,2021-09-03,2026-08-29
+CUST-001658,Pro,Two year,Annual,Credit card,30.74,59,active,2021-09-22,
+CUST-001659,Basic,Month-to-month,Monthly,Credit card,77.43,38,active,2023-06-30,
+CUST-001660,Basic,Month-to-month,Monthly,Mailed check,35.57,53,active,2022-03-21,
+CUST-001661,Basic,Month-to-month,Monthly,Credit card,88.61,9,cancelled,2025-12-16,2026-08-28
+CUST-001662,Standard,One year,Annual,Mailed check,111.64,16,active,2025-04-22,
+CUST-001663,Standard,One year,Annual,Credit card,65.48,62,active,2021-07-16,
+CUST-001664,Basic,Month-to-month,Monthly,Credit card,28.31,32,cancelled,2024-01-07,2026-09-14
+CUST-001665,Pro,Two year,Annual,Credit card,77.93,39,active,2023-06-05,
+CUST-001666,Pro,Two year,Annual,Electronic check,60.85,33,active,2023-12-10,
+CUST-001667,Pro,Two year,Annual,Electronic check,101.09,14,active,2025-06-18,
+CUST-001668,Basic,Month-to-month,Monthly,Credit card,54.03,60,active,2021-08-21,
+CUST-001669,Basic,Month-to-month,Monthly,Electronic check,107.49,55,cancelled,2022-01-29,2026-09-15
+CUST-001670,Pro,Two year,Annual,Electronic check,47.37,49,active,2022-08-04,
+CUST-001671,Basic,Month-to-month,Monthly,Mailed check,35.75,25,active,2024-07-25,
+CUST-001672,Standard,One year,Annual,Mailed check,50.65,46,active,2022-10-26,
+CUST-001673,Standard,One year,Annual,Electronic check,23.49,69,active,2020-12-02,
+CUST-001674,Basic,Month-to-month,Monthly,Electronic check,48.12,47,active,2022-09-23,
+CUST-001675,Standard,One year,Annual,Mailed check,86.01,36,active,2023-09-12,
+CUST-001676,Pro,Two year,Annual,Bank transfer,34.23,19,active,2025-02-07,
+CUST-001677,Standard,One year,Annual,Bank transfer,31.14,38,active,2023-07-18,
+CUST-001678,Basic,Month-to-month,Monthly,Credit card,33.24,27,cancelled,2024-06-14,2026-08-20
+CUST-001679,Pro,Two year,Annual,Credit card,27.76,44,active,2023-01-11,
+CUST-001680,Basic,Month-to-month,Monthly,Electronic check,107.46,3,cancelled,2026-05-30,2026-07-19
+CUST-001681,Standard,One year,Annual,Bank transfer,114.41,13,active,2025-07-23,
+CUST-001682,Pro,Two year,Annual,Electronic check,24.66,57,active,2021-11-29,
+CUST-001683,Standard,One year,Annual,Mailed check,96.01,27,active,2024-06-04,
+CUST-001684,Basic,Month-to-month,Monthly,Mailed check,93.72,31,cancelled,2024-02-08,2026-08-29
+CUST-001685,Basic,Month-to-month,Monthly,Bank transfer,119.69,39,active,2023-06-14,
+CUST-001686,Basic,Month-to-month,Monthly,Mailed check,54.79,31,cancelled,2024-01-30,2026-09-01
+CUST-001687,Basic,Month-to-month,Monthly,Credit card,48.55,55,active,2022-02-11,
+CUST-001688,Basic,Month-to-month,Monthly,Mailed check,65.31,17,cancelled,2025-03-25,2026-08-31
+CUST-001689,Standard,One year,Annual,Credit card,105.66,55,active,2022-02-03,
+CUST-001690,Basic,Month-to-month,Monthly,Credit card,92.86,15,cancelled,2025-06-07,2026-07-20
+CUST-001691,Standard,One year,Annual,Bank transfer,67.16,27,active,2024-06-17,
+CUST-001692,Pro,Two year,Annual,Electronic check,44.46,42,active,2023-03-11,
+CUST-001693,Basic,Month-to-month,Monthly,Bank transfer,92.7,64,cancelled,2021-05-17,2026-08-07
+CUST-001694,Standard,One year,Annual,Mailed check,105.45,16,active,2025-04-26,
+CUST-001695,Standard,One year,Annual,Mailed check,60.0,42,active,2023-03-04,
+CUST-001696,Basic,Month-to-month,Monthly,Mailed check,86.86,4,cancelled,2026-04-25,2026-08-08
+CUST-001697,Basic,Month-to-month,Monthly,Mailed check,60.02,5,cancelled,2026-04-01,2026-09-04
+CUST-001698,Pro,Two year,Annual,Mailed check,67.85,56,active,2021-12-19,
+CUST-001699,Pro,Two year,Annual,Credit card,72.49,52,active,2022-04-25,
+CUST-001700,Standard,One year,Annual,Mailed check,97.57,27,active,2024-06-13,
+CUST-001701,Pro,Two year,Annual,Mailed check,117.75,45,active,2022-12-14,
+CUST-001702,Pro,Two year,Annual,Bank transfer,64.44,27,active,2024-05-22,
+CUST-001703,Basic,Month-to-month,Monthly,Electronic check,54.23,20,active,2025-01-08,
+CUST-001704,Standard,One year,Annual,Bank transfer,57.36,31,active,2024-01-25,
+CUST-001705,Basic,Month-to-month,Monthly,Credit card,33.39,22,cancelled,2024-10-29,2026-07-24
+CUST-001706,Pro,Two year,Annual,Credit card,49.69,59,active,2021-09-26,
+CUST-001707,Basic,Month-to-month,Monthly,Electronic check,28.64,30,active,2024-03-09,
+CUST-001708,Basic,Month-to-month,Monthly,Mailed check,62.79,23,cancelled,2024-10-07,2026-09-04
+CUST-001709,Pro,Two year,Annual,Electronic check,36.74,39,active,2023-06-01,
+CUST-001710,Basic,Month-to-month,Monthly,Bank transfer,54.64,55,active,2022-02-15,
+CUST-001711,Standard,One year,Annual,Mailed check,99.36,19,active,2025-02-06,
+CUST-001712,Basic,Month-to-month,Monthly,Credit card,44.59,68,active,2021-01-01,
+CUST-001713,Pro,Two year,Annual,Electronic check,81.19,33,active,2023-12-11,
+CUST-001714,Pro,Two year,Annual,Credit card,110.12,48,active,2022-09-08,
+CUST-001715,Basic,Month-to-month,Monthly,Mailed check,76.69,69,cancelled,2020-11-17,2026-07-20
+CUST-001716,Standard,One year,Annual,Credit card,39.38,31,active,2024-02-08,
+CUST-001717,Basic,Month-to-month,Monthly,Electronic check,54.48,14,active,2025-06-20,
+CUST-001718,Standard,One year,Annual,Mailed check,79.04,54,active,2022-02-19,
+CUST-001719,Standard,One year,Annual,Mailed check,70.66,0,active,2026-08-27,
+CUST-001720,Pro,Two year,Annual,Credit card,34.86,33,active,2023-12-13,
+CUST-001721,Basic,Month-to-month,Monthly,Bank transfer,64.68,71,cancelled,2020-10-10,2026-07-21
+CUST-001722,Basic,Month-to-month,Monthly,Credit card,74.31,30,cancelled,2024-02-18,2026-08-13
+CUST-001723,Standard,One year,Annual,Bank transfer,46.73,49,active,2022-08-17,
+CUST-001724,Standard,One year,Annual,Credit card,81.24,38,active,2023-07-03,
+CUST-001725,Basic,Month-to-month,Monthly,Bank transfer,27.02,15,cancelled,2025-05-31,2026-07-26
+CUST-001726,Basic,Month-to-month,Monthly,Bank transfer,53.66,23,cancelled,2024-09-21,2026-07-19
+CUST-001727,Basic,Month-to-month,Monthly,Credit card,100.43,38,active,2023-06-22,
+CUST-001728,Pro,Two year,Annual,Credit card,45.93,7,active,2026-02-07,
+CUST-001729,Basic,Month-to-month,Monthly,Bank transfer,80.52,30,cancelled,2024-03-02,2026-08-12
+CUST-001730,Basic,Month-to-month,Monthly,Mailed check,61.0,30,cancelled,2024-02-27,2026-08-01
+CUST-001731,Pro,Two year,Annual,Bank transfer,51.65,60,active,2021-08-19,
+CUST-001732,Basic,Month-to-month,Monthly,Bank transfer,111.61,9,active,2025-12-01,
+CUST-001733,Standard,One year,Annual,Credit card,54.33,61,active,2021-08-14,
+CUST-001734,Basic,Month-to-month,Monthly,Bank transfer,43.67,29,active,2024-03-21,
+CUST-001735,Pro,Two year,Annual,Credit card,110.93,47,active,2022-10-02,
+CUST-001736,Standard,One year,Annual,Bank transfer,94.59,40,active,2023-05-13,
+CUST-001737,Pro,Two year,Annual,Credit card,88.18,21,active,2024-12-11,
+CUST-001738,Basic,Month-to-month,Monthly,Credit card,24.95,67,active,2021-02-09,
+CUST-001739,Basic,Month-to-month,Monthly,Credit card,33.12,16,active,2025-04-26,
+CUST-001740,Standard,One year,Annual,Electronic check,83.83,2,active,2026-06-20,
+CUST-001741,Basic,Month-to-month,Monthly,Credit card,40.94,54,active,2022-03-05,
+CUST-001742,Basic,Month-to-month,Monthly,Mailed check,42.56,45,active,2022-12-15,
+CUST-001743,Basic,Month-to-month,Monthly,Credit card,97.91,65,active,2021-03-22,
+CUST-001744,Pro,Two year,Annual,Mailed check,48.59,33,active,2023-11-28,
+CUST-001745,Standard,One year,Annual,Mailed check,27.16,1,active,2026-07-31,
+CUST-001746,Standard,One year,Annual,Bank transfer,23.64,1,active,2026-08-16,
+CUST-001747,Standard,One year,Annual,Bank transfer,64.32,31,active,2024-01-18,
+CUST-001748,Basic,Month-to-month,Monthly,Bank transfer,81.71,18,cancelled,2025-03-16,2026-08-12
+CUST-001749,Basic,Month-to-month,Monthly,Electronic check,106.89,67,active,2021-01-28,
+CUST-001750,Basic,Month-to-month,Monthly,Credit card,31.08,8,active,2025-12-30,
+CUST-001751,Standard,One year,Annual,Mailed check,39.67,64,active,2021-05-02,
+CUST-001752,Basic,Month-to-month,Monthly,Credit card,72.98,15,cancelled,2025-06-01,2026-08-16
+CUST-001753,Pro,Two year,Annual,Mailed check,56.41,8,active,2026-01-05,
+CUST-001754,Pro,Two year,Annual,Bank transfer,68.25,20,active,2024-12-30,
+CUST-001755,Basic,Month-to-month,Monthly,Bank transfer,112.41,10,active,2025-11-06,
+CUST-001756,Standard,One year,Annual,Electronic check,74.49,29,active,2024-04-03,
+CUST-001757,Basic,Month-to-month,Monthly,Mailed check,61.51,24,active,2024-08-27,
+CUST-001758,Pro,Two year,Annual,Bank transfer,118.94,38,active,2023-06-26,
+CUST-001759,Pro,Two year,Annual,Credit card,26.52,39,active,2023-06-13,
+CUST-001760,Pro,Two year,Annual,Credit card,113.21,0,active,2026-08-18,
+CUST-001761,Basic,Month-to-month,Monthly,Mailed check,70.17,9,cancelled,2025-12-15,2026-08-27
+CUST-001762,Basic,Month-to-month,Monthly,Bank transfer,70.38,11,cancelled,2025-10-09,2026-08-08
+CUST-001763,Basic,Month-to-month,Monthly,Electronic check,112.2,14,cancelled,2025-07-07,2026-08-31
+CUST-001764,Basic,Month-to-month,Monthly,Credit card,70.73,6,cancelled,2026-03-09,2026-09-04
+CUST-001765,Basic,Month-to-month,Monthly,Credit card,63.84,22,active,2024-11-06,
+CUST-001766,Basic,Month-to-month,Monthly,Credit card,47.25,40,active,2023-05-09,
+CUST-001767,Pro,Two year,Annual,Mailed check,85.88,22,active,2024-11-03,
+CUST-001768,Basic,Month-to-month,Monthly,Mailed check,76.96,24,active,2024-08-25,
+CUST-001769,Basic,Month-to-month,Monthly,Credit card,41.43,34,active,2023-10-24,
+CUST-001770,Pro,Two year,Annual,Bank transfer,90.94,40,active,2023-05-08,
+CUST-001771,Standard,One year,Annual,Electronic check,84.41,24,active,2024-09-09,
+CUST-001772,Standard,One year,Annual,Bank transfer,59.73,16,active,2025-04-27,
+CUST-001773,Standard,One year,Annual,Bank transfer,20.44,29,active,2024-04-16,
+CUST-001774,Pro,Two year,Annual,Mailed check,64.66,1,active,2026-08-04,
+CUST-001775,Standard,One year,Annual,Mailed check,20.61,35,active,2023-10-11,
+CUST-001776,Basic,Month-to-month,Monthly,Electronic check,27.5,68,active,2020-12-29,
+CUST-001777,Standard,One year,Annual,Mailed check,63.06,29,active,2024-04-15,
+CUST-001778,Basic,Month-to-month,Monthly,Electronic check,28.19,7,active,2026-01-22,
+CUST-001779,Basic,Month-to-month,Monthly,Mailed check,47.57,51,active,2022-06-09,
+CUST-001780,Basic,Month-to-month,Monthly,Electronic check,85.55,9,cancelled,2025-12-02,2026-08-30
+CUST-001781,Basic,Month-to-month,Monthly,Mailed check,50.86,14,active,2025-06-30,
+CUST-001782,Pro,Two year,Annual,Bank transfer,119.76,10,cancelled,2025-11-02,2026-09-15
+CUST-001783,Basic,Month-to-month,Monthly,Mailed check,111.63,64,cancelled,2021-05-04,2026-07-22
+CUST-001784,Basic,Month-to-month,Monthly,Electronic check,78.53,71,active,2020-10-08,
+CUST-001785,Basic,Month-to-month,Monthly,Credit card,116.69,41,cancelled,2023-03-25,2026-08-31
+CUST-001786,Pro,Two year,Annual,Mailed check,106.8,45,active,2022-12-02,
+CUST-001787,Basic,Month-to-month,Monthly,Bank transfer,51.89,47,active,2022-10-11,
+CUST-001788,Standard,One year,Annual,Bank transfer,94.96,44,active,2023-01-09,
+CUST-001789,Pro,Two year,Annual,Bank transfer,33.68,39,active,2023-06-04,
+CUST-001790,Basic,Month-to-month,Monthly,Mailed check,88.46,72,active,2020-08-22,
+CUST-001791,Standard,One year,Annual,Credit card,69.11,53,active,2022-03-20,
+CUST-001792,Basic,Month-to-month,Monthly,Credit card,21.68,6,active,2026-03-07,
+CUST-001793,Basic,Month-to-month,Monthly,Credit card,47.42,28,cancelled,2024-05-06,2026-07-30
+CUST-001794,Standard,One year,Annual,Mailed check,115.54,71,active,2020-10-13,
+CUST-001795,Pro,Two year,Annual,Mailed check,51.58,29,active,2024-04-01,
+CUST-001796,Basic,Month-to-month,Monthly,Electronic check,38.15,14,cancelled,2025-07-10,2026-08-21
+CUST-001797,Standard,One year,Annual,Mailed check,38.75,63,active,2021-05-24,
+CUST-001798,Basic,Month-to-month,Monthly,Credit card,67.92,45,active,2022-12-01,
+CUST-001799,Standard,One year,Annual,Mailed check,104.26,41,active,2023-04-11,
+CUST-001800,Standard,One year,Annual,Credit card,95.8,30,active,2024-02-19,
+CUST-001801,Standard,One year,Annual,Credit card,63.69,9,active,2025-11-23,
+CUST-001802,Standard,One year,Annual,Bank transfer,40.87,28,active,2024-05-08,
+CUST-001803,Basic,Month-to-month,Monthly,Bank transfer,24.61,31,active,2024-02-13,
+CUST-001804,Standard,One year,Annual,Credit card,66.26,67,active,2021-02-08,
+CUST-001805,Standard,One year,Annual,Electronic check,101.48,22,active,2024-11-05,
+CUST-001806,Standard,One year,Annual,Electronic check,92.97,10,active,2025-11-04,
+CUST-001807,Basic,Month-to-month,Monthly,Electronic check,60.86,31,active,2024-01-23,
+CUST-001808,Basic,Month-to-month,Monthly,Credit card,79.47,72,active,2020-08-18,
+CUST-001809,Basic,Month-to-month,Monthly,Mailed check,63.62,35,active,2023-09-25,
+CUST-001810,Basic,Month-to-month,Monthly,Electronic check,77.9,27,cancelled,2024-05-23,2026-08-26
+CUST-001811,Basic,Month-to-month,Monthly,Electronic check,71.75,48,cancelled,2022-09-13,2026-09-02
+CUST-001812,Basic,Month-to-month,Monthly,Mailed check,88.1,47,active,2022-10-13,
+CUST-001813,Standard,One year,Annual,Mailed check,70.77,21,active,2024-11-19,
+CUST-001814,Basic,Month-to-month,Monthly,Electronic check,114.06,70,active,2020-10-29,
+CUST-001815,Pro,Two year,Annual,Electronic check,62.8,43,active,2023-02-09,
+CUST-001816,Basic,Month-to-month,Monthly,Credit card,21.59,4,active,2026-04-25,
+CUST-001817,Standard,One year,Annual,Credit card,43.64,29,active,2024-04-12,
+CUST-001818,Basic,Month-to-month,Monthly,Electronic check,70.06,67,active,2021-01-23,
+CUST-001819,Basic,Month-to-month,Monthly,Mailed check,74.06,28,active,2024-04-21,
+CUST-001820,Standard,One year,Annual,Mailed check,75.24,41,active,2023-04-03,
+CUST-001821,Pro,Two year,Annual,Mailed check,91.46,44,active,2022-12-28,
+CUST-001822,Basic,Month-to-month,Monthly,Electronic check,47.46,51,active,2022-05-27,
+CUST-001823,Basic,Month-to-month,Monthly,Credit card,86.49,63,cancelled,2021-05-22,2026-07-29
+CUST-001824,Standard,One year,Annual,Bank transfer,90.4,10,active,2025-10-30,
+CUST-001825,Standard,One year,Annual,Credit card,61.13,37,active,2023-08-09,
+CUST-001826,Basic,Month-to-month,Monthly,Mailed check,60.22,38,active,2023-07-12,
+CUST-001827,Basic,Month-to-month,Monthly,Credit card,37.89,11,cancelled,2025-10-07,2026-08-16
+CUST-001828,Basic,Month-to-month,Monthly,Bank transfer,61.4,49,active,2022-08-16,
+CUST-001829,Pro,Two year,Annual,Electronic check,98.68,8,active,2025-12-27,
+CUST-001830,Basic,Month-to-month,Monthly,Mailed check,110.9,33,cancelled,2023-12-06,2026-08-20
+CUST-001831,Basic,Month-to-month,Monthly,Credit card,79.36,24,cancelled,2024-08-26,2026-08-08
+CUST-001832,Pro,Two year,Annual,Credit card,49.94,11,active,2025-10-16,
+CUST-001833,Basic,Month-to-month,Monthly,Bank transfer,88.23,60,active,2021-09-07,
+CUST-001834,Basic,Month-to-month,Monthly,Electronic check,94.01,17,cancelled,2025-04-06,2026-07-30
+CUST-001835,Basic,Month-to-month,Monthly,Bank transfer,53.22,18,active,2025-03-16,
+CUST-001836,Basic,Month-to-month,Monthly,Credit card,102.65,62,active,2021-06-23,
+CUST-001837,Basic,Month-to-month,Monthly,Electronic check,27.37,64,active,2021-04-30,
+CUST-001838,Basic,Month-to-month,Monthly,Mailed check,21.08,2,active,2026-06-23,
+CUST-001839,Standard,One year,Annual,Electronic check,32.3,20,active,2024-12-23,
+CUST-001840,Standard,One year,Annual,Electronic check,35.6,51,active,2022-06-16,
+CUST-001841,Basic,Month-to-month,Monthly,Credit card,107.89,56,active,2021-12-22,
+CUST-001842,Standard,One year,Annual,Electronic check,62.5,72,active,2020-09-14,
+CUST-001843,Basic,Month-to-month,Monthly,Electronic check,47.49,40,cancelled,2023-04-22,2026-08-08
+CUST-001844,Pro,Two year,Annual,Electronic check,62.91,0,active,2026-08-27,
+CUST-001845,Basic,Month-to-month,Monthly,Credit card,59.48,63,active,2021-05-24,
+CUST-001846,Standard,One year,Annual,Mailed check,50.15,11,active,2025-10-03,
+CUST-001847,Basic,Month-to-month,Monthly,Credit card,33.79,8,active,2026-01-12,
+CUST-001848,Standard,One year,Annual,Mailed check,85.59,49,active,2022-08-13,
+CUST-001849,Basic,Month-to-month,Monthly,Bank transfer,33.66,44,active,2023-01-13,
+CUST-001850,Standard,One year,Annual,Credit card,97.54,4,cancelled,2026-04-24,2026-08-19
+CUST-001851,Basic,Month-to-month,Monthly,Bank transfer,40.17,12,active,2025-08-31,
+CUST-001852,Pro,Two year,Annual,Bank transfer,93.14,43,active,2023-02-10,
+CUST-001853,Basic,Month-to-month,Monthly,Electronic check,100.56,18,cancelled,2025-03-15,2026-07-25
+CUST-001854,Standard,One year,Annual,Electronic check,32.53,49,active,2022-08-15,
+CUST-001855,Pro,Two year,Annual,Bank transfer,28.67,30,active,2024-03-10,
+CUST-001856,Pro,Two year,Annual,Mailed check,114.96,42,active,2023-02-24,
+CUST-001857,Basic,Month-to-month,Monthly,Electronic check,66.3,34,cancelled,2023-10-22,2026-07-25
+CUST-001858,Basic,Month-to-month,Monthly,Electronic check,83.02,26,cancelled,2024-06-29,2026-07-20
+CUST-001859,Basic,Month-to-month,Monthly,Mailed check,22.33,24,cancelled,2024-08-18,2026-09-10
+CUST-001860,Basic,Month-to-month,Monthly,Electronic check,47.87,50,active,2022-07-06,
+CUST-001861,Standard,One year,Annual,Bank transfer,70.54,37,active,2023-08-08,
+CUST-001862,Pro,Two year,Annual,Mailed check,108.62,43,active,2023-01-27,
+CUST-001863,Pro,Two year,Annual,Mailed check,47.14,42,active,2023-03-14,
+CUST-001864,Basic,Month-to-month,Monthly,Electronic check,97.52,15,cancelled,2025-05-21,2026-07-25
+CUST-001865,Standard,One year,Annual,Bank transfer,86.22,66,active,2021-02-22,
+CUST-001866,Pro,Two year,Annual,Electronic check,31.53,41,active,2023-04-16,
+CUST-001867,Pro,Two year,Annual,Bank transfer,49.34,52,active,2022-05-13,
+CUST-001868,Basic,Month-to-month,Monthly,Credit card,43.79,64,active,2021-04-29,
+CUST-001869,Basic,Month-to-month,Monthly,Credit card,64.25,67,active,2021-01-24,
+CUST-001870,Pro,Two year,Annual,Bank transfer,83.53,48,active,2022-09-10,
+CUST-001871,Basic,Month-to-month,Monthly,Credit card,63.34,57,active,2021-11-24,
+CUST-001872,Basic,Month-to-month,Monthly,Credit card,44.45,34,cancelled,2023-11-03,2026-09-04
+CUST-001873,Pro,Two year,Annual,Bank transfer,89.59,53,active,2022-03-28,
+CUST-001874,Pro,Two year,Annual,Mailed check,78.45,23,active,2024-10-04,
+CUST-001875,Pro,Two year,Annual,Bank transfer,71.93,51,active,2022-06-04,
+CUST-001876,Pro,Two year,Annual,Credit card,75.44,6,active,2026-03-07,
+CUST-001877,Basic,Month-to-month,Monthly,Bank transfer,42.19,66,active,2021-03-13,
+CUST-001878,Basic,Month-to-month,Monthly,Mailed check,88.04,17,cancelled,2025-04-12,2026-08-10
+CUST-001879,Basic,Month-to-month,Monthly,Electronic check,58.75,47,active,2022-10-12,
+CUST-001880,Standard,One year,Annual,Electronic check,56.35,0,active,2026-08-23,
+CUST-001881,Basic,Month-to-month,Monthly,Mailed check,34.97,11,cancelled,2025-10-05,2026-08-08
+CUST-001882,Standard,One year,Annual,Credit card,79.68,72,active,2020-09-05,
+CUST-001883,Basic,Month-to-month,Monthly,Bank transfer,80.27,60,active,2021-08-22,
+CUST-001884,Standard,One year,Annual,Electronic check,54.03,16,active,2025-04-21,
+CUST-001885,Basic,Month-to-month,Monthly,Credit card,105.99,9,cancelled,2025-12-10,2026-09-03
+CUST-001886,Basic,Month-to-month,Monthly,Mailed check,104.55,59,active,2021-10-07,
+CUST-001887,Basic,Month-to-month,Monthly,Mailed check,30.91,72,active,2020-09-04,
+CUST-001888,Basic,Month-to-month,Monthly,Credit card,89.5,12,cancelled,2025-08-22,2026-09-15
+CUST-001889,Pro,Two year,Annual,Mailed check,59.38,48,active,2022-08-27,
+CUST-001890,Basic,Month-to-month,Monthly,Bank transfer,119.97,20,cancelled,2024-12-31,2026-07-22
+CUST-001891,Basic,Month-to-month,Monthly,Credit card,42.5,54,active,2022-03-11,
+CUST-001892,Standard,One year,Annual,Bank transfer,48.05,30,active,2024-03-06,
+CUST-001893,Standard,One year,Annual,Bank transfer,64.21,9,active,2025-12-17,
+CUST-001894,Basic,Month-to-month,Monthly,Mailed check,46.87,23,active,2024-09-25,
+CUST-001895,Basic,Month-to-month,Monthly,Credit card,89.2,39,active,2023-05-21,
+CUST-001896,Basic,Month-to-month,Monthly,Electronic check,68.09,58,active,2021-10-24,
+CUST-001897,Standard,One year,Annual,Mailed check,42.09,1,active,2026-08-08,
+CUST-001898,Basic,Month-to-month,Monthly,Credit card,70.64,69,active,2020-12-02,
+CUST-001899,Basic,Month-to-month,Monthly,Mailed check,108.88,47,active,2022-09-19,
+CUST-001900,Basic,Month-to-month,Monthly,Electronic check,99.24,63,active,2021-06-05,
+CUST-001901,Standard,One year,Annual,Mailed check,69.88,67,active,2021-01-21,
+CUST-001902,Basic,Month-to-month,Monthly,Mailed check,48.85,11,cancelled,2025-09-30,2026-07-25
+CUST-001903,Pro,Two year,Annual,Bank transfer,37.99,6,active,2026-03-04,
+CUST-001904,Basic,Month-to-month,Monthly,Electronic check,107.84,56,active,2021-12-30,
+CUST-001905,Standard,One year,Annual,Mailed check,91.02,13,active,2025-08-11,
+CUST-001906,Basic,Month-to-month,Monthly,Credit card,77.22,10,cancelled,2025-11-04,2026-09-05
+CUST-001907,Basic,Month-to-month,Monthly,Electronic check,107.94,34,active,2023-11-08,
+CUST-001908,Basic,Month-to-month,Monthly,Credit card,32.17,66,active,2021-02-23,
+CUST-001909,Pro,Two year,Annual,Electronic check,88.25,58,active,2021-10-29,
+CUST-001910,Pro,Two year,Annual,Mailed check,41.67,37,active,2023-08-06,
+CUST-001911,Basic,Month-to-month,Monthly,Bank transfer,32.06,14,active,2025-06-23,
+CUST-001912,Basic,Month-to-month,Monthly,Credit card,66.56,24,cancelled,2024-09-03,2026-08-11
+CUST-001913,Pro,Two year,Annual,Mailed check,58.74,50,active,2022-06-19,
+CUST-001914,Basic,Month-to-month,Monthly,Electronic check,114.12,11,cancelled,2025-09-29,2026-09-07
+CUST-001915,Basic,Month-to-month,Monthly,Credit card,52.4,38,active,2023-06-22,
+CUST-001916,Basic,Month-to-month,Monthly,Credit card,101.49,0,cancelled,2026-08-18,2026-08-13
+CUST-001917,Standard,One year,Annual,Bank transfer,94.88,23,active,2024-10-07,
+CUST-001918,Standard,One year,Annual,Electronic check,86.79,18,active,2025-03-11,
+CUST-001919,Standard,One year,Annual,Bank transfer,112.04,49,active,2022-07-23,
+CUST-001920,Pro,Two year,Annual,Mailed check,60.79,66,active,2021-03-11,
+CUST-001921,Basic,Month-to-month,Monthly,Mailed check,58.97,10,cancelled,2025-10-25,2026-08-28
+CUST-001922,Basic,Month-to-month,Monthly,Electronic check,36.09,58,active,2021-11-11,
+CUST-001923,Basic,Month-to-month,Monthly,Mailed check,47.58,47,cancelled,2022-09-21,2026-08-02
+CUST-001924,Basic,Month-to-month,Monthly,Credit card,107.98,70,active,2020-10-27,
+CUST-001925,Basic,Month-to-month,Monthly,Electronic check,67.44,66,active,2021-03-02,
+CUST-001926,Basic,Month-to-month,Monthly,Credit card,54.14,7,cancelled,2026-02-02,2026-08-13
+CUST-001927,Basic,Month-to-month,Monthly,Bank transfer,41.61,54,active,2022-02-27,
+CUST-001928,Standard,One year,Annual,Bank transfer,68.5,43,active,2023-02-05,
+CUST-001929,Basic,Month-to-month,Monthly,Credit card,91.67,8,cancelled,2026-01-05,2026-08-17
+CUST-001930,Basic,Month-to-month,Monthly,Electronic check,48.67,18,cancelled,2025-03-12,2026-08-06
+CUST-001931,Standard,One year,Annual,Credit card,95.77,67,active,2021-02-11,
+CUST-001932,Standard,One year,Annual,Mailed check,82.98,39,active,2023-05-22,
+CUST-001933,Standard,One year,Annual,Mailed check,98.76,24,active,2024-08-25,
+CUST-001934,Pro,Two year,Annual,Mailed check,45.09,23,active,2024-10-03,
+CUST-001935,Standard,One year,Annual,Bank transfer,83.1,61,active,2021-07-24,
+CUST-001936,Basic,Month-to-month,Monthly,Mailed check,35.37,20,cancelled,2024-12-29,2026-08-18
+CUST-001937,Basic,Month-to-month,Monthly,Credit card,56.38,11,cancelled,2025-09-30,2026-09-15
+CUST-001938,Standard,One year,Annual,Electronic check,92.44,41,active,2023-04-14,
+CUST-001939,Basic,Month-to-month,Monthly,Bank transfer,83.17,72,active,2020-08-31,
+CUST-001940,Basic,Month-to-month,Monthly,Bank transfer,38.79,13,cancelled,2025-08-14,2026-08-11
+CUST-001941,Basic,Month-to-month,Monthly,Bank transfer,105.83,18,cancelled,2025-02-26,2026-08-01
+CUST-001942,Basic,Month-to-month,Monthly,Bank transfer,25.34,34,active,2023-11-15,
+CUST-001943,Basic,Month-to-month,Monthly,Bank transfer,79.52,14,active,2025-07-02,
+CUST-001944,Basic,Month-to-month,Monthly,Credit card,118.38,47,cancelled,2022-10-06,2026-08-18
+CUST-001945,Pro,Two year,Annual,Electronic check,73.15,18,active,2025-03-15,
+CUST-001946,Pro,Two year,Annual,Mailed check,100.07,9,active,2025-12-03,
+CUST-001947,Basic,Month-to-month,Monthly,Bank transfer,79.52,19,cancelled,2025-02-09,2026-09-05
+CUST-001948,Pro,Two year,Annual,Mailed check,98.31,67,active,2021-02-08,
+CUST-001949,Basic,Month-to-month,Monthly,Credit card,85.56,68,active,2020-12-21,
+CUST-001950,Pro,Two year,Annual,Bank transfer,89.11,36,active,2023-09-07,
+CUST-001951,Pro,Two year,Annual,Bank transfer,42.78,29,active,2024-04-05,
+CUST-001952,Basic,Month-to-month,Monthly,Electronic check,94.18,59,active,2021-10-17,
+CUST-001953,Standard,One year,Annual,Mailed check,43.79,14,active,2025-07-08,
+CUST-001954,Pro,Two year,Annual,Bank transfer,118.06,47,active,2022-10-07,
+CUST-001955,Pro,Two year,Annual,Mailed check,42.78,49,active,2022-07-27,
+CUST-001956,Pro,Two year,Annual,Credit card,43.67,51,active,2022-06-14,
+CUST-001957,Standard,One year,Annual,Electronic check,105.87,15,active,2025-05-21,
+CUST-001958,Basic,Month-to-month,Monthly,Electronic check,44.3,52,active,2022-05-15,
+CUST-001959,Pro,Two year,Annual,Mailed check,56.09,44,active,2022-12-28,
+CUST-001960,Standard,One year,Annual,Mailed check,91.46,63,active,2021-06-17,
+CUST-001961,Standard,One year,Annual,Credit card,35.87,12,active,2025-08-23,
+CUST-001962,Basic,Month-to-month,Monthly,Credit card,35.91,44,cancelled,2022-12-27,2026-09-15
+CUST-001963,Standard,One year,Annual,Mailed check,68.64,60,active,2021-08-22,
+CUST-001964,Basic,Month-to-month,Monthly,Bank transfer,44.37,20,cancelled,2024-12-20,2026-08-29
+CUST-001965,Standard,One year,Annual,Mailed check,43.57,54,active,2022-02-21,
+CUST-001966,Basic,Month-to-month,Monthly,Bank transfer,20.92,7,active,2026-01-28,
+CUST-001967,Standard,One year,Annual,Bank transfer,57.04,52,active,2022-04-23,
+CUST-001968,Pro,Two year,Annual,Bank transfer,51.83,44,active,2023-01-14,
+CUST-001969,Basic,Month-to-month,Monthly,Credit card,23.12,14,active,2025-06-28,
+CUST-001970,Basic,Month-to-month,Monthly,Bank transfer,82.12,4,active,2026-04-19,
+CUST-001971,Basic,Month-to-month,Monthly,Mailed check,82.67,54,cancelled,2022-03-07,2026-08-01
+CUST-001972,Pro,Two year,Annual,Electronic check,27.08,17,active,2025-03-19,
+CUST-001973,Standard,One year,Annual,Bank transfer,51.7,36,active,2023-09-02,
+CUST-001974,Basic,Month-to-month,Monthly,Credit card,107.28,4,cancelled,2026-05-04,2026-08-27
+CUST-001975,Basic,Month-to-month,Monthly,Bank transfer,78.22,70,active,2020-11-07,
+CUST-001976,Basic,Month-to-month,Monthly,Credit card,61.2,40,active,2023-05-15,
+CUST-001977,Basic,Month-to-month,Monthly,Mailed check,66.51,68,active,2020-12-21,
+CUST-001978,Pro,Two year,Annual,Electronic check,40.83,11,active,2025-09-26,
+CUST-001979,Standard,One year,Annual,Bank transfer,101.19,15,active,2025-06-05,
+CUST-001980,Basic,Month-to-month,Monthly,Electronic check,111.4,44,cancelled,2022-12-19,2026-07-21
+CUST-001981,Pro,Two year,Annual,Electronic check,111.07,44,active,2023-01-11,
+CUST-001982,Basic,Month-to-month,Monthly,Bank transfer,42.39,57,active,2021-11-23,
+CUST-001983,Pro,Two year,Annual,Mailed check,51.07,67,active,2021-02-02,
+CUST-001984,Basic,Month-to-month,Monthly,Bank transfer,36.06,59,cancelled,2021-09-29,2026-08-27
+CUST-001985,Standard,One year,Annual,Bank transfer,50.72,10,active,2025-11-15,
+CUST-001986,Pro,Two year,Annual,Mailed check,53.28,22,active,2024-10-29,
+CUST-001987,Basic,Month-to-month,Monthly,Bank transfer,83.31,66,active,2021-02-25,
+CUST-001988,Standard,One year,Annual,Bank transfer,38.96,40,active,2023-04-19,
+CUST-001989,Pro,Two year,Annual,Bank transfer,111.94,63,active,2021-06-07,
+CUST-001990,Basic,Month-to-month,Monthly,Bank transfer,30.31,41,active,2023-04-15,
+CUST-001991,Basic,Month-to-month,Monthly,Mailed check,20.69,3,cancelled,2026-06-16,2026-08-21
+CUST-001992,Standard,One year,Annual,Bank transfer,105.49,34,active,2023-11-13,
+CUST-001993,Basic,Month-to-month,Monthly,Bank transfer,90.38,60,cancelled,2021-09-08,2026-08-02
+CUST-001994,Basic,Month-to-month,Monthly,Electronic check,55.54,47,active,2022-09-23,
+CUST-001995,Basic,Month-to-month,Monthly,Electronic check,79.55,9,cancelled,2025-12-12,2026-08-10
+CUST-001996,Standard,One year,Annual,Electronic check,42.35,15,active,2025-06-13,
+CUST-001997,Basic,Month-to-month,Monthly,Electronic check,36.84,62,active,2021-07-17,
+CUST-001998,Basic,Month-to-month,Monthly,Mailed check,67.11,71,active,2020-10-05,
+CUST-001999,Pro,Two year,Annual,Credit card,55.32,54,active,2022-02-28,
+CUST-002000,Basic,Month-to-month,Monthly,Credit card,81.52,7,cancelled,2026-02-07,2026-09-13

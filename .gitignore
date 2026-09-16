@@ -1,0 +1,25 @@
+# Environments
+.env
+venv/
+env1/
+.env1/
+.venv/
+__pycache__/
+*.pyc
+
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+mlruns/
+mlflow.db
+
+dashboards/powerbi/*.pbix
+dashboards/tableau/*.twbx
+
+.DS_Store
+.vscode/
+.idea/
+
+.pytest_cache/
