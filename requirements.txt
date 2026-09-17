@@ -1,7 +1,3 @@
-# Kairos — Python dependencies
-# Pinned loosely (major.minor) — tighten exact versions once Phase 3 build starts
-# and you know what's actually compatible in your environment.
-
 # Data
 pandas>=2.0
 numpy>=1.24
@@ -9,25 +5,25 @@ numpy>=1.24
 # Database
 SQLAlchemy>=2.0
 psycopg2-binary>=2.9
-pgvector>=0.2          # Python client for the pgvector extension
+pgvector>=0.2         
 
 # ML / XAI
 scikit-learn>=1.4
-xgboost>=2.0            # or lightgbm>=4.0 — pick one per Kairos_TechStack_Evaluation_Lock.md
+xgboost>=2.0         
 shap>=0.45
 optuna>=3.6
 mlflow>=2.12
-scipy>=1.12              # PSI / KS-test drift monitoring
+scipy>=1.12             
 
-# Embeddings / RAG (Module B, Phase 5+)
+# Embeddings / RAG
 sentence-transformers>=2.6
-langchain>=0.2            # or drop for a lightweight custom orchestrator — see tech stack lock
+langchain>=0.2       
 
 # Backend API
 flask>=3.0
 flask-sqlalchemy>=3.1
 flask-jwt-extended>=4.6
-flask-smorest>=0.44        # or flask-restx — pick one per tech stack lock
+flask-smorest>=0.44        
 
 # Testing / Dev
 pytest>=8.0

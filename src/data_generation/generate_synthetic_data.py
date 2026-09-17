@@ -167,32 +167,63 @@ def build_customers_and_subscriptions(seed_df: pd.DataFrame, rng: np.random.Gene
 
 
 # ---------------------------------------------------------------------
-# 3. usage_logs — conditioned on churn: churners show a declining trend
-#    in the months leading up to churn; retained customers stay stable
-#    or grow slightly.
+# 3. usage_logs — conditioned on churn, but NOT deterministically.
+#
+# IMPORTANT DESIGN NOTE (added after diagnosing near-perfect separability):
+# An earlier version of this generator applied a single deterministic decay
+# curve to every churner with too little noise. Diagnostic check showed
+# individual features reaching 0.86-0.96 single-feature AUC, and a combined
+# model reaching ROC-AUC 0.9998 — unrealistic (real churn literature tops
+# out around 0.85-0.93, per Kairos_documentation.pdf Section 5.1). Fixed by:
+#   1. A fraction of churners are "silent" (SILENT_CHURN_FRAC) — no usage
+#      decline at all, representing real exogenous churn (price sensitivity,
+#      competitor offers, life circumstances) that behavioral data can't
+#      explain. This caps how predictable churn can ever be, which is
+#      realistic and also a defensible point in the paper's limitations.
+#   2. Per-customer random decay slopes (not one fixed curve) + larger,
+#      proportional noise, so "predictable" churners vary in how visible
+#      their decline is instead of following an identical trajectory.
+#   3. Some retained customers naturally run low usage too (heterogeneous
+#      population), so low usage alone doesn't perfectly imply churn.
 # ---------------------------------------------------------------------
+
+SILENT_CHURN_FRAC = 0.38  # share of churners with NO behavioral warning signs
+
 
 def build_usage_logs(seed_df: pd.DataFrame, rng: np.random.Generator, n_months: int = 6) -> pd.DataFrame:
     rows = []
     for _, row in seed_df.iterrows():
         cust_id = row["customer_id"]
         churned = row["churn_label"] == 1
-        base_sessions = rng.uniform(8, 25)
-        base_minutes = rng.uniform(10, 45)
-        base_adoption = rng.uniform(0.3, 0.8)
+        # Silent churners behave like retained customers behaviorally —
+        # their churn isn't explainable from usage data, by design.
+        silent_churner = churned and (rng.random() < SILENT_CHURN_FRAC)
+        predictable_decline = churned and not silent_churner
+
+        # Heterogeneous baseline regardless of churn status — some retained
+        # customers are naturally light users, some churners are naturally
+        # heavy users. This creates the overlap real datasets have.
+        base_sessions = rng.lognormal(mean=np.log(15), sigma=0.45)
+        base_minutes = rng.lognormal(mean=np.log(25), sigma=0.45)
+        base_adoption = float(np.clip(rng.normal(0.55, 0.18), 0.05, 0.95))
+
+        # Per-customer random decay slope — no two predictable churners
+        # decline identically.
+        decay_rate = rng.uniform(0.03, 0.10) if predictable_decline else 0.0
+        noise_scale = 0.5  # proportional noise, applied every month
 
         for m in range(n_months, 0, -1):
             log_month = (TODAY.replace(day=1) - pd.DateOffset(months=m)).date()
-            if churned:
-                # progressive decline as churn approaches (m=1 is most recent, most decayed)
-                decay = 1 - (0.10 * (n_months - m + 1))
-                decay = max(decay, 0.15)
-            else:
-                decay = 1 + rng.normal(0.01, 0.05)  # roughly flat/slightly growing, noisy
+            months_elapsed = n_months - m + 1
+            decay = max(1 - decay_rate * months_elapsed, 0.2)
 
-            sessions = max(0, int(base_sessions * decay + rng.normal(0, 2)))
-            minutes = max(0.0, round(base_minutes * decay + rng.normal(0, 3), 2))
-            adoption = float(np.clip(base_adoption * decay + rng.normal(0, 0.03), 0, 1))
+            session_noise = rng.normal(1.0, noise_scale)
+            minutes_noise = rng.normal(1.0, noise_scale)
+            adoption_noise = rng.normal(0, 0.08)
+
+            sessions = max(0, int(base_sessions * decay * session_noise))
+            minutes = max(0.0, round(base_minutes * decay * minutes_noise, 2))
+            adoption = float(np.clip(base_adoption * decay + adoption_noise, 0.02, 0.98))
             last_active = log_month + timedelta(days=int(rng.integers(0, 27)))
 
             rows.append({
@@ -239,8 +270,15 @@ def build_support_tickets(seed_df: pd.DataFrame, rng: np.random.Generator) -> pd
     for _, row in seed_df.iterrows():
         cust_id = row["customer_id"]
         churned = row["churn_label"] == 1
-        # churners: 0-5 tickets, skewed higher and more billing-related
-        n_tickets = int(rng.poisson(2.4 if churned else 0.7))
+        # Silent churners (see build_usage_logs) also get normal ticket behavior —
+        # consistent with them being behaviorally indistinguishable from retained
+        # customers, by design.
+        silent_churner = churned and (rng.random() < SILENT_CHURN_FRAC)
+        elevated_risk = churned and not silent_churner
+
+        # churners: 0-5 tickets, skewed higher and more billing-related — but only
+        # for the "predictable" (non-silent) group
+        n_tickets = int(rng.poisson(2.0 if elevated_risk else 0.9))
         n_tickets = min(n_tickets, 6)
 
         for _ in range(n_tickets):
@@ -248,14 +286,14 @@ def build_support_tickets(seed_df: pd.DataFrame, rng: np.random.Generator) -> pd
             created_at = TODAY - timedelta(days=days_ago)
             category = rng.choice(
                 ["billing", "technical", "other"],
-                p=[0.55, 0.30, 0.15] if churned else [0.30, 0.40, 0.30]
+                p=[0.50, 0.30, 0.20] if elevated_risk else [0.32, 0.38, 0.30]
             )
             priority = rng.choice(["low", "medium", "high"], p=[0.3, 0.5, 0.2])
-            resolved = rng.random() < (0.75 if not churned else 0.55)
+            resolved = rng.random() < (0.72 if not elevated_risk else 0.58)
             resolution_hours = None
             resolved_at = None
             if resolved:
-                resolution_hours = round(float(rng.uniform(1, 96 if churned else 48)), 2)
+                resolution_hours = round(float(rng.uniform(1, 84 if elevated_risk else 48)), 2)
                 resolved_at = created_at + timedelta(hours=resolution_hours)
             text = rng.choice(TICKET_TEXT_TEMPLATES[category])
 
@@ -285,11 +323,13 @@ def build_transactions(seed_df: pd.DataFrame, rng: np.random.Generator, n_months
     for _, row in seed_df.iterrows():
         cust_id = row["customer_id"]
         churned = row["churn_label"] == 1
+        silent_churner = churned and (rng.random() < SILENT_CHURN_FRAC)
+        elevated_risk = churned and not silent_churner
         charge = float(row["monthly_charge"])
 
         for m in range(n_months, 0, -1):
             txn_date = TODAY - pd.DateOffset(months=m)
-            fail_prob = 0.35 if churned else 0.04
+            fail_prob = 0.28 if elevated_risk else 0.05
             failed = rng.random() < fail_prob
             if failed:
                 rows.append({

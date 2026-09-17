@@ -1,0 +1,7 @@
+{
+  "logistic_regression": {
+    "roc_auc": 0.944,
+    "pr_auc": 0.9214,
+    "brier_score": 0.1877
+  }
+}
