@@ -1,0 +1,42 @@
+feature,mean_abs_shap
+num__months_of_usage_history,0.828898
+num__tenure_months,0.603438
+cat__plan_type_Basic,0.50330263
+num__monthly_charge,0.46001598
+num__avg_feature_adoption_recent,0.43066582
+num__failed_payment_count_90d,0.36572942
+num__days_since_last_active,0.30990472
+num__session_count_trend,0.27087468
+num__age,0.25276607
+num__avg_resolution_hours_90d,0.24966946
+num__avg_session_minutes_recent,0.2013995
+cat__payment_method_Electronic check,0.19245738
+num__avg_session_count_recent,0.15158156
+cat__plan_type_Pro,0.13696858
+num__total_paid_90d,0.13399711
+num__open_ticket_count,0.12899251
+num__failed_payment_ratio_90d,0.116485834
+cat__contract_type_Month-to-month,0.08827604
+num__billing_ticket_ratio_90d,0.07423336
+cat__payment_method_Mailed check,0.06199252
+cat__payment_method_Bank transfer (automatic),0.050600313
+cat__signup_channel_referral,0.04825523
+cat__signup_channel_social,0.040044427
+num__ticket_count_90d,0.036467846
+cat__region_Central,0.031859238
+cat__region_West,0.02613005
+num__transaction_count_90d,0.021758895
+cat__signup_channel_partner,0.01916918
+cat__billing_cycle_Annual,0.019093541
+cat__payment_method_Credit card (automatic),0.018789822
+cat__signup_channel_paid_search,0.018617736
+cat__region_North,0.01667875
+cat__region_East,0.01490263
+cat__gender_Female,0.012868026
+cat__contract_type_Two year,0.012831198
+cat__plan_type_Standard,0.012476188
+cat__region_South,0.008054746
+cat__contract_type_One year,0.0072173546
+cat__signup_channel_organic,0.0049505653
+cat__gender_Male,0.003918631
+cat__billing_cycle_Monthly,0.0

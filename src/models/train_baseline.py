@@ -19,6 +19,11 @@ Design notes
   same way.
 - MLflow logging is guarded the same way — if not installed, metrics/params
   are still printed and written to metrics.json, just not tracked in MLflow.
+  Uses a SQLite backend (sqlite:///mlflow.db) by default, not the plain
+  filesystem store — newer MLflow versions deprecated file-store-only
+  tracking and raise at runtime if pointed at a bare directory like
+  './mlruns'. That exception is caught too, so a tracking-backend problem
+  never takes down a run whose model training already succeeded.
 - class imbalance (churn ~22-42% depending on split) is handled via
   class_weight="balanced" (LR) and scale_pos_weight (XGBoost), not by
   resampling — keeps the leakage-safe row structure untouched.
@@ -218,20 +223,27 @@ def run_shap(pipe, X_test, feature_names, out_dir, top_k: int = 3):
 # MLflow logging (guarded — may not be installed)
 # ---------------------------------------------------------------------
 
-def log_to_mlflow(model_name, params, metrics, tracking_uri="./mlruns"):
+def log_to_mlflow(model_name, params, metrics, tracking_uri="sqlite:///mlflow.db"):
     try:
         import mlflow
+        mlflow.set_tracking_uri(tracking_uri)
+        mlflow.set_experiment("kairos_churn_baseline")
+        with mlflow.start_run(run_name=model_name):
+            mlflow.log_params(params)
+            mlflow.log_metrics(metrics)
+        print(f"[MLflow] Logged run for {model_name} to {tracking_uri}")
     except ImportError:
         print(f"\n[MLflow] 'mlflow' is not installed — skipping tracking for {model_name}. "
               "Install with `pip install mlflow` and re-run to get experiment tracking.")
-        return
-
-    mlflow.set_tracking_uri(tracking_uri)
-    mlflow.set_experiment("kairos_churn_baseline")
-    with mlflow.start_run(run_name=model_name):
-        mlflow.log_params(params)
-        mlflow.log_metrics(metrics)
-    print(f"[MLflow] Logged run for {model_name} to {tracking_uri}")
+    except Exception as e:
+        # Broadened beyond ImportError on purpose: newer MLflow versions raise a
+        # runtime MlflowException if pointed at a plain filesystem URI (the old
+        # './mlruns' default is now deprecated in favor of a DB backend like
+        # sqlite:///mlflow.db). Rather than let a tracking-backend issue take down
+        # a run whose actual model training already succeeded, log a warning and
+        # continue — metrics.json still has everything either way.
+        print(f"\n[MLflow] Logging failed for {model_name}, continuing without it. "
+              f"Reason: {e}")
 
 
 # ---------------------------------------------------------------------
@@ -287,7 +299,7 @@ def main():
     parser = argparse.ArgumentParser(description="Kairos baseline model training.")
     parser.add_argument("--data-dir", type=str, default="data/processed")
     parser.add_argument("--out-dir", type=str, default="models")
-    parser.add_argument("--mlflow-uri", type=str, default="./mlruns")
+    parser.add_argument("--mlflow-uri", type=str, default="sqlite:///mlflow.db")
     args = parser.parse_args()
 
     os.makedirs(args.out_dir, exist_ok=True)

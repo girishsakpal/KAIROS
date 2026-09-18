@@ -376,7 +376,7 @@ def main():
     parser = argparse.ArgumentParser(description="Generate Kairos synthetic data.")
     parser.add_argument("--seed-csv", type=str, default=None,
                          help="Path to Kaggle Telco-Customer-Churn.csv (optional).")
-    parser.add_argument("--out-dir", type=str, default="./synthetic_data")
+    parser.add_argument("--out-dir", type=str, default="data/synthetic")
     parser.add_argument("--n-fallback", type=int, default=2000,
                          help="Number of customers to generate if no seed CSV is found.")
     args = parser.parse_args()

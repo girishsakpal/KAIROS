@@ -64,3 +64,32 @@ psql -U postgres -d kairos -c "\copy usage_logs FROM 'data/synthetic/usage_logs.
 psql -U postgres -d kairos -c "\copy support_tickets FROM 'data/synthetic/support_tickets.csv' CSV HEADER"
 psql -U postgres -d kairos -c "\copy transactions FROM 'data/synthetic/transactions.csv' CSV HEADER"
 ```
+
+# Results of Linear Regression vs XG Boost:
+
+```
+{
+  "logistic_regression": {
+    "roc_auc": 0.8984,
+    "pr_auc": 0.8728,
+    "brier_score": 0.2498
+  },
+  "xgboost": {
+    "roc_auc": 0.9047,
+    "pr_auc": 0.8824,
+    "brier_score": 0.1599
+  }
+}
+```
+
+## ROC AUC (Receiver Operating Characteristic - Area Under the Curve)
+### What it signifies: It measures how well the model separates the two classes (e.g., distinguishing between "fraud" and "not fraud"). A score of 1.0 is perfect, and 0.5 is random guessing.
+### Interpretation: Both models have excellent discriminative power (approx. 90% chance of ranking a positive instance higher than a negative one). XGBoost has a slight edge.
+
+## PR AUC (Precision-Recall Area Under the Curve)
+### What it signifies: This evaluates performance specifically on the positive class. It is highly useful if your dataset is imbalanced (e.g., rare diseases or defaults). A higher score means the model finds positive cases accurately without catching too many false alarms.
+### Interpretation: Both models perform strongly here, meaning they handle the positive class well. XGBoost again slightly outperforms Logistic Regression.
+
+## Brier Score
+### What it signifies: It measures the accuracy of predicted probabilities (calibration). It is the mean squared difference between the predicted probability and the actual outcome. Lower is better, with 0.0 being a perfect score and 0.25 representing random guessing (for a 50/50 balanced dataset).
+### Interpretation: This is the biggest differentiator. Logistic Regression’s score (~0.25) suggests its probability estimates are uncalibrated and closer to random guessing. XGBoost (0.1599) is much lower, meaning its predicted probabilities are far more reliable and accurate.

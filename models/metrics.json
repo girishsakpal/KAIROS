@@ -1,7 +1,12 @@
 {
   "logistic_regression": {
-    "roc_auc": 0.944,
-    "pr_auc": 0.9214,
-    "brier_score": 0.1877
+    "roc_auc": 0.8984,
+    "pr_auc": 0.8728,
+    "brier_score": 0.2498
+  },
+  "xgboost": {
+    "roc_auc": 0.9047,
+    "pr_auc": 0.8824,
+    "brier_score": 0.1599
   }
 }
