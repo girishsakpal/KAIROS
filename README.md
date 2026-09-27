@@ -65,7 +65,7 @@ psql -U postgres -d kairos -c "\copy support_tickets FROM 'data/synthetic/suppor
 psql -U postgres -d kairos -c "\copy transactions FROM 'data/synthetic/transactions.csv' CSV HEADER"
 ```
 
-# Results of Linear Regression vs XG Boost:
+# Results: Logistic Regression vs XGBoost vs LSTM
 
 ```
 {
@@ -78,18 +78,44 @@ psql -U postgres -d kairos -c "\copy transactions FROM 'data/synthetic/transacti
     "roc_auc": 0.9047,
     "pr_auc": 0.8824,
     "brier_score": 0.1599
+  },
+  "lstm": {
+    "roc_auc": 0.9174,
+    "pr_auc": 0.8957,
+    "brier_score": 0.1414
+  },
+  "lstm_calibrated": {
+    "roc_auc": 0.9158,
+    "pr_auc": 0.8851,
+    "brier_score": 0.1137
   }
 }
 ```
 
+The LSTM is a hybrid model: an LSTM branch reads each customer's raw 6-month
+usage sequence (session count, session minutes, feature adoption), concatenated
+with a dense branch reading the same static features LR/XGBoost use (contract,
+tenure, payment method, support/transaction aggregates), so it's judged on
+whether *learning* the usage trajectory beats *summarizing* it into hand-built
+features. `lstm_calibrated` applies isotonic calibration fit on a held-out
+validation slice — see the Brier section below for why that matters.
+
 ## ROC AUC (Receiver Operating Characteristic - Area Under the Curve)
-### What it signifies: It measures how well the model separates the two classes (e.g., distinguishing between "fraud" and "not fraud"). A score of 1.0 is perfect, and 0.5 is random guessing.
-### Interpretation: Both models have excellent discriminative power (approx. 90% chance of ranking a positive instance higher than a negative one). XGBoost has a slight edge.
+### What it signifies: 
+It measures how well the model separates the two classes (e.g., distinguishing between "fraud" and "not fraud"). A score of 1.0 is perfect, and 0.5 is random guessing.
+### Interpretation: 
+All three models have strong discriminative power. The LSTM has the edge (0.917 raw / 0.916 calibrated) over XGBoost (0.905) and Logistic Regression (0.898), the raw usage sequence appears to carry more signal than the 6 hand-built summary features derived from it.
 
 ## PR AUC (Precision-Recall Area Under the Curve)
-### What it signifies: This evaluates performance specifically on the positive class. It is highly useful if your dataset is imbalanced (e.g., rare diseases or defaults). A higher score means the model finds positive cases accurately without catching too many false alarms.
-### Interpretation: Both models perform strongly here, meaning they handle the positive class well. XGBoost again slightly outperforms Logistic Regression.
+### What it signifies: 
+This evaluates performance specifically on the positive class. It is highly useful if your dataset is imbalanced (e.g., rare diseases or defaults). A higher score means the model finds positive cases accurately without catching too many false alarms.
+### Interpretation: 
+The LSTM again leads (0.896 raw), ahead of XGBoost (0.882) and Logistic Regression (0.873). Calibration trades a little PR-AUC for much better calibration (0.885) — expected, since PR-AUC is sensitive to how probabilities are ranked/thresholded, not just their calibration.
 
 ## Brier Score
-### What it signifies: It measures the accuracy of predicted probabilities (calibration). It is the mean squared difference between the predicted probability and the actual outcome. Lower is better, with 0.0 being a perfect score and 0.25 representing random guessing (for a 50/50 balanced dataset).
-### Interpretation: This is the biggest differentiator. Logistic Regression’s score (~0.25) suggests its probability estimates are uncalibrated and closer to random guessing. XGBoost (0.1599) is much lower, meaning its predicted probabilities are far more reliable and accurate.
+### What it signifies: 
+It measures the accuracy of predicted probabilities (calibration). It is the mean squared difference between the predicted probability and the actual outcome. Lower is better, with 0.0 being a perfect score.
+### Interpretation: 
+The calibrated LSTM is the best-calibrated model by a clear margin (0.114), followed by the raw LSTM (0.141) and XGBoost (0.160). **Caveat on LR and XGBoost's scores above:** both are trained with `class_weight`/`scale_pos_weight` re-balancing, which systematically inflates predicted probabilities (mean predicted churn on the test set is 0.565 vs an actual rate of 0.409) — so their Brier scores here are worse than their true ranking ability would suggest, not evidence that their probabilities are "close to random." The LSTM's isotonic calibration step corrects for this directly (mean predicted drops to 0.421 against the same 0.409 actual rate), which is why it's the most trustworthy of the four for anything using the probability itself (e.g. expected-revenue-at-risk), not just the ranking.
+
+**Model selection:** on ROC-AUC the LSTM currently outperforms XGBoost, so it is the promoted champion in `model_registry_row.json` unless retrained. See `docs/LSTM_Notes.md` for architecture details and `docs/Phase3_Findings.md` for the calibration issue in more depth.

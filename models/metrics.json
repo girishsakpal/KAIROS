@@ -8,5 +8,15 @@
     "roc_auc": 0.9047,
     "pr_auc": 0.8824,
     "brier_score": 0.1599
+  },
+  "lstm": {
+    "roc_auc": 0.9174,
+    "pr_auc": 0.8957,
+    "brier_score": 0.1414
+  },
+  "lstm_calibrated": {
+    "roc_auc": 0.9158,
+    "pr_auc": 0.8851,
+    "brier_score": 0.1137
   }
 }

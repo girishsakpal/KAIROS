@@ -1,0 +1,19 @@
+feature,auc_drop_when_shuffled
+usage_sequence_6mo (whole branch),0.0887
+tenure_months,0.0307
+failed_payment_count_90d,0.0196
+failed_payment_ratio_90d,0.0128
+total_paid_90d,0.0096
+avg_resolution_hours_90d,0.0093
+billing_cycle,0.0087
+contract_type,0.0071
+open_ticket_count,0.0036
+monthly_charge,0.0034
+signup_channel,0.0018
+age,0.0014
+region,0.0007
+payment_method,0.0003
+ticket_count_90d,0.0
+billing_ticket_ratio_90d,-0.0002
+gender,-0.0005
+transaction_count_90d,-0.0005

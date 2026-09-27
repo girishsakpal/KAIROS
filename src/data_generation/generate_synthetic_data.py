@@ -29,8 +29,8 @@ Two modes:
    Swap in the real seed file later with zero code changes.
 
 Usage:
-    python3 generate_synthetic_data.py --seed-csv /path/to/telco.csv --out-dir ./synthetic_data
-    python3 generate_synthetic_data.py --out-dir ./synthetic_data   # fallback mode
+    python3 generate_synthetic_data.py --seed-csv /path/to/telco.csv --out-dir data/synthetic
+    python3 generate_synthetic_data.py --out-dir data/synthetic   # fallback mode
 """
 
 import argparse
