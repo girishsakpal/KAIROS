@@ -2,7 +2,10 @@
 Build Power BI-ready tables from the Phase 3 model outputs.
 
 Inputs  (all produced by earlier Phase 3 steps):
-  models/churn_predictions_test.csv   - probabilities + top-3 SHAP drivers (JSON string)
+  models/xgboost_predictions_test.csv - calibrated probabilities + top-3 SHAP drivers (JSON string).
+                                        Falls back to churn_predictions_test.csv with a warning.
+                                        NOTE: the champion file (churn_predictions_test.csv) may belong to
+                                        the LSTM, which has no SHAP drivers -- hence the XGBoost file.
   models/shap_global_importance.csv   - mean |SHAP| per feature
   data/synthetic/customers.csv        - region, channel, age, gender
   data/synthetic/subscriptions.csv    - plan, contract, monthly_charge, tenure
@@ -13,8 +16,11 @@ Outputs (dashboards/powerbi/data/):
   shap_global.csv        - global driver ranking with business-friendly labels and groups
 
 Run from repo root:  python3 dashboards/powerbi/prepare_dashboard_data.py
+Options:             --predictions PATH   override the predictions file
 """
+import argparse
 import json
+import sys
 from pathlib import Path
 import pandas as pd
 
@@ -61,7 +67,21 @@ def parse_drivers(s):
     try: return json.loads(s)
     except Exception: return []
 
-pred = pd.read_csv(ROOT / "models" / "churn_predictions_test.csv")
+ap = argparse.ArgumentParser()
+ap.add_argument("--predictions", default=None)
+args = ap.parse_args()
+pred_path = Path(args.predictions) if args.predictions else ROOT / "models" / "xgboost_predictions_test.csv"
+if not pred_path.exists():
+    pred_path = ROOT / "models" / "churn_predictions_test.csv"
+    print(f"[warn] xgboost_predictions_test.csv not found -- falling back to {pred_path.name}. "
+          "If the champion is the LSTM this file has NO SHAP drivers.")
+pred = pd.read_csv(pred_path)
+print(f"[info] predictions from {pred_path.name}, model_id = {pred['model_id'].unique().tolist()}")
+if "top_features" not in pred.columns or pred["top_features"].isna().all():
+    sys.exit("[error] top_features is empty for every row -- this predictions file has no SHAP drivers, "
+             "so drivers and recommended actions would be blank. Use xgboost_predictions_test.csv.")
+# extra column from train_baseline.py; keep the dashboard schema identical to the existing .pbix
+pred = pred.drop(columns=[c for c in ["churn_probability_raw"] if c in pred.columns])
 cust = pd.read_csv(ROOT / "data" / "synthetic" / "customers.csv")
 subs = pd.read_csv(ROOT / "data" / "synthetic" / "subscriptions.csv")
 

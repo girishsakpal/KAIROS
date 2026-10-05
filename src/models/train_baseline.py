@@ -24,6 +24,20 @@ Design notes
   tracking and raise at runtime if pointed at a bare directory like
   './mlruns'. That exception is caught too, so a tracking-backend problem
   never takes down a run whose model training already succeeded.
+- STEP 5 CHANGES (Phase 3 findings): `plan_type` (1:1 relabel of contract_type) and
+  `months_of_usage_history` (redundant with tenure, inflates SHAP) are dropped.
+  Both models are now calibrated: the last 15% of train (chronologically) is held
+  out as a validation slice, models fit on the first 85%, and an isotonic
+  calibrator is fit on the validation slice. The test set never touches fitting
+  or calibration. Metrics are reported before AND after calibration.
+- SHAP explains the RAW (uncalibrated) XGBoost output. Isotonic calibration is a
+  monotone transform of that score, so driver rankings are unaffected; only the
+  probability shown to the user is recalibrated.
+- Champion logic is registry-aware: if model_registry_row.json already holds a
+  non-baseline champion (e.g. the LSTM) with a higher ROC-AUC, this script leaves
+  it and churn_predictions_test.csv alone. XGBoost's explainable predictions are
+  ALWAYS written to xgboost_predictions_test.csv so the dashboard can use SHAP
+  drivers regardless of who the champion is.
 - class imbalance (churn ~22-42% depending on split) is handled via
   class_weight="balanced" (LR) and scale_pos_weight (XGBoost), not by
   resampling — keeps the leakage-safe row structure untouched.
@@ -36,6 +50,10 @@ Outputs (all under --out-dir, default `models/`):
     shap_summary_plot.png               — bar chart of global importance (if shap available)
     model_registry_row.json             — ready to insert into model_registry table
     churn_predictions_test.csv          — ready to insert into churn_predictions table
+                                          (champion only; untouched if a stronger non-baseline champion exists)
+    xgboost_predictions_test.csv        — XGBoost calibrated probs + SHAP top_features (always written)
+    xgboost_registry_row.json           — registry row for the XGBoost run (champion or challenger)
+    calibration_curve.png               — reliability diagram, raw vs calibrated
 """
 
 import argparse
@@ -47,15 +65,22 @@ import numpy as np
 import pandas as pd
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
+from sklearn.isotonic import IsotonicRegression
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score, average_precision_score, brier_score_loss
 from sklearn.pipeline import Pipeline, Pipeline as SkPipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
-CATEGORICAL_COLS = ["region", "signup_channel", "gender", "plan_type",
+CATEGORICAL_COLS = ["region", "signup_channel", "gender",
                      "contract_type", "billing_cycle", "payment_method"]
 ID_COLS = ["customer_id", "snapshot_date"]
 LABEL_COL = "churn_label"
+
+# Dropped per docs/Phase3_Findings.md section 2 (redundant features).
+DROP_COLS = ["plan_type", "months_of_usage_history"]
+VALIDATION_FRACTION = 0.15      # chronological slice from the END of train
+BASELINE_ID_PREFIXES = ("xgb_churn", "logreg_churn")
+MODEL_VERSION = "v2"            # v1 = pre-Step-5 feature set / uncalibrated
 
 
 # ---------------------------------------------------------------------
@@ -63,14 +88,28 @@ LABEL_COL = "churn_label"
 # ---------------------------------------------------------------------
 
 def load_data(data_dir: str):
-    train = pd.read_csv(os.path.join(data_dir, "features_train.csv"))
-    test = pd.read_csv(os.path.join(data_dir, "features_test.csv"))
-    feature_cols = [c for c in train.columns if c not in ID_COLS + [LABEL_COL]]
+    """Returns fit/val/test splits. Validation = most recent 15% of train."""
+    train = pd.read_csv(os.path.join(data_dir, "features_train.csv"),
+                        parse_dates=["snapshot_date"])
+    test = pd.read_csv(os.path.join(data_dir, "features_test.csv"),
+                       parse_dates=["snapshot_date"])
+    # Chronological order so the tail really is "most recent", never random.
+    train = train.sort_values("snapshot_date", kind="mergesort").reset_index(drop=True)
+
+    feature_cols = [c for c in train.columns if c not in ID_COLS + [LABEL_COL] + DROP_COLS]
     numeric_cols = [c for c in feature_cols if c not in CATEGORICAL_COLS]
 
-    X_train, y_train = train[feature_cols], train[LABEL_COL]
-    X_test, y_test = test[feature_cols], test[LABEL_COL]
-    return X_train, y_train, X_test, y_test, test, numeric_cols
+    n_val = int(len(train) * VALIDATION_FRACTION)
+    fit_df, val_df = train.iloc[:-n_val], train.iloc[-n_val:]
+    if val_df[LABEL_COL].nunique() < 2:
+        print("[warn] Validation slice has a single class — calibration will be unreliable.")
+
+    return {
+        "X_fit": fit_df[feature_cols], "y_fit": fit_df[LABEL_COL],
+        "X_val": val_df[feature_cols], "y_val": val_df[LABEL_COL],
+        "X_test": test[feature_cols], "y_test": test[LABEL_COL],
+        "test_df": test, "numeric_cols": numeric_cols, "feature_cols": feature_cols,
+    }
 
 
 def build_preprocessor(numeric_cols):
@@ -105,36 +144,86 @@ def risk_tier(prob: float) -> str:
 
 
 # ---------------------------------------------------------------------
+# Calibration
+# ---------------------------------------------------------------------
+
+def fit_calibrator(val_proba, y_val):
+    """Isotonic regression mapping raw score -> calibrated probability.
+    Fit ONLY on the validation slice (never train-fit rows, never test)."""
+    iso = IsotonicRegression(out_of_bounds="clip", y_min=0.0, y_max=1.0)
+    iso.fit(val_proba, y_val)
+    return iso
+
+
+def calibrate_and_report(name, pipe, data):
+    """Returns (calibrator, raw_test_proba, cal_test_proba, raw_metrics, cal_metrics)."""
+    val_raw = pipe.predict_proba(data["X_val"])[:, 1]
+    test_raw = pipe.predict_proba(data["X_test"])[:, 1]
+    iso = fit_calibrator(val_raw, data["y_val"])
+    test_cal = iso.predict(test_raw)
+    raw_m = evaluate(data["y_test"], test_raw)
+    cal_m = evaluate(data["y_test"], test_cal)
+    actual = float(np.mean(data["y_test"]))
+    print(f"[{name}] mean predicted churn on test: raw {test_raw.mean():.3f} -> "
+          f"calibrated {test_cal.mean():.3f} (actual {actual:.3f})")
+    print(f"[{name}] raw        : {raw_m}")
+    print(f"[{name}] calibrated : {cal_m}")
+    return iso, test_raw, test_cal, raw_m, cal_m
+
+
+def save_calibration_plot(out_dir, y_test, curves):
+    """curves: {label: proba}. Reliability diagram; skipped if matplotlib missing."""
+    try:
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+        from sklearn.calibration import calibration_curve
+        plt.figure(figsize=(6, 6))
+        plt.plot([0, 1], [0, 1], "k--", label="Perfectly calibrated")
+        for lab, proba in curves.items():
+            frac_pos, mean_pred = calibration_curve(y_test, proba, n_bins=10, strategy="quantile")
+            plt.plot(mean_pred, frac_pos, marker="o", label=lab)
+        plt.xlabel("Mean predicted probability")
+        plt.ylabel("Observed churn rate")
+        plt.title("Kairos — Reliability curve (test set)")
+        plt.legend(fontsize=8)
+        plt.tight_layout()
+        path = os.path.join(out_dir, "calibration_curve.png")
+        plt.savefig(path, dpi=150)
+        plt.close()
+        print(f"[write] {path}")
+    except Exception as e:
+        print(f"[warn] Could not save calibration plot: {e}")
+
+
+# ---------------------------------------------------------------------
 # Logistic Regression baseline
 # ---------------------------------------------------------------------
 
-def train_logistic_regression(X_train, y_train, X_test, y_test, numeric_cols):
-    print("\n[LogisticRegression] Training baseline...")
+def train_logistic_regression(X_train, y_train, numeric_cols):
+    print("\n[LogisticRegression] Training baseline (on fit slice)...")
     pipe = Pipeline([
         ("preprocess", build_preprocessor(numeric_cols)),
         ("clf", LogisticRegression(class_weight="balanced", max_iter=1000)),
     ])
     pipe.fit(X_train, y_train)
-    proba = pipe.predict_proba(X_test)[:, 1]
-    metrics = evaluate(y_test, proba)
-    print(f"[LogisticRegression] Test metrics: {metrics}")
-    return pipe, proba, metrics
+    return pipe
 
 
 # ---------------------------------------------------------------------
 # XGBoost + SHAP (guarded — may not be installed)
 # ---------------------------------------------------------------------
 
-def train_xgboost(X_train, y_train, X_test, y_test, numeric_cols):
+def train_xgboost(X_train, y_train, numeric_cols):
     try:
         import xgboost as xgb
     except ImportError:
         print("\n[XGBoost] 'xgboost' is not installed in this environment — "
               "skipping XGBoost + SHAP. Install with `pip install xgboost shap` "
               "and re-run to get the full comparison.")
-        return None, None, None, None
+        return None, None
 
-    print("\n[XGBoost] Training...")
+    print("\n[XGBoost] Training (on fit slice)...")
     preprocessor = build_preprocessor(numeric_cols)
     scale_pos_weight = (y_train == 0).sum() / max((y_train == 1).sum(), 1)
 
@@ -152,12 +241,8 @@ def train_xgboost(X_train, y_train, X_test, y_test, numeric_cols):
         )),
     ])
     pipe.fit(X_train, y_train)
-    proba = pipe.predict_proba(X_test)[:, 1]
-    metrics = evaluate(y_test, proba)
-    print(f"[XGBoost] Test metrics: {metrics}")
-
     feature_names = pipe.named_steps["preprocess"].get_feature_names_out()
-    return pipe, proba, metrics, feature_names
+    return pipe, feature_names
 
 
 def run_shap(pipe, X_test, feature_names, out_dir, top_k: int = 3):
@@ -250,7 +335,8 @@ def log_to_mlflow(model_name, params, metrics, tracking_uri="sqlite:///mlflow.db
 # DB-ready output files
 # ---------------------------------------------------------------------
 
-def write_model_registry_row(out_dir, model_id, algorithm, metrics, feature_names):
+def write_model_registry_row(out_dir, model_id, algorithm, metrics, feature_names,
+                              status="champion", filename="model_registry_row.json"):
     row = {
         "model_id": model_id,
         "model_name": f"Kairos churn model ({algorithm})",
@@ -263,15 +349,16 @@ def write_model_registry_row(out_dir, model_id, algorithm, metrics, feature_name
         "drift_psi_score": None,   # populated by Phase 6 drift monitoring, not at training time
         "drift_ks_pvalue": None,
         "drift_detected": False,
-        "status": "champion",
+        "status": status,
     }
-    path = os.path.join(out_dir, "model_registry_row.json")
+    path = os.path.join(out_dir, filename)
     with open(path, "w") as f:
         json.dump(row, f, indent=2)
-    print(f"[write] {path}")
+    print(f"[write] {path}  (status={status})")
 
 
-def write_churn_predictions(out_dir, test_df, proba, model_id, top_features_per_customer=None):
+def write_churn_predictions(out_dir, test_df, proba, model_id, top_features_per_customer=None,
+                             filename="churn_predictions_test.csv", proba_raw=None):
     rows = pd.DataFrame({
         "customer_id": test_df["customer_id"].values,
         "model_id": model_id,
@@ -280,15 +367,39 @@ def write_churn_predictions(out_dir, test_df, proba, model_id, top_features_per_
         "risk_tier": [risk_tier(p) for p in proba],
         "actual_churn": test_df[LABEL_COL].values,
     })
+    if proba_raw is not None:
+        rows["churn_probability_raw"] = proba_raw   # extra column, not part of DB table
     if top_features_per_customer is not None:
         rows["top_features"] = [json.dumps(tf) for tf in top_features_per_customer]
     else:
         rows["top_features"] = None
 
-    path = os.path.join(out_dir, "churn_predictions_test.csv")
+    path = os.path.join(out_dir, filename)
     rows.to_csv(path, index=False)
-    print(f"[write] {path}  ({len(rows)} rows — ready for \\copy into churn_predictions, "
-          f"after model_registry_row.json is inserted first for the FK)")
+    print(f"[write] {path}  ({len(rows)} rows)")
+
+
+def update_metrics_json(out_dir, new_entries):
+    """Merge into metrics.json instead of overwriting, so LSTM entries written by
+    train_lstm.py survive a re-run of this script."""
+    path = os.path.join(out_dir, "metrics.json")
+    existing = {}
+    if os.path.exists(path):
+        with open(path) as f:
+            existing = json.load(f)
+    existing.update(new_entries)
+    with open(path, "w") as f:
+        json.dump(existing, f, indent=2)
+    print(f"\n[write] {path} (merged; kept: {sorted(set(existing) - set(new_entries))})")
+    return existing
+
+
+def read_existing_registry(out_dir):
+    path = os.path.join(out_dir, "model_registry_row.json")
+    if os.path.exists(path):
+        with open(path) as f:
+            return json.load(f)
+    return None
 
 
 # ---------------------------------------------------------------------
@@ -296,72 +407,98 @@ def write_churn_predictions(out_dir, test_df, proba, model_id, top_features_per_
 # ---------------------------------------------------------------------
 
 def main():
+    import joblib
     parser = argparse.ArgumentParser(description="Kairos baseline model training.")
     parser.add_argument("--data-dir", type=str, default="data/processed")
     parser.add_argument("--out-dir", type=str, default="models")
     parser.add_argument("--mlflow-uri", type=str, default="sqlite:///mlflow.db")
     args = parser.parse_args()
-
     os.makedirs(args.out_dir, exist_ok=True)
 
-    X_train, y_train, X_test, y_test, test_df, numeric_cols = load_data(args.data_dir)
-    print(f"[info] Train: {len(X_train)} rows, churn rate {y_train.mean():.1%}")
-    print(f"[info] Test:  {len(X_test)} rows, churn rate {y_test.mean():.1%}")
+    data = load_data(args.data_dir)
+    print(f"[info] Fit:  {len(data['X_fit'])} rows, churn rate {data['y_fit'].mean():.1%}")
+    print(f"[info] Val:  {len(data['X_val'])} rows, churn rate {data['y_val'].mean():.1%}  (calibration only)")
+    print(f"[info] Test: {len(data['X_test'])} rows, churn rate {data['y_test'].mean():.1%}")
+    print(f"[info] Dropped features: {DROP_COLS}")
 
-    all_metrics = {}
+    new_metrics, curves = {}, {}
 
     # --- Logistic Regression (always runs) ---
-    import joblib
-    lr_pipe, lr_proba, lr_metrics = train_logistic_regression(
-        X_train, y_train, X_test, y_test, numeric_cols)
-    all_metrics["logistic_regression"] = lr_metrics
+    lr_pipe = train_logistic_regression(data["X_fit"], data["y_fit"], data["numeric_cols"])
+    lr_iso, lr_raw, lr_cal, lr_raw_m, lr_cal_m = calibrate_and_report("LogisticRegression", lr_pipe, data)
+    new_metrics["logistic_regression"] = lr_raw_m
+    new_metrics["logistic_regression_calibrated"] = lr_cal_m
+    curves["LogReg raw"], curves["LogReg calibrated"] = lr_raw, lr_cal
     joblib.dump(lr_pipe, os.path.join(args.out_dir, "logistic_regression_pipeline.joblib"))
-    log_to_mlflow("logistic_regression",
-                   {"class_weight": "balanced", "max_iter": 1000},
-                   lr_metrics, args.mlflow_uri)
+    joblib.dump(lr_iso, os.path.join(args.out_dir, "logistic_regression_calibrator.joblib"))
+    log_to_mlflow("logistic_regression", {"class_weight": "balanced", "max_iter": 1000,
+                                           "dropped": ",".join(DROP_COLS)},
+                  {**lr_raw_m, **{f"cal_{k}": v for k, v in lr_cal_m.items()}}, args.mlflow_uri)
 
     # --- XGBoost (guarded) ---
-    xgb_result = train_xgboost(X_train, y_train, X_test, y_test, numeric_cols)
-    xgb_pipe, xgb_proba, xgb_metrics, feature_names = xgb_result if xgb_result[0] else (None, None, None, None)
-
+    xgb_pipe, feature_names = train_xgboost(data["X_fit"], data["y_fit"], data["numeric_cols"])
+    xgb_ready = xgb_pipe is not None
     top_features_per_customer = None
-    if xgb_pipe is not None:
-        all_metrics["xgboost"] = xgb_metrics
+    if xgb_ready:
+        xgb_iso, xgb_raw, xgb_cal, xgb_raw_m, xgb_cal_m = calibrate_and_report("XGBoost", xgb_pipe, data)
+        new_metrics["xgboost"] = xgb_raw_m
+        new_metrics["xgboost_calibrated"] = xgb_cal_m
+        curves["XGBoost raw"], curves["XGBoost calibrated"] = xgb_raw, xgb_cal
         joblib.dump(xgb_pipe, os.path.join(args.out_dir, "xgboost_pipeline.joblib"))
-        log_to_mlflow("xgboost",
-                       {"n_estimators": 300, "max_depth": 4, "learning_rate": 0.05},
-                       xgb_metrics, args.mlflow_uri)
+        joblib.dump(xgb_iso, os.path.join(args.out_dir, "xgboost_calibrator.joblib"))
+        log_to_mlflow("xgboost", {"n_estimators": 300, "max_depth": 4, "learning_rate": 0.05,
+                                   "dropped": ",".join(DROP_COLS)},
+                      {**xgb_raw_m, **{f"cal_{k}": v for k, v in xgb_cal_m.items()}}, args.mlflow_uri)
+        _, top_features_per_customer = run_shap(xgb_pipe, data["X_test"], feature_names, args.out_dir)
 
-        global_importance, top_features_per_customer = run_shap(
-            xgb_pipe, X_test, feature_names, args.out_dir)
+    save_calibration_plot(args.out_dir, data["y_test"], curves)
+    update_metrics_json(args.out_dir, new_metrics)
 
-    # --- Metrics summary ---
-    metrics_path = os.path.join(args.out_dir, "metrics.json")
-    with open(metrics_path, "w") as f:
-        json.dump(all_metrics, f, indent=2)
-    print(f"\n[write] {metrics_path}")
-    print(f"[summary] {json.dumps(all_metrics, indent=2)}")
-
-    # --- Champion model choice: XGBoost if available and it beats LR on ROC-AUC, else LR ---
-    if xgb_metrics and xgb_metrics["roc_auc"] >= lr_metrics["roc_auc"]:
-        champion_id = "xgb_churn_v1"
-        champion_algo = "XGBoost"
-        champion_metrics = xgb_metrics
-        champion_proba = xgb_proba
-        champion_features = feature_names
+    # --- This run's best baseline, judged on the probabilities we would actually serve
+    #     (calibrated). XGBoost wins ties, same as before.
+    if xgb_ready and xgb_cal_m["roc_auc"] >= lr_cal_m["roc_auc"]:
+        best = dict(id=f"xgb_churn_{MODEL_VERSION}", algo="XGBoost", metrics=xgb_cal_m,
+                    proba=xgb_cal, raw=xgb_raw, feats=feature_names, tf=top_features_per_customer)
     else:
-        champion_id = "logreg_churn_v1"
-        champion_algo = "LogisticRegression"
-        champion_metrics = lr_metrics
-        champion_proba = lr_proba
-        champion_features = lr_pipe.named_steps["preprocess"].get_feature_names_out()
+        best = dict(id=f"logreg_churn_{MODEL_VERSION}", algo="LogisticRegression", metrics=lr_cal_m,
+                    proba=lr_cal, raw=lr_raw,
+                    feats=lr_pipe.named_steps["preprocess"].get_feature_names_out(), tf=None)
 
-    write_model_registry_row(args.out_dir, champion_id, champion_algo,
-                              champion_metrics, champion_features)
-    write_churn_predictions(args.out_dir, test_df, champion_proba, champion_id,
-                             top_features_per_customer if champion_algo == "XGBoost" else None)
+    # --- Registry-aware champion check (fixes the "doesn't know the LSTM exists" trap) ---
+    existing = read_existing_registry(args.out_dir)
+    defer = False
+    if existing:
+        ex_id, ex_auc = str(existing.get("model_id", "")), existing.get("roc_auc")
+        is_baseline = ex_id.startswith(BASELINE_ID_PREFIXES)
+        print(f"\n[compare] Existing champion: {ex_id} (roc_auc={ex_auc}) "
+              f"vs this run's best baseline: {best['id']} (calibrated roc_auc={best['metrics']['roc_auc']})")
+        # Stale baseline rows (xgb_churn_v1 etc.) are always replaceable; only a
+        # NON-baseline champion (the LSTM) can block promotion.
+        if not is_baseline and ex_auc is not None and ex_auc >= best["metrics"]["roc_auc"]:
+            defer = True
 
-    print(f"\n[done] Champion model: {champion_algo} ({champion_id})")
+    if defer:
+        print(f"[compare] {existing['model_id']} keeps the champion slot — "
+              "model_registry_row.json and churn_predictions_test.csv left untouched.")
+    else:
+        write_model_registry_row(args.out_dir, best["id"], best["algo"], best["metrics"], best["feats"])
+        write_churn_predictions(args.out_dir, data["test_df"], best["proba"], best["id"], best["tf"],
+                                proba_raw=None)
+
+    # --- XGBoost explainable outputs: ALWAYS written (dashboard + DB consume these) ---
+    if xgb_ready:
+        xgb_id = f"xgb_churn_{MODEL_VERSION}"
+        status = "champion" if (not defer and best["id"] == xgb_id) else "challenger"
+        write_model_registry_row(args.out_dir, xgb_id, "XGBoost", xgb_cal_m, feature_names,
+                                  status=status, filename="xgboost_registry_row.json")
+        write_churn_predictions(args.out_dir, data["test_df"], xgb_cal, xgb_id,
+                                top_features_per_customer,
+                                filename="xgboost_predictions_test.csv", proba_raw=xgb_raw)
+
+    print(f"\n[done] Champion slot: {'kept ' + existing['model_id'] if defer else best['algo'] + ' (' + best['id'] + ')'}")
+    if defer:
+        print("[note] Dashboard data should be built from xgboost_predictions_test.csv "
+              "(has SHAP drivers); the champion file has none.")
 
 
 if __name__ == "__main__":

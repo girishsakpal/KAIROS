@@ -1,13 +1,13 @@
 {
   "logistic_regression": {
-    "roc_auc": 0.8984,
-    "pr_auc": 0.8728,
-    "brier_score": 0.2498
+    "roc_auc": 0.8993,
+    "pr_auc": 0.8725,
+    "brier_score": 0.1309
   },
   "xgboost": {
-    "roc_auc": 0.9047,
-    "pr_auc": 0.8824,
-    "brier_score": 0.1599
+    "roc_auc": 0.8853,
+    "pr_auc": 0.8516,
+    "brier_score": 0.1403
   },
   "lstm": {
     "roc_auc": 0.9174,
@@ -18,5 +18,15 @@
     "roc_auc": 0.9158,
     "pr_auc": 0.8851,
     "brier_score": 0.1137
+  },
+  "logistic_regression_calibrated": {
+    "roc_auc": 0.8971,
+    "pr_auc": 0.8553,
+    "brier_score": 0.129
+  },
+  "xgboost_calibrated": {
+    "roc_auc": 0.8833,
+    "pr_auc": 0.8386,
+    "brier_score": 0.1389
   }
 }
