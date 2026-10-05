@@ -1,38 +1,38 @@
 feature,mean_abs_shap
-num__tenure_months,0.6257611
-cat__contract_type_Month-to-month,0.57374936
-num__monthly_charge,0.4799034
-num__avg_feature_adoption_recent,0.41412723
-num__session_count_trend,0.34362304
-num__failed_payment_count_90d,0.33400488
-num__days_since_last_active,0.314225
-num__avg_resolution_hours_90d,0.27290422
-num__avg_session_minutes_recent,0.22368804
-num__avg_session_count_recent,0.22178115
-num__open_ticket_count,0.21093409
-cat__payment_method_Electronic check,0.19636378
-num__age,0.19562009
-num__total_paid_90d,0.16282769
-num__failed_payment_ratio_90d,0.12974514
-num__billing_ticket_ratio_90d,0.10790402
-cat__contract_type_Two year,0.10486882
-cat__payment_method_Mailed check,0.07419203
-cat__billing_cycle_Annual,0.061694223
-cat__payment_method_Bank transfer (automatic),0.05771653
-cat__signup_channel_paid_search,0.049474016
-cat__signup_channel_referral,0.047891676
-num__ticket_count_90d,0.04207767
-cat__signup_channel_partner,0.04151381
-cat__signup_channel_social,0.03853517
-cat__payment_method_Credit card (automatic),0.031881463
-num__transaction_count_90d,0.027977917
-cat__region_Central,0.026732435
-cat__region_South,0.020665227
-cat__billing_cycle_Monthly,0.017489133
-cat__gender_Female,0.014909535
-cat__signup_channel_organic,0.014281066
-cat__region_West,0.01106274
-cat__region_North,0.00976796
-cat__region_East,0.008897077
-cat__contract_type_One year,0.0083035175
-cat__gender_Male,0.0075674634
+cat__contract_type_Month-to-month,0.6069116
+num__tenure_months,0.60355484
+num__monthly_charge,0.4372152
+num__avg_feature_adoption_recent,0.43275198
+num__failed_payment_count_90d,0.38883314
+num__session_count_trend,0.34959167
+num__avg_resolution_hours_90d,0.27185684
+num__days_since_last_active,0.24460538
+num__avg_session_minutes_recent,0.23030214
+num__avg_session_count_recent,0.21916379
+cat__payment_method_Electronic check,0.19938909
+num__open_ticket_count,0.17230019
+num__age,0.15587437
+num__total_paid_90d,0.13710003
+num__failed_payment_ratio_90d,0.12224985
+cat__contract_type_Two year,0.11574464
+num__billing_ticket_ratio_90d,0.0798008
+cat__billing_cycle_Annual,0.06582527
+cat__payment_method_Mailed check,0.06253378
+cat__payment_method_Bank transfer (automatic),0.050409712
+num__ticket_count_90d,0.040592175
+cat__signup_channel_referral,0.04046888
+cat__signup_channel_social,0.031254783
+cat__signup_channel_partner,0.029389288
+cat__region_West,0.024697725
+num__transaction_count_90d,0.024026569
+cat__contract_type_One year,0.0238244
+cat__payment_method_Credit card (automatic),0.021964328
+cat__billing_cycle_Monthly,0.02134884
+cat__signup_channel_paid_search,0.018713117
+cat__region_Central,0.017505078
+cat__region_South,0.012875336
+cat__region_East,0.011498925
+cat__gender_Female,0.010168427
+cat__region_North,0.009758914
+cat__signup_channel_organic,0.009459963
+cat__gender_Male,0.0014932724

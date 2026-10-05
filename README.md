@@ -119,3 +119,26 @@ It measures the accuracy of predicted probabilities (calibration). It is the mea
 The calibrated LSTM is the best-calibrated model by a clear margin (0.114), followed by the raw LSTM (0.141) and XGBoost (0.160). **Caveat on LR and XGBoost's scores above:** both are trained with `class_weight`/`scale_pos_weight` re-balancing, which systematically inflates predicted probabilities (mean predicted churn on the test set is 0.565 vs an actual rate of 0.409) — so their Brier scores here are worse than their true ranking ability would suggest, not evidence that their probabilities are "close to random." The LSTM's isotonic calibration step corrects for this directly (mean predicted drops to 0.421 against the same 0.409 actual rate), which is why it's the most trustworthy of the four for anything using the probability itself (e.g. expected-revenue-at-risk), not just the ranking.
 
 **Model selection:** on ROC-AUC the LSTM currently outperforms XGBoost, so it is the promoted champion in `model_registry_row.json` unless retrained. See `docs/LSTM_Notes.md` for architecture details and `docs/Phase3_Findings.md` for the calibration issue in more depth.
+
+
+# API (Phase 3 skeleton)
+
+Run from the repo root:
+
+```bash
+python -m src.api.app                      # or: flask --app src.api.app run --debug
+python -m unittest tests.test_api -v       # or: python -m pytest tests/test_api.py -v
+```
+
+| Endpoint | Status |
+|---|---|
+| `GET  /api/v1/health` | built |
+| `POST /api/v1/predict` | built (cached predictions only; `force_recompute=true` returns 501) |
+| `GET  /api/v1/customer-detail/<customer_id>?include=...` | built |
+| `GET  /api/v1/model-metrics` | built |
+| `/batch-predict`, `/segment`, `/chat` | not started |
+
+Current limitations (see `src/api/routes.py` docstring): **no authentication yet** (JWT is Phase 7);
+data is read from CSV/JSON, not Postgres; `/predict` serves the XGBoost model's predictions (the
+LSTM champion has no per-customer SHAP) and only the 1,419 test-set customers have predictions;
+`drift_status.drift_checked` is `false` until Phase 6 drift monitoring exists.

@@ -2,7 +2,7 @@
   "model_id": "xgb_churn_v2",
   "model_name": "Kairos churn model (XGBoost)",
   "algorithm": "XGBoost",
-  "trained_at": "2026-10-05T07:31:26.507437+00:00",
+  "trained_at": "2026-10-05T08:55:20.365449+00:00",
   "feature_list": [
     "cat__region_Central",
     "cat__region_East",
@@ -42,9 +42,9 @@
     "num__total_paid_90d",
     "num__transaction_count_90d"
   ],
-  "roc_auc": 0.8833,
-  "pr_auc": 0.8386,
-  "calibration_error": 0.1389,
+  "roc_auc": 0.8936,
+  "pr_auc": 0.8527,
+  "calibration_error": 0.1328,
   "drift_psi_score": null,
   "drift_ks_pvalue": null,
   "drift_detected": false,

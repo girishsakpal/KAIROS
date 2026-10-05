@@ -30,6 +30,13 @@ Design notes
   out as a validation slice, models fit on the first 85%, and an isotonic
   calibrator is fit on the validation slice. The test set never touches fitting
   or calibration. Metrics are reported before AND after calibration.
+- OPTIONAL `--refit-full`: after the calibrator is fit on the validation slice, each model
+  is refit on the FULL train set (fit + validation) and the same calibrator is applied to
+  its test scores. This recovers the most recent, most test-like training rows that the
+  calibration holdout otherwise removes. Both variants are always reported in
+  metrics.json (`*_calibrated` = fit-slice model, `*_refit_calibrated` = refit model);
+  the flag only chooses which one is SERVED and explained. Caveat: the calibrator was
+  fit on scores from the 85% model, so check the printed mean-predicted vs actual.
 - SHAP explains the RAW (uncalibrated) XGBoost output. Isotonic calibration is a
   monotone transform of that score, so driver rankings are unaffected; only the
   probability shown to the user is recalibrated.
@@ -171,6 +178,25 @@ def calibrate_and_report(name, pipe, data):
     return iso, test_raw, test_cal, raw_m, cal_m
 
 
+def refit_and_report(name, builder, data, iso, numeric_cols):
+    """Refit on fit+val, apply the EXISTING calibrator (never re-fit it on test).
+    builder(X, y, numeric_cols) must return a fitted pipeline as its first element."""
+    X_full = pd.concat([data["X_fit"], data["X_val"]])
+    y_full = pd.concat([data["y_fit"], data["y_val"]])
+    built = builder(X_full, y_full, numeric_cols)
+    pipe = built[0] if isinstance(built, tuple) else built
+    test_raw = pipe.predict_proba(data["X_test"])[:, 1]
+    test_cal = iso.predict(test_raw)
+    raw_m = evaluate(data["y_test"], test_raw)
+    cal_m = evaluate(data["y_test"], test_cal)
+    actual = float(np.mean(data["y_test"]))
+    print(f"[{name} refit-full] mean predicted churn on test: raw {test_raw.mean():.3f} -> "
+          f"calibrated {test_cal.mean():.3f} (actual {actual:.3f})")
+    print(f"[{name} refit-full] raw        : {raw_m}")
+    print(f"[{name} refit-full] calibrated : {cal_m}")
+    return built, test_raw, test_cal, raw_m, cal_m
+
+
 def save_calibration_plot(out_dir, y_test, curves):
     """curves: {label: proba}. Reliability diagram; skipped if matplotlib missing."""
     try:
@@ -201,7 +227,7 @@ def save_calibration_plot(out_dir, y_test, curves):
 # ---------------------------------------------------------------------
 
 def train_logistic_regression(X_train, y_train, numeric_cols):
-    print("\n[LogisticRegression] Training baseline (on fit slice)...")
+    print("\n[LogisticRegression] Training baseline...")
     pipe = Pipeline([
         ("preprocess", build_preprocessor(numeric_cols)),
         ("clf", LogisticRegression(class_weight="balanced", max_iter=1000)),
@@ -223,7 +249,7 @@ def train_xgboost(X_train, y_train, numeric_cols):
               "and re-run to get the full comparison.")
         return None, None
 
-    print("\n[XGBoost] Training (on fit slice)...")
+    print("\n[XGBoost] Training...")
     preprocessor = build_preprocessor(numeric_cols)
     scale_pos_weight = (y_train == 0).sum() / max((y_train == 1).sum(), 1)
 
@@ -412,6 +438,8 @@ def main():
     parser.add_argument("--data-dir", type=str, default="data/processed")
     parser.add_argument("--out-dir", type=str, default="models")
     parser.add_argument("--mlflow-uri", type=str, default="sqlite:///mlflow.db")
+    parser.add_argument("--refit-full", action="store_true",
+                        help="Refit each model on fit+validation after calibrating; serve the refit model.")
     args = parser.parse_args()
     os.makedirs(args.out_dir, exist_ok=True)
 
@@ -428,6 +456,11 @@ def main():
     lr_iso, lr_raw, lr_cal, lr_raw_m, lr_cal_m = calibrate_and_report("LogisticRegression", lr_pipe, data)
     new_metrics["logistic_regression"] = lr_raw_m
     new_metrics["logistic_regression_calibrated"] = lr_cal_m
+    lr_built_f, lr_raw_f, lr_cal_f, lr_raw_fm, lr_cal_fm = refit_and_report(
+        "LogisticRegression", train_logistic_regression, data, lr_iso, data["numeric_cols"])
+    new_metrics["logistic_regression_refit_calibrated"] = lr_cal_fm
+    if args.refit_full:
+        lr_pipe, lr_raw, lr_cal, lr_cal_m = lr_built_f, lr_raw_f, lr_cal_f, lr_cal_fm
     curves["LogReg raw"], curves["LogReg calibrated"] = lr_raw, lr_cal
     joblib.dump(lr_pipe, os.path.join(args.out_dir, "logistic_regression_pipeline.joblib"))
     joblib.dump(lr_iso, os.path.join(args.out_dir, "logistic_regression_calibrator.joblib"))
@@ -443,6 +476,13 @@ def main():
         xgb_iso, xgb_raw, xgb_cal, xgb_raw_m, xgb_cal_m = calibrate_and_report("XGBoost", xgb_pipe, data)
         new_metrics["xgboost"] = xgb_raw_m
         new_metrics["xgboost_calibrated"] = xgb_cal_m
+        xgb_built_f, xgb_raw_f, xgb_cal_f, xgb_raw_fm, xgb_cal_fm = refit_and_report(
+            "XGBoost", train_xgboost, data, xgb_iso, data["numeric_cols"])
+        new_metrics["xgboost_refit_calibrated"] = xgb_cal_fm
+        if args.refit_full:
+            xgb_pipe, feature_names = xgb_built_f
+            xgb_raw, xgb_cal, xgb_cal_m = xgb_raw_f, xgb_cal_f, xgb_cal_fm
+            print("[XGBoost] --refit-full: serving and explaining the refit model.")
         curves["XGBoost raw"], curves["XGBoost calibrated"] = xgb_raw, xgb_cal
         joblib.dump(xgb_pipe, os.path.join(args.out_dir, "xgboost_pipeline.joblib"))
         joblib.dump(xgb_iso, os.path.join(args.out_dir, "xgboost_calibrator.joblib"))

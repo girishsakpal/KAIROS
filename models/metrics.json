@@ -28,5 +28,15 @@
     "roc_auc": 0.8833,
     "pr_auc": 0.8386,
     "brier_score": 0.1389
+  },
+  "logistic_regression_refit_calibrated": {
+    "roc_auc": 0.9006,
+    "pr_auc": 0.8637,
+    "brier_score": 0.1285
+  },
+  "xgboost_refit_calibrated": {
+    "roc_auc": 0.8936,
+    "pr_auc": 0.8527,
+    "brier_score": 0.1328
   }
 }
