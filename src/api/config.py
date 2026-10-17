@@ -12,12 +12,23 @@ and the API contract promises `top_features` on every prediction. Same split the
 Power BI dashboard uses: the LSTM scores best, XGBoost explains.
 When the Postgres load exists, these become queries instead of file reads.
 """
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 
+try:                                   # let .env set KAIROS_REPOSITORY / DATABASE_URL
+    from dotenv import load_dotenv
+    load_dotenv(ROOT / ".env")
+except ImportError:
+    pass
+
 
 class Config:
+    # "csv"      -> read data/ and models/ files (no database needed; the default)
+    # "postgres" -> read Supabase/Postgres via DATABASE_URL (see docs/SUPABASE_SETUP.md)
+    REPOSITORY = os.getenv("KAIROS_REPOSITORY", "csv").strip().lower()
+
     SYNTHETIC_DIR = ROOT / "data" / "synthetic"
     PROCESSED_DIR = ROOT / "data" / "processed"
     MODELS_DIR = ROOT / "models"

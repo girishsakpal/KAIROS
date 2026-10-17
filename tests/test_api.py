@@ -48,7 +48,9 @@ def build_fixture(root: Path, with_model=True):
         "contract_type": ["Two year", "Month-to-month", "Month-to-month"],
         "billing_cycle": ["Annual", "Monthly", "Monthly"], "payment_method": ["Credit card", "Mailed check", "Mailed check"],
         "monthly_charge": [49.99, 20.0, 30.0], "tenure_months": [19, 5, 3],
-        "status": ["active", "cancelled", "active"]}).to_csv(syn / "subscriptions.csv", index=False)
+        "status": ["active", "cancelled", "active"],
+        "start_date": ["2025-02-14", "2024-01-01", "2026-01-01"],
+        "end_date": [None, "2026-08-29", None]}).to_csv(syn / "subscriptions.csv", index=False)
     # C1 usage: Mar..Aug = 20,18,16,10,8,6 (valid) + Oct=99 (AFTER snapshot, must be ignored)
     months = ["2026-03-01", "2026-04-01", "2026-05-01", "2026-06-01", "2026-07-01", "2026-08-01", "2026-10-01"]
     pd.DataFrame({"customer_id": ["C1"] * 7, "log_month": months,

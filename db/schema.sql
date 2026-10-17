@@ -1,11 +1,11 @@
 -- =====================================================================
 -- KAIROS — PostgreSQL Schema (Phase 3)
--- Matches Kairos_ER_Diagram.pdf / .png (7 tables).
+-- Matches Kairos_ER_Diagram.pdf / .png (8 tables; feature_snapshots added after the original 7).
 -- Color-coding from the ER diagram is preserved as comments below:
 --   teal  = core entity        (customers)
 --   navy  = behavioral tables  (subscriptions, usage_logs, support_tickets, transactions)
 --   purple = ML prediction output (churn_predictions)
---   gray  = model tracking/infra (model_registry)
+--   gray  = model tracking/infra (model_registry, feature_snapshots)
 --
 -- Requires: PostgreSQL 14+ and the pgvector extension (for Phase 5 embeddings).
 -- Embedding columns are added now (nullable) so no schema migration is needed
@@ -163,9 +163,27 @@ CREATE INDEX idx_churn_predictions_risk_tier ON churn_predictions(risk_tier);
 CREATE INDEX idx_churn_predictions_predicted_at ON churn_predictions(predicted_at);
 -- Vector index deferred to Phase 5, same reasoning as support_tickets above.
 
+-- ---------------------------------------------------------------------
+-- 8. feature_snapshots  [gray — model tracking / infra]
+-- One row per customer: the as-of date the ML features were computed at
+-- (build_features.py) and the train/test split the customer landed in.
+-- The API shows usage / tickets / failed payments AS OF this date, so the
+-- numbers match what the model saw (and never include post-snapshot rows).
+-- Added after the original 7 tables; existing databases get it from
+-- db/migrations/001_feature_snapshots.sql.
+-- ---------------------------------------------------------------------
+CREATE TABLE feature_snapshots (
+    customer_id         VARCHAR(20)   PRIMARY KEY REFERENCES customers(customer_id) ON DELETE CASCADE,
+    snapshot_date       DATE          NOT NULL,
+    split               VARCHAR(10)   NOT NULL CHECK (split IN ('train', 'test')),
+    created_at          TIMESTAMPTZ   NOT NULL DEFAULT now()
+);
+
+CREATE INDEX idx_feature_snapshots_split ON feature_snapshots(split);
+
 -- =====================================================================
 -- End of schema. Load order for synthetic data: customers -> subscriptions
--- -> usage_logs / support_tickets / transactions -> (model_registry ->
+-- -> usage_logs / support_tickets / transactions / feature_snapshots -> (model_registry ->
 -- churn_predictions, populated by the ML pipeline in Phase 3's later steps,
 -- not by the data generator).
 -- =====================================================================

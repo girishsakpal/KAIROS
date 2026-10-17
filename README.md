@@ -138,7 +138,11 @@ python -m unittest tests.test_api -v       # or: python -m pytest tests/test_api
 | `GET  /api/v1/model-metrics` | built |
 | `/batch-predict`, `/segment`, `/chat` | not started |
 
+**Backends.** `KAIROS_REPOSITORY=csv` (default) reads the CSV/JSON files; `KAIROS_REPOSITORY=postgres` reads the
+Supabase/Postgres tables via `DATABASE_URL` (see `docs/SUPABASE_SETUP.md`). Both call the same summary code
+(`src/api/summaries.py`); `python -m src.api.check_parity` confirms they return identical responses.
+
 Current limitations (see `src/api/routes.py` docstring): **no authentication yet** (JWT is Phase 7);
-data is read from CSV/JSON, not Postgres; `/predict` serves the XGBoost model's predictions (the
+data is read from CSV/JSON by default (Postgres via `KAIROS_REPOSITORY=postgres`); `/predict` serves the XGBoost model's predictions (the
 LSTM champion has no per-customer SHAP) and only the 1,419 test-set customers have predictions;
 `drift_status.drift_checked` is `false` until Phase 6 drift monitoring exists.

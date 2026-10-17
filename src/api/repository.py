@@ -11,12 +11,16 @@ customer uses only rows dated on or before THAT customer's snapshot_date, read
 from features_train/test.csv. Customers with no snapshot fall back to
 REFERENCE_DATE. So the numbers shown here match what the model saw.
 """
+import datetime as dt
+import decimal
 import json
 import math
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
+
+from . import summaries
 
 
 def to_py(v):
@@ -27,8 +31,12 @@ def to_py(v):
         return int(v)
     if isinstance(v, (np.floating, float)):
         return None if math.isnan(v) else float(v)
-    if isinstance(v, pd.Timestamp):
+    if isinstance(v, decimal.Decimal):                  # Postgres NUMERIC
+        return float(v)
+    if isinstance(v, pd.Timestamp):                     # (checked before datetime: it is a subclass)
         return None if pd.isna(v) else v.date().isoformat()
+    if isinstance(v, (dt.datetime, dt.date)):           # Postgres DATE / TIMESTAMPTZ
+        return v.isoformat()
     try:
         if pd.isna(v):
             return None
@@ -110,46 +118,13 @@ class CsvRepository:
                 "contract_type": to_py(s["contract_type"]), "payment_method": to_py(s["payment_method"])}
 
     def usage_summary(self, cid):
-        """Usage logs are MONTHLY aggregates, so `sessions_30d` is the latest month on/before
-        snapshot. Trend compares the last 3 vs first 3 months (needs >= 4 months of data)."""
-        snap = self.snapshot_date(cid)
-        g = self._usage.get(cid)
-        if g is not None:
-            g = g[g["log_month"] <= snap].sort_values("log_month")
-        if g is None or g.empty:
-            return {"sessions_30d": None, "sessions_90d_avg": None, "trend": "unknown"}
-        recent, early = g.tail(3)["session_count"].mean(), g.head(3)["session_count"].mean()
-        if len(g) < 4:
-            trend = "unknown"
-        else:
-            rel = (recent - early) / early if early > 0 else 0.0
-            trend = "declining" if rel < -0.10 else "growing" if rel > 0.10 else "stable"
-        return {"sessions_30d": int(g.iloc[-1]["session_count"]),
-                "sessions_90d_avg": round(float(recent), 1), "trend": trend}
+        return summaries.usage_summary(self._usage.get(cid), self.snapshot_date(cid))
 
     def support_summary(self, cid):
-        snap = self.snapshot_date(cid)
-        g = self._tickets.get(cid)
-        if g is not None:
-            g = g[g["created_at"] <= snap]
-        if g is None or g.empty:
-            return {"open_tickets": 0, "tickets_60d": 0, "last_ticket_category": None}
-        last = g.sort_values("created_at").iloc[-1]
-        return {"open_tickets": int((g["status"] == "open").sum()),
-                "tickets_60d": int((g["created_at"] >= snap - pd.Timedelta(days=60)).sum()),
-                "last_ticket_category": to_py(last["category"])}
+        return summaries.support_summary(self._tickets.get(cid), self.snapshot_date(cid))
 
     def transaction_summary(self, cid):
-        snap = self.snapshot_date(cid)
-        g = self._txns.get(cid)
-        if g is not None:
-            g = g[g["transaction_date"] <= snap]
-        if g is None or g.empty:
-            return {"failed_payments_90d": 0, "lifetime_value": 0.0}
-        failed = ((g["transaction_type"] == "failed_payment")
-                  & (g["transaction_date"] >= snap - pd.Timedelta(days=90))).sum()
-        return {"failed_payments_90d": int(failed),
-                "lifetime_value": round(float(g.loc[g["status"] == "success", "amount"].sum()), 2)}
+        return summaries.transaction_summary(self._txns.get(cid), self.snapshot_date(cid))
 
     # ---- predictions & models -----------------------------------------
     def latest_prediction(self, cid):

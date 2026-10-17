@@ -21,7 +21,7 @@ fit on the validation slice. Per-feature SHAP statements use that model's
 | 3–4 written business insights (Section 4.1 style) | Drafted and re-checked against v2 SHAP (Section 5 below) |
 | Power BI ops dashboard on real predictions | Done (`kairos_ops.pbix`, 4 pages); **Refresh needed** with the refit data |
 | Skeleton Flask API (predict, customer-detail) | Done: 4 endpoints, 19 tests pass on your machine; no auth, CSV-backed |
-| Postgres load | Not started |
+| Postgres load | Done on Supabase (8 tables incl. `feature_snapshots`); counts and sums verified; Postgres-backed API repository built, parity check pending your run |
 
 ## 2. Diagnostics from the 19 Sep version — now actioned
 
@@ -191,8 +191,9 @@ v1 and must be replaced. Keep the 25% save rate labelled as an assumption.
 
 1. Refresh `kairos_ops.pbix` (Home → Refresh). Re-check Page 3 (calibration gap is small for most deciles;
    deciles 2, 5 and 6 still over-predict by 0.10–0.14), the Decile 1 Lift card (2.37x) and the Page 1 workload chart.
-2. Load into Postgres and confirm the JSONB `top_features` parses; then swap `CsvRepository` for a
-   Postgres-backed one (the API's only storage-touching file).
+2. Add `feature_snapshots` to the database (`python -m src.db.load_to_postgres --reset`), then run
+   `python -m src.api.check_parity` to confirm the Postgres-backed API matches the CSV-backed one. Update the
+   ER diagram with table 8 (see `docs/SUPABASE_SETUP.md` section 9).
 3. `git add` / `git commit` the Step 5 changes, the API, the `.pbix` and this file. Keep `.env`,
    `mlflow.db` and `.joblib` files out of git.
 4. Update `README.md`'s results block from `models/metrics.json` (still shows v1 numbers).
