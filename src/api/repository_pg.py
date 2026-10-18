@@ -43,15 +43,33 @@ class PostgresRepository:
         self._snap_cache = {}
 
     @classmethod
-    def from_env(cls, reference_date, minconn=1, maxconn=5):
+    def from_env(cls, reference_date, minconn=1, maxconn=8):
         import os
         from dotenv import load_dotenv
         from psycopg2.pool import ThreadedConnectionPool
         from ..db.load_to_postgres import ROOT, masked, normalize_url
         load_dotenv(ROOT / ".env")
         url = normalize_url(os.getenv("DATABASE_URL", ""))
+        import threading
         pool = ThreadedConnectionPool(minconn, maxconn, dsn=url, connect_timeout=15)
-        repo = cls(pool.getconn, lambda conn, broken=False: pool.putconn(conn, close=broken), reference_date)
+        slots = threading.BoundedSemaphore(maxconn)      # make bursts of requests wait instead of failing
+
+        def acquire():
+            if not slots.acquire(timeout=30):
+                raise RuntimeError("timed out waiting for a free database connection")
+            try:
+                return pool.getconn()
+            except Exception:
+                slots.release()
+                raise
+
+        def release(conn, broken=False):
+            try:
+                pool.putconn(conn, close=broken)
+            finally:
+                slots.release()
+
+        repo = cls(acquire, release, reference_date)
         repo.description = masked(url)
         return repo
 

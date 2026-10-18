@@ -8,7 +8,9 @@ Run from the repo root (either works):
     flask --app src.api.app run --debug          # create_app is auto-detected
 Then:  GET http://127.0.0.1:5000/api/v1/health
 """
-from flask import Flask
+from pathlib import Path
+
+from flask import Flask, send_from_directory
 
 from .config import Config
 from .errors import register_error_handlers
@@ -35,6 +37,18 @@ def create_app(overrides=None, repository=None):
     app.extensions["kairos_repo"] = repository
     register_error_handlers(app)
     app.register_blueprint(bp)
+
+    # Demo UI (Sem VII checkpoint): same-origin page that shows the dashboard and calls the API.
+    ui_dir = Path(__file__).resolve().parent.parent / "ui"
+
+    @app.get("/")
+    def ui_index():
+        return send_from_directory(ui_dir, "index.html")
+
+    @app.get("/ui/<path:filename>")
+    def ui_files(filename):
+        return send_from_directory(ui_dir, filename)
+
     return app
 
 

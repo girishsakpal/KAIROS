@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kairos: Sem VII Checkpoint Demo</title>
+  <style>
+    :root {
+      --bg: #F5F6FA;
+      --card: #fff;
+      --ink: #1B1B3A;
+      --mut: #6B7394;
+      --line: #E3E6F0;
+      --teal: #2A9D8F;
+      --blue: #2F6DB5;
+      --red: #C0392B;
+      --amber: #E0A800;
+      --green: #2E8B57
+    }
+
+    @media(prefers-color-scheme:dark) {
+      :root {
+        --bg: #14151F;
+        --card: #1D1F2D;
+        --ink: #ECEEF8;
+        --mut: #9AA1BD;
+        --line: #2E3146
+      }
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font: 15px/1.5 system-ui, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--ink)
+    }
+
+    header {
+      padding: 18px 28px;
+      background: linear-gradient(90deg, #2A9D8F, #2F6DB5);
+      color: #fff
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 22px
+    }
+
+    header p {
+      margin: 2px 0 0;
+      opacity: .9;
+      font-size: 13px
+    }
+
+    nav {
+      display: flex;
+      gap: 4px;
+      padding: 10px 28px 0;
+      border-bottom: 1px solid var(--line);
+      background: var(--card);
+      flex-wrap: wrap
+    }
+
+    nav button {
+      border: 0;
+      background: none;
+      color: var(--mut);
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border-bottom: 3px solid transparent
+    }
+
+    nav button.on {
+      color: var(--blue);
+      border-color: var(--blue)
+    }
+
+    main {
+      max-width: 1150px;
+      margin: 22px auto;
+      padding: 0 20px
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 16px
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 17px
+    }
+
+    h3 {
+      margin: 14px 0 6px;
+      font-size: 14px;
+      color: var(--mut);
+      text-transform: uppercase;
+      letter-spacing: .04em
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center
+    }
+
+    .pill {
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 13px
+    }
+
+    .pill.on {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue)
+    }
+
+    .shot {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--bg);
+      min-height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .shot img {
+      width: 100%;
+      display: block
+    }
+
+    .ph {
+      padding: 50px 24px;
+      text-align: center;
+      color: var(--mut)
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px
+    }
+
+    .kpi {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 14px
+    }
+
+    .kpi b {
+      display: block;
+      font-size: 22px
+    }
+
+    .kpi span {
+      color: var(--mut);
+      font-size: 12px
+    }
+
+    button.go {
+      background: var(--blue);
+      color: #fff;
+      border: 0;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-weight: 600;
+      cursor: pointer
+    }
+
+    button.go:hover {
+      opacity: .9
+    }
+
+    input,
+    select {
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      color: var(--ink);
+      font-size: 14px
+    }
+
+    code,
+    pre {
+      font-family: ui-monospace, Consolas, monospace;
+      font-size: 12.5px
+    }
+
+    pre {
+      background: #10121c;
+      color: #d6e2ff;
+      border-radius: 10px;
+      padding: 14px;
+      overflow: auto;
+      max-height: 340px;
+      margin: 8px 0 0
+    }
+
+    .kpi b .badge {
+      color: #fff
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff
+    }
+
+    .high {
+      background: var(--red)
+    }
+
+    .medium {
+      background: var(--amber)
+    }
+
+    .low {
+      background: var(--green)
+    }
+
+    .ok {
+      background: var(--green)
+    }
+
+    .err {
+      background: var(--red)
+    }
+
+    .bar {
+      height: 10px;
+      border-radius: 5px;
+      background: var(--line);
+      overflow: hidden
+    }
+
+    .bar i {
+      display: block;
+      height: 100%
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse
+    }
+
+    td,
+    th {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top
+    }
+
+    th {
+      color: var(--mut);
+      font-size: 12px;
+      text-transform: uppercase
+    }
+
+    .done {
+      color: var(--green);
+      font-weight: 700
+    }
+
+    .plan {
+      color: var(--blue);
+      font-weight: 700
+    }
+
+    .sm {
+      font-size: 12.5px;
+      color: var(--mut)
+    }
+
+    .feat {
+      display: grid;
+      grid-template-columns: 230px 1fr 60px;
+      gap: 10px;
+      align-items: center;
+      margin: 5px 0;
+      font-size: 13px
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>KAIROS <span style="font-weight:400;opacity:.85">| Semester VII checkpoint demo</span></h1>
+    <p>Explainable customer churn intelligence: dashboard and backend built so far</p>
+  </header>
+  <nav id="nav">
+    <button class="on" data-t="dash">Power BI dashboard</button>
+    <button data-t="api">Backend API (live)</button>
+    <button data-t="status">Project status</button>
+  </nav>
+  <main>
+
+    <section id="dash">
+      <div class="card">
+        <h2>Operations dashboard</h2>
+        <div class="row" id="pages"></div>
+        <p class="sm" id="pcap" style="margin:10px 0"></p>
+        <div class="shot" id="shot"></div>
+      </div>
+    </section>
+
+    <section id="api" hidden>
+      <div class="card">
+        <h2>Service health <span class="sm">GET /api/v1/health</span></h2>
+        <div class="grid" id="health">
+          <div class="sm">Loading…</div>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Try the endpoints</h2>
+        <p class="sm" style="margin-top:0">These calls hit the running Flask API. Sample customers are held-out test
+          customers.</p>
+        <div class="row">
+          <select id="sample">
+            <option value="5561-NWEVX">5561-NWEVX (high risk)</option>
+            <option value="7605-SNLQG">7605-SNLQG (medium risk)</option>
+            <option value="7994-XIRTR">7994-XIRTR (low risk)</option>
+            <option value="0000-NOPE">0000-NOPE (unknown, shows error)</option>
+          </select>
+          <input id="cid" placeholder="or type a customer ID" size="18">
+        </div>
+        <div class="row" style="margin-top:12px">
+          <button class="go" onclick="call('predict')">POST /predict</button>
+          <button class="go" onclick="call('detail')">GET /customer-detail/{id}</button>
+          <button class="go" onclick="call('metrics')">GET /model-metrics</button>
+        </div>
+        <div id="meta" class="sm" style="margin-top:12px"></div>
+        <div id="view"></div>
+        <details style="margin-top:10px">
+          <summary class="sm" style="cursor:pointer">Raw JSON response</summary>
+          <pre id="raw">Press a button above.</pre>
+        </details>
+      </div>
+    </section>
+
+    <section id="status" hidden>
+      <div class="card">
+        <h2>What is built vs. planned</h2>
+        <table>
+          <tr>
+            <th>Component</th>
+            <th>Status</th>
+            <th>Detail</th>
+          </tr>
+          <tr>
+            <td>Data layer</td>
+            <td class="done">Built</td>
+            <td>8-table PostgreSQL schema (Supabase), leakage-safe features, loader with verification</td>
+          </tr>
+          <tr>
+            <td>Churn models</td>
+            <td class="done">Built</td>
+            <td>Logistic Regression, XGBoost (SHAP, calibrated, served), LSTM comparison</td>
+          </tr>
+          <tr>
+            <td>Power BI ops dashboard</td>
+            <td class="done">Built</td>
+            <td>4 pages fed by model outputs</td>
+          </tr>
+          <tr>
+            <td>REST API</td>
+            <td class="done">Skeleton built</td>
+            <td>4 endpoints, CSV and Postgres backends with parity check, automated tests</td>
+          </tr>
+          <tr>
+            <td>JWT authentication</td>
+            <td class="plan">Sem VIII</td>
+            <td>Currently open (no auth)</td>
+          </tr>
+          <tr>
+            <td>Live scoring, batch-predict, segment</td>
+            <td class="plan">Sem VIII</td>
+            <td>/predict serves stored predictions only</td>
+          </tr>
+          <tr>
+            <td>Drift monitoring and MLflow</td>
+            <td class="plan">Sem VIII</td>
+            <td>Drift fields are placeholders until then</td>
+          </tr>
+          <tr>
+            <td>Tableau executive dashboard</td>
+            <td class="plan">Sem VIII</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Chat / hybrid RAG (Module B)</td>
+            <td class="plan">Sem VIII</td>
+            <td>Will replace this page's lookup with a conversational panel</td>
+          </tr>
+          <tr>
+            <td>Evaluation harness, Docker, paper</td>
+            <td class="plan">Sem VIII</td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const PAGES = [["Operations overview", "Page 1: KPIs, risk tiers and the at-risk customer list."],
+    ["Customer drill-through", "Page 2: one customer's risk, drivers and history."],
+    ["Model validation", "Page 3: model quality, lift and calibration."],
+    ["What-if", "Page 4: save-rate slicer and illustrative revenue saved."]];
+    // Optional: paste a Power BI "Publish to web" embed URL here to show the live report instead of screenshots.
+    const POWERBI_EMBED_URL = "";
+    let cur = 0;
+    function showPage(i) {
+      cur = i;
+      document.querySelectorAll("#pages .pill").forEach((b, j) => b.classList.toggle("on", j === i));
+      pcap.textContent = PAGES[i][1];
+      if (POWERBI_EMBED_URL) { shot.innerHTML = `<iframe src="${POWERBI_EMBED_URL}" style="width:100%;height:560px;border:0"></iframe>`; return }
+      shot.innerHTML = `<img src="/ui/dashboard/page${i + 1}.png" alt="${PAGES[i][0]}" onerror="this.parentNode.innerHTML='<div class=ph>Add your screenshot as <code>src/ui/dashboard/page${i + 1}.png</code></div>'">`
+    }
+    PAGES.forEach((p, i) => { const b = document.createElement("button"); b.className = "pill"; b.textContent = p[0]; b.onclick = () => showPage(i); pages.appendChild(b) });
+    showPage(0);
+    document.querySelectorAll("nav button").forEach(b => b.onclick = () => {
+      document.querySelectorAll("nav button").forEach(x => x.classList.toggle("on", x === b));
+      ["dash", "api", "status"].forEach(s => document.getElementById(s).hidden = s !== b.dataset.t);
+      if (b.dataset.t === "api" && !window._h) { window._h = 1; loadHealth() }
+    });
+
+    const $ = id => document.getElementById(id);
+    async function req(path, opt) {
+      const t = performance.now();
+      try { const r = await fetch("/api/v1" + path, opt); const j = await r.json().catch(() => null); return { ok: r.ok, status: r.status, ms: Math.round(performance.now() - t), json: j } }
+      catch (e) { return { ok: false, status: 0, ms: 0, json: { error: String(e) } } }
+    }
+    async function loadHealth() {
+      const r = await req("/health"); const j = r.json || {};
+      if (!r.ok) { health.innerHTML = `<div class="kpi"><b><span class="badge err">DOWN</span></b><span>API not reachable (HTTP ${r.status})</span></div>`; return }
+      const items = [["Status", "<span class='badge ok'>" + j.status + "</span>"], ["Serving model", j.serving_model_id || "none"]];
+      for (const [k, v] of Object.entries(j)) if (!["status", "serving_model_id"].includes(k)) items.push([k.replace(/_/g, " "), Number(v).toLocaleString ? Number(v).toLocaleString() : v]);
+      health.innerHTML = items.map(([k, v]) => `<div class="kpi"><b>${v}</b><span>${k}</span></div>`).join("")
+    }
+    const cidv = () => cid.value.trim() || sample.value;
+    const nice = f => f.replace(/^(num|cat)__/, "").replace(/_/g, " ");
+    function feats(list) {
+      if (!list || !list.length) return "";
+      const m = Math.max(...list.map(f => Math.abs(f.shap_value || 0)), .01);
+      return "<h3>Top drivers (SHAP)</h3>" + list.map(f => {
+        const up = (f.direction || "").startsWith("inc"), w = Math.abs(f.shap_value) / m * 100;
+        return `<div class="feat"><span>${nice(f.feature)}</span><div class="bar"><i style="width:${w}%;background:${up ? "var(--red)" : "var(--green)"}"></i></div><span class="sm">${up ? "+" : "−"}${Math.abs(f.shap_value).toFixed(2)}</span></div>`
+      }).join("")
+    }
+    function predCard(p) {
+      const pct = (p.churn_probability * 100).toFixed(0);
+      return `<h3>Prediction</h3><div class="row"><b style="font-size:26px">${pct}%</b><span class="badge ${p.risk_tier}">${p.risk_tier} risk</span><span class="sm">model ${p.model_id || ""}</span></div>
+ <div class="bar" style="margin:8px 0"><i style="width:${pct}%;background:var(--blue)"></i></div>${feats(p.top_features)}
+ ${p.drift_status ? `<p class="sm">Drift monitoring: ${p.drift_status.drift_checked === true ? (p.drift_status.drift_detected ? "drift detected" : "no drift detected") : "not active yet (planned Sem VIII)"}. Model age: ${p.drift_status.days_since_training ?? "?"} days.</p>` : ""}`
+    }
+    let busy = false;
+    async function call(kind) { if (busy) return; busy = true; document.querySelectorAll('button.go').forEach(b => b.disabled = true); try { await call2(kind) } finally { busy = false; document.querySelectorAll('button.go').forEach(b => b.disabled = false) } }
+    async function call2(kind) {
+      let r, id = cidv();
+      if (kind === "predict") r = await req("/predict", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ customer_id: id }) });
+      else if (kind === "detail") r = await req("/customer-detail/" + encodeURIComponent(id));
+      else r = await req("/model-metrics");
+      const line = kind === "predict" ? "POST /api/v1/predict" : kind === "detail" ? "GET /api/v1/customer-detail/" + id : "GET /api/v1/model-metrics";
+      meta.innerHTML = `<code>${line}</code> &nbsp; <span class="badge ${r.ok ? "ok" : "err"}">HTTP ${r.status}</span> &nbsp; ${r.ms} ms`;
+      raw.textContent = JSON.stringify(r.json, null, 2); const j = r.json || {}; let h = "";
+      if (!r.ok && j.error) { h = `<h3>Error handled gracefully</h3><p><b>${j.error.code || ""}</b>: ${j.error.message || ""}</p>` }
+      else if (kind === "predict") h = predCard(j);
+      else if (kind === "detail") {
+        const box = (t, o) => o ? `<h3>${t}</h3><div class="grid">${Object.entries(o).map(([k, v]) => `<div class="kpi"><b style="font-size:15px">${v}</b><span>${k.replace(/_/g, " ")}</span></div>`).join("")}</div>` : "";
+        h = `<h3>Customer ${j.customer_id}</h3>` + box("Profile", j.profile) + box("Subscription", j.subscription) + box("Usage", j.usage_summary) + box("Support", j.support_summary) + box("Transactions", j.transaction_summary);
+        if (j.latest_prediction) {
+          const lp = j.latest_prediction, pct = (lp.churn_probability * 100).toFixed(0);
+          h += `<h3>Latest prediction</h3><div class="row"><b style="font-size:26px">${pct}%</b><span class="badge ${lp.risk_tier}">${lp.risk_tier} risk</span></div>
+   <div class="bar" style="margin:8px 0"><i style="width:${pct}%;background:var(--blue)"></i></div>
+   <p class="sm">Top drivers: ${(lp.top_features || []).map(nice).join(", ")}. Model age: ${lp.drift_status?.days_since_training ?? "?"} days. Drift monitoring: not active yet (planned Sem VIII).</p>`
+        }
+      } else {
+        const b = x => x ? `<div class="kpi"><b style="font-size:15px">${x.model_id || x.name || ""}</b><span>${x.algorithm || ""} ${x.status || ""}</span></div>` : "";
+        h = `<h3>Champion vs serving model</h3><div class="grid">${b(j.champion_model)}${b(j.serving_model)}</div>`
+      }
+      view.innerHTML = h
+    }
+  </script>
+</body>
+
+</html>
