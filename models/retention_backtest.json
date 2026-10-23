@@ -1,0 +1,140 @@
+{
+  "test_customers": 1419,
+  "test_churners": 581,
+  "horizon_months": 12,
+  "note": "churners_reached uses real outcomes; expected values use ASSUMED save rates.",
+  "results": [
+    {
+      "budget": 500,
+      "random": {
+        "customers_contacted": 166.0,
+        "spent": 498.0,
+        "churners_reached": 68.295,
+        "share_of_all_churners_reached": 0.118,
+        "churn_revenue_reached": 59721.417,
+        "precision_of_contacts": 0.412,
+        "assumed_expected_revenue_saved": 6606.333,
+        "assumed_expected_net_value": 6108.333
+      },
+      "top_risk": {
+        "customers_contacted": 166,
+        "spent": 498.0,
+        "churners_reached": 160,
+        "share_of_all_churners_reached": 0.275,
+        "churn_revenue_reached": 146986.2,
+        "precision_of_contacts": 0.964,
+        "assumed_expected_revenue_saved": 15127.76,
+        "assumed_expected_net_value": 14629.76
+      },
+      "kairos": {
+        "customers_contacted": 128,
+        "spent": 500.0,
+        "churners_reached": 112,
+        "share_of_all_churners_reached": 0.193,
+        "churn_revenue_reached": 118126.8,
+        "precision_of_contacts": 0.875,
+        "assumed_expected_revenue_saved": 39720.04,
+        "assumed_expected_net_value": 39220.04
+      }
+    },
+    {
+      "budget": 1000,
+      "random": {
+        "customers_contacted": 333.0,
+        "spent": 999.0,
+        "churners_reached": 136.225,
+        "share_of_all_churners_reached": 0.234,
+        "churn_revenue_reached": 119505.351,
+        "precision_of_contacts": 0.409,
+        "assumed_expected_revenue_saved": 13203.055,
+        "assumed_expected_net_value": 12204.055
+      },
+      "top_risk": {
+        "customers_contacted": 333,
+        "spent": 999.0,
+        "churners_reached": 301,
+        "share_of_all_churners_reached": 0.518,
+        "churn_revenue_reached": 274015.2,
+        "precision_of_contacts": 0.904,
+        "assumed_expected_revenue_saved": 28805.76,
+        "assumed_expected_net_value": 27806.76
+      },
+      "kairos": {
+        "customers_contacted": 242,
+        "spent": 999.0,
+        "churners_reached": 192,
+        "share_of_all_churners_reached": 0.33,
+        "churn_revenue_reached": 192532.8,
+        "precision_of_contacts": 0.793,
+        "assumed_expected_revenue_saved": 61007.03,
+        "assumed_expected_net_value": 60008.03
+      }
+    },
+    {
+      "budget": 2000,
+      "random": {
+        "customers_contacted": 666.0,
+        "spent": 1998.0,
+        "churners_reached": 272.275,
+        "share_of_all_churners_reached": 0.469,
+        "churn_revenue_reached": 238786.587,
+        "precision_of_contacts": 0.409,
+        "assumed_expected_revenue_saved": 26307.847,
+        "assumed_expected_net_value": 24309.847
+      },
+      "top_risk": {
+        "customers_contacted": 666,
+        "spent": 1998.0,
+        "churners_reached": 484,
+        "share_of_all_churners_reached": 0.833,
+        "churn_revenue_reached": 426343.8,
+        "precision_of_contacts": 0.727,
+        "assumed_expected_revenue_saved": 45255.18,
+        "assumed_expected_net_value": 43257.18
+      },
+      "kairos": {
+        "customers_contacted": 407,
+        "spent": 1999.0,
+        "churners_reached": 306,
+        "share_of_all_churners_reached": 0.527,
+        "churn_revenue_reached": 295920.0,
+        "precision_of_contacts": 0.752,
+        "assumed_expected_revenue_saved": 86836.24,
+        "assumed_expected_net_value": 84837.24
+      }
+    },
+    {
+      "budget": 4000,
+      "random": {
+        "customers_contacted": 1333.0,
+        "spent": 3999.0,
+        "churners_reached": 545.38,
+        "share_of_all_churners_reached": 0.939,
+        "churn_revenue_reached": 477933.249,
+        "precision_of_contacts": 0.409,
+        "assumed_expected_revenue_saved": 52584.262,
+        "assumed_expected_net_value": 48585.262
+      },
+      "top_risk": {
+        "customers_contacted": 1333,
+        "spent": 3999.0,
+        "churners_reached": 580,
+        "share_of_all_churners_reached": 0.998,
+        "churn_revenue_reached": 508855.8,
+        "precision_of_contacts": 0.435,
+        "assumed_expected_revenue_saved": 56002.59,
+        "assumed_expected_net_value": 52003.59
+      },
+      "kairos": {
+        "customers_contacted": 693,
+        "spent": 3999.57,
+        "churners_reached": 443,
+        "share_of_all_churners_reached": 0.762,
+        "churn_revenue_reached": 399894.0,
+        "precision_of_contacts": 0.639,
+        "assumed_expected_revenue_saved": 111559.69,
+        "assumed_expected_net_value": 107560.1
+      }
+    }
+  ]
+}

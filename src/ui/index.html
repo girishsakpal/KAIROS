@@ -4,140 +4,704 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kairos: Sem VII Checkpoint Demo</title>
+  <title>KAIROS | Knowledge Augmented Insights and Retention Optimization System</title>
   <style>
     :root {
-      --bg: #F5F6FA;
+      --bg: #F3F5FA;
       --card: #fff;
-      --ink: #1B1B3A;
-      --mut: #6B7394;
-      --line: #E3E6F0;
-      --teal: #2A9D8F;
-      --blue: #2F6DB5;
-      --red: #C0392B;
-      --amber: #E0A800;
-      --green: #2E8B57
+      --ink: #17182B;
+      --mut: #6A7192;
+      --line: #E4E8F2;
+      --side: #14162B;
+      --side2: #1D2040;
+      --acc: #3B6FE0;
+      --acc2: #2A9D8F;
+      --high: #E5484D;
+      --med: #F2A024;
+      --low: #2FA56F;
+      --soft: #EEF2FC;
+      --shadow: 0 1px 2px rgba(20, 22, 43, .06), 0 4px 14px rgba(20, 22, 43, .05)
     }
 
-    @media(prefers-color-scheme:dark) {
-      :root {
-        --bg: #14151F;
-        --card: #1D1F2D;
-        --ink: #ECEEF8;
-        --mut: #9AA1BD;
-        --line: #2E3146
-      }
+    [data-theme=dark] {
+      --bg: #0F1120;
+      --card: #181B31;
+      --ink: #ECEEF9;
+      --mut: #9AA1C4;
+      --line: #2A2E4A;
+      --side: #0A0B18;
+      --side2: #161934;
+      --soft: #20243F;
+      --shadow: none
     }
 
     * {
       box-sizing: border-box
     }
 
+    html,
+    body {
+      height: 100%
+    }
+
     body {
       margin: 0;
-      font: 15px/1.5 system-ui, Segoe UI, Roboto, sans-serif;
+      font: 14.5px/1.5 Inter, system-ui, Segoe UI, Roboto, sans-serif;
       background: var(--bg);
       color: var(--ink)
     }
 
-    header {
-      padding: 18px 28px;
-      background: linear-gradient(90deg, #2A9D8F, #2F6DB5);
-      color: #fff
+    button {
+      font: inherit;
+      cursor: pointer
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 22px
+    #app {
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      min-height: 100%
     }
 
-    header p {
-      margin: 2px 0 0;
-      opacity: .9;
-      font-size: 13px
+    aside {
+      background: linear-gradient(180deg, var(--side), var(--side2));
+      color: #CBD0F0;
+      padding: 20px 14px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: .14em;
+      font-size: 20px;
+      color: #fff;
+      padding: 2px 10px 2px
+    }
+
+    .logo small {
+      display: block;
+      font-weight: 500;
+      letter-spacing: .02em;
+      font-size: 11.5px;
+      color: #8D93BC;
+      margin-top: 2px
     }
 
     nav {
+      margin-top: 22px;
       display: flex;
-      gap: 4px;
-      padding: 10px 28px 0;
-      border-bottom: 1px solid var(--line);
-      background: var(--card);
-      flex-wrap: wrap
+      flex-direction: column;
+      gap: 3px
     }
 
-    nav button {
-      border: 0;
-      background: none;
-      color: var(--mut);
-      padding: 10px 16px;
-      font-size: 14px;
+    nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 12px;
+      border-radius: 9px;
+      color: #B8BEE6;
+      text-decoration: none;
       font-weight: 600;
-      cursor: pointer;
-      border-bottom: 3px solid transparent
+      font-size: 14px;
+      cursor: pointer
     }
 
-    nav button.on {
-      color: var(--blue);
-      border-color: var(--blue)
+    nav a:hover {
+      background: rgba(255, 255, 255, .07)
+    }
+
+    nav a.on {
+      background: var(--acc);
+      color: #fff
+    }
+
+    nav a .ic {
+      width: 18px;
+      text-align: center
+    }
+
+    nav a .cnt {
+      margin-left: auto;
+      background: var(--acc2);
+      color: #fff;
+      border-radius: 10px;
+      padding: 0 8px;
+      font-size: 12px
+    }
+
+    .sidefoot {
+      margin-top: auto;
+      font-size: 11.5px;
+      color: #7F86B3;
+      padding: 8px 10px
     }
 
     main {
-      max-width: 1150px;
-      margin: 22px auto;
-      padding: 0 20px
+      min-width: 0
+    }
+
+    .top {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 28px;
+      background: var(--card);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      flex-wrap: wrap
+    }
+
+    .top h1 {
+      font-size: 18px;
+      margin: 0;
+      flex: 1;
+      min-width: 180px
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+      padding: 4px 11px;
+      border-radius: 20px;
+      font-size: 12.5px;
+      color: var(--mut)
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--low)
+    }
+
+    .dot.bad {
+      background: var(--high)
+    }
+
+    input,
+    select,
+    textarea {
+      font: inherit;
+      padding: 7px 10px;
+      border-radius: 9px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      color: var(--ink);
+      min-width: 0
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 2px solid color-mix(in srgb, var(--acc) 40%, transparent);
+      border-color: var(--acc)
+    }
+
+    #view {
+      padding: 22px 28px 50px;
+      max-width: 1280px
     }
 
     .card {
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 12px;
+      border-radius: 14px;
       padding: 18px 20px;
+      box-shadow: var(--shadow);
       margin-bottom: 16px
     }
 
-    h2 {
-      margin: 0 0 10px;
-      font-size: 17px
+    .card h2 {
+      margin: 0 0 4px;
+      font-size: 16px
     }
 
-    h3 {
-      margin: 14px 0 6px;
-      font-size: 14px;
-      color: var(--mut);
+    .card h3 {
+      margin: 16px 0 8px;
+      font-size: 12px;
+      letter-spacing: .07em;
       text-transform: uppercase;
-      letter-spacing: .04em
+      color: var(--mut)
+    }
+
+    .sub {
+      color: var(--mut);
+      font-size: 13px;
+      margin: 0 0 12px
     }
 
     .row {
       display: flex;
       gap: 10px;
-      flex-wrap: wrap;
-      align-items: center
+      align-items: center;
+      flex-wrap: wrap
     }
 
-    .pill {
-      padding: 6px 14px;
-      border-radius: 20px;
+    .grid {
+      display: grid;
+      gap: 14px
+    }
+
+    .g4 {
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr))
+    }
+
+    .g2 {
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr))
+    }
+
+    .g3 {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+    }
+
+    .kpi {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: var(--shadow)
+    }
+
+    .kpi .v {
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.15
+    }
+
+    .kpi .l {
+      color: var(--mut);
+      font-size: 12.5px
+    }
+
+    .btn {
+      background: var(--acc);
+      color: #fff;
+      border: 0;
+      border-radius: 9px;
+      padding: 8px 15px;
+      font-weight: 700
+    }
+
+    .btn:hover {
+      filter: brightness(1.08)
+    }
+
+    .btn.ghost {
+      background: var(--soft);
+      color: var(--ink);
+      border: 1px solid var(--line)
+    }
+
+    .btn.sm {
+      padding: 4px 10px;
+      font-size: 12.5px
+    }
+
+    .btn:disabled {
+      opacity: .5;
+      cursor: default
+    }
+
+    .chip {
       border: 1px solid var(--line);
       background: var(--card);
       color: var(--ink);
-      cursor: pointer;
+      padding: 5px 13px;
+      border-radius: 20px;
+      font-weight: 600;
       font-size: 13px
     }
 
-    .pill.on {
-      background: var(--blue);
+    .chip:hover {
+      border-color: var(--acc)
+    }
+
+    .chip.on {
+      background: var(--acc);
       color: #fff;
-      border-color: var(--blue)
+      border-color: var(--acc)
+    }
+
+    .chip.high.on {
+      background: var(--high);
+      border-color: var(--high)
+    }
+
+    .chip.medium.on {
+      background: var(--med);
+      border-color: var(--med)
+    }
+
+    .chip.low.on {
+      background: var(--low);
+      border-color: var(--low)
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      white-space: nowrap
+    }
+
+    .badge.high {
+      background: var(--high)
+    }
+
+    .badge.medium {
+      background: var(--med)
+    }
+
+    .badge.low {
+      background: var(--low)
+    }
+
+    .badge.team {
+      background: var(--acc2)
+    }
+
+    .badge.grey {
+      background: var(--mut)
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px
+    }
+
+    th,
+    td {
+      padding: 9px 10px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      white-space: nowrap
+    }
+
+    th {
+      color: var(--mut);
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      cursor: default
+    }
+
+    th.sortable {
+      cursor: pointer
+    }
+
+    th.sortable:hover {
+      color: var(--acc)
+    }
+
+    tbody tr[data-href] {
+      cursor: pointer
+    }
+
+    tbody tr[data-href]:hover {
+      background: var(--soft)
+    }
+
+    .scroll {
+      overflow: auto
+    }
+
+    .bars .b {
+      display: grid;
+      grid-template-columns: 210px 1fr 76px;
+      gap: 10px;
+      align-items: center;
+      margin: 6px 0;
+      font-size: 13px
+    }
+
+    .bars .b.click {
+      cursor: pointer
+    }
+
+    .bars .b.click:hover .lab {
+      color: var(--acc)
+    }
+
+    .bars.narrow .b {
+      grid-template-columns: 70px 1fr 80px
+    }
+
+    .bars .lab {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap
+    }
+
+    .track {
+      height: 10px;
+      background: var(--soft);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex
+    }
+
+    .track i {
+      display: block;
+      height: 100%
+    }
+
+    .num {
+      color: var(--mut);
+      text-align: right;
+      font-variant-numeric: tabular-nums
+    }
+
+    .vcols {
+      display: flex;
+      gap: 6px;
+      align-items: flex-end;
+      height: 130px;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .vcols .c {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100%
+    }
+
+    .vcols .c div {
+      width: 100%;
+      border-radius: 4px 4px 0 0;
+      min-height: 2px
+    }
+
+    .vlab {
+      display: flex;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--mut)
+    }
+
+    .vlab span {
+      flex: 1;
+      text-align: center
+    }
+
+    .legend {
+      display: flex;
+      gap: 14px;
+      font-size: 12px;
+      color: var(--mut);
+      margin-top: 6px;
+      flex-wrap: wrap
+    }
+
+    .legend i {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+      margin-right: 5px
+    }
+
+    svg text {
+      fill: var(--mut);
+      font-size: 11px
+    }
+
+    .sl {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    .sl input[type=range] {
+      flex: 1;
+      min-width: 180px;
+      accent-color: var(--acc)
+    }
+
+    .mono {
+      font-family: ui-monospace, Consolas, monospace;
+      font-size: 12.5px
+    }
+
+    pre.json {
+      background: #0E1020;
+      color: #D6E2FF;
+      border-radius: 10px;
+      padding: 14px;
+      overflow: auto;
+      max-height: 380px;
+      margin: 8px 0 0;
+      font-size: 12.5px
+    }
+
+    .shap {
+      display: grid;
+      grid-template-columns: 190px 1fr 56px;
+      gap: 10px;
+      align-items: center;
+      margin: 6px 0;
+      font-size: 13px
+    }
+
+    .shap .ax {
+      position: relative;
+      height: 12px;
+      background: var(--soft);
+      border-radius: 6px
+    }
+
+    .shap .ax:before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -2px;
+      bottom: -2px;
+      width: 1px;
+      background: var(--mut)
+    }
+
+    .shap .ax i {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      border-radius: 6px
+    }
+
+    .act {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin: 10px 0;
+      background: var(--card)
+    }
+
+    .act .t {
+      font-weight: 700;
+      font-size: 15.5px
+    }
+
+    .act p {
+      margin: 5px 0
+    }
+
+    .tile {
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+      color: #fff
+    }
+
+    .tile .v {
+      font-size: 26px;
+      font-weight: 800
+    }
+
+    .tile .l {
+      font-size: 12px;
+      opacity: .95
+    }
+
+    .sug {
+      position: absolute;
+      z-index: 9;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
+      min-width: 250px;
+      max-height: 260px;
+      overflow: auto
+    }
+
+    .sug button {
+      display: flex;
+      width: 100%;
+      gap: 10px;
+      justify-content: space-between;
+      background: none;
+      border: 0;
+      color: var(--ink);
+      padding: 8px 12px;
+      text-align: left
+    }
+
+    .sug button:hover {
+      background: var(--soft)
+    }
+
+    #toast {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      background: #17182B;
+      color: #fff;
+      padding: 11px 18px;
+      border-radius: 10px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: .25s;
+      pointer-events: none;
+      z-index: 50;
+      font-weight: 600
+    }
+
+    #toast.show {
+      opacity: 1;
+      transform: none
+    }
+
+    .empty {
+      padding: 36px;
+      text-align: center;
+      color: var(--mut)
+    }
+
+    .skel {
+      height: 90px;
+      border-radius: 12px;
+      background: linear-gradient(90deg, var(--soft), var(--line), var(--soft));
+      background-size: 200% 100%;
+      animation: sh 1.2s infinite
+    }
+
+    @keyframes sh {
+      to {
+        background-position: -200% 0
+      }
+    }
+
+    .note {
+      background: var(--soft);
+      border-left: 4px solid var(--acc);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--mut);
+      margin: 12px 0
     }
 
     .shot {
       border: 1px solid var(--line);
       border-radius: 10px;
       overflow: hidden;
-      background: var(--bg);
-      min-height: 260px;
+      background: var(--soft);
+      min-height: 240px;
       display: flex;
       align-items: center;
       justify-content: center
@@ -148,362 +712,377 @@
       display: block
     }
 
-    .ph {
-      padding: 50px 24px;
-      text-align: center;
-      color: var(--mut)
-    }
+    @media(max-width:900px) {
+      .bars .b {
+        grid-template-columns: 120px 1fr 60px
+      }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px
-    }
+      #app {
+        grid-template-columns: 1fr
+      }
 
-    .kpi {
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 12px 14px
-    }
+      aside {
+        position: static;
+        height: auto;
+        flex-direction: row;
+        overflow: auto;
+        padding: 10px
+      }
 
-    .kpi b {
-      display: block;
-      font-size: 22px
-    }
+      nav {
+        flex-direction: row;
+        margin: 0 0 0 14px
+      }
 
-    .kpi span {
-      color: var(--mut);
-      font-size: 12px
-    }
+      .sidefoot,
+      .logo small {
+        display: none
+      }
 
-    button.go {
-      background: var(--blue);
-      color: #fff;
-      border: 0;
-      border-radius: 8px;
-      padding: 8px 16px;
-      font-weight: 600;
-      cursor: pointer
-    }
-
-    button.go:hover {
-      opacity: .9
-    }
-
-    input,
-    select {
-      padding: 8px 10px;
-      border-radius: 8px;
-      border: 1px solid var(--line);
-      background: var(--card);
-      color: var(--ink);
-      font-size: 14px
-    }
-
-    code,
-    pre {
-      font-family: ui-monospace, Consolas, monospace;
-      font-size: 12.5px
-    }
-
-    pre {
-      background: #10121c;
-      color: #d6e2ff;
-      border-radius: 10px;
-      padding: 14px;
-      overflow: auto;
-      max-height: 340px;
-      margin: 8px 0 0
-    }
-
-    .kpi b .badge {
-      color: #fff
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 2px 10px;
-      border-radius: 12px;
-      font-size: 12px;
-      font-weight: 700;
-      color: #fff
-    }
-
-    .high {
-      background: var(--red)
-    }
-
-    .medium {
-      background: var(--amber)
-    }
-
-    .low {
-      background: var(--green)
-    }
-
-    .ok {
-      background: var(--green)
-    }
-
-    .err {
-      background: var(--red)
-    }
-
-    .bar {
-      height: 10px;
-      border-radius: 5px;
-      background: var(--line);
-      overflow: hidden
-    }
-
-    .bar i {
-      display: block;
-      height: 100%
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse
-    }
-
-    td,
-    th {
-      padding: 8px 10px;
-      border-bottom: 1px solid var(--line);
-      text-align: left;
-      vertical-align: top
-    }
-
-    th {
-      color: var(--mut);
-      font-size: 12px;
-      text-transform: uppercase
-    }
-
-    .done {
-      color: var(--green);
-      font-weight: 700
-    }
-
-    .plan {
-      color: var(--blue);
-      font-weight: 700
-    }
-
-    .sm {
-      font-size: 12.5px;
-      color: var(--mut)
-    }
-
-    .feat {
-      display: grid;
-      grid-template-columns: 230px 1fr 60px;
-      gap: 10px;
-      align-items: center;
-      margin: 5px 0;
-      font-size: 13px
+      #view {
+        padding: 16px
+      }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>KAIROS <span style="font-weight:400;opacity:.85">| Semester VII checkpoint demo</span></h1>
-    <p>Explainable customer churn intelligence: dashboard and backend built so far</p>
-  </header>
-  <nav id="nav">
-    <button class="on" data-t="dash">Power BI dashboard</button>
-    <button data-t="api">Backend API (live)</button>
-    <button data-t="status">Project status</button>
-  </nav>
-  <main>
-
-    <section id="dash">
-      <div class="card">
-        <h2>Operations dashboard</h2>
-        <div class="row" id="pages"></div>
-        <p class="sm" id="pcap" style="margin:10px 0"></p>
-        <div class="shot" id="shot"></div>
-      </div>
-    </section>
-
-    <section id="api" hidden>
-      <div class="card">
-        <h2>Service health <span class="sm">GET /api/v1/health</span></h2>
-        <div class="grid" id="health">
-          <div class="sm">Loading…</div>
+  <div id="app">
+    <aside>
+      <div class="logo">KAIROS<small>Knowledge Augmented Insights and Retention Optimization System</small></div>
+      <nav id="nav">
+        <a data-r="overview"><span class="ic">&#9638;</span>Overview</a>
+        <a data-r="customer"><span class="ic">&#9786;</span>Customer 360</a>
+        <a data-r="planner"><span class="ic">&#9873;</span>Retention planner</a>
+        <a data-r="queue"><span class="ic">&#9745;</span>Work queue<span class="cnt" id="qcnt" hidden>0</span></a>
+        <a data-r="model"><span class="ic">&#9650;</span>Model validation</a>
+        <a data-r="api"><span class="ic">&#8644;</span>API explorer</a>
+        <a data-r="powerbi"><span class="ic">&#9636;</span>Power BI report</a>
+        <a data-r="status"><span class="ic">&#10003;</span>Project status</a>
+      </nav>
+      <div class="sidefoot">Semester VII checkpoint<br>Decision support, not a guarantee.</div>
+    </aside>
+    <main>
+      <div class="top">
+        <h1 id="title">Overview</h1>
+        <div style="position:relative"><input id="gs" placeholder="Jump to customer ID..." autocomplete="off"
+            style="width:220px">
+          <div id="gsug" class="sug" hidden></div>
         </div>
+        <span class="pill" id="health"><span class="dot bad"></span>connecting</span>
+        <button class="btn ghost sm" id="theme" title="Toggle dark mode">Theme</button>
       </div>
-      <div class="card">
-        <h2>Try the endpoints</h2>
-        <p class="sm" style="margin-top:0">These calls hit the running Flask API. Sample customers are held-out test
-          customers.</p>
-        <div class="row">
-          <select id="sample">
-            <option value="5561-NWEVX">5561-NWEVX (high risk)</option>
-            <option value="7605-SNLQG">7605-SNLQG (medium risk)</option>
-            <option value="7994-XIRTR">7994-XIRTR (low risk)</option>
-            <option value="0000-NOPE">0000-NOPE (unknown, shows error)</option>
-          </select>
-          <input id="cid" placeholder="or type a customer ID" size="18">
-        </div>
-        <div class="row" style="margin-top:12px">
-          <button class="go" onclick="call('predict')">POST /predict</button>
-          <button class="go" onclick="call('detail')">GET /customer-detail/{id}</button>
-          <button class="go" onclick="call('metrics')">GET /model-metrics</button>
-        </div>
-        <div id="meta" class="sm" style="margin-top:12px"></div>
-        <div id="view"></div>
-        <details style="margin-top:10px">
-          <summary class="sm" style="cursor:pointer">Raw JSON response</summary>
-          <pre id="raw">Press a button above.</pre>
-        </details>
-      </div>
-    </section>
-
-    <section id="status" hidden>
-      <div class="card">
-        <h2>What is built vs. planned</h2>
-        <table>
-          <tr>
-            <th>Component</th>
-            <th>Status</th>
-            <th>Detail</th>
-          </tr>
-          <tr>
-            <td>Data layer</td>
-            <td class="done">Built</td>
-            <td>8-table PostgreSQL schema (Supabase), leakage-safe features, loader with verification</td>
-          </tr>
-          <tr>
-            <td>Churn models</td>
-            <td class="done">Built</td>
-            <td>Logistic Regression, XGBoost (SHAP, calibrated, served), LSTM comparison</td>
-          </tr>
-          <tr>
-            <td>Power BI ops dashboard</td>
-            <td class="done">Built</td>
-            <td>4 pages fed by model outputs</td>
-          </tr>
-          <tr>
-            <td>REST API</td>
-            <td class="done">Skeleton built</td>
-            <td>4 endpoints, CSV and Postgres backends with parity check, automated tests</td>
-          </tr>
-          <tr>
-            <td>JWT authentication</td>
-            <td class="plan">Sem VIII</td>
-            <td>Currently open (no auth)</td>
-          </tr>
-          <tr>
-            <td>Live scoring, batch-predict, segment</td>
-            <td class="plan">Sem VIII</td>
-            <td>/predict serves stored predictions only</td>
-          </tr>
-          <tr>
-            <td>Drift monitoring and MLflow</td>
-            <td class="plan">Sem VIII</td>
-            <td>Drift fields are placeholders until then</td>
-          </tr>
-          <tr>
-            <td>Tableau executive dashboard</td>
-            <td class="plan">Sem VIII</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Chat / hybrid RAG (Module B)</td>
-            <td class="plan">Sem VIII</td>
-            <td>Will replace this page's lookup with a conversational panel</td>
-          </tr>
-          <tr>
-            <td>Evaluation harness, Docker, paper</td>
-            <td class="plan">Sem VIII</td>
-            <td></td>
-          </tr>
-        </table>
-      </div>
-    </section>
-  </main>
+      <div id="view"></div>
+    </main>
+  </div>
+  <div id="toast"></div>
 
   <script>
-    const PAGES = [["Operations overview", "Page 1: KPIs, risk tiers and the at-risk customer list."],
-    ["Customer drill-through", "Page 2: one customer's risk, drivers and history."],
-    ["Model validation", "Page 3: model quality, lift and calibration."],
-    ["What-if", "Page 4: save-rate slicer and illustrative revenue saved."]];
-    // Optional: paste a Power BI "Publish to web" embed URL here to show the live report instead of screenshots.
-    const POWERBI_EMBED_URL = "";
-    let cur = 0;
-    function showPage(i) {
-      cur = i;
-      document.querySelectorAll("#pages .pill").forEach((b, j) => b.classList.toggle("on", j === i));
-      pcap.textContent = PAGES[i][1];
-      if (POWERBI_EMBED_URL) { shot.innerHTML = `<iframe src="${POWERBI_EMBED_URL}" style="width:100%;height:560px;border:0"></iframe>`; return }
-      shot.innerHTML = `<img src="/ui/dashboard/page${i + 1}.png" alt="${PAGES[i][0]}" onerror="this.parentNode.innerHTML='<div class=ph>Add your screenshot as <code>src/ui/dashboard/page${i + 1}.png</code></div>'">`
-    }
-    PAGES.forEach((p, i) => { const b = document.createElement("button"); b.className = "pill"; b.textContent = p[0]; b.onclick = () => showPage(i); pages.appendChild(b) });
-    showPage(0);
-    document.querySelectorAll("nav button").forEach(b => b.onclick = () => {
-      document.querySelectorAll("nav button").forEach(x => x.classList.toggle("on", x === b));
-      ["dash", "api", "status"].forEach(s => document.getElementById(s).hidden = s !== b.dataset.t);
-      if (b.dataset.t === "api" && !window._h) { window._h = 1; loadHealth() }
-    });
-
-    const $ = id => document.getElementById(id);
-    async function req(path, opt) {
+    const API = "/api/v1";
+    const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+    const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+    const money = v => { const n = Math.round(+v || 0); return (n < 0 ? "-$" : "$") + Math.abs(n).toLocaleString() };
+    const pct = (v, d = 0) => ((+v || 0) * 100).toFixed(d) + "%";
+    const debounce = (f, ms) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => f(...a), ms) } };
+    const view = $("#view");
+    async function api(path, opt) {
       const t = performance.now();
-      try { const r = await fetch("/api/v1" + path, opt); const j = await r.json().catch(() => null); return { ok: r.ok, status: r.status, ms: Math.round(performance.now() - t), json: j } }
-      catch (e) { return { ok: false, status: 0, ms: 0, json: { error: String(e) } } }
-    }
-    async function loadHealth() {
-      const r = await req("/health"); const j = r.json || {};
-      if (!r.ok) { health.innerHTML = `<div class="kpi"><b><span class="badge err">DOWN</span></b><span>API not reachable (HTTP ${r.status})</span></div>`; return }
-      const items = [["Status", "<span class='badge ok'>" + j.status + "</span>"], ["Serving model", j.serving_model_id || "none"]];
-      for (const [k, v] of Object.entries(j)) if (!["status", "serving_model_id"].includes(k)) items.push([k.replace(/_/g, " "), Number(v).toLocaleString ? Number(v).toLocaleString() : v]);
-      health.innerHTML = items.map(([k, v]) => `<div class="kpi"><b>${v}</b><span>${k}</span></div>`).join("")
-    }
-    const cidv = () => cid.value.trim() || sample.value;
-    const nice = f => f.replace(/^(num|cat)__/, "").replace(/_/g, " ");
-    function feats(list) {
-      if (!list || !list.length) return "";
-      const m = Math.max(...list.map(f => Math.abs(f.shap_value || 0)), .01);
-      return "<h3>Top drivers (SHAP)</h3>" + list.map(f => {
-        const up = (f.direction || "").startsWith("inc"), w = Math.abs(f.shap_value) / m * 100;
-        return `<div class="feat"><span>${nice(f.feature)}</span><div class="bar"><i style="width:${w}%;background:${up ? "var(--red)" : "var(--green)"}"></i></div><span class="sm">${up ? "+" : "−"}${Math.abs(f.shap_value).toFixed(2)}</span></div>`
-      }).join("")
-    }
-    function predCard(p) {
-      const pct = (p.churn_probability * 100).toFixed(0);
-      return `<h3>Prediction</h3><div class="row"><b style="font-size:26px">${pct}%</b><span class="badge ${p.risk_tier}">${p.risk_tier} risk</span><span class="sm">model ${p.model_id || ""}</span></div>
- <div class="bar" style="margin:8px 0"><i style="width:${pct}%;background:var(--blue)"></i></div>${feats(p.top_features)}
- ${p.drift_status ? `<p class="sm">Drift monitoring: ${p.drift_status.drift_checked === true ? (p.drift_status.drift_detected ? "drift detected" : "no drift detected") : "not active yet (planned Sem VIII)"}. Model age: ${p.drift_status.days_since_training ?? "?"} days.</p>` : ""}`
-    }
-    let busy = false;
-    async function call(kind) { if (busy) return; busy = true; document.querySelectorAll('button.go').forEach(b => b.disabled = true); try { await call2(kind) } finally { busy = false; document.querySelectorAll('button.go').forEach(b => b.disabled = false) } }
-    async function call2(kind) {
-      let r, id = cidv();
-      if (kind === "predict") r = await req("/predict", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ customer_id: id }) });
-      else if (kind === "detail") r = await req("/customer-detail/" + encodeURIComponent(id));
-      else r = await req("/model-metrics");
-      const line = kind === "predict" ? "POST /api/v1/predict" : kind === "detail" ? "GET /api/v1/customer-detail/" + id : "GET /api/v1/model-metrics";
-      meta.innerHTML = `<code>${line}</code> &nbsp; <span class="badge ${r.ok ? "ok" : "err"}">HTTP ${r.status}</span> &nbsp; ${r.ms} ms`;
-      raw.textContent = JSON.stringify(r.json, null, 2); const j = r.json || {}; let h = "";
-      if (!r.ok && j.error) { h = `<h3>Error handled gracefully</h3><p><b>${j.error.code || ""}</b>: ${j.error.message || ""}</p>` }
-      else if (kind === "predict") h = predCard(j);
-      else if (kind === "detail") {
-        const box = (t, o) => o ? `<h3>${t}</h3><div class="grid">${Object.entries(o).map(([k, v]) => `<div class="kpi"><b style="font-size:15px">${v}</b><span>${k.replace(/_/g, " ")}</span></div>`).join("")}</div>` : "";
-        h = `<h3>Customer ${j.customer_id}</h3>` + box("Profile", j.profile) + box("Subscription", j.subscription) + box("Usage", j.usage_summary) + box("Support", j.support_summary) + box("Transactions", j.transaction_summary);
-        if (j.latest_prediction) {
-          const lp = j.latest_prediction, pct = (lp.churn_probability * 100).toFixed(0);
-          h += `<h3>Latest prediction</h3><div class="row"><b style="font-size:26px">${pct}%</b><span class="badge ${lp.risk_tier}">${lp.risk_tier} risk</span></div>
-   <div class="bar" style="margin:8px 0"><i style="width:${pct}%;background:var(--blue)"></i></div>
-   <p class="sm">Top drivers: ${(lp.top_features || []).map(nice).join(", ")}. Model age: ${lp.drift_status?.days_since_training ?? "?"} days. Drift monitoring: not active yet (planned Sem VIII).</p>`
-        }
-      } else {
-        const b = x => x ? `<div class="kpi"><b style="font-size:15px">${x.model_id || x.name || ""}</b><span>${x.algorithm || ""} ${x.status || ""}</span></div>` : "";
-        h = `<h3>Champion vs serving model</h3><div class="grid">${b(j.champion_model)}${b(j.serving_model)}</div>`
+      try {
+        const r = await fetch(API + path, opt); let j = null; try { j = await r.json() } catch (e) { }
+        return { ok: r.ok, status: r.status, ms: Math.round(performance.now() - t), json: j }
       }
-      view.innerHTML = h
+      catch (e) { return { ok: false, status: 0, ms: 0, json: { error: { code: "NETWORK", message: String(e) } } } }
     }
+    const errMsg = r => `${r.json?.error?.code || r.status}: ${r.json?.error?.message || "request failed"}`;
+    function toast(m) { const t = $("#toast"); t.textContent = m; t.classList.add("show"); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove("show"), 2200) }
+    const TIERC = { high: "var(--high)", medium: "var(--med)", low: "var(--low)" };
+    const tierBadge = (t, p) => `<span class="badge ${t}">${p == null ? t : pct(p)}</span>`;
+
+    /* ---------- small chart helpers ---------- */
+    function donut(data, size = 176) {
+      const tot = data.reduce((a, d) => a + d.value, 0) || 1, R = size / 2 - 6, r = R * .62, c = size / 2; let a0 = -Math.PI / 2, out = "";
+      data.forEach(d => {
+        if (!d.value) return; const a = Math.min(2 * Math.PI * d.value / tot, 2 * Math.PI - .0001), a1 = a0 + a, lg = a > Math.PI ? 1 : 0;
+        const p = (rad, ang) => [c + rad * Math.cos(ang), c + rad * Math.sin(ang)]; const [x0, y0] = p(R, a0), [x1, y1] = p(R, a1), [x2, y2] = p(r, a1), [x3, y3] = p(r, a0);
+        out += `<path d="M${x0} ${y0}A${R} ${R} 0 ${lg} 1 ${x1} ${y1}L${x2} ${y2}A${r} ${r} 0 ${lg} 0 ${x3} ${y3}Z" fill="${d.color}" opacity="${d.dim ? .35 : 1}" ${d.act ? `data-act="${d.act}" data-v="${d.key}" style="cursor:pointer"` : ""}><title>${esc(d.label)}: ${d.value.toLocaleString()} (${pct(d.value / tot)})</title></path>`; a0 = a1
+      });
+      return `<svg viewBox="0 0 ${size} ${size}" width="${size}" height="${size}">${out}<text x="${c}" y="${c - 2}" text-anchor="middle" style="font-size:22px;font-weight:800;fill:var(--ink)">${tot.toLocaleString()}</text><text x="${c}" y="${c + 15}" text-anchor="middle">customers</text></svg>`
+    }
+    function hbars(items, o = {}) {
+      const mx = Math.max(...items.map(i => i.total ?? i.value), 1);
+      return `<div class="bars ${o.narrow ? "narrow" : ""}">` + items.map(i => {
+        const w = (i.total ?? i.value) / mx * 100;
+        const inner = i.seg ? i.seg.map(s => `<i style="width:${s.v / (i.total) * w}%;background:${s.c}"></i>`).join("") : `<i style="width:${w}%;background:${i.color || "var(--acc)"}"></i>`;
+        return `<div class="b ${i.act ? "click" : ""}" ${i.act ? `data-act="${i.act}" data-v="${esc(i.key)}"` : ""} title="${esc(i.title || i.label)}"><span class="lab">${esc(i.label)}</span><div class="track">${inner}</div><span class="num">${i.display ?? i.value}</span></div>`
+      }).join("") + `</div>`
+    }
+    function vcols(cols, labels, legend) {
+      const mx = Math.max(...cols.flatMap(c => c.map(x => x.v)), .0001);
+      return `<div class="vcols">` + cols.map(c => `<div class="c" style="flex-direction:row;align-items:flex-end;gap:2px">` + c.map(x => `<div style="height:${x.v / mx * 100}%;background:${x.c}" title="${esc(x.t)}"></div>`).join("") + `</div>`).join("") + `</div><div class="vlab">${labels.map(l => `<span>${l}</span>`).join("")}</div>` + (legend ? `<div class="legend">${legend.map(l => `<span><i style="background:${l.c}"></i>${l.t}</span>`).join("")}</div>` : "")
+    }
+    function lineChart(o) {
+      const W = o.w || 520, H = o.h || 300, m = { l: 60, r: 26, t: 12, b: 38 }, iw = W - m.l - m.r, ih = H - m.t - m.b, X = v => m.l + v / o.xmax * iw, Y = v => m.t + ih - v / o.ymax * ih;
+      let s = `<svg viewBox="0 0 ${W} ${H}" style="width:100%;max-width:${W}px">`;
+      for (let i = 0; i <= 4; i++) { const yv = o.ymax * i / 4, xv = o.xmax * i / 4; s += `<line x1="${m.l}" x2="${W - m.r}" y1="${Y(yv)}" y2="${Y(yv)}" stroke="var(--line)"/><text x="${m.l - 6}" y="${Y(yv) + 4}" text-anchor="end">${o.yfmt ? o.yfmt(yv) : yv.toFixed(1)}</text><text x="${X(xv)}" y="${H - m.b + 16}" text-anchor="middle">${o.xfmt ? o.xfmt(xv) : xv.toFixed(1)}</text>` }
+      if (o.diag) s += `<line x1="${X(0)}" y1="${Y(0)}" x2="${X(o.xmax)}" y2="${Y(o.ymax)}" stroke="var(--mut)" stroke-dasharray="4 4"/>`;
+      o.series.forEach(se => {
+        const pts = se.pts.map(p => `${X(p[0])},${Y(p[1])}`).join(" "); if (se.area) s += `<polygon points="${X(se.pts[0][0])},${Y(0)} ${pts} ${X(se.pts[se.pts.length - 1][0])},${Y(0)}" fill="${se.color}" opacity=".12"/>`; s += `<polyline points="${pts}" fill="none" stroke="${se.color}" stroke-width="2.4" stroke-linejoin="round"/>`;
+        if (se.dots) se.pts.forEach(p => s += `<circle cx="${X(p[0])}" cy="${Y(p[1])}" r="3.5" fill="${se.color}"><title>${esc(se.tip ? se.tip(p) : p.join(", "))}</title></circle>`)
+      });
+      if (o.marker) s += `<line x1="${X(o.marker[0])}" x2="${X(o.marker[0])}" y1="${m.t}" y2="${H - m.b}" stroke="var(--high)" stroke-dasharray="3 3" opacity=".6"/><circle cx="${X(o.marker[0])}" cy="${Y(o.marker[1])}" r="6.5" fill="var(--high)" stroke="#fff" stroke-width="2"/>`;
+      s += `<text x="${m.l + iw / 2}" y="${H - 4}" text-anchor="middle">${o.xl || ""}</text><text transform="rotate(-90 12 ${m.t + ih / 2})" x="12" y="${m.t + ih / 2}" text-anchor="middle">${o.yl || ""}</text></svg>`; return s
+    }
+    function gauge(p) {
+      const a = Math.PI * p, x = 100 - 80 * Math.cos(a), y = 100 - 80 * Math.sin(a), col = p >= .6 ? "var(--high)" : p >= .3 ? "var(--med)" : "var(--low)";
+      return `<svg viewBox="0 0 200 118" width="200"><path d="M20 100A80 80 0 0 1 180 100" fill="none" stroke="var(--soft)" stroke-width="16" stroke-linecap="round"/><path d="M20 100A80 80 0 0 1 ${x} ${y}" fill="none" stroke="${col}" stroke-width="16" stroke-linecap="round"/><text x="100" y="94" text-anchor="middle" style="font-size:30px;font-weight:800;fill:var(--ink)">${pct(p)}</text><text x="100" y="112" text-anchor="middle">churn probability</text></svg>`
+    }
+
+    /* ---------- work queue (kept in the browser) ---------- */
+    let Q = []; try { Q = JSON.parse(localStorage.getItem("kairos_queue") || "[]") } catch (e) { }
+    const saveQ = () => { try { localStorage.setItem("kairos_queue", JSON.stringify(Q)) } catch (e) { } const c = $("#qcnt"); c.textContent = Q.length; c.hidden = !Q.length };
+    function addQ(it) { if (Q.some(q => q.customer_id === it.customer_id && q.action_id === it.action_id)) return false; Q.push({ ...it, status: "To do", added: new Date().toISOString().slice(0, 16).replace("T", " ") }); saveQ(); return true }
+
+    /* ---------- router ---------- */
+    const TITLES = { overview: "Overview", customer: "Customer 360", planner: "Retention planner", queue: "Work queue", model: "Model validation", api: "API explorer", powerbi: "Power BI report", status: "Project status" };
+    function route() {
+      const h = (location.hash || "#/overview").slice(2).split("/"); const r = TITLES[h[0]] ? h[0] : "overview";
+      $$("#nav a").forEach(a => a.classList.toggle("on", a.dataset.r === r)); $("#title").textContent = TITLES[r];
+      ({ overview: vOverview, customer: () => vCustomer(decodeURIComponent(h[1] || "")), planner: vPlanner, queue: vQueue, model: vModel, api: vApi, powerbi: vPowerBI, status: vStatus })[r](); window.scrollTo(0, 0)
+    }
+    window.addEventListener("hashchange", route);
+    $$("#nav a").forEach(a => a.onclick = () => { location.hash = "#/" + a.dataset.r + (a.dataset.r === "customer" && lastCust ? "/" + lastCust : "") });
+    let lastCust = "";
+
+    /* ---------- OVERVIEW (Power BI page 1, interactive) ---------- */
+    const F = { q: "", tiers: new Set(), region: "", contract: "", band: "", sort: "probability", order: "desc", page: 1 }; let OPT = null;
+    function ovQuery() { const p = new URLSearchParams(); if (F.q) p.set("q", F.q); if (F.tiers.size) p.set("risk_tier", [...F.tiers]); if (F.region) p.set("region", F.region); if (F.contract) p.set("contract", F.contract); if (F.band) p.set("tenure_band", F.band); p.set("sort", F.sort); p.set("order", F.order); p.set("page", F.page); p.set("page_size", 15); return p }
+    function vOverview() {
+      view.innerHTML = `<div class="card"><div class="row" style="gap:12px">
+  <input data-bind="q" placeholder="Search customer ID" value="${esc(F.q)}" style="width:190px">
+  <span id="chips" class="row" style="gap:6px"></span>
+  <select data-bind="region" id="f_region"><option value="">All regions</option></select>
+  <select data-bind="contract" id="f_contract"><option value="">All contracts</option></select>
+  <select data-bind="band" id="f_band"><option value="">Any tenure (months)</option></select>
+  <button class="btn ghost sm" data-act="reset">Reset filters</button></div>
+  <p class="sub" style="margin:10px 0 0">Everything below updates live as you filter. Click a chart segment to filter by it, click a column header to sort, click a row to open the customer.</p></div>
+  <div id="ovbody"><div class="grid g4"><div class="skel"></div><div class="skel"></div><div class="skel"></div><div class="skel"></div></div></div>`; loadOverview()
+    }
+    async function loadOverview() {
+      const r = await api("/customers?" + ovQuery()); const b = $("#ovbody"); if (!b) return;
+      if (!r.ok) { b.innerHTML = `<div class="card empty">Could not load customers (${esc(errMsg(r))}).</div>`; return }
+      const j = r.json, a = j.aggregates;
+      if (!OPT) { OPT = j.filter_options; $("#f_region").innerHTML += OPT.regions.map(x => `<option>${esc(x)}</option>`).join(""); $("#f_contract").innerHTML += OPT.contracts.map(x => `<option>${esc(x)}</option>`).join(""); $("#f_band").innerHTML += OPT.tenure_bands.map(x => `<option>${esc(x)}</option>`).join("") }
+      $("#f_region").value = F.region; $("#f_contract").value = F.contract; $("#f_band").value = F.band;
+      $("#chips").innerHTML = ["high", "medium", "low"].map(t => `<button class="chip ${t} ${F.tiers.has(t) ? "on" : ""}" data-act="tier" data-v="${t}">${t[0].toUpperCase() + t.slice(1)}</button>`).join("");
+      const tiers = [["high", "High"], ["medium", "Medium"], ["low", "Low"]].map(([k, l]) => ({ key: k, label: l, value: a.tiers[k], color: TIERC[k], act: "tier", dim: F.tiers.size && !F.tiers.has(k) }));
+      const pages = Math.max(1, Math.ceil(j.total / j.page_size));
+      const sortTh = (k, l) => `<th class="sortable" data-act="sort" data-v="${k}">${l}${F.sort === k ? (F.order === "desc" ? " &#9660;" : " &#9650;") : ""}</th>`;
+      b.innerHTML = `<div class="grid g4" style="margin-bottom:16px">
+  <div class="kpi"><div class="v">${a.customers.toLocaleString()}</div><div class="l">customers in view</div></div>
+  <div class="kpi"><div class="v" style="color:var(--high)">${a.tiers.high.toLocaleString()}</div><div class="l">high risk</div></div>
+  <div class="kpi"><div class="v">${money(a.revenue_exposed_monthly)}</div><div class="l">monthly revenue exposed (high risk)</div></div>
+  <div class="kpi"><div class="v">${pct(a.avg_probability)}</div><div class="l">average churn probability</div></div></div>
+ <div class="grid g3">
+  <div class="card"><h2>Risk tiers</h2><p class="sub">Click a slice to filter.</p><div class="row" style="justify-content:center">${donut(tiers)}</div></div>
+  <div class="card"><h2>High-risk customers by region</h2><p class="sub">Click a bar to filter by region.</p>${hbars(a.by_region.map(r => ({ key: r.region, label: r.region, total: r.customers, value: r.high, display: r.high + " / " + r.customers, act: "region", seg: [{ v: r.high, c: "var(--high)" }, { v: r.customers - r.high, c: "var(--soft)" }] })), { narrow: true })}</div>
+  <div class="card"><h2>Churn probability spread</h2><p class="sub">Customers per probability band.</p>${vcols(a.probability_histogram.map((n, i) => [{ v: n, c: i >= 6 ? "var(--high)" : i >= 3 ? "var(--med)" : "var(--low)", t: `${i * 10}-${i * 10 + 10}%: ${n} customers` }]), a.probability_histogram.map((_, i) => i * 10 + "%"))}</div></div>
+ <div class="grid g2">
+  <div class="card"><h2>What is driving high-risk customers</h2><p class="sub">Top model driver per high-risk customer (SHAP).</p>${a.top_driver_of_high_risk.length ? hbars(a.top_driver_of_high_risk.map(d => ({ label: d.driver, value: d.customers, color: "var(--high)" }))) : '<div class="empty">No high-risk customers in this view.</div>'}</div>
+  <div class="card"><h2>Recommended action mix</h2><p class="sub">Best action per customer from the Retention Action Engine.</p>${a.recommended_action_mix.length ? hbars(a.recommended_action_mix.map(d => ({ label: d.action, value: d.customers, color: "var(--acc2)" }))) : '<div class="empty">Nothing to recommend for this view.</div>'}</div></div>
+ <div class="card"><h2>At-risk customers <span class="sub">(${j.total.toLocaleString()} match)</span></h2><div class="scroll"><table><thead><tr>${sortTh("id", "Customer")}${sortTh("probability", "Risk")}<th>Region</th><th>Plan</th><th>Contract</th>${sortTh("charge", "Charge")}${sortTh("tenure", "Tenure")}<th>Top driver</th><th>Recommended action</th></tr></thead><tbody>` +
+        (j.items.length ? j.items.map(c => `<tr data-href="#/customer/${encodeURIComponent(c.customer_id)}"><td class="mono">${esc(c.customer_id)}</td><td>${tierBadge(c.risk_tier, c.churn_probability)}</td><td>${esc(c.region)}</td><td>${esc(c.plan)}</td><td>${esc(c.contract_type)}</td><td>${money(c.monthly_charge)}</td><td>${c.tenure_months} mo</td><td style="white-space:normal">${esc(c.top_driver || "-")}</td><td style="white-space:normal;min-width:190px">${esc(c.best_action || "-")}</td></tr>`).join("") : `<tr><td colspan="9" class="empty">No customers match these filters.</td></tr>`) +
+        `</tbody></table></div><div class="row" style="justify-content:space-between;margin-top:12px"><span class="sub" style="margin:0">Page ${j.page} of ${pages}</span><span class="row"><button class="btn ghost sm" data-act="page" data-v="-1" ${j.page <= 1 ? "disabled" : ""}>Previous</button><button class="btn ghost sm" data-act="page" data-v="1" ${j.page >= pages ? "disabled" : ""}>Next</button></span></div></div>`
+    }
+
+    /* ---------- CUSTOMER 360 (Power BI page 2) ---------- */
+    const CS = { horizon: 12, scale: 1 };
+    async function vCustomer(id) {
+      view.innerHTML = `<div class="card"><div class="row"><div style="position:relative"><input id="cq" placeholder="Search a customer ID..." autocomplete="off" value="${esc(id)}" style="width:260px"><div id="csug" class="sug" hidden></div></div><button class="btn" data-act="cgo">Open</button><span class="sub" style="margin:0">Type part of an ID, then pick a suggestion. Try 5561, 7605 or 7994.</span></div></div><div id="cbody">${id ? '<div class="skel"></div>' : '<div class="card empty">Pick a customer to see their risk, the reasons behind it, and what to do about it.</div>'}</div>`;
+      if (!id) return; lastCust = id;
+      const [rec, det] = await Promise.all([api(`/recommend/${encodeURIComponent(id)}?limit=4&horizon_months=${CS.horizon}&save_rate_scale=${CS.scale}`), api(`/customer-detail/${encodeURIComponent(id)}`)]);
+      const b = $("#cbody"); if (!b) return;
+      if (!rec.ok) { b.innerHTML = `<div class="card empty"><b>${esc(rec.json?.error?.code || rec.status)}</b><br>${esc(rec.json?.error?.message || "")}</div>`; return }
+      const j = rec.json, d = det.json || {}, mx = Math.max(...j.drivers.map(x => Math.abs(x.shap_value)), .01);
+      const facts = (t, o) => o ? `<h3>${t}</h3><div class="grid g4" style="gap:8px">${Object.entries(o).map(([k, v]) => `<div class="kpi" style="padding:9px 12px;box-shadow:none"><div class="v" style="font-size:15px">${esc(v)}</div><div class="l">${esc(k.replace(/_/g, " "))}</div></div>`).join("")}</div>` : "";
+      b.innerHTML = `<div class="grid g2"><div class="card"><div class="row" style="justify-content:space-between"><h2 class="mono" style="font-size:18px">${esc(id)}</h2>${tierBadge(j.risk_tier)}</div>
+   <div class="row" style="justify-content:center">${gauge(j.churn_probability)}</div>
+   <p class="sub" style="text-align:center">monthly charge ${money(j.monthly_charge)} | revenue at stake ${money(j.assumptions.revenue_at_stake)} over ${j.assumptions.horizon_months} months</p>
+   <h3>Why the model flagged this customer (SHAP)</h3>`+
+        j.drivers.map(x => { const w = Math.abs(x.shap_value) / mx * 50, up = x.shap_value > 0; return `<div class="shap"><span>${esc(x.name || x.label)}</span><div class="ax"><i style="${up ? "left:50%" : `left:${50 - w}%`};width:${w}%;background:${up ? "var(--high)" : "var(--low)"}"></i></div><span class="num">${up ? "+" : ""}${x.shap_value.toFixed(2)}</span></div>` }).join("") +
+        `<div class="legend"><span><i style="background:var(--high)"></i>raises churn risk</span><span><i style="background:var(--low)"></i>lowers it</span></div></div>
+  <div class="card"><h2>Recommended actions</h2><div class="sl" style="margin:6px 0 4px"><label class="sub" style="margin:0">Horizon <select data-cs="horizon">${[6, 12, 24].map(h => `<option ${h == CS.horizon ? "selected" : ""} value="${h}">${h} months</option>`).join("")}</select></label>
+   <label class="sub" style="margin:0;flex:1">Save-rate scale <input type="range" min="0.5" max="1.5" step="0.1" value="${CS.scale}" data-cs="scale" style="width:60%"> <b id="csv">${CS.scale}x</b></label></div>` +
+        j.recommendations.map((a, i) => `<div class="act"><div class="row" style="justify-content:space-between"><span class="t">${i + 1}. ${esc(a.action)}</span><span class="badge team">${esc(a.owner_team)}</span></div><p>${esc(a.description)}</p>
+    <p class="sub" style="margin:2px 0"><b>Why:</b> ${a.why.map(esc).join(" ")}</p>
+    <div class="row" style="justify-content:space-between"><span class="sub" style="margin:0">Cost ${money(a.cost)} | assumed success ${pct(a.success_probability)} | saved ${money(a.expected_revenue_saved)} | <b>net ${money(a.net_value)}</b></span>
+    <button class="btn sm" data-act="addq" data-i="${i}">Add to work queue</button></div></div>`).join("") +
+        `<p class="sub">${j.total_applicable_actions} action(s) apply. ${esc(j.disclaimer)}</p></div></div>
+  <div class="card"><h2>Customer record</h2>${facts("Profile", d.profile)}${facts("Subscription", d.subscription)}${facts("Usage", d.usage_summary)}${facts("Support", d.support_summary)}${facts("Transactions", d.transaction_summary)}</div>`;
+      window._rec = j
+    }
+
+    /* ---------- RETENTION PLANNER ---------- */
+    const P = { budget: 1000, max: "", scale: 1, horizon: 12, cap: {} }; const TEAMS = ["Collections", "Sales", "Customer Success", "Support"]; let CURVE = null, CURVEKEY = "", LASTPLAN = null;
+    function vPlanner() {
+      view.innerHTML = `<div class="card"><h2>Retention planner</h2><p class="sub">Given a budget, who should the team contact and with which action? Move any control and the plan recalculates live.</p>
+ <div class="grid g3" style="gap:18px">
+  <div><div class="sl"><label>Budget</label><input type="range" min="100" max="6000" step="100" value="${P.budget}" data-p="budget"><b id="pv_budget" style="min-width:64px">${money(P.budget)}</b></div>
+   <div class="sl" style="margin-top:10px"><label>Save-rate scale</label><input type="range" min="0.5" max="1.5" step="0.1" value="${P.scale}" data-p="scale"><b id="pv_scale">${P.scale}x</b></div></div>
+  <div><div class="sl"><label>Horizon</label><select data-p="horizon">${[6, 12, 24].map(h => `<option value="${h}" ${h == P.horizon ? "selected" : ""}>${h} months</option>`).join("")}</select><label>Max contacts</label><input type="number" min="1" placeholder="no limit" value="${P.max}" data-p="max" style="width:100px"></div>
+   <p class="sub" style="margin:10px 0 0">Costs and save rates are assumptions, so values move with the scale.</p></div>
+  <div><div class="sub" style="margin:0 0 4px">Team capacity (contacts per team, blank = unlimited)</div><div class="row" style="gap:8px">${TEAMS.map(t => `<label class="sub" style="margin:0">${t}<br><input type="number" min="0" data-cap="${esc(t)}" value="${P.cap[t] ?? ""}" style="width:92px"></label>`).join("")}</div></div></div></div>
+ <div id="pbody"><div class="skel"></div></div>`; loadPlan(); loadCurve()
+    }
+    function planQuery() { let q = `?budget=${P.budget}&save_rate_scale=${P.scale}&horizon_months=${P.horizon}&limit=20`; if (P.max) q += "&max_contacts=" + P.max; TEAMS.forEach(t => { if (P.cap[t] !== undefined && P.cap[t] !== "") q += `&capacity_${t.replace(/ /g, "_")}=${P.cap[t]}` }); return q }
+    async function loadPlan() {
+      const r = await api("/campaign" + planQuery()); const b = $("#pbody"); if (!b) return;
+      if (!r.ok) { b.innerHTML = `<div class="card empty">${esc(errMsg(r))}</div>`; return }
+      const j = r.json, s = j.summary; LASTPLAN = j;
+      b.innerHTML = `<div class="grid g4" style="margin-bottom:16px"><div class="kpi"><div class="v">${s.customers_contacted}</div><div class="l">customers to contact (of ${s.customers_considered.toLocaleString()})</div></div><div class="kpi"><div class="v">${money(s.spent)}</div><div class="l">spent of ${money(s.budget)}</div></div><div class="kpi"><div class="v">${money(s.expected_revenue_saved)}</div><div class="l">expected revenue saved (assumed)</div></div><div class="kpi"><div class="v">${money(s.expected_net_value)}</div><div class="l">expected net value (assumed)</div></div></div>
+ <div class="grid g2"><div class="card"><h2>Returns versus budget</h2><p class="sub">Expected net value as the budget grows. The red dot is your current budget; gains flatten as the best opportunities run out.</p><div id="curve"></div></div>
+  <div class="card"><h2>Where the money goes</h2><p class="sub">Customers per action</p>${hbars(Object.entries(s.by_action).map(([k, v]) => ({ label: k, value: v, color: "var(--acc2)" })))}<h3>By team</h3>${hbars(Object.entries(s.by_team).map(([k, v]) => ({ label: k, value: v, color: "var(--acc)", display: v + (P.cap[k] ? " / " + P.cap[k] : "") })))}</div></div>
+ <div class="card"><div class="row" style="justify-content:space-between"><h2>Top ${j.returned} customers in this plan</h2><button class="btn sm" data-act="addplan">Add these ${j.returned} to work queue</button></div><div class="scroll"><table><thead><tr><th>Customer</th><th>Risk</th><th>Action</th><th>Team</th><th>Cost</th><th>Net value</th><th></th></tr></thead><tbody>` +
+        j.selected.map((c, i) => `<tr><td class="mono"><a href="#/customer/${encodeURIComponent(c.customer_id)}" style="color:var(--acc)">${esc(c.customer_id)}</a></td><td>${tierBadge(c.risk_tier, c.churn_probability)}</td><td>${esc(c.action)}</td><td>${esc(c.owner_team)}</td><td>${money(c.cost)}</td><td>${money(c.net_value)}</td><td><button class="btn ghost sm" data-act="addrow" data-i="${i}">Queue</button></td></tr>`).join("") + `</tbody></table></div></div>`; drawCurve()
+    }
+    async function loadCurve() { const key = `${P.scale}|${P.horizon}`; if (CURVEKEY !== key || !CURVE) { const r = await api(`/campaign/curve?max_budget=6000&points=12&save_rate_scale=${P.scale}&horizon_months=${P.horizon}`); if (r.ok) { CURVE = r.json.curve; CURVEKEY = key } } drawCurve() }
+    function drawCurve() {
+      const el = $("#curve"); if (!el || !CURVE) return; const pts = [[0, 0], ...CURVE.map(c => [c.budget, c.expected_net_value])], ymax = Math.max(...pts.map(p => p[1]), 1) * 1.1;
+      const cur = LASTPLAN ? [P.budget, LASTPLAN.summary.expected_net_value] : null;
+      el.innerHTML = lineChart({ w: 520, h: 280, xmax: 6000, ymax, series: [{ pts, color: "var(--acc)", area: true, dots: true, tip: p => `Budget ${money(p[0])}: net ${money(p[1])}` }], marker: cur, xfmt: v => money(v), yfmt: v => "$" + (v >= 1000 ? (v / 1000).toFixed(0) + "k" : v.toFixed(0)), xl: "Budget", yl: "Expected net value" })
+    }
+
+    /* ---------- WORK QUEUE ---------- */
+    function vQueue() {
+      const tot = Q.reduce((a, q) => a + q.cost, 0), net = Q.reduce((a, q) => a + q.net_value, 0), done = Q.filter(q => q.status === "Done").length;
+      view.innerHTML = `<div class="grid g4" style="margin-bottom:16px"><div class="kpi"><div class="v">${Q.length}</div><div class="l">actions queued</div></div><div class="kpi"><div class="v">${done}</div><div class="l">marked done</div></div><div class="kpi"><div class="v">${money(tot)}</div><div class="l">planned spend</div></div><div class="kpi"><div class="v">${money(net)}</div><div class="l">expected net value (assumed)</div></div></div>
+ <div class="card"><div class="row" style="justify-content:space-between"><h2>Work queue</h2><span class="row"><button class="btn ghost sm" data-act="exportq" ${Q.length ? "" : "disabled"}>Export CSV</button><button class="btn ghost sm" data-act="clearq" ${Q.length ? "" : "disabled"}>Clear all</button></span></div>
+ <p class="sub">Actions your team has picked from the Customer 360 and Retention planner pages. It is stored in this browser, so it survives a refresh.</p>`+
+        (Q.length ? `<div class="scroll"><table><thead><tr><th>Customer</th><th>Action</th><th>Team</th><th>Cost</th><th>Net value</th><th>Status</th><th>Added</th><th></th></tr></thead><tbody>` + Q.map((q, i) => `<tr><td class="mono"><a href="#/customer/${encodeURIComponent(q.customer_id)}" style="color:var(--acc)">${esc(q.customer_id)}</a></td><td>${esc(q.action)}</td><td>${esc(q.owner_team)}</td><td>${money(q.cost)}</td><td>${money(q.net_value)}</td><td><select data-qs="${i}">${["To do", "In progress", "Done"].map(s => `<option ${s === q.status ? "selected" : ""}>${s}</option>`).join("")}</select></td><td class="sub">${esc(q.added)}</td><td><button class="btn ghost sm" data-act="rmq" data-i="${i}">Remove</button></td></tr>`).join("") + `</tbody></table></div>` : `<div class="empty">Nothing queued yet. Open a customer or build a plan, then add actions here.</div>`) + `</div>`
+    }
+
+    /* ---------- MODEL VALIDATION (Power BI page 3, interactive) ---------- */
+    let VAL = null;
+    async function vModel() {
+      view.innerHTML = '<div class="skel"></div>'; if (!VAL) { const r = await api("/model/validation"); if (!r.ok) { view.innerHTML = `<div class="card empty">${esc(errMsg(r))}</div>`; return } VAL = r.json }
+      const v = VAL;
+      view.innerHTML = `<div class="grid g4" style="margin-bottom:16px"><div class="kpi"><div class="v">${v.roc_auc.toFixed(3)}</div><div class="l">ROC-AUC (held-out test set)</div></div><div class="kpi"><div class="v">${v.customers.toLocaleString()}</div><div class="l">test customers</div></div><div class="kpi"><div class="v">${v.churners}</div><div class="l">actual churners (${pct(v.base_rate)})</div></div><div class="kpi"><div class="v">${v.deciles[0].lift.toFixed(2)}x</div><div class="l">top-decile lift</div></div></div>
+ <div class="card"><h2>Pick a decision threshold</h2><p class="sub">Customers with a churn probability at or above the threshold are flagged. Drag to see the trade-off between catching churners and false alarms.</p>
+  <div class="sl"><input type="range" id="thr" min="0" max="1" step="0.01" value="0.5"><b id="thrv" style="min-width:46px">0.50</b></div>
+  <div class="grid g2" style="margin-top:14px"><div id="cm"></div><div id="roc"></div></div></div>
+ <div class="grid g2"><div class="card"><h2>Risk deciles: predicted vs actual</h2><p class="sub">Decile 1 = the 10% of customers the model ranks most at risk. Hover a bar for details.</p>${vcols(v.deciles.map(d => [{ v: d.avg_predicted, c: "var(--acc)", t: `Decile ${d.decile}: predicted ${pct(d.avg_predicted)}` }, { v: d.actual_churn_rate, c: "var(--high)", t: `Decile ${d.decile}: actual ${pct(d.actual_churn_rate)} | lift ${d.lift.toFixed(2)}x` }]), v.deciles.map(d => d.decile), [{ c: "var(--acc)", t: "predicted" }, { c: "var(--high)", t: "actual" }])}
+   <p class="sub" style="margin-top:10px">Top 3 deciles capture <b>${pct(v.deciles[2].cum_churners_captured, 1)}</b> of all churners. Customers with identical scores are ordered by the raw model score, so counts can differ from the Power BI table by a customer or two.</p></div>
+  <div class="card"><h2>Cumulative gains</h2><p class="sub">Share of all churners found by contacting the top X% of customers, against random targeting (dashed).</p>${lineChart({ w: 520, h: 270, xmax: 100, ymax: 100, diag: true, series: [{ pts: [[0, 0], ...v.deciles.map((d, i) => [(i + 1) * 10, d.cum_churners_captured * 100])], color: "var(--acc2)", area: true, dots: true, tip: p => `Top ${p[0]}% of customers: ${p[1].toFixed(0)}% of churners` }], xfmt: x => x + "%", yfmt: y => y + "%", xl: "Customers contacted (ranked by risk)", yl: "Churners captured" })}</div></div>
+ <div class="grid g2"><div class="card"><h2>Calibration</h2><p class="sub">When the model says 70%, do about 70% really churn? Points near the diagonal mean yes.</p>${lineChart({ w: 520, h: 270, xmax: 1, ymax: 1, diag: true, series: [{ pts: v.calibration.map(c => [c.avg_predicted, c.actual_rate]), color: "var(--high)", dots: true, tip: p => `Predicted ${pct(p[0])}, actual ${pct(p[1])}` }], xfmt: x => pct(x), yfmt: y => pct(y), xl: "Predicted probability", yl: "Actual churn rate" })}</div>
+  <div class="card"><h2>What drives the model overall (SHAP)</h2><p class="sub">Mean absolute SHAP value: average influence on churn risk.</p>${hbars(v.shap_global.map(s => ({ label: s.label, value: s.mean_abs_shap, display: s.mean_abs_shap.toFixed(2), color: "var(--acc)" })))}</div></div>`;
+      const upd = () => {
+        const t = +$("#thr").value, r = v.thresholds[Math.round(t * 100)]; $("#thrv").textContent = t.toFixed(2);
+        const tile = (l, n, c, x) => `<div class="tile" style="background:${c}"><div class="v">${n}</div><div class="l">${l}</div></div>`;
+        const flagged = r.tp + r.fp; $("#cm").innerHTML = `<div class="grid" style="grid-template-columns:1fr 1fr;gap:8px;max-width:340px">${tile("True positives: churners caught", r.tp, "var(--low)")}${tile("False positives: false alarms", r.fp, "var(--med)")}${tile("False negatives: churners missed", r.fn, "var(--high)")}${tile("True negatives: correctly left alone", r.tn, "#6A7192")}</div>
+   <div class="grid g4" style="margin-top:10px;gap:8px;grid-template-columns:repeat(4,1fr)"><div class="kpi" style="padding:8px 10px"><div class="v" style="font-size:18px">${pct(r.precision)}</div><div class="l">precision</div></div><div class="kpi" style="padding:8px 10px"><div class="v" style="font-size:18px">${pct(r.recall)}</div><div class="l">recall</div></div><div class="kpi" style="padding:8px 10px"><div class="v" style="font-size:18px">${r.f1.toFixed(2)}</div><div class="l">F1</div></div><div class="kpi" style="padding:8px 10px"><div class="v" style="font-size:18px">${pct(r.accuracy)}</div><div class="l">accuracy</div></div></div>
+   <p class="sub" style="margin-top:8px">Flagging ${flagged} customers catches ${pct(r.recall)} of all churners.</p>`;
+        $("#roc").innerHTML = lineChart({ w: 420, h: 290, xmax: 1, ymax: 1, diag: true, series: [{ pts: v.roc.map(p => [p.fpr, p.tpr]), color: "var(--acc)", area: true }], marker: [r.fp / (r.fp + r.tn), r.recall], xfmt: x => x.toFixed(1), yfmt: y => y.toFixed(1), xl: "False positive rate", yl: "True positive rate (recall)" })
+      };
+      $("#thr").addEventListener("input", upd); upd()
+    }
+
+    /* ---------- API EXPLORER ---------- */
+    const EP = [{ n: "Health", m: "GET", u: "/health" }, { n: "Predict", m: "POST", u: "/predict", b: '{"customer_id":"5561-NWEVX"}' }, { n: "Customer detail", m: "GET", u: "/customer-detail/5561-NWEVX" }, { n: "Model metrics", m: "GET", u: "/model-metrics" },
+    { n: "Recommend actions", m: "GET", u: "/recommend/5561-NWEVX?limit=3" }, { n: "Action catalogue", m: "GET", u: "/recommend/catalog" }, { n: "Campaign plan", m: "GET", u: "/campaign?budget=1000&limit=5" }, { n: "Search customers", m: "GET", u: "/customers?risk_tier=high&region=West&page_size=5" }, { n: "Model validation", m: "GET", u: "/model/validation" }, { n: "Budget curve", m: "GET", u: "/campaign/curve?max_budget=3000&points=6" }, { n: "Error demo (unknown ID)", m: "GET", u: "/recommend/0000-NOPE" }];
+    function vApi() {
+      view.innerHTML = `<div class="card"><h2>API explorer</h2><p class="sub">Every endpoint of the backend, live. Pick one, edit the URL or body, and send.</p><div class="row" style="gap:6px">${EP.map((e, i) => `<button class="chip" data-act="ep" data-v="${i}">${esc(e.n)}</button>`).join("")}</div>
+ <div class="row" style="margin-top:14px;flex-wrap:nowrap"><select id="am"><option>GET</option><option>POST</option></select><span class="mono" style="color:var(--mut)">/api/v1</span><input id="au" class="mono" style="flex:1" value="/health"><button class="btn" data-act="send">Send</button></div>
+ <textarea id="ab" class="mono" rows="2" style="width:100%;margin-top:8px" placeholder='JSON body (for POST)'></textarea><div id="ameta" class="sub" style="margin-top:10px"></div><pre class="json" id="aout">Press Send.</pre></div>`}
+    async function sendApi() {
+      const m = $("#am").value, u = $("#au").value.trim(); const opt = { method: m }; if (m === "POST") { opt.headers = { "Content-Type": "application/json" }; opt.body = $("#ab").value || "{}" }
+      $("#aout").textContent = "Loading..."; const r = await api(u, opt); const txt = JSON.stringify(r.json, null, 2) || "";
+      $("#ameta").innerHTML = `<span class="badge ${r.ok ? "low" : "high"}">HTTP ${r.status}</span> &nbsp; ${r.ms} ms &nbsp; ${(txt.length / 1024).toFixed(1)} KB`; $("#aout").textContent = txt.length > 9000 ? txt.slice(0, 9000) + "\n... (truncated, " + txt.length + " characters)" : txt
+    }
+
+    /* ---------- POWER BI + STATUS ---------- */
+    const PB = [["Operations overview", "KPIs, risk tiers and the at-risk list."], ["Customer drill-through", "One customer: risk, drivers, history."], ["Model validation", "Quality, lift and calibration."], ["What-if", "Save-rate slicer and illustrative revenue saved."]];
+    const pbiUrl = () => { try { return localStorage.getItem("kairos_pbi_url") || "" } catch (e) { return "" } };
+    function parsePbi(raw) { raw = (raw || "").trim(); const m = raw.match(/src\s*=\s*["']([^"']+)["']/i); const u = (m ? m[1] : raw).replace(/&amp;/g, "&"); return /^https:\/\/app\.powerbi(gov)?\.(com|us)\//i.test(u) ? u : "" }
+    function vPowerBI() {
+      const u = pbiUrl();
+      if (u) {
+        view.innerHTML = `<div class="card"><div class="row" style="justify-content:space-between"><div><h2>Power BI operations report (live)</h2><p class="sub" style="margin:0">The real report, embedded. Use the page tabs at the bottom of the report to switch pages, and click, filter and drill as in Power BI.</p></div><button class="btn ghost sm" data-act="pbreset">Change or remove link</button></div></div>
+  <iframe title="Power BI report" src="${esc(u)}" allowfullscreen style="width:100%;height:calc(100vh - 210px);min-height:540px;border:1px solid var(--line);border-radius:12px;background:var(--card)"></iframe>`; return
+      }
+      view.innerHTML = `<div class="card"><h2>Power BI operations report</h2><p class="sub">Screenshots of the report built in Power BI Desktop. Connect the live report below to make it interactive inside this app. The Overview, Customer 360, Model validation and Retention planner pages are interactive web versions of the same ideas, built on the same model outputs.</p><div class="row" style="gap:6px" id="pbtabs">${PB.map((p, i) => `<button class="chip ${i ? "" : "on"}" data-act="pb" data-v="${i}">${p[0]}</button>`).join("")}</div><p class="sub" id="pbcap" style="margin:10px 0">${PB[0][1]}</p><div class="shot" id="pbshot"></div></div>
+ <div class="card"><h2>Connect the live report</h2><p class="sub">A .pbix file cannot run inside a web page by itself. Publish it once, then paste the link here.</p>
+  <ol class="sub" style="margin:0 0 12px;padding-left:20px;line-height:1.8"><li>In Power BI Desktop choose <b>Publish</b> and pick your workspace (needs a Power BI account).</li><li>Open the report in the Power BI service, then <b>File, Embed report, Publish to web (public)</b>. If that option is missing or greyed out, your account administrator has disabled it.</li><li>Copy the link (or the whole iframe code) and paste it below.</li></ol>
+  <div class="row" style="flex-wrap:nowrap"><input id="pburl" class="mono" style="flex:1" placeholder="https://app.powerbi.com/view?r=..."><button class="btn" data-act="pbconnect">Connect</button></div>
+  <div class="note">Publish to web makes the report visible to anyone with the link. This project uses public Telco data and synthetic tables, but check you are comfortable with that. Signed-in "Secure embed" links (also starting with https://app.powerbi.com/) work too for people who have access.</div></div>`; pbShow(0)
+    }
+    function pbShow(i) { $$("#pbtabs .chip").forEach((c, j) => c.classList.toggle("on", j === i)); $("#pbcap").textContent = PB[i][1]; $("#pbshot").innerHTML = `<img src="/ui/dashboard/page${i + 1}.png" onerror="this.parentNode.innerHTML='<div class=empty>Add your screenshot as <code>src/ui/dashboard/page${i + 1}.png</code></div>'">` }
+    function vStatus() {
+      const R = (a, s, d) => `<tr><td><b>${a}</b></td><td><span class="badge ${s === "Built" ? "low" : "grey"}">${s}</span></td><td class="sub" style="white-space:normal">${d}</td></tr>`;
+      view.innerHTML = `<div class="card"><h2>What is built vs planned</h2><div class="scroll"><table><thead><tr><th>Component</th><th>Status</th><th>Detail</th></tr></thead><tbody>` +
+        R("Data layer", "Built", "8-table PostgreSQL schema (Supabase), leakage-safe features, loader with verification") + R("Churn models", "Built", "Logistic Regression, XGBoost (SHAP, calibrated, served), LSTM comparison") + R("Power BI operations dashboard", "Built", "4 pages fed by model outputs") + R("Interactive web app", "Built", "Filters, customer search, SHAP drivers, threshold explorer, planner, work queue, API explorer") + R("Retention Action Engine", "Built", "Explainable per-customer actions from SHAP drivers and customer facts, budget-constrained planner, backtest. Costs and save rates are assumptions.") + R("REST API", "Built", "10 endpoints, CSV and Postgres backends with parity check, automated tests") +
+        R("JWT authentication", "Sem VIII", "Currently open (no auth)") + R("Live scoring, batch-predict", "Sem VIII", "/predict serves stored predictions only") + R("Drift monitoring and MLflow", "Sem VIII", "Drift fields are placeholders until then") + R("Tableau executive dashboard", "Sem VIII", "") + R("Causal uplift testing", "Sem VIII", "Needs intervention data to measure whether actions really retain customers") + R("Chat / hybrid RAG (Module B)", "Sem VIII", "Conversational layer over the data and explanations") + R("Evaluation harness, Docker, paper", "Sem VIII", "") + `</tbody></table></div></div>`
+    }
+
+    /* ---------- global events ---------- */
+    document.addEventListener("click", e => {
+      const t = e.target.closest("[data-act],[data-href]"); if (!t) return;
+      if (t.dataset.href) { location.hash = t.dataset.href; return }
+      const a = t.dataset.act, v = t.dataset.v;
+      if (a === "tier") { F.tiers.has(v) ? F.tiers.delete(v) : F.tiers.add(v); F.page = 1; loadOverview() }
+      else if (a === "region") { F.region = F.region === v ? "" : v; F.page = 1; loadOverview() }
+      else if (a === "reset") { Object.assign(F, { q: "", region: "", contract: "", band: "", sort: "probability", order: "desc", page: 1 }); F.tiers.clear(); vOverview() }
+      else if (a === "sort") { F.order = F.sort === v && F.order === "desc" ? "asc" : "desc"; F.sort = v; F.page = 1; loadOverview() }
+      else if (a === "page") { F.page = Math.max(1, F.page + +v); loadOverview() }
+      else if (a === "cgo") { const id = $("#cq").value.trim(); if (id) location.hash = "#/customer/" + encodeURIComponent(id) }
+      else if (a === "addq") { const r = window._rec.recommendations[+t.dataset.i]; toast(addQ({ customer_id: window._rec.customer_id, action_id: r.action_id, action: r.action, owner_team: r.owner_team, cost: r.cost, net_value: r.net_value }) ? "Added to work queue" : "Already in the queue") }
+      else if (a === "addrow") { const c = LASTPLAN.selected[+t.dataset.i]; toast(addQ(c) ? "Added to work queue" : "Already in the queue") }
+      else if (a === "addplan") { let n = 0; LASTPLAN.selected.forEach(c => { if (addQ(c)) n++ }); toast(n + " action(s) added to the work queue") }
+      else if (a === "rmq") { Q.splice(+t.dataset.i, 1); saveQ(); vQueue() }
+      else if (a === "clearq") { if (confirm("Remove every item from the queue?")) { Q = []; saveQ(); vQueue() } }
+      else if (a === "exportq") {
+        const rows = [["customer_id", "action", "team", "cost", "expected_net_value", "status", "added"], ...Q.map(q => [q.customer_id, q.action, q.owner_team, q.cost, q.net_value, q.status, q.added])];
+        const blob = new Blob([rows.map(r => r.map(x => `"${String(x).replace(/"/g, '""')}"`).join(",")).join("\n")], { type: "text/csv" }); const l = document.createElement("a"); l.href = URL.createObjectURL(blob); l.download = "kairos_work_queue.csv"; l.click()
+      }
+      else if (a === "ep") { const x = EP[+v]; $("#am").value = x.m; $("#au").value = x.u; $("#ab").value = x.b || ""; sendApi() }
+      else if (a === "send") sendApi();
+      else if (a === "pb") pbShow(+v)
+      else if (a === "pbconnect") { const u = parsePbi($("#pburl").value); if (!u) { toast("Paste the link or iframe code from Power BI (it starts with https://app.powerbi.com/)"); return } try { localStorage.setItem("kairos_pbi_url", u) } catch (e) { } toast("Live report connected"); vPowerBI() }
+      else if (a === "pbreset") { try { localStorage.removeItem("kairos_pbi_url") } catch (e) { } vPowerBI() }
+    });
+    document.addEventListener("input", e => {
+      const t = e.target;
+      if (t.dataset.bind === "q") { F.q = t.value; F.page = 1; dQ() }
+      else if (t.dataset.p) { const k = t.dataset.p; P[k] = t.type === "range" || k === "horizon" ? +t.value : t.value; if (k === "budget") $("#pv_budget").textContent = money(P.budget); if (k === "scale") $("#pv_scale").textContent = P.scale + "x"; dPlan(k === "scale" || k === "horizon") }
+      else if (t.dataset.cap !== undefined) { P.cap[t.dataset.cap] = t.value; dPlan(false) }
+      else if (t.dataset.cs === "scale") { CS.scale = +t.value; $("#csv").textContent = CS.scale + "x"; dCust() }
+    });
+    document.addEventListener("change", e => {
+      const t = e.target;
+      if (t.dataset.bind && t.dataset.bind !== "q") { F[t.dataset.bind] = t.value; F.page = 1; loadOverview() }
+      else if (t.dataset.cs === "horizon") { CS.horizon = +t.value; dCust() }
+      else if (t.dataset.qs !== undefined) { Q[+t.dataset.qs].status = t.value; saveQ(); vQueue() }
+      else if (t.dataset.p === "horizon") { }
+    });
+    const dQ = debounce(() => loadOverview(), 280), dPlan = debounce(c => { loadPlan(); if (c) loadCurve() }, 260), dCust = debounce(() => vCustomer(lastCust), 260);
+    /* typeahead (header box and Customer 360 box) */
+    function typeahead(inp, box, go) {
+      const run = debounce(async () => {
+        const q = inp.value.trim(); if (q.length < 2) { box.hidden = true; return }
+        const r = await api("/customers?q=" + encodeURIComponent(q) + "&page_size=8"); if (!r.ok || !r.json.items.length) { box.hidden = true; return }
+        box.innerHTML = r.json.items.map(c => `<button data-id="${esc(c.customer_id)}"><span class="mono">${esc(c.customer_id)}</span>${tierBadge(c.risk_tier, c.churn_probability)}</button>`).join(""); box.hidden = false
+      }, 200);
+      inp.addEventListener("input", run); inp.addEventListener("keydown", e => { if (e.key === "Enter" && inp.value.trim()) { box.hidden = true; go(inp.value.trim()) } });
+      box.addEventListener("click", e => { const b = e.target.closest("button"); if (b) { box.hidden = true; go(b.dataset.id) } })
+    }
+    const goCust = id => { location.hash = "#/customer/" + encodeURIComponent(id) };
+    typeahead($("#gs"), $("#gsug"), id => { $("#gs").value = ""; goCust(id) });
+    document.addEventListener("click", e => { if (!e.target.closest(".sug,input")) $$(".sug").forEach(s => s.hidden = true) });
+    new MutationObserver(() => { const q = $("#cq"); if (q && !q._ta) { q._ta = 1; typeahead(q, $("#csug"), goCust) } }).observe(view, { childList: true });
+    /* theme + health */
+    const setTheme = t => { document.documentElement.dataset.theme = t; try { localStorage.setItem("kairos_theme", t) } catch (e) { } };
+    setTheme((() => { try { return localStorage.getItem("kairos_theme") } catch (e) { } })() || (matchMedia("(prefers-color-scheme:dark)").matches ? "dark" : "light"));
+    $("#theme").onclick = () => setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+    (async () => { const r = await api("/health"); $("#health").innerHTML = r.ok ? `<span class="dot"></span>API online | model ${esc(r.json.serving_model_id || "none")} | ${(r.json.predictions || 0).toLocaleString()} scored customers` : `<span class="dot bad"></span>API offline` })();
+    saveQ(); route();
   </script>
 </body>
 

@@ -88,7 +88,7 @@ class ApiTestBase(unittest.TestCase):
         self._tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self._tmp.cleanup)
         cfg = build_fixture(Path(self._tmp.name), self.with_model)
-        self.client = create_app({**cfg, **self.extra, "TESTING": True}).test_client()
+        self.client = create_app({**cfg, "REPOSITORY": "csv", **self.extra, "TESTING": True}).test_client()
 
     def assertError(self, resp, status, code):
         self.assertEqual(resp.status_code, status, resp.get_data(as_text=True))

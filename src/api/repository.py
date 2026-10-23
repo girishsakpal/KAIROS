@@ -127,6 +127,9 @@ class CsvRepository:
         return summaries.transaction_summary(self._txns.get(cid), self.snapshot_date(cid))
 
     # ---- predictions & models -----------------------------------------
+    def scored_customer_ids(self):
+        return [] if self._pred is None else list(self._pred.index)
+
     def latest_prediction(self, cid):
         if self._pred is None or cid not in self._pred.index:
             return None
