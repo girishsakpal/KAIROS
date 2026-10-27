@@ -1,148 +1,170 @@
-# Kairos
+# KAIROS
 
-An Explainable AI-Driven Customer Churn Intelligence Framework for Predictive and
-Actionable Retention.
+**Knowledge-Augmented Insight & Retention Optimization System**
 
-> The right insight, at the right moment.
+KAIROS is an AI-based customer churn prediction and retention system. It predicts which subscription customers may leave, explains the main factors behind each prediction, and recommends actions a retention team can take.
 
----
+**Project:** B.E. Artificial Intelligence and Data Science, Rizvi College of Engineering, University of Mumbai  
+**Academic year:** 2026–27  
+**Team:** Girish Dayaghan Sakpal, Aryan Prakash Pilwalkar, Kaif Reshamwala  
+**Guide:** Prof. Junaid Mandviwala  
+**Status:** Semester VII checkpoint
 
-## Repo structure
+## 1. What KAIROS does
 
-```
-kairos/
-├── data/
-│   ├── raw/            # place the real Kaggle Telco-Customer-Churn.csv here (gitignored)
-│   ├── synthetic/       # generator output — customers/subscriptions/usage/tickets/txns
-│   └── processed/       # feature-engineered, leakage-safe train/test sets (Phase 3, next step)
-├── db/
-│   └── schema.sql        # PostgreSQL DDL — 7 tables, matches Kairos_ER_Diagram.pdf
-├── src/
-│   ├── data_generation/  # generate_synthetic_data.py — conditioned on churn outcome
-│   ├── features/         # leakage-safe feature engineering (Phase 3, next step)
-│   ├── models/            # baseline LR + XGBoost/LightGBM training, SHAP, MLflow (Phase 3)
-│   ├── api/                # Flask + SQLAlchemy REST API — see docs/Kairos_API_Contracts.md
-│   └── evaluation/         # text-to-SQL accuracy, RAGAS, explanation-faithfulness (Phase 7)
-├── dashboards/
-│   ├── powerbi/            # .pbix files + JSON theme file (Phase 3 ops view, Phase 6 full)
-│   └── tableau/            # .twbx files + .tps theme file (Phase 6 exec view)
-├── docs/                    # living reference docs (see below)
-├── notebooks/                # exploratory analysis, not production code
-├── tests/                     # Pytest suite for src/api and src/models
-├── mlruns/                     # MLflow tracking store (gitignored — local/artifact only)
-├── requirements.txt
-├── .env.example
-└── .gitignore
-```
+KAIROS helps a business answer three questions:
 
-## Setup
+1. **Who might leave?** A machine-learning model estimates each customer's churn probability.
+2. **Why are they at risk?** SHAP explains the main factors behind each prediction.
+3. **What should the team do?** A retention engine recommends actions and helps prioritize customers within a budget.
 
-```bash
-cp .env.example .env          # fill in DB creds / LLM provider config
+The system includes a Flask REST API, a web dashboard, and a Power BI report.
+
+## 2. Main features
+
+- Customer churn prediction using Logistic Regression, XGBoost, and LSTM.
+- Customer-level explanations using SHAP.
+- Risk categories: High, Medium, and Low.
+- Recommended retention actions, such as payment recovery calls and onboarding calls.
+- Budget planner to prioritize customer contacts.
+- Interactive dashboard with customer search, filters, charts, and a work queue.
+- Power BI report for operational analysis.
+- REST API with 10 endpoints.
+- **109 automated tests passing.**
+
+## 3. Current implementation status
+
+**Built in Semester VII**
+- PostgreSQL database design with 8 tables and a validated data loader.
+- Feature engineering and leakage checks.
+- Three machine-learning approaches and model evaluation.
+- SHAP explanations and retention recommendations.
+- Flask API, interactive web app, and four-page Power BI report.
+- Basic MLflow experiment logging.
+
+**Planned for Semester VIII**
+- Login and JWT authentication.
+- Live predictions for new customers.
+- Data/model drift monitoring and model registry.
+- Conversational interface with SQL and semantic search.
+- Tableau executive dashboard.
+- Docker, CI, and a model evaluation framework.
+- Testing retention actions using real intervention data.
+
+## 4. Technology stack
+
+- **Language:** Python
+- **Machine learning:** scikit-learn, XGBoost, TensorFlow/Keras, SHAP
+- **Backend:** Flask REST API
+- **Database:** PostgreSQL / Supabase, with CSV support
+- **Frontend:** HTML, CSS, JavaScript, SVG charts
+- **BI:** Power BI
+- **Experiment tracking:** MLflow
+
+## 5. Data used
+
+The project starts with a real Telco Customer Churn dataset containing **7,043 customers**. Additional usage logs, support tickets, and transaction records are generated for the project.
+
+Important limitation: the behavioural records are generated using the churn label. This can make model results look better than they would on real-world behavioural data. These results should therefore be treated as a demonstration, not as proof of real-world performance.
+
+## 6. Model results
+
+Results on the held-out test set of **1,419 customers**:
+
+| Metric | Logistic Regression | XGBoost (used by app) | LSTM |
+|---|---:|---:|---:|
+| Accuracy | 82.2% | 81.5% | 82.5% |
+| Precision | 77.8% | 75.2% | 76.0% |
+| Recall | 79.0% | 81.8% | 83.5% |
+| F1 score | 0.784 | 0.783 | 0.796 |
+| ROC-AUC | 0.901 | 0.894 | 0.916 |
+
+The LSTM has the strongest overall metrics in this test, but the app uses XGBoost because it supports the per-customer SHAP explanations used by the recommendation system.
+
+These results come from one test split, and the synthetic behavioural data may make them optimistic.
+
+## 7. Retention Action Engine
+
+The engine uses a customer's risk score, SHAP drivers, and customer details to rank possible actions. Examples include:
+
+- Recover a failed payment and switch the customer to auto-pay.
+- Offer a discounted annual contract.
+- Make an early-life onboarding call.
+- Provide a product-feature walkthrough.
+- Follow up on unresolved support issues.
+
+It can plan customer contacts under a budget and team-capacity limits. Action costs and success rates are assumptions because the project does not yet have real data showing which retention actions worked.
+
+## 8. Application pages
+
+The web app includes:
+
+- **Overview:** overall churn risk, charts, filters, and customer list.
+- **Customer 360:** individual customer risk, explanations, and recommendations.
+- **Retention planner:** budget and contact planning.
+- **Work queue:** track selected actions and export them to CSV.
+- **Model validation:** examine thresholds and model performance.
+- **API explorer:** try the available API endpoints.
+- **Power BI report:** view report screenshots or a published report.
+- **Project status:** see what is built and what remains.
+
+## 9. Run the application
+
+You need Python and the packages listed in `requirements.txt`.
+
+From the repository root, run:
+
+```powershell
 pip install -r requirements.txt
+$env:KAIROS_REPOSITORY="csv"
+python -m src.api.app
 ```
 
-Stand up the database:
+Then open **http://127.0.0.1:5000/** in your browser.
+
+The CSV backend is recommended for demos and does not require a database connection. PostgreSQL/Supabase is optional.
+
+## 10. Run the tests
 
 ```bash
-psql -U postgres -c "CREATE DATABASE kairos;"
-psql -U postgres -d kairos -f db/schema.sql
+python -m unittest tests.test_dashboard tests.test_recommend tests.test_api tests.test_api_postgres tests.test_db_loader
 ```
 
-```bash
-python3 src/data_generation/generate_synthetic_data.py \
-    --seed-csv data/raw/Telco-Customer-Churn.csv \
-    --out-dir data/synthetic
+The project currently has **109 passing automated tests**.
+
+## 11. Key limitations
+
+- Behavioural data is synthetic and generated using the churn label.
+- Model evaluation uses one test split; cross-validation and confidence intervals are not yet available.
+- Retention-action costs and success rates are assumptions.
+- The recommendations are decision support, not a guarantee that a customer will stay.
+- Authentication, live scoring, drift monitoring, and the conversational interface are not yet implemented.
+
+## 12. Semester VIII plan
+
+The next phase will focus on authentication, live scoring, monitoring, a conversational interface, Tableau, Docker/CI, improved evaluation, testing retention actions with real data, and the final report and paper.
+
+## 13. Repository overview
+
+```text
+kairos/
+├── data/          Raw, generated, and processed data
+├── db/            Database schema and migrations
+├── src/
+│   ├── data_generation/
+│   ├── features/
+│   ├── models/
+│   ├── db/
+│   ├── recommend/
+│   ├── api/
+│   ├── ui/
+│   └── evaluation/
+├── models/        Trained models, predictions, metrics, and plots
+├── dashboards/
+│   ├── powerbi/
+│   └── tableau/
+├── docs/          Project documentation and setup guides
+└── tests/         Automated tests
 ```
 
-Load into Postgres (order matters, respects FK dependencies):
-
-```bash
-psql -U postgres -d kairos -c "\copy customers FROM 'data/synthetic/customers.csv' CSV HEADER"
-psql -U postgres -d kairos -c "\copy subscriptions FROM 'data/synthetic/subscriptions.csv' CSV HEADER"
-psql -U postgres -d kairos -c "\copy usage_logs FROM 'data/synthetic/usage_logs.csv' CSV HEADER"
-psql -U postgres -d kairos -c "\copy support_tickets FROM 'data/synthetic/support_tickets.csv' CSV HEADER"
-psql -U postgres -d kairos -c "\copy transactions FROM 'data/synthetic/transactions.csv' CSV HEADER"
-```
-
-# Results: Logistic Regression vs XGBoost vs LSTM
-
-```
-{
-  "logistic_regression": {
-    "roc_auc": 0.8984,
-    "pr_auc": 0.8728,
-    "brier_score": 0.2498
-  },
-  "xgboost": {
-    "roc_auc": 0.9047,
-    "pr_auc": 0.8824,
-    "brier_score": 0.1599
-  },
-  "lstm": {
-    "roc_auc": 0.9174,
-    "pr_auc": 0.8957,
-    "brier_score": 0.1414
-  },
-  "lstm_calibrated": {
-    "roc_auc": 0.9158,
-    "pr_auc": 0.8851,
-    "brier_score": 0.1137
-  }
-}
-```
-
-The LSTM is a hybrid model: an LSTM branch reads each customer's raw 6-month
-usage sequence (session count, session minutes, feature adoption), concatenated
-with a dense branch reading the same static features LR/XGBoost use (contract,
-tenure, payment method, support/transaction aggregates), so it's judged on
-whether *learning* the usage trajectory beats *summarizing* it into hand-built
-features. `lstm_calibrated` applies isotonic calibration fit on a held-out
-validation slice — see the Brier section below for why that matters.
-
-## ROC AUC (Receiver Operating Characteristic - Area Under the Curve)
-### What it signifies: 
-It measures how well the model separates the two classes (e.g., distinguishing between "fraud" and "not fraud"). A score of 1.0 is perfect, and 0.5 is random guessing.
-### Interpretation: 
-All three models have strong discriminative power. The LSTM has the edge (0.917 raw / 0.916 calibrated) over XGBoost (0.905) and Logistic Regression (0.898), the raw usage sequence appears to carry more signal than the 6 hand-built summary features derived from it.
-
-## PR AUC (Precision-Recall Area Under the Curve)
-### What it signifies: 
-This evaluates performance specifically on the positive class. It is highly useful if your dataset is imbalanced (e.g., rare diseases or defaults). A higher score means the model finds positive cases accurately without catching too many false alarms.
-### Interpretation: 
-The LSTM again leads (0.896 raw), ahead of XGBoost (0.882) and Logistic Regression (0.873). Calibration trades a little PR-AUC for much better calibration (0.885) — expected, since PR-AUC is sensitive to how probabilities are ranked/thresholded, not just their calibration.
-
-## Brier Score
-### What it signifies: 
-It measures the accuracy of predicted probabilities (calibration). It is the mean squared difference between the predicted probability and the actual outcome. Lower is better, with 0.0 being a perfect score.
-### Interpretation: 
-The calibrated LSTM is the best-calibrated model by a clear margin (0.114), followed by the raw LSTM (0.141) and XGBoost (0.160). **Caveat on LR and XGBoost's scores above:** both are trained with `class_weight`/`scale_pos_weight` re-balancing, which systematically inflates predicted probabilities (mean predicted churn on the test set is 0.565 vs an actual rate of 0.409) — so their Brier scores here are worse than their true ranking ability would suggest, not evidence that their probabilities are "close to random." The LSTM's isotonic calibration step corrects for this directly (mean predicted drops to 0.421 against the same 0.409 actual rate), which is why it's the most trustworthy of the four for anything using the probability itself (e.g. expected-revenue-at-risk), not just the ranking.
-
-**Model selection:** on ROC-AUC the LSTM currently outperforms XGBoost, so it is the promoted champion in `model_registry_row.json` unless retrained. See `docs/LSTM_Notes.md` for architecture details and `docs/Phase3_Findings.md` for the calibration issue in more depth.
-
-
-# API (Phase 3 skeleton)
-
-Run from the repo root:
-
-```bash
-python -m src.api.app                      # or: flask --app src.api.app run --debug
-python -m unittest tests.test_api -v       # or: python -m pytest tests/test_api.py -v
-```
-
-| Endpoint | Status |
-|---|---|
-| `GET  /api/v1/health` | built |
-| `POST /api/v1/predict` | built (cached predictions only; `force_recompute=true` returns 501) |
-| `GET  /api/v1/customer-detail/<customer_id>?include=...` | built |
-| `GET  /api/v1/model-metrics` | built |
-| `/batch-predict`, `/segment`, `/chat` | not started |
-
-**Backends.** `KAIROS_REPOSITORY=csv` (default) reads the CSV/JSON files; `KAIROS_REPOSITORY=postgres` reads the
-Supabase/Postgres tables via `DATABASE_URL` (see `docs/SUPABASE_SETUP.md`). Both call the same summary code
-(`src/api/summaries.py`); `python -m src.api.check_parity` confirms they return identical responses.
-
-Current limitations (see `src/api/routes.py` docstring): **no authentication yet** (JWT is Phase 7);
-data is read from CSV/JSON by default (Postgres via `KAIROS_REPOSITORY=postgres`); `/predict` serves the XGBoost model's predictions (the
-LSTM champion has no per-customer SHAP) and only the 1,419 test-set customers have predictions;
-`drift_status.drift_checked` is `false` until Phase 6 drift monitoring exists.
+For detailed setup and technical information, see the documents in `docs/`, especially `KAIROS_documentation.pdf` and `Kairos_API_Contracts.md`.
